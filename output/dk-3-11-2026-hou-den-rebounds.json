@@ -1,0 +1,505 @@
+[
+  {
+    "playerName": "Nikola Jokic",
+    "statType": "RPG",
+    "statValue": "1.2.5",
+    "lines": [
+      {
+        "line": "7+",
+        "odds": "−3200"
+      },
+      {
+        "line": "8+",
+        "odds": "−1300"
+      },
+      {
+        "line": "9+",
+        "odds": "−640"
+      },
+      {
+        "line": "10+",
+        "odds": "−366"
+      },
+      {
+        "line": "11+",
+        "odds": "−225"
+      },
+      {
+        "line": "12+",
+        "odds": "−145"
+      },
+      {
+        "line": "13+",
+        "odds": "+105"
+      },
+      {
+        "line": "14+",
+        "odds": "+155"
+      },
+      {
+        "line": "15+",
+        "odds": "+234"
+      },
+      {
+        "line": "16+",
+        "odds": "+345"
+      },
+      {
+        "line": "17+",
+        "odds": "+507"
+      },
+      {
+        "line": "18+",
+        "odds": "+750"
+      },
+      {
+        "line": "19+",
+        "odds": "+1100"
+      },
+      {
+        "line": "20+",
+        "odds": "+1540"
+      }
+    ]
+  },
+  {
+    "playerName": "Alperen Sengun",
+    "statType": "RPG",
+    "statValue": "9.1",
+    "lines": [
+      {
+        "line": "5+",
+        "odds": "−1480"
+      },
+      {
+        "line": "6+",
+        "odds": "−610"
+      },
+      {
+        "line": "7+",
+        "odds": "−303"
+      },
+      {
+        "line": "8+",
+        "odds": "−168"
+      },
+      {
+        "line": "9+",
+        "odds": "+103"
+      },
+      {
+        "line": "10+",
+        "odds": "+173"
+      },
+      {
+        "line": "11+",
+        "odds": "+284"
+      },
+      {
+        "line": "12+",
+        "odds": "+465"
+      },
+      {
+        "line": "13+",
+        "odds": "+750"
+      },
+      {
+        "line": "14+",
+        "odds": "+1180"
+      }
+    ]
+  },
+  {
+    "playerName": "Amen Thompson",
+    "statType": "RPG",
+    "statValue": "7.6",
+    "lines": [
+      {
+        "line": "4+",
+        "odds": "−1380"
+      },
+      {
+        "line": "5+",
+        "odds": "−553"
+      },
+      {
+        "line": "6+",
+        "odds": "−268"
+      },
+      {
+        "line": "7+",
+        "odds": "−146"
+      },
+      {
+        "line": "8+",
+        "odds": "+119"
+      },
+      {
+        "line": "9+",
+        "odds": "+206"
+      },
+      {
+        "line": "10+",
+        "odds": "+343"
+      },
+      {
+        "line": "11+",
+        "odds": "+565"
+      },
+      {
+        "line": "12+",
+        "odds": "+920"
+      },
+      {
+        "line": "13+",
+        "odds": "+1480"
+      }
+    ]
+  },
+  {
+    "playerName": "Jabari Smith Jr.",
+    "statType": "RPG",
+    "statValue": "6.8",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−3800"
+      },
+      {
+        "line": "4+",
+        "odds": "−930"
+      },
+      {
+        "line": "5+",
+        "odds": "−381"
+      },
+      {
+        "line": "6+",
+        "odds": "−187"
+      },
+      {
+        "line": "7+",
+        "odds": "+100"
+      },
+      {
+        "line": "8+",
+        "odds": "+175"
+      },
+      {
+        "line": "9+",
+        "odds": "+302"
+      },
+      {
+        "line": "10+",
+        "odds": "+504"
+      },
+      {
+        "line": "11+",
+        "odds": "+860"
+      },
+      {
+        "line": "12+",
+        "odds": "+1440"
+      }
+    ]
+  },
+  {
+    "playerName": "Tari Eason",
+    "statType": "RPG",
+    "statValue": "6.2",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−1960"
+      },
+      {
+        "line": "4+",
+        "odds": "−640"
+      },
+      {
+        "line": "5+",
+        "odds": "−280"
+      },
+      {
+        "line": "6+",
+        "odds": "−142"
+      },
+      {
+        "line": "7+",
+        "odds": "+128"
+      },
+      {
+        "line": "8+",
+        "odds": "+227"
+      },
+      {
+        "line": "9+",
+        "odds": "+392"
+      },
+      {
+        "line": "10+",
+        "odds": "+660"
+      },
+      {
+        "line": "11+",
+        "odds": "+1080"
+      },
+      {
+        "line": "12+",
+        "odds": "+1700"
+      }
+    ]
+  },
+  {
+    "playerName": "Aaron Gordon",
+    "statType": "RPG",
+    "statValue": "6.2",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−1000"
+      },
+      {
+        "line": "4+",
+        "odds": "−378"
+      },
+      {
+        "line": "5+",
+        "odds": "−185"
+      },
+      {
+        "line": "6+",
+        "odds": "+100"
+      },
+      {
+        "line": "7+",
+        "odds": "+177"
+      },
+      {
+        "line": "8+",
+        "odds": "+306"
+      },
+      {
+        "line": "9+",
+        "odds": "+523"
+      },
+      {
+        "line": "10+",
+        "odds": "+880"
+      },
+      {
+        "line": "11+",
+        "odds": "+1440"
+      }
+    ]
+  },
+  {
+    "playerName": "Kevin Durant",
+    "statType": "RPG",
+    "statValue": "5.5",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−1060"
+      },
+      {
+        "line": "4+",
+        "odds": "−378"
+      },
+      {
+        "line": "5+",
+        "odds": "−173"
+      },
+      {
+        "line": "6+",
+        "odds": "+112"
+      },
+      {
+        "line": "7+",
+        "odds": "+211"
+      },
+      {
+        "line": "8+",
+        "odds": "+394"
+      },
+      {
+        "line": "9+",
+        "odds": "+710"
+      },
+      {
+        "line": "10+",
+        "odds": "+1240"
+      }
+    ]
+  },
+  {
+    "playerName": "Christian Braun",
+    "statType": "RPG",
+    "statValue": "4.9",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−770"
+      },
+      {
+        "line": "4+",
+        "odds": "−286"
+      },
+      {
+        "line": "5+",
+        "odds": "−133"
+      },
+      {
+        "line": "6+",
+        "odds": "+148"
+      },
+      {
+        "line": "7+",
+        "odds": "+277"
+      },
+      {
+        "line": "8+",
+        "odds": "+522"
+      },
+      {
+        "line": "9+",
+        "odds": "+930"
+      },
+      {
+        "line": "10+",
+        "odds": "+1600"
+      }
+    ]
+  },
+  {
+    "playerName": "Jamal Murray",
+    "statType": "RPG",
+    "statValue": "4.4",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−366"
+      },
+      {
+        "line": "4+",
+        "odds": "−150"
+      },
+      {
+        "line": "5+",
+        "odds": "+143"
+      },
+      {
+        "line": "6+",
+        "odds": "+287"
+      },
+      {
+        "line": "7+",
+        "odds": "+565"
+      },
+      {
+        "line": "8+",
+        "odds": "+1060"
+      }
+    ]
+  },
+  {
+    "playerName": "Bruce Brown",
+    "statType": "RPG",
+    "statValue": "4",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−209"
+      },
+      {
+        "line": "4+",
+        "odds": "+114"
+      },
+      {
+        "line": "5+",
+        "odds": "+244"
+      },
+      {
+        "line": "6+",
+        "odds": "+487"
+      },
+      {
+        "line": "7+",
+        "odds": "+950"
+      }
+    ]
+  },
+  {
+    "playerName": "Cameron Johnson",
+    "statType": "RPG",
+    "statValue": "3.7",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−185"
+      },
+      {
+        "line": "4+",
+        "odds": "+131"
+      },
+      {
+        "line": "5+",
+        "odds": "+284"
+      },
+      {
+        "line": "6+",
+        "odds": "+587"
+      },
+      {
+        "line": "7+",
+        "odds": "+1120"
+      }
+    ]
+  },
+  {
+    "playerName": "Reed Sheppard",
+    "statType": "RPG",
+    "statValue": "2.8",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−167"
+      },
+      {
+        "line": "4+",
+        "odds": "+149"
+      },
+      {
+        "line": "5+",
+        "odds": "+334"
+      },
+      {
+        "line": "6+",
+        "odds": "+710"
+      },
+      {
+        "line": "7+",
+        "odds": "+1440"
+      }
+    ]
+  },
+  {
+    "playerName": "Nikola Jokic",
+    "statType": "",
+    "statValue": "",
+    "lines": [
+      {
+        "line": "1+",
+        "odds": "−250"
+      },
+      {
+        "line": "2+",
+        "odds": "+185"
+      },
+      {
+        "line": "3+",
+        "odds": "+660"
+      }
+    ]
+  }
+]

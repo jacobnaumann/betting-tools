@@ -1,0 +1,63 @@
+{
+  "season": "2019-20",
+  "startYear": 2019,
+  "asOfDate": "2020-04-15",
+  "expectedTeams": 365,
+  "rowsWritten": 365,
+  "source": "teamrankings",
+  "metricUrls": {
+    "offensive_efficiency": "https://www.teamrankings.com/ncaa-basketball/stat/offensive-efficiency?date=2020-04-15",
+    "defensive_efficiency": "https://www.teamrankings.com/ncaa-basketball/stat/defensive-efficiency?date=2020-04-15",
+    "effective_fg_pct": "https://www.teamrankings.com/ncaa-basketball/stat/effective-field-goal-pct?date=2020-04-15",
+    "opp_effective_fg_pct": "https://www.teamrankings.com/ncaa-basketball/stat/opponent-effective-field-goal-pct?date=2020-04-15",
+    "turnover_rate": "https://www.teamrankings.com/ncaa-basketball/stat/turnover-pct?date=2020-04-15",
+    "opp_turnover_rate": "https://www.teamrankings.com/ncaa-basketball/stat/opponent-turnover-pct?date=2020-04-15",
+    "offensive_rebound_rate": "https://www.teamrankings.com/ncaa-basketball/stat/offensive-rebounding-pct?date=2020-04-15",
+    "free_throw_rate": "https://www.teamrankings.com/ncaa-basketball/stat/free-throw-rate?date=2020-04-15",
+    "three_point_rate": "https://www.teamrankings.com/ncaa-basketball/stat/three-point-rate?date=2020-04-15",
+    "sos": "https://www.teamrankings.com/ncaa-basketball/ranking/schedule-strength-by-other?date=2020-04-15",
+    "pace": "https://www.teamrankings.com/ncaa-basketball/stat/possessions-per-game?date=2020-04-15"
+  },
+  "metricCoverage": {
+    "offensive_efficiency": 351,
+    "defensive_efficiency": 351,
+    "effective_fg_pct": 351,
+    "opp_effective_fg_pct": 351,
+    "turnover_rate": 351,
+    "opp_turnover_rate": 351,
+    "offensive_rebound_rate": 351,
+    "free_throw_rate": 351,
+    "three_point_rate": 351,
+    "sos": 351,
+    "pace": 351
+  },
+  "missingByMetric": {
+    "offensive_efficiency": 14,
+    "defensive_efficiency": 14,
+    "effective_fg_pct": 14,
+    "opp_effective_fg_pct": 14,
+    "turnover_rate": 14,
+    "opp_turnover_rate": 14,
+    "offensive_rebound_rate": 14,
+    "free_throw_rate": 14,
+    "three_point_rate": 14,
+    "sos": 14,
+    "pace": 14
+  },
+  "teamsMissingAtLeastOneMetric": 14,
+  "unresolvedMetricTeamSlugs": {
+    "offensive_efficiency": [],
+    "defensive_efficiency": [],
+    "effective_fg_pct": [],
+    "opp_effective_fg_pct": [],
+    "turnover_rate": [],
+    "opp_turnover_rate": [],
+    "offensive_rebound_rate": [],
+    "free_throw_rate": [],
+    "three_point_rate": [],
+    "sos": [],
+    "pace": []
+  },
+  "scrapeErrors": [],
+  "generatedAtUtc": "2026-03-17T14:24:29.214Z"
+}

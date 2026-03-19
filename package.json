@@ -1,0 +1,24 @@
+{
+  "name": "draftkings-scrape",
+  "version": "1.0.0",
+  "description": "",
+  "main": "scrape-draftkings-props.js",
+  "scripts": {
+    "scrape": "node scrape-draftkings-props.js",
+    "scrape:ncaa-results": "node scrape-teamrankings-ncaa-results.js",
+    "scrape:ncaa-team-stats": "node scrape-teamrankings-ncaa-team-stats.js",
+    "scrape:ncaa-team-stats:multi": "node build-multi-season-ncaa-team-stats.js",
+    "map:ncaa-team-names": "node build-team-name-map.js",
+    "apply:ncaa-team-names": "node apply-team-name-map.js --allow-review-rows",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cheerio": "^1.2.0",
+    "playwright": "^1.58.2",
+    "xlsx": "^0.18.5"
+  }
+}

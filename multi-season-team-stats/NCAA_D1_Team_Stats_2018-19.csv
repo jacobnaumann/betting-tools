@@ -1,0 +1,366 @@
+season,start_year,team,team_slug,offensive_efficiency,defensive_efficiency,effective_fg_pct,opp_effective_fg_pct,turnover_rate,opp_turnover_rate,offensive_rebound_rate,free_throw_rate,three_point_rate,sos,pace,source,source_as_of_date,scraped_at_utc
+2018-19,2018,Abilene Christian Wildcats,abilene-christian-wildcats,103.9,95.9,51.9,49.8,15.2,20.6,26,24.7,34.5,-5.9,68.1,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Air Force Falcons,air-force-falcons,96.9,103.4,51.3,53.6,17.3,15.9,20.9,20.6,40.6,-1.3,69.5,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Akron Zips,akron-zips,97.3,92,48.2,45.5,15.2,16.3,23.4,20.9,47.6,0.7,70.2,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Alabama A&M Bulldogs,alabama-am-bulldogs,87,102.6,45.8,53.7,19.5,18.1,25.6,18.2,31.9,-8.3,69.6,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Alabama Crimson Tide,alabama-crimson-tide,100.6,100,50.3,48.9,16.8,14.7,29.5,26.8,36.9,8.4,71.6,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Alabama State Hornets,alabama-st-hornets,92.7,103.6,46.1,53,18,18.3,28.6,26.1,39,-8.9,70.8,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Albany Great Danes,albany-great-danes,97,100.9,49.3,52.1,18.4,16.3,25.5,23,45.5,-4.8,68.9,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Alcorn State Braves,alcorn-st-braves,87.3,106.3,45.7,52.7,20.7,15.9,29.2,21,36.2,-12.5,69.1,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,American Eagles,american-eagles,102.5,98.2,53.3,48.2,16.7,15.5,22.9,25.5,35.5,-4.8,70.3,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,App State Mountaineers,appalachian-st-mountaineers,103.2,108.3,51.4,53.8,15.8,15.2,24.5,26.6,41.9,-0.8,74.9,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Arizona State Sun Devils,arizona-state-sun-devils,102.8,97.1,50.6,48.5,16.1,16.7,29.6,30.4,35.5,6.6,75.5,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Arizona Wildcats,arizona-wildcats,100.5,97.7,49,50.9,14.7,18,26,24.6,37.6,6.1,70.5,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Arkansas Razorbacks,arkansas-razorbacks,101.7,97.7,51,49.4,16.1,19.2,26.2,27.4,37.5,7.8,74,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Arkansas State Red Wolves,arkansas-st-red-wolves,99.3,107.3,47.2,51.6,16.4,14.9,31.5,26.8,37.5,-1.9,73.3,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Arkansas-Pine Bluff Golden Lions,arkansas-pine-bluff-golden-lions,93.8,102.8,48.4,51.6,19.3,17.2,26.8,28.4,34.3,-7.5,69.6,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Army Black Knights,army-black-knights,96.5,100.4,49.6,53.3,14.9,16.8,18.4,18.7,43.5,-3.8,72.8,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Auburn Tigers,auburn-tigers,111.5,97.6,54.4,51.7,14.4,21.3,30.2,23.1,49.6,11.5,70.9,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Austin Peay Governors,austin-peay-governors,109,102.2,52.9,52.5,14.2,18.2,32.3,25.3,34.1,-2.1,73.4,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Ball State Cardinals,ball-st-cardinals,100.4,97.4,51.8,47.3,17.9,15.5,26,26.2,32.9,1.3,73.8,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Baylor Bears,baylor-bears,105.1,99,51.2,49.1,16.4,16.1,36.4,23.4,40.9,9.6,68.4,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Bellarmine Knights,bellarmine-knights,,,,,,,,,,,,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Belmont Bruins,belmont-bruins,114,98.5,57.6,48.7,13.6,14.2,23.7,21.7,43.8,1.4,75.8,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Bethune-Cookman Wildcats,bethune-cookman-wildcats,94.7,97.6,48.3,47.8,18.3,16.9,32,25.7,33,-9.1,76.1,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Binghamton Bearcats,binghamton-bearcats,93.2,106.8,49.5,52.3,16.7,14.3,19,18.2,42.9,-5.8,67.7,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Boise State Broncos,boise-st-broncos,104.4,100.7,53.9,51.8,15.6,16.6,21.5,23.3,40,2.1,68.3,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Boston College Eagles,boston-college-eagles,99.7,102.4,48.5,48.4,15.2,14.2,27,25.5,38,5.9,71.1,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Boston University Terriers,boston-u-terriers,102.9,104.7,53.4,54.6,16.6,16.3,25.1,18.6,33.1,-3.6,69.6,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Bowling Green Falcons,bowling-green-falcons,104.4,99.9,50.5,50.8,14.3,15.8,29.1,25.8,36,0.2,74.7,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Bradley Braves,bradley-braves,98.5,97.3,49.7,47.6,16.5,16.2,25.4,25.7,35.3,0,67.3,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Brown Bears,brown-bears,97.1,93.5,50.4,48,18.2,18.3,22.3,25.6,40.9,-1.5,74.1,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Bryant Bulldogs,bryant-bulldogs,98.5,109.1,49,54.9,16.3,16.2,24.7,26.2,42.1,-6,70.7,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Bucknell Bison,bucknell-bison,105,100.2,53,49.2,15.4,14.6,23.5,24.6,45.9,-1,73.1,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Buffalo Bulls,buffalo-bulls,110.6,93.6,53.4,47.3,13.7,17.8,30.6,24.4,44.1,4.2,76.2,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Butler Bulldogs,butler-bulldogs,104.2,102.6,52.1,52.7,14.3,16.8,23,19.4,42.8,7.6,69,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,BYU Cougars,brigham-young-cougars,106.6,102.7,52.8,50.7,13.6,15.6,21.7,28.9,36.4,4,74.1,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Cal Poly Mustangs,cal-poly-slo-mustangs,94.4,109.3,47.2,52.6,14.9,13.4,23.4,19.7,40.3,-4.8,69.9,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Cal State Bakersfield Roadrunners,csu-bakersfield-roadrunners,98.9,102.4,46.6,51.3,15.7,17.6,36.1,21.7,32.3,-3.1,70.2,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Cal State Fullerton Titans,csu-fullerton-titans,96,99,49.1,48.3,17,14.7,22.3,26.9,30.8,-1,72.7,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Cal State Northridge Matadors,csu-northridge-matadors,102.8,107,51.5,51.6,14.5,14.6,26.2,23.7,30.8,-3.2,74.5,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,California Baptist Lancers,california-baptist-lancers,104,103.7,51.2,48.9,15.7,13.1,26.1,23.6,42.9,-4.4,71.8,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,California Golden Bears,california-golden-bears,97.2,109.4,48.6,56.9,14.7,18,20.9,25.2,34.1,3.3,70.4,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Campbell Fighting Camels,campbell-fighting-camels,107.9,106.8,52.8,54.6,13.1,17.3,22.7,23.6,48.3,-4.1,68.6,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Canisius Golden Griffins,canisius-golden-griffins,99,104.6,50.5,53.6,16.4,17.8,23.9,22.9,43.1,-2.9,71,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Central Arkansas Bears,central-arkansas-bears,96.8,105.7,49.1,51.9,17.6,15.5,22.4,24.4,42.4,-5.6,73.3,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Central Connecticut Blue Devils,central-conn-st-blue-devils,96.8,106.9,47,53,17.2,15.8,28.9,24.2,33.9,-6.7,72.6,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Central Michigan Chippewas,central-michigan-chippewas,105.9,101.8,51.4,50.2,14,15.9,28.2,28.9,37.8,-0.8,75.9,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Charleston Cougars,charleston-cougars,109.4,101.6,54.2,52.1,13.9,16.9,24.1,24.7,36.6,-0.8,67.6,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Charleston Southern Buccaneers,charleston-southern-buccaneers,100.4,98,49.8,50.9,15.6,18.5,27.2,20.3,42.7,-4,72.3,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Charlotte 49ers,charlotte-49ers,91.4,102.5,48.1,51.3,19.9,15.8,19.3,24.9,42.7,-1.7,67,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Chattanooga Mocs,chattanooga-mocs,97.8,107.9,51.5,52.9,17,13.5,21.8,18,43.4,-3.7,70.6,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Chicago State Cougars,chicago-st-cougars,82.3,117.3,44.1,57.7,20.4,14.4,19,22.7,27.1,-7.4,72.8,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Cincinnati Bearcats,cincinnati-bearcats,107,93.5,49,48.6,13.4,18.1,35.6,27.8,33.3,6.5,67.1,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Clemson Tigers,clemson-tigers,100.1,93.1,50.7,47.6,17.3,17.6,26.4,23.9,35.6,8.8,68.7,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Cleveland State Vikings,cleveland-st-vikings,100,108.7,51.5,51.6,16.3,14.4,23.8,22.9,44.4,-3.8,73.4,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Coastal Carolina Chanticleers,coastal-carolina-chanticleers,105.9,103.9,51.8,51,16.9,15.8,31.6,27.8,38.7,-0.9,72.7,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Colgate Raiders,colgate-raiders,108.1,100.9,55.9,50.7,16.9,15.7,28.6,20.7,41.4,-1.9,69.7,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Colorado Buffaloes,colorado-buffaloes,103,94.5,51,48.4,16.7,15.5,27.9,26.4,34.9,4.2,71.4,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Colorado State Rams,colorado-st-rams,105.3,107.4,54.4,53.1,15.3,14.2,22.2,23.4,39.4,0.6,70.3,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Columbia Lions,columbia-lions,98.7,102.9,51.5,52.2,16.1,16.7,21.7,17,36.6,-1.8,72.9,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Connecticut Huskies,connecticut-huskies,102.5,99,51,49.6,15.8,17.6,30.4,23.8,37.4,4.3,72,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Coppin State Eagles,coppin-st-eagles,86.9,102.9,45.4,50.2,20.5,14.6,24,25.4,46,-8.6,73.8,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Cornell Big Red,cornell-big-red,95.9,101.7,51.1,50.5,17.4,15.2,15.9,24.1,42.3,-1.6,71.4,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Creighton Bluejays,creighton-bluejays,106.2,101.5,56.2,52.8,16.6,16.9,22.4,21.3,46.7,8,72.5,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Dartmouth Big Green,dartmouth-big-green,99.8,103.8,51.8,53,15.7,14.3,20.6,18.7,39.9,-2.5,69.6,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Davidson Wildcats,davidson-wildcats,104.6,98,53.1,48.3,15,14.7,21.5,21.2,46.4,2.4,67.3,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Dayton Flyers,dayton-flyers,107.2,97.3,56.1,47.9,16.8,14.6,24.8,23.3,34.5,3.7,68,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Delaware Blue Hens,delaware-blue-hens,105,109.6,53.3,52.8,15.5,13,22.3,23.1,41.1,-3.5,67.1,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Delaware State Hornets,delaware-state-hornets,83,105.6,40,52.4,16.4,16.2,24.5,19.2,40,-12.4,73.7,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Denver Pioneers,denver-pioneers,98.2,110.9,50.2,56.5,17.4,14.2,25.2,19.2,36.3,-3.6,70,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,DePaul Blue Demons,depaul-blue-demons,106.5,103.8,52.7,53.2,16.3,15.8,30.1,25.9,32.8,4.3,73.6,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Detroit Mercy Titans,detroit-mercy-titans,102.4,110.7,49.7,54.4,14.1,16.8,27.9,23.1,44,-1,71.8,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Drake Bulldogs,drake-bulldogs,102.4,98,53.3,48.7,17.1,14.8,21.3,23.4,39.6,0.1,72.3,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Drexel Dragons,drexel-dragons,104.8,110.5,51.3,55.6,14.7,12.9,26.1,22.9,34.9,-2.4,71,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Duke Blue Devils,duke-blue-devils,110.5,90.5,53.6,45,14.8,16.8,34.9,24.4,37.3,14.4,74.9,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Duquesne Dukes,duquesne-dukes,101,99.4,49.9,49.9,17,18.3,30.1,24.9,44.4,-0.4,72.8,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,East Carolina Pirates,east-carolina-pirates,93.1,102.5,46.1,51,16.5,16.9,25.6,25.4,30.4,-0.9,72.4,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,East Tennessee State Buccaneers,east-tennessee-st-buccaneers,108.8,99,54.6,52.6,17,18.3,35.7,21.9,37.2,-0.2,71.6,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,East Texas A&M Lions,east-texas-am-lions,,,,,,,,,,,,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Eastern Illinois Panthers,eastern-illinois-panthers,98.9,108.4,49.6,53.6,16.3,15.9,27.7,21,38.7,-5.3,72,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Eastern Kentucky Colonels,eastern-kentucky-colonels,97.3,103.3,47.8,53.2,15.9,18.9,25.9,23.8,39.2,-3.3,81.9,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Eastern Michigan Eagles,eastern-michigan-eagles,97,103,48.5,50.8,17.6,17,33,24.1,34.9,0.5,67.5,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Eastern Washington Eagles,eastern-washington-eagles,100.2,103.8,50.3,52.5,15.2,14.9,22,20.4,43.4,-2.6,71.6,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Elon Phoenix,elon-university-phoenix,98.5,109.9,52,53.6,16.6,13.3,20,18.1,50,-4,70.2,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Evansville Purple Aces,evansville-purple-aces,95.6,101.1,49.4,50,16.8,15.1,17.4,26.4,43.8,-0.3,72.4,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Fairfield Stags,fairfield-stags,96.4,100.8,50.7,52.6,18.3,18.8,23.9,17.6,42.2,-4.7,69.4,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Fairleigh Dickinson Knights,fairleigh-dickinson-knights,104.9,103.3,54.2,51.9,17.4,17.3,26.9,25.1,35.3,-5.7,70.7,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Florida A&M Rattlers,florida-am-rattlers,88.8,96.7,49.1,48.5,21.7,18.7,25.8,21.3,29.4,-8.1,69.3,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Florida Atlantic Owls,florida-atlantic-owls,96.1,95.6,47.9,48.2,18,16,27.5,20.7,45.5,-2,72,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Florida Gators,florida-gators,101.3,95,49.7,48.1,15.4,19.2,29.1,22.1,43.3,10.8,66.9,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Florida Gulf Coast Eagles,florida-gulf-coast-eagles,97.7,102.8,52.6,52.1,18.8,16.7,24,22.4,40.5,-2.7,72,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Florida International Panthers,florida-international-panthers,97.4,101.2,48.9,53.1,15.7,20.2,23.5,27.2,41.1,-2.7,80.7,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Florida State Seminoles,florida-state-seminoles,104,93.3,50.5,47.2,16.2,18,31.9,25.6,37.7,11,72,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Fordham Rams,fordham-rams,94.7,98.5,46.8,49.5,14.4,16.7,23.3,18.8,43.5,-3,68.2,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Fresno State Bulldogs,fresno-st-bulldogs,107.2,95.5,54.5,48.5,16,17.3,25.6,22.2,47.9,2.2,70.9,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Furman Paladins,furman-paladins,107.4,94.7,55.4,47.9,16.2,17.3,26.5,18.6,47,0.1,70.7,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Gardner-Webb Runnin' Bulldogs,gardner-webb-runnin-bulldogs,105.3,102.8,54.8,50.5,15.4,15.7,20,27.3,37.6,-3.4,71.4,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,George Mason Patriots,george-mason-patriots,99.7,98.6,50.1,50.2,16.5,16,26,24.5,34.3,0.7,70.3,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,George Washington Revolutionaries,george-washington-revolutionaries,91.2,102.4,45.8,51.2,16.3,14.9,21.7,23.7,34.3,-0.2,69.7,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Georgetown Hoyas,georgetown-hoyas,103.8,101.9,51,50.1,15.7,14.3,26.6,27.3,37.5,5.6,76.6,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Georgia Bulldogs,georgia-bulldogs,98.2,102.1,50.1,48.5,19.3,13.3,30.4,27.7,37,6.9,72.4,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Georgia Southern Eagles,georgia-southern-eagles,105.5,100.8,54.3,51.4,16.6,17.5,26,25.1,31.2,0.7,76,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Georgia State Panthers,georgia-st-panthers,103.7,101.2,53.7,50.3,14.6,17.9,21.7,25.6,43.5,1.4,72.5,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Georgia Tech Yellow Jackets,georgia-tech-yellow-jackets,93.1,94.8,49.2,45.7,18.7,16,22.6,23.9,33.4,6.5,70.2,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Gonzaga Bulldogs,gonzaga-bulldogs,119.7,88.6,59,44.2,13,16.6,30,26.1,35.3,10,73.2,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Grambling Tigers,grambling-state-tigers,95,95.5,50,45.1,19.6,15.6,24.4,28.5,30.5,-8.5,72.7,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Grand Canyon Lopes,grand-canyon-lopes,104.6,97.1,51.3,49.9,15.1,17.1,27.4,24.6,39,0.7,71.4,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Green Bay Phoenix,green-bay-phoenix,102.3,104.7,51.5,52.1,15.2,16.2,24.5,24.6,36.8,-1.5,77.9,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Hampton Pirates,hampton-pirates,105.2,103,48.9,50.8,12.8,14.3,25,26.2,38.1,-3.9,75.8,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Harvard Crimson,harvard-crimson,100.5,98.8,53.3,50.2,19.8,15.8,27.6,22,42.1,2.2,71.1,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Hawai'i Rainbow Warriors,hawaii-rainbow-warriors,103.5,100.1,52.3,50.8,15.6,15.5,24.9,22.9,42.8,-3,69,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,High Point Panthers,high-point-panthers,99.4,101.3,49.1,50.3,17.4,14.3,33,24.1,33.6,-4,66.7,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Hofstra Pride,hofstra-pride,116.9,103.9,55.9,52.1,12.3,15.9,25.9,28,38.8,-0.9,70.8,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Holy Cross Crusaders,holy-cross-crusaders,100.3,103.9,52.7,53.8,14.6,19.2,18.9,17.7,36.5,-2.5,67,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Houston Christian Huskies,houston-christian-huskies,102.1,107.1,49.6,55.7,16.7,17.7,31.1,29.7,31.9,-5.4,77.5,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Houston Cougars,houston-cougars,109.2,88.5,52.1,42.5,13.9,15.9,33.3,23.6,42.6,6.6,69,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Howard Bison,howard-bison,100.8,104.5,48.5,51.8,14.6,17.1,27.5,24.8,30.3,-8.5,75.6,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Idaho State Bengals,idaho-state-bengals,102.7,114.7,52,56.1,15.6,13.2,23.7,21.3,42.7,-4.8,69.9,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Idaho Vandals,idaho-vandals,96.2,114.5,50.3,53.7,17.8,11.4,22.1,20.4,38.7,-7.1,68.7,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Illinois Chicago Flames,illinois-chicago-flames,99.9,101.5,53.3,48.3,17.9,15.2,22.5,20.1,45.6,-2.4,74.1,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Illinois Fighting Illini,illinois-fighting-illini,98.8,102.3,49.6,52.2,16,19,26.5,21.7,37.5,9.3,73.5,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Illinois State Redbirds,illinois-st-redbirds,97.8,101.1,49.1,51.3,16.2,16.1,24,21.2,38.5,0.5,69.6,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Incarnate Word Cardinals,incarnate-word-cardinals,94.7,114.7,51.9,59.3,22,17.5,20.4,23.2,34.5,-9,69,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Indiana Hoosiers,indiana-hoosiers,100.8,95.6,51,48.2,15.6,15.8,25.9,25.1,33.6,9.6,71,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Indiana State Sycamores,indiana-st-sycamores,96.4,101.1,48.6,51.5,16.7,17.1,20.5,25.6,28.6,0.2,71.2,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Iona Gaels,iona-gaels,105.2,104.2,53,52.3,15.4,16,22.8,26.4,44.5,-2.7,72.9,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Iowa Hawkeyes,iowa-hawkeyes,108.5,102.4,52.7,51.5,15.1,16,28.2,30,39,9.7,72.1,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Iowa State Cyclones,iowa-state-cyclones,110.2,97.7,54.8,48.4,13.9,15.9,26.5,22.6,39.6,10.4,69.8,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,IU Indy Jaguars,iu-indy-jaguars,102,101.5,50.2,52.6,16.7,17.5,32.2,25.1,35.4,-2.9,72.6,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Jackson State Tigers,jackson-state-tigers,89.3,97,44.7,49.2,17.6,18.3,27.3,24.4,31.4,-9.3,68.5,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Jacksonville Dolphins,jacksonville-dolphins,97,101.7,49.6,52.2,17.4,16.1,26.5,22,32.7,-5.1,74.3,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Jacksonville State Gamecocks,jacksonville-st-gamecocks,103.7,94.1,50.5,48.7,16.1,18.1,31.1,22.2,30.5,-2.4,73.5,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,James Madison Dukes,james-madison-dukes,101.7,108.2,50.2,52.9,16.3,14.3,28,24.1,36.5,-3.4,68.3,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Kansas City Roos,kansas-city-roos,97.8,105,49.8,53.6,15.4,18.2,20.6,23.7,40.3,-1.9,70.1,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Kansas Jayhawks,kansas-jayhawks,104.8,97.1,52.6,47.8,16.1,15.5,28.8,23.5,34.9,12.2,72.2,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Kansas State Wildcats,kansas-state-wildcats,99.3,90,49.4,48.2,15.2,20.2,26.6,22.7,38.4,9.8,66.2,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Kennesaw State Owls,kennesaw-st-owls,86.3,107.2,40.9,53.7,16.4,14.8,26.3,22.3,22.6,-5.6,72.3,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Kent State Golden Flashes,kent-st-golden-flashes,105,104.1,49.6,52.7,13.9,16.6,31.6,23.7,39.3,-0.1,71.3,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Kentucky Wildcats,kentucky-wildcats,110,93.9,53,46.6,15.9,15.8,35,29.3,29.6,11.9,68.9,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,La Salle Explorers,la-salle-explorers,94.7,101.6,47.2,51.3,17.6,17.4,26.4,20.7,43.5,0.6,71.2,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Lafayette Leopards,lafayette-leopards,100.6,109.2,52.6,54.7,16.9,13.5,20,18.4,41,-4.1,72.5,teamrankings,2019-04-15,2026-03-17T14:23:57.706Z
+2018-19,2018,Lamar Cardinals,lamar-cardinals,102.2,100.5,49.3,52.2,16.9,17.5,34.5,29.4,33,-6.1,73.2,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Le Moyne Dolphins,le-moyne-dolphins,,,,,,,,,,,,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Lehigh Mountain Hawks,lehigh-mountain-hawks,107.2,104.3,56.4,50.3,16.7,13.7,20.7,24.8,38.2,-2.3,74.6,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Liberty Flames,liberty-flames,108.3,94.5,56,48.9,15.4,18.1,22.6,19.9,42.8,-1.1,66.5,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Lindenwood Lions,lindenwood-lions,,,,,,,,,,,,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Lipscomb Bisons,lipscomb-bisons,108.2,94.5,54.8,48.3,15.9,17.4,23.8,26.1,39.2,2.2,75.5,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Little Rock Trojans,little-rock-trojans,99.2,103,54.4,52.3,20.4,17.2,23.2,28.3,34.1,-2.4,74.1,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Long Beach State Beach,long-beach-st-beach,97.4,102.9,47.6,51.1,16.5,16.2,26.8,28.6,30.3,-0.8,75.1,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Long Island Sharks,liu-sharks,,,,,,,,,,,,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Longwood Lancers,longwood-lancers,100.3,102.9,52.4,50.5,18.2,15.4,23.1,23.6,50.1,-6.4,69.9,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Louisiana Ragin' Cajuns,ul-lafayette-ragin-cajuns,105.2,106,50.9,53.2,15.1,17.4,27.9,25.5,40.4,-1.3,75.8,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Louisiana State Tigers,louisiana-state-tigers,109.1,99.2,51.2,49.9,15,17.5,36,26.7,34.2,9.4,73.7,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Louisiana Tech Bulldogs,louisiana-tech-bulldogs,101.9,97.3,49.8,49.3,14.7,16.8,28,26.2,39.5,-1.4,69.9,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Louisville Cardinals,louisville-cardinals,105.3,96.5,50.9,46.8,15.2,14.1,26.9,25.4,43.7,11.3,70.8,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Loyola Chicago Ramblers,loyola-chicago-ramblers,101.2,94.8,55,51.1,17.2,18.6,18.2,22.9,33.6,0.8,64.5,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Loyola Maryland Greyhounds,loyola-md-greyhounds,100.1,106.3,51.6,55.6,17.3,18.2,23.8,24.1,33.6,-3.2,72.8,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Loyola Marymount Lions,loyola-marymount-lions,99.8,96.7,49.5,49.6,17,19.1,27,26,28.2,0.4,65.7,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Maine Black Bears,maine-black-bears,90.7,106.9,48.6,55.3,19.6,17,24.2,18.5,37.8,-4.4,67.2,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Manhattan Jaspers,manhattan-jaspers,88.7,97.3,47.4,51,20.8,20.5,28.3,22.8,41,-4.7,64.6,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Marist Red Foxes,marist-red-foxes,100.3,103.2,52.3,53,16.9,17.1,23,23.1,41,-4.2,67.1,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Marquette Golden Eagles,marquette-golden-eagles,105.8,95.1,53.5,46.3,16.9,14.5,26.9,25,41.7,8.1,73.1,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Marshall Thundering Herd,marshall-thundering-herd,102.8,102.8,51.9,52,14.3,18,21.2,22.8,44.7,-0.5,78.3,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Maryland Eastern Shore Hawks,maryland-eastern-shore-hawks,84.2,108.6,43.5,54.4,18.4,16.4,21.2,20.3,36.2,-11.5,66.8,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Maryland Terrapins,maryland-terrapins,105.1,96.4,51.4,45.9,16.6,12.3,32.2,23.8,37,10.1,68,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Massachusetts Minutemen,massachusetts-minutemen,100.7,104.8,51.1,51.2,17.5,14.9,30.1,22.5,39.9,-0.3,70.2,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,McNeese Cowboys,mcneese-st-cowboys,97.6,109.5,49.8,54.2,18.6,15.3,27.6,26.5,32.4,-7.9,69.3,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Memphis Tigers,memphis-tigers,103.4,96.1,51,48.6,17,18.5,31.1,26.4,36.1,5.3,77.4,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Mercer Bears,mercer-bears,100.6,104.3,51,52.7,16.9,17.3,27,25.4,37.9,-1.3,70.4,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Mercyhurst Lakers,mercyhurst-lakers,,,,,,,,,,,,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Merrimack Warriors,merrimack-warriors,,,,,,,,,,,,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Miami (OH) RedHawks,miami-oh-redhawks,100,102.2,48.6,51.1,16.1,14.8,28.2,25,45.8,1,69.6,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Miami Hurricanes,miami-hurricanes,102.3,101.3,50.8,52,14.9,17.3,24.3,22.8,43.5,7.7,70.2,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Michigan State Spartans,michigan-st-spartans,110.7,92.7,55.2,43.9,15.9,13,32.5,24.1,37.8,12.9,70.1,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Michigan Wolverines,michigan-wolverines,104.5,87.5,51.6,44.1,12.3,15.8,21.9,21.3,39.9,11.6,66.6,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Middle Tennessee Blue Raiders,middle-tennessee-st-blue-raiders,91.7,102.4,46.7,50.8,19.5,15.3,30.1,21,35.4,-0.6,70.8,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Milwaukee Panthers,milwaukee-panthers,97.4,106.5,48.1,51.7,15.9,13.3,23.6,21.1,37.5,-3.4,70.4,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Minnesota Golden Gophers,minnesota-golden-gophers,101.1,99.3,48.2,49.5,14.7,14.7,28.5,29.8,29.6,9.8,69.9,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Mississippi Rebels,mississippi-rebels,105.5,99.6,53.1,51,15.9,18,27.7,22.5,39.9,8,71.4,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Mississippi State Bulldogs,mississippi-state-bulldogs,109.8,100,54.6,50.3,16.5,17,33.3,23.6,39.1,9.5,70.4,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Mississippi Valley State Delta Devils,mississippi-valley-state-delta-devils,87.3,108.7,41.9,54.1,16,15,25.5,24.5,28.7,-9.5,72.3,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Missouri State Bears,missouri-st-bears,100.2,100.4,51.2,53.5,16.2,19.6,24.2,26.2,37.2,-0.2,67.5,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Missouri Tigers,missouri-tigers,99.1,99.9,50.5,49.4,18.2,16,30.3,21.3,41.2,7.9,67.8,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Monmouth Hawks,monmouth-nj-hawks,92,100.3,45.8,51.2,18,18.6,27.3,27.7,29.5,-2.5,71,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Montana Grizzlies,montana-grizzlies,108.4,99.1,56.1,50.1,15.4,17.2,24.2,23.3,38.3,-1.7,70,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Montana State Bobcats,montana-st-bobcats,107.6,110.4,53.4,57.1,15.2,15.3,24.4,25.5,43.8,-3.9,72.5,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Morehead State Eagles,morehead-st-eagles,98.6,106.8,48.4,52.5,15,15.3,25.2,24.7,38.7,-2.5,72.8,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Morgan State Bears,morgan-st-bears,93.6,100.6,43.7,53.4,15.2,20.4,29.2,25.3,27.3,-11.2,76.3,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Mount St. Mary's Mountaineers,mount-st-marys-mountaineers,94.2,106.3,47.9,52.1,16.9,15.3,23.1,24.4,41.1,-6.6,70.8,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Murray State Racers,murray-st-racers,111.5,94.9,54.8,46.5,14.9,16.6,30.9,24.5,36.6,0.5,72.7,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Navy Midshipmen,navy-midshipmen,95,103.7,46.8,52.1,17.6,14.7,29.8,21.9,36.7,-2.9,70,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,NC State Wolfpack,nc-state-wolfpack,108.1,96.3,52,49.4,14.6,18.8,33.7,21.5,35.8,8.4,74.1,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Nebraska Cornhuskers,nebraska-cornhuskers,103.8,98.6,49.2,48.2,12.4,16.4,26.4,25,37.5,10,69,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Nevada Wolf Pack,nevada-wolf-pack,110.7,92.3,53.7,47.7,12.8,17,25.7,29.8,42.8,4.7,72.4,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,New Hampshire Wildcats,new-hampshire-wildcats,84.3,103,44,51.5,16.4,15,19.5,16.5,48.1,-7,67.4,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,New Haven Chargers,new-haven-chargers,,,,,,,,,,,,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,New Mexico Lobos,new-mexico-lobos,99.5,102.3,49.5,51.6,16.8,16.1,27.4,27.5,43.7,0.9,75.9,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,New Mexico State Aggies,new-mexico-st-aggies,112.7,94.6,54.1,48.9,15,17.2,36.9,25.3,46.5,-0.1,68.9,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,New Orleans Privateers,new-orleans-privateers,95.7,99,48,50,18.7,19.3,30.4,25.1,29.2,-6.7,72.6,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Niagara Purple Eagles,niagara-purple-eagles,100.7,105.6,49.2,53.4,15.2,14.3,24.7,24.5,39.1,-5.2,72,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Nicholls Colonels,nicholls-state-colonels,98.8,105.6,50.2,51,15.3,15.5,22.7,16.7,46.4,-7.7,71.8,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,NJIT Highlanders,njit-highlanders,99.8,98.2,50.7,49,15.4,15.7,20.1,27.3,37.1,-3.5,70.7,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Norfolk State Spartans,norfolk-state-spartans,97.5,96.6,49.6,49.2,17.9,18.1,24.8,26.6,37.2,-7,73.7,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,North Alabama Lions,north-alabama-lions,90.9,103.7,44.5,52.6,16.7,15.2,25.3,22.6,40.8,-4.7,72.2,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,North Carolina A&T Aggies,north-carolina-at-aggies,97.4,99.3,51.1,48.8,17.1,17.5,24.6,22.3,35.9,-9.1,70,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,North Carolina Central Eagles,north-carolina-central-eagles,98.6,99,49.9,49.9,19.4,15.4,32.4,23.4,36.6,-9.3,68.9,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,North Carolina Tar Heels,north-carolina-tar-heels,110.6,94.3,52.9,49,14.7,16.3,33.6,22.7,35.8,13.3,77.6,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,North Dakota Fighting Hawks,north-dakota-fighting-hawks,97.3,104.5,51.3,52.5,16.2,15.5,18.7,20.1,36.9,-4.7,72.4,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,North Dakota State Bison,north-dakota-state-bison,105.9,108.7,53.5,53.6,14.3,12.9,18.8,23.9,48,-2.2,68.2,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,North Florida Ospreys,north-florida-ospreys,98.1,101.8,52.1,48.1,19,14.4,27.4,18.2,45.3,-1.7,75.2,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,North Texas Mean Green,north-texas-mean-green,96.8,92.1,49.2,47.4,17.3,17.6,27.9,20.3,43.1,-2.8,69.5,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Northeastern Huskies,northeastern-huskies,110.3,103.5,56.5,52.1,15,14.9,21.1,25,46.4,1.9,68.4,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Northern Arizona Lumberjacks,northern-arizona-lumberjacks,101.7,107.9,50.3,55,15.1,14.7,23,24.9,41.2,-3.8,71.8,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Northern Colorado Bears,northern-colorado-bears,104.4,100.4,53,51.4,16.3,16.5,26.2,25,45.4,-4.1,70.5,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Northern Illinois Huskies,northern-illinois-huskies,104.7,102.6,52.6,51.9,15.1,15.8,25.9,20,32.3,0.3,69.9,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Northern Iowa Panthers,northern-iowa-panthers,96.5,99.7,48.9,51.1,16,16.3,21.2,20.5,42.8,0.7,66.2,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Northern Kentucky Norse,northern-kentucky-norse,107.8,98,54.6,49.1,15.5,16.4,28.3,25.2,41.3,-1.8,71.6,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Northwestern State Demons,northwestern-st-demons,88.3,103.7,44.7,51.2,19.5,16.7,28.1,23.4,35.9,-8.9,71.9,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Northwestern Wildcats,northwestern-wildcats,95.5,94.3,46.6,46.7,14.3,15.8,22.6,22.5,40.8,7.8,69,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Notre Dame Fighting Irish,notre-dame-fighting-irish,101.1,101.5,46.2,49,11.9,14,26.9,23.2,43.7,7.1,67.9,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Oakland Golden Grizzlies,oakland-golden-grizzlies,106.9,108,54.3,53,16.5,14.8,24.3,25.5,43.6,-2,71.4,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Ohio Bobcats,ohio-bobcats,94.1,100.9,48.6,50.8,17.5,16.3,27,23.5,34.6,0.9,73.5,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Ohio State Buckeyes,ohio-st-buckeyes,101.3,97,50.3,48.3,16.4,16,25.7,24.4,40.1,10,68.2,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Oklahoma Sooners,oklahoma-sooners,100.1,95.7,50.4,47.5,15,14.9,23.3,23.1,33.2,10.9,71.2,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Oklahoma State Cowboys,oklahoma-state-cowboys,98.5,103.5,50.1,50.3,15.8,15.2,23.7,22.4,41.9,9.7,69.1,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Old Dominion Monarchs,old-dominion-monarchs,97.8,90.5,47.2,45.6,15,16.4,31.3,21.5,37.3,0.1,67.2,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Omaha Mavericks,nebraska-omaha-mavericks,109.4,108,54.4,55,12.1,15,22.4,19,36.3,-1.8,71.6,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Oral Roberts Golden Eagles,oral-roberts-golden-eagles,101.1,111.7,52.2,54.1,17.8,12.8,28.1,19.2,38.9,-2.6,70.1,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Oregon Ducks,oregon-ducks,103.8,92.2,52,46.4,15.4,18.3,27.9,21.7,39.5,7.2,67.5,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Oregon State Beavers,oregon-st-beavers,106.1,101,52.2,50.2,15.9,15.4,29.8,26.3,36.6,4.7,69.2,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Pacific Tigers,pacific-tigers,97.2,103.7,47.7,54.2,17.3,17.3,25.1,28.2,33.1,-0.4,67.7,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Penn Quakers,pennsylvania-quakers,99.7,95.7,52.6,49.1,16.3,16.8,22.7,20.7,44.3,1,71.5,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Penn State Nittany Lions,penn-st-nittany-lions,98.7,97.3,47.5,49.9,15.5,17.3,29.5,23.8,36.5,9.9,70.6,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Pepperdine Waves,pepperdine-waves,103.4,103,52,53.9,16.1,18.4,23.2,25.6,42.2,0.1,72.4,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Pittsburgh Panthers,pittsburgh-panthers,98.5,96.8,47.9,47.7,16.8,18,29.2,29.3,36.9,6.3,71,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Portland Pilots,portland-pilots,90.4,106.7,47.3,51.8,18.1,14.1,17.5,27.1,40.3,-3.4,69.7,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Portland State Vikings,portland-st-vikings,100.7,105.1,46.9,53.7,16,16.6,37.6,26.6,39.1,-5.2,73.1,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Prairie View A&M Panthers,prairie-view-am-panthers,101.2,98.6,49,51.2,15.1,21.3,27.6,30.3,33.9,-6.1,74,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Presbyterian Blue Hose,presbyterian-blue-hose,108.3,105.8,53.4,53.4,13,15.8,23,23.1,47.6,-4.1,70.5,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Princeton Tigers,princeton-tigers,94.8,98.3,47,49.7,15.9,15.3,21.6,22.1,40.5,-0.6,71.9,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Providence Friars,providence-friars,99.7,97.5,48,49.7,16,17.8,30.5,27.6,35,6.8,71.6,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Purdue Boilermakers,purdue-boilermakers,112.3,98.5,53.6,49,13.5,16.3,33.3,22.6,45.5,12.2,68.3,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Purdue Fort Wayne Mastodons,purdue-fort-wayne-mastodons,106.9,106.7,55.8,54,15.1,15.1,22.2,20.1,45.7,-3,74.8,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Queens Royals,queens-university-of-charlotte-royals,,,,,,,,,,,,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Quinnipiac Bobcats,quinnipiac-bobcats,104.9,103.1,52.8,50.7,16.9,13.6,28.1,26.3,53.4,-4.7,70.5,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Radford Highlanders,radford-highlanders,106.9,102.1,52.8,51.9,14.3,16,28.1,20.6,38.1,-1.5,67.6,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Rhode Island Rams,rhode-island-rams,98.7,96.4,47.4,48.7,15.3,17.7,29.4,26.6,32.1,1.9,70.4,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Rice Owls,rice-owls,99.4,105.5,50.1,51.6,16.6,13.2,25.1,27.1,42.5,-3,74.1,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Richmond Spiders,richmond-spiders,103.9,104.8,54.1,53.1,14,16.2,17,23.1,40.2,-0.7,67.5,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Rider Broncs,rider-broncs,101.1,99.1,50.6,53.7,15.5,20.2,28.7,28.3,34.4,-3.1,76,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Robert Morris Colonials,robert-morris-colonials,96.5,99,48.8,52.2,18.2,19.7,27.9,23,38.6,-6.4,70.2,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Rutgers Scarlet Knights,rutgers-scarlet-knights,96.7,98,47,49.2,16.2,15.3,32.3,23.2,33.2,8,70.2,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Sacramento State Hornets,sacramento-state-hornets,98,100.8,48.7,52.6,16.7,19.1,26.9,24.1,29.6,-5.4,71.1,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Sacred Heart Pioneers,sacred-heart-pioneers,104.4,104.1,51.7,51.8,17.3,14.5,29.3,26.9,35,-5.7,75.5,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Saint Joseph's Hawks,saint-josephs-hawks,100.4,103.3,48,51.7,12,14,20.3,24.2,44.7,1.8,70.3,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Saint Louis Billikens,saint-louis-billikens,97.4,93.2,46.7,46.9,16,17.1,34.7,27.9,32.9,2.7,68.4,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Saint Mary's Gaels,saint-marys-gaels,110.3,97.8,53.8,48.9,14.1,14.6,28.9,22,35.2,5.8,65.7,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Saint Peter's Peacocks,saint-peters-peacocks,93.9,102.4,48.7,51.2,20.4,16.6,28.3,23.8,34.6,-4.7,67,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Sam Houston Bearkats,sam-houston-st-bearkats,103.8,100.1,51.8,51.2,15.9,18.6,27.5,19.5,42.3,-4.2,71,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Samford Bulldogs,samford-bulldogs,105.1,101.5,54.1,49.6,17.1,15.5,25.9,24.2,35.1,-2,74.8,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,San Diego State Aztecs,san-diego-st-aztecs,101.1,97.1,49.9,48.2,16,16.4,26.7,25.4,37.2,3.1,70.1,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,San Diego Toreros,san-diego-toreros,101.8,98.2,52.4,49.6,17,15.8,22,23.4,40.2,3.5,70.1,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,San Francisco Dons,san-francisco-dons,108.9,98.2,53.5,48.9,13.1,15.3,27.7,23.4,39,1.9,69.5,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,San Jose State Spartans,san-jose-st-spartans,88.7,111.9,46,56.1,19.2,13.4,25.4,24.1,35.8,-3.8,73.4,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Santa Clara Broncos,santa-clara-broncos,97.8,101.9,51.6,49.1,18.3,14.2,23,23.7,40.1,-1,69.3,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Seattle Redhawks,seattle-redhawks,101.6,98.2,49.1,46.7,15.3,14,27.7,25.1,33.3,-3.7,70.4,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Seton Hall Pirates,seton-hall-pirates,101.6,98.9,49.9,49.6,15.2,17.3,27.8,25.1,36.7,8.4,72.6,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Siena Saints,siena-saints,101.8,104,51.5,52.6,13.9,15.8,22.2,19,47.8,-3.6,63.4,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,SIU Edwardsville Cougars,siu-edwardsville-cougars,96,108.5,46.8,56.6,16.3,16.7,26.5,25.1,35.5,-6.3,75.2,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,SMU Mustangs,southern-methodist-mustangs,105.9,103.4,51.2,50,14,15,31.3,21,41,3.9,68,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,South Alabama Jaguars,south-alabama-jaguars,100.8,103.3,52.9,52.1,17.3,17,23.7,24.8,40.4,-3,70.9,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,South Carolina Gamecocks,south-carolina-gamecocks,97.8,99.5,48.3,49.5,16.5,17.6,28.4,25.8,34.6,8,73.6,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,South Carolina State Bulldogs,south-carolina-state-bulldogs,96.4,108.4,47.2,56.4,18,18,29.7,27.3,31,-9.4,71.3,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,South Carolina Upstate Spartans,south-carolina-upstate-spartans,91.8,107.2,47.3,53.1,17.7,15.8,22.3,18.7,44.2,-7,71.7,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,South Dakota Coyotes,south-dakota-coyotes,100.1,103.7,50.1,51.7,14.6,15.5,18.7,26.2,40.6,-3.2,69.8,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,South Dakota State Jackrabbits,south-dakota-state-jackrabbits,114.1,99.7,58.5,50.2,14.7,13.9,21.6,23.6,41.3,-1.5,74,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,South Florida Bulls,south-florida-bulls,98.6,92.7,49.1,48.4,19.1,19.3,33.8,31.9,38.7,1.5,72.9,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Southeast Missouri State Redhawks,se-missouri-st-redhawks,96.4,105.9,50.4,52.7,17.9,15.3,23.4,21,39.5,-5.3,73,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Southeastern Louisiana Lions,southeastern-louisiana-lions,97.6,99.5,50.4,50.2,20.9,18.4,32.3,25,40.9,-5.8,68.1,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Southern Illinois Salukis,southern-illinois-salukis,100.5,98.2,52.8,49.6,18.4,16.6,26.8,22.6,33.1,0.9,68.2,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Southern Indiana Screaming Eagles,southern-indiana-screaming-eagles,,,,,,,,,,,,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Southern Jaguars,southern-jaguars,92.4,105.9,48.8,54.9,20.3,19.3,27.3,23.6,31.8,-8.4,69.9,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Southern Miss Golden Eagles,southern-miss-golden-eagles,102.6,97.6,53.1,49.1,14,16.9,21,18.4,37,-1,67.9,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Southern Utah Thunderbirds,southern-utah-thunderbirds,97.8,101.3,50.2,50.4,17,15.1,20.8,27.4,39.6,-4.6,75.2,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,St. Bonaventure Bonnies,st-bonaventure-bonnies,97.5,93,48.3,47.2,16.2,17.3,27.6,20.8,33.2,1.8,67.9,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,St. Francis (PA) Red Flash,st-francis-pa-red-flash,103.5,107,48.8,53.9,14.8,14.8,31.1,25.8,36,-5.8,71.9,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,St. John's Red Storm,st-johns-red-storm,103.4,100.2,51.8,50.7,12.9,18.6,19.9,22.4,38.5,6.5,74.6,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,St. Thomas Tommies,st-thomas-mn-tommies,,,,,,,,,,,,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Stanford Cardinal,stanford-cardinal,98.3,97.1,51.2,47.9,18.3,15,27.1,25.1,36.6,5,74,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Stephen F. Austin Lumberjacks,stephen-f-austin-lumberjacks,95.5,102.5,48.4,52.7,18,18.7,26.6,25.4,35.2,-6.7,71.9,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Stetson Hatters,stetson-hatters,93.1,109,45.5,54.5,15.2,15.5,25.8,19.1,35,-7,72.7,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Stonehill Skyhawks,stonehill-skyhawks,,,,,,,,,,,,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Stony Brook Seawolves,stony-brook-seawolves,98.4,92.3,48.1,46,17.6,16.3,31.9,25,36.9,-3.4,72,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Syracuse Orange,syracuse-orange,100.5,95.3,49.6,48.1,15.9,19.6,28.3,26.3,43.2,9.4,69.3,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Tarleton State Texans,tarleton-state-texans,,,,,,,,,,,,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,TCU Horned Frogs,texas-christian-horned-frogs,102.8,97,52.1,48.4,16.6,16.2,29.5,22.9,37.5,8.8,71.8,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Temple Owls,temple-owls,102.6,98.1,49.9,50.6,13.8,18,24.9,24.3,37.4,4.8,72.8,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Tennessee State Tigers,tennessee-st-tigers,95.2,106.7,49.1,54.3,19.9,18,27.1,24.9,40.8,-4.7,74.1,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Tennessee Tech Golden Eagles,tennessee-tech-golden-eagles,87.8,103.6,46.1,51.1,19.9,16.5,26.2,24.8,34.4,-6.1,74.2,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Tennessee Volunteers,tennessee-volunteers,113.9,98.1,55.3,48.1,13.7,15.5,30.4,24.7,32.2,11.2,71.9,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Texas A&M Aggies,texas-am-aggies,99.3,101.2,49.3,49.3,17.1,15.7,31.4,24.3,36,7.5,70.9,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Texas A&M-Corpus Christi Islanders,texas-am-cc-islanders,93.4,98.4,47.9,48.6,19.2,17.7,29.6,21.2,34.1,-6.6,68.4,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Texas Longhorns,texas-longhorns,103.8,97.1,50.9,48.7,14,16.5,27.2,22.3,43.5,10.5,68.4,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Texas Southern Tigers,texas-southern-tigers,102.7,100.9,50.8,51.6,17,17.1,31.3,28.5,35.6,-4.9,78.8,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Texas State Bobcats,texas-state-bobcats,101.3,94.8,50,48.5,16.9,18.3,30.3,24.8,38.1,-2,70,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Texas Tech Red Raiders,texas-tech-red-raiders,105.2,86,53.5,43,15.7,19.9,26.3,23.8,36,12.1,69.2,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,The Citadel Bulldogs,the-citadel-bulldogs,103.6,114,52,56.6,15.4,14.6,22.9,19.6,53.6,-3.6,76.6,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Toledo Rockets,toledo-rockets,106.5,96,53.2,46.8,15.2,13.4,26,19.7,42.9,1.2,71.6,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Towson Tigers,towson-tigers,99.8,107,48,52,15.8,13.3,34.1,20.9,29.3,-3.2,67.1,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Troy Trojans,troy-trojans,99.9,107.1,51,52.7,17.5,14.7,25.7,22.8,40.9,-2,71.3,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Tulane Green Wave,tulane-green-wave,91,105,47.1,50.6,18.5,12.9,23.8,23.1,37.6,1.2,73.8,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Tulsa Golden Hurricane,tulsa-golden-hurricane,100,98.9,51.2,48.1,16.2,15.1,20.4,30.1,37.6,3.5,71.7,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,UAB Blazers,uab-blazers,102.3,99.6,50.4,49.4,14.5,15.7,29,23.5,34.4,-1.3,68.6,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,UC Davis Aggies,uc-davis-aggies,93.2,100.1,49,52.8,18,18.7,20,21.4,37.7,-1.9,69,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,UC Irvine Anteaters,uc-irvine-anteaters,104.4,92.8,51.3,44.1,14.9,14.5,31.6,21.4,32.4,0.2,68.8,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,UC Riverside Highlanders,uc-riverside-highlanders,95.9,108,51.2,54.4,18.1,14.2,23.4,16.8,40.3,-4,65.7,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,UC San Diego Tritons,uc-san-diego-tritons,,,,,,,,,,,,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,UC Santa Barbara Gauchos,uc-santa-barbara-gauchos,106.1,100.3,50.3,49.7,14.4,14.6,31.1,28.4,32.7,-3.8,67.6,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,UCF Knights,central-florida-knights,104.3,93.1,52.9,45.4,15.4,15.4,27.9,31.3,35.6,5.9,69.3,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,UCLA Bruins,ucla-bruins,103.1,102.6,52,49.6,16.5,13,29.6,27.1,35.8,5.7,75.8,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,UL Monroe Warhawks,ul-monroe-warhawks,110.5,106.7,54,52.9,14.4,15.2,25.7,26.1,44.2,-1,71.3,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,UMass Lowell River Hawks,massachusetts-lowell-river-hawks,102.9,104.7,53.7,52,17.5,15.5,23.7,24.2,39,-5.1,73.1,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,UMBC Retrievers,umbc-retrievers,94.9,94.9,48.4,51.4,16.3,20.5,21.5,22.6,42,-5.2,68.7,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,UNC Asheville Bulldogs,unc-asheville-bulldogs,88.3,115,46.2,55.7,20.5,15.4,26.1,18.5,42.1,-7.2,65.5,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,UNC Greensboro Spartans,unc-greensboro-spartans,104.9,97.9,51.2,51,14.8,19.4,30.4,22.8,37.3,0.1,70.7,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,UNC Wilmington Seahawks,unc-wilmington-seahawks,104.5,112.9,50.5,56,15.9,12.8,30.5,24,37,-1.8,71.8,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,UNLV Rebels,unlv-rebels,102.9,101.4,49.5,51,15.7,15.4,33.5,25.3,40.2,0.7,71.4,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,USC Trojans,southern-california-trojans,103.8,99.3,52.8,49.1,14.5,15.7,25.2,20.8,36,5.2,73.5,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,UT Arlington Mavericks,texas-arlington-mavericks,96.1,98,47,48,17.5,15.7,28.9,24.5,40.6,0.6,71.4,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,UT Martin Skyhawks,tenn-martin-skyhawks,102.7,111.8,50.4,57.1,16.2,16.6,30.5,19.7,38.3,-5,72.4,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,UT Rio Grande Valley Vaqueros,texas-rio-grande-valley-vaqueros,95.3,95.8,46.3,50.5,15.8,21,23.6,30,29.7,-2.7,73.7,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Utah State Aggies,utah-st-aggies,108.8,93.4,53.9,46.5,15.8,15.4,29.7,26.2,38,3.9,72.2,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Utah Tech Trailblazers,utah-tech-trailblazers,,,,,,,,,,,,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Utah Utes,utah-utes,108.3,106.8,55,52.3,16.9,12.8,28.3,25.4,46.5,5.4,69.8,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Utah Valley Wolverines,utah-valley-wolverines,106.7,99.3,55.6,49.1,18,14.6,25.3,27.8,38.3,-0.6,71.5,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,UTEP Miners,texas-el-paso-miners,87.8,96.8,45.7,49.5,20,16.7,23.8,23.9,39,-3.6,71.9,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,UTSA Roadrunners,texas-san-antonio-roadrunners,100.7,99.9,49.5,49.5,14.4,15.7,23.6,20.1,41.8,-1.1,75.5,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Valparaiso Beacons,valparaiso-beacons,94.8,98.3,48.9,49.9,18,16.7,24,22.9,33.2,-0.7,67.6,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Vanderbilt Commodores,vanderbilt-commodores,96.2,102.2,48.6,49.5,17.9,14.2,26.7,27.9,42.2,6.4,70.8,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,VCU Rams,vcu-rams,99.5,86.8,50.1,43.5,17.2,20.2,29.7,25.1,41.2,3.9,71.4,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Vermont Catamounts,vermont-catamounts,107.1,93.7,52.6,48.7,14.8,17.2,25.7,26.2,41,-0.9,67.5,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Villanova Wildcats,villanova-wildcats,109.8,100.3,53.2,50.4,14.1,15.4,29.7,25.3,53.5,8.6,67.1,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Virginia Cavaliers,virginia-cavaliers,114.1,89.6,55.2,44.7,12.8,15.3,28.6,22.3,39.5,13.2,62.6,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Virginia Tech Hokies,virginia-tech-hokies,111.4,94,55.6,49,15.2,19,27.3,23.5,43.8,10.7,66,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,VMI Keydets,vmi-keydets,98.9,113.1,50.1,56.9,14.9,15,19.9,21.8,46,-4.8,74.6,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Wagner Seahawks,wagner-seahawks,93.5,101.3,44,51.1,17.4,17.4,33,24,45.9,-6.3,68,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Wake Forest Demon Deacons,wake-forest-demon-deacons,96.5,106.7,44.8,53.3,16.5,14.1,31.7,26.9,35.3,5.2,70.9,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Washington Huskies,washington-huskies,100.9,93.6,52.1,47.5,17.3,20.6,26.3,24.5,39.9,7,69.2,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Washington State Cougars,washington-st-cougars,102.6,107.9,52.8,54.6,17.1,15,23.6,21.9,44.5,1.2,72.9,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Weber State Wildcats,weber-st-wildcats,103.7,101.3,53.2,49,14.5,13.9,17.7,26.7,35.2,-3.7,74.5,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,West Georgia Wolves,west-georgia-wolves,,,,,,,,,,,,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,West Virginia Mountaineers,west-virginia-mountaineers,99.4,104.3,47.5,52.4,17.8,16.2,35.2,27.2,39.1,8.7,74.2,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Western Carolina Catamounts,western-carolina-catamounts,97,110.1,53.6,55.3,22.2,13.2,27.2,23.3,45.8,-1.8,73.5,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Western Illinois Leathernecks,western-illinois-leathernecks,98.2,105.1,49.8,52.2,14.6,12.8,20.1,17.9,34,-5,70.9,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Western Kentucky Hilltoppers,western-kentucky-hilltoppers,99.7,96.6,49.9,49,17.1,16.2,27.6,26.5,31.8,1.9,71.7,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Western Michigan Broncos,western-michigan-broncos,95,105.6,48,52.1,18.8,13.3,27.9,25.5,39.3,-0.9,72.9,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Wichita State Shockers,wichita-st-shockers,99,96.5,46.9,47.6,14.8,15.3,30.6,21.7,39.1,5.8,71.2,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,William & Mary Tribe,william--mary-tribe,103.4,107.1,54.4,52.7,16.2,13.8,22.9,22.7,41.5,-1.2,71.4,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Winthrop Eagles,winthrop-eagles,105.3,104.2,54.2,51.3,17.7,13.6,27.8,21.8,52.7,-3.2,75.3,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Wisconsin Badgers,wisconsin-badgers,101.8,91.6,51.1,45.2,12.9,15.1,23.1,20.9,34.6,11.6,67.4,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Wofford Terriers,wofford-terriers,116,97.1,57.5,49.9,14,17.2,31.4,21.1,43.9,4.1,69.4,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Wright State Raiders,wright-st-raiders,105.7,99.7,51,53.1,15,17.9,28.1,25.7,40.1,-1,69.1,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Wyoming Cowboys,wyoming-cowboys,91.4,105.2,49.1,51.7,18.5,15.2,12.5,26.8,43.3,-2.1,72,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Xavier Musketeers,xavier-musketeers,105.4,103.1,52.8,50.7,16.5,13.7,30.3,23.7,37.4,7.6,68.5,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Yale Bulldogs,yale-bulldogs,107.7,98.7,55.6,47.3,15.9,13.4,24.7,22.1,35.3,0.9,74.9,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z
+2018-19,2018,Youngstown State Penguins,youngstown-st-penguins,101.4,109.4,49.6,53.6,15.7,14.2,31.6,17.6,44.1,-3.4,72.5,teamrankings,2019-04-15,2026-03-17T14:23:57.707Z

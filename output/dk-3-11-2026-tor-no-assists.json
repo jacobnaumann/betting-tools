@@ -1,0 +1,314 @@
+[
+  {
+    "playerName": "Immanuel Quickley",
+    "statType": "A/G",
+    "statValue": "6.1",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−3700"
+      },
+      {
+        "line": "4+",
+        "odds": "−980"
+      },
+      {
+        "line": "5+",
+        "odds": "−401"
+      },
+      {
+        "line": "6+",
+        "odds": "−200"
+      },
+      {
+        "line": "7+",
+        "odds": "−107"
+      },
+      {
+        "line": "8+",
+        "odds": "+169"
+      },
+      {
+        "line": "9+",
+        "odds": "+297"
+      },
+      {
+        "line": "10+",
+        "odds": "+512"
+      },
+      {
+        "line": "11+",
+        "odds": "+880"
+      },
+      {
+        "line": "12+",
+        "odds": "+1480"
+      },
+      {
+        "line": "13+",
+        "odds": "+2200"
+      }
+    ]
+  },
+  {
+    "playerName": "Dejounte Murray",
+    "statType": "A/G",
+    "statValue": "5.3",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−1420"
+      },
+      {
+        "line": "4+",
+        "odds": "−495"
+      },
+      {
+        "line": "5+",
+        "odds": "−224"
+      },
+      {
+        "line": "6+",
+        "odds": "−115"
+      },
+      {
+        "line": "7+",
+        "odds": "+156"
+      },
+      {
+        "line": "8+",
+        "odds": "+280"
+      },
+      {
+        "line": "9+",
+        "odds": "+473"
+      },
+      {
+        "line": "10+",
+        "odds": "+810"
+      },
+      {
+        "line": "11+",
+        "odds": "+1300"
+      },
+      {
+        "line": "12+",
+        "odds": "+2000"
+      },
+      {
+        "line": "13+",
+        "odds": "+2800"
+      }
+    ]
+  },
+  {
+    "playerName": "Scottie Barnes",
+    "statType": "A/G",
+    "statValue": "5.4",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−800"
+      },
+      {
+        "line": "4+",
+        "odds": "−304"
+      },
+      {
+        "line": "5+",
+        "odds": "−138"
+      },
+      {
+        "line": "6+",
+        "odds": "+144"
+      },
+      {
+        "line": "7+",
+        "odds": "+276"
+      },
+      {
+        "line": "8+",
+        "odds": "+508"
+      },
+      {
+        "line": "9+",
+        "odds": "+940"
+      },
+      {
+        "line": "10+",
+        "odds": "+1620"
+      },
+      {
+        "line": "11+",
+        "odds": "+2500"
+      }
+    ]
+  },
+  {
+    "playerName": "Brandon Ingram",
+    "statType": "A/G",
+    "statValue": "3.8",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−385"
+      },
+      {
+        "line": "4+",
+        "odds": "−152"
+      },
+      {
+        "line": "5+",
+        "odds": "+142"
+      },
+      {
+        "line": "6+",
+        "odds": "+290"
+      },
+      {
+        "line": "7+",
+        "odds": "+568"
+      },
+      {
+        "line": "8+",
+        "odds": "+1080"
+      },
+      {
+        "line": "9+",
+        "odds": "+1880"
+      },
+      {
+        "line": "10+",
+        "odds": "+2900"
+      }
+    ]
+  },
+  {
+    "playerName": "Trey Murphy III",
+    "statType": "A/G",
+    "statValue": "3.8",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−273"
+      },
+      {
+        "line": "4+",
+        "odds": "−111"
+      },
+      {
+        "line": "5+",
+        "odds": "+198"
+      },
+      {
+        "line": "6+",
+        "odds": "+414"
+      },
+      {
+        "line": "7+",
+        "odds": "+830"
+      },
+      {
+        "line": "8+",
+        "odds": "+1540"
+      },
+      {
+        "line": "9+",
+        "odds": "+2500"
+      }
+    ]
+  },
+  {
+    "playerName": "RJ Barrett",
+    "statType": "A/G",
+    "statValue": "3.4",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−243"
+      },
+      {
+        "line": "4+",
+        "odds": "+102"
+      },
+      {
+        "line": "5+",
+        "odds": "+226"
+      },
+      {
+        "line": "6+",
+        "odds": "+477"
+      },
+      {
+        "line": "7+",
+        "odds": "+970"
+      },
+      {
+        "line": "8+",
+        "odds": "+1860"
+      }
+    ]
+  },
+  {
+    "playerName": "Jeremiah Fears",
+    "statType": "A/G",
+    "statValue": "3.3",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−160"
+      },
+      {
+        "line": "4+",
+        "odds": "+149"
+      },
+      {
+        "line": "5+",
+        "odds": "+328"
+      },
+      {
+        "line": "6+",
+        "odds": "+680"
+      },
+      {
+        "line": "7+",
+        "odds": "+1300"
+      },
+      {
+        "line": "8+",
+        "odds": "+2300"
+      }
+    ]
+  },
+  {
+    "playerName": "Zion Williamson",
+    "statType": "A/G",
+    "statValue": "3.4",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−176"
+      },
+      {
+        "line": "4+",
+        "odds": "+140"
+      },
+      {
+        "line": "5+",
+        "odds": "+316"
+      },
+      {
+        "line": "6+",
+        "odds": "+670"
+      },
+      {
+        "line": "7+",
+        "odds": "+1340"
+      },
+      {
+        "line": "8+",
+        "odds": "+2400"
+      }
+    ]
+  }
+]

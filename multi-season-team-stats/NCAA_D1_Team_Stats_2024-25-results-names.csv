@@ -1,0 +1,366 @@
+season,start_year,team_slug,offensive_efficiency,defensive_efficiency,effective_fg_pct,opp_effective_fg_pct,turnover_rate,opp_turnover_rate,offensive_rebound_rate,free_throw_rate,three_point_rate,sos,pace,source,source_as_of_date,scraped_at_utc,team_original,team
+2024-25,2024,abilene-christian-wildcats,93.7,98.5,46.7,51.5,18.1,21,27.8,25.9,25.3,-3.1,72.1,teamrankings,2025-04-15,2026-03-17T14:27:13.157Z,Abilene Christian Wildcats,Abilene Christian
+2024-25,2024,air-force-falcons,93.1,110.7,50.1,54.6,18.7,13.7,19.9,24.7,48.5,0.1,66.5,teamrankings,2025-04-15,2026-03-17T14:27:13.157Z,Air Force Falcons,Air Force
+2024-25,2024,akron-zips,111.7,102.4,54.9,50.1,14.1,15,30.8,20.5,45.2,-1.8,74.6,teamrankings,2025-04-15,2026-03-17T14:27:13.157Z,Akron Zips,Akron
+2024-25,2024,alabama-am-bulldogs,92.3,106.5,45.1,54.3,18.6,18.1,31.8,26.7,41.6,-11.3,75.1,teamrankings,2025-04-15,2026-03-17T14:27:13.157Z,Alabama A&M Bulldogs,Alabama A&M
+2024-25,2024,alabama-crimson-tide,115.5,103.5,56.6,47.8,14.2,11.6,31.8,28.3,46.6,16.2,78.5,teamrankings,2025-04-15,2026-03-17T14:27:13.157Z,Alabama Crimson Tide,Alabama
+2024-25,2024,alabama-st-hornets,100.9,102,47,50.7,11.3,16.1,25.6,22.8,42.7,-6.4,71.2,teamrankings,2025-04-15,2026-03-17T14:27:13.157Z,Alabama State Hornets,Alabama St.
+2024-25,2024,albany-great-danes,103.9,105.6,49.3,54.9,13.4,17.5,29.4,22.5,36,-5.5,70.8,teamrankings,2025-04-15,2026-03-17T14:27:13.157Z,Albany Great Danes,UAlbany
+2024-25,2024,alcorn-st-braves,96.1,106.5,46.1,53,16.5,15.8,32.3,22.2,29.6,-6.8,68,teamrankings,2025-04-15,2026-03-17T14:27:13.157Z,Alcorn State Braves,Alcorn
+2024-25,2024,american-eagles,103.2,104.4,52,52.5,14.9,15.6,22.2,21.6,45.3,-5.4,65.6,teamrankings,2025-04-15,2026-03-17T14:27:13.157Z,American Eagles,American
+2024-25,2024,appalachian-st-mountaineers,99.8,97.9,49.7,46.1,14.7,12.6,24.7,25.6,41.1,-2.8,66,teamrankings,2025-04-15,2026-03-17T14:27:13.157Z,App State Mountaineers,App State
+2024-25,2024,arizona-state-sun-devils,101.7,105.4,51.5,50.7,15.6,14,22.1,26,42.6,11,72.8,teamrankings,2025-04-15,2026-03-17T14:27:13.157Z,Arizona State Sun Devils,Arizona St.
+2024-25,2024,arizona-wildcats,113.4,100.7,53.3,48.9,13.6,14.1,34.8,26.4,34.7,14.9,72.7,teamrankings,2025-04-15,2026-03-17T14:27:13.157Z,Arizona Wildcats,Arizona
+2024-25,2024,arkansas-razorbacks,106.1,98.7,52.2,47.6,14.3,14.9,25.7,26,36.6,12,72.4,teamrankings,2025-04-15,2026-03-17T14:27:13.157Z,Arkansas Razorbacks,Arkansas
+2024-25,2024,arkansas-st-red-wolves,108.7,97.4,49.6,46.1,12.3,14.6,32.5,25.1,44.6,0.1,72.4,teamrankings,2025-04-15,2026-03-17T14:27:13.157Z,Arkansas State Red Wolves,Arkansas St.
+2024-25,2024,arkansas-pine-bluff-golden-lions,94.2,115.7,50.3,56.3,18.1,14.4,24.1,23.3,37.9,-12,74,teamrankings,2025-04-15,2026-03-17T14:27:13.157Z,Arkansas-Pine Bluff Golden Lions,Ark.-Pine Bluff
+2024-25,2024,army-black-knights,101.5,108.3,49.5,53.7,12.6,13.9,23.8,20.3,41.7,-6.5,70.7,teamrankings,2025-04-15,2026-03-17T14:27:13.157Z,Army Black Knights,Army West Point
+2024-25,2024,auburn-tigers,116.7,97.6,54.9,46.1,11.6,15.1,33.2,25.7,40.8,16.6,71.1,teamrankings,2025-04-15,2026-03-17T14:27:13.157Z,Auburn Tigers,Auburn
+2024-25,2024,austin-peay-governors,100.8,109.1,48.7,53.8,12.9,14.6,23.2,22.2,40.2,-4.5,69.5,teamrankings,2025-04-15,2026-03-17T14:27:13.157Z,Austin Peay Governors,Austin Peay
+2024-25,2024,ball-st-cardinals,105.2,107.3,51.3,51.6,14.6,12.3,23.9,31.6,37.1,-6.3,70.1,teamrankings,2025-04-15,2026-03-17T14:27:13.157Z,Ball State Cardinals,Ball St.
+2024-25,2024,baylor-bears,110.7,103.4,51.1,52,13.4,16.1,33.9,23.2,40.1,13.7,68,teamrankings,2025-04-15,2026-03-17T14:27:13.157Z,Baylor Bears,Baylor
+2024-25,2024,bellarmine-knights,102.9,118,53.7,58.1,16,13.5,17.8,19.9,43.2,-7.2,68.9,teamrankings,2025-04-15,2026-03-17T14:27:13.157Z,Bellarmine Knights,Bellarmine
+2024-25,2024,belmont-bruins,109.7,106.8,54.8,53.7,14,15.4,25.6,20,44.6,0,71.9,teamrankings,2025-04-15,2026-03-17T14:27:13.157Z,Belmont Bruins,Belmont
+2024-25,2024,bethune-cookman-wildcats,96.5,101.4,48.2,48.8,17,14.4,27.1,25.5,33.9,-5,71.2,teamrankings,2025-04-15,2026-03-17T14:27:13.157Z,Bethune-Cookman Wildcats,Bethune-Cookman
+2024-25,2024,binghamton-bearcats,99.6,105.9,51.6,49.7,17.3,11.2,24,23.9,36.2,-6.7,68.9,teamrankings,2025-04-15,2026-03-17T14:27:13.157Z,Binghamton Bearcats,Binghamton
+2024-25,2024,boise-st-broncos,111,99,52.6,50.4,14.2,14.8,31.1,27.4,42.9,6,67.7,teamrankings,2025-04-15,2026-03-17T14:27:13.157Z,Boise State Broncos,Boise St.
+2024-25,2024,boston-college-eagles,100.1,107.8,48.9,51.9,15,13.5,26.7,23.3,33,3.2,70.3,teamrankings,2025-04-15,2026-03-17T14:27:13.157Z,Boston College Eagles,Boston College
+2024-25,2024,boston-u-terriers,99.1,103,50.2,52.4,17.7,14.9,30.3,22.2,41.9,-6.4,66.3,teamrankings,2025-04-15,2026-03-17T14:27:13.157Z,Boston University Terriers,Boston U.
+2024-25,2024,bowling-green-falcons,100,104.8,49.9,52.6,15.5,15.3,22.4,25,39.7,-6.1,71.9,teamrankings,2025-04-15,2026-03-17T14:27:13.157Z,Bowling Green Falcons,Bowling Green
+2024-25,2024,bradley-braves,110.5,101.5,56.7,47.7,15.5,13.6,23.9,23.7,42.3,1.2,68.3,teamrankings,2025-04-15,2026-03-17T14:27:13.157Z,Bradley Braves,Bradley
+2024-25,2024,brown-bears,101.4,102.7,51.1,49.3,14.7,13.5,28.2,20.9,40.5,-2.9,70.2,teamrankings,2025-04-15,2026-03-17T14:27:13.157Z,Brown Bears,Brown
+2024-25,2024,bryant-bulldogs,105.9,99.4,50.7,47.8,13.8,14.2,32.8,22.3,34.8,-2.9,75.4,teamrankings,2025-04-15,2026-03-17T14:27:13.157Z,Bryant Bulldogs,Bryant
+2024-25,2024,bucknell-bison,102.9,101.6,53.8,50.3,16.6,14.9,24.2,26,41,-4.7,72,teamrankings,2025-04-15,2026-03-17T14:27:13.157Z,Bucknell Bison,Bucknell
+2024-25,2024,buffalo-bulls,95.4,110.6,48.8,54.2,17.3,14.1,22.9,23.5,43.9,-5.7,73.7,teamrankings,2025-04-15,2026-03-17T14:27:13.157Z,Buffalo Bulls,Buffalo
+2024-25,2024,butler-bulldogs,107.9,108.1,53.7,50.1,14.4,9.8,23.3,26.8,41.6,8.9,69.3,teamrankings,2025-04-15,2026-03-17T14:27:13.157Z,Butler Bulldogs,Butler
+2024-25,2024,brigham-young-cougars,114.6,102.1,57,51.4,15,14.8,31.9,22.7,47.6,12.1,71.1,teamrankings,2025-04-15,2026-03-17T14:27:13.157Z,BYU Cougars,BYU
+2024-25,2024,cal-poly-slo-mustangs,105.3,107.6,55.2,53.2,18.3,16.4,25.5,19.5,51.1,-1.4,77.5,teamrankings,2025-04-15,2026-03-17T14:27:13.157Z,Cal Poly Mustangs,Cal Poly
+2024-25,2024,csu-bakersfield-roadrunners,102.9,108.2,48.2,54.3,16,16.5,33.7,25.1,28.4,-3.3,69.5,teamrankings,2025-04-15,2026-03-17T14:27:13.157Z,Cal State Bakersfield Roadrunners,CSU Bakersfield
+2024-25,2024,csu-fullerton-titans,88.6,111.8,44.2,54.3,18.8,14,23.9,26.7,34.1,-5,70.4,teamrankings,2025-04-15,2026-03-17T14:27:13.157Z,Cal State Fullerton Titans,Cal St. Fullerton
+2024-25,2024,csu-northridge-matadors,106.3,99.4,51.7,50.1,16.1,18.1,33.5,25.6,30.7,-1.9,74.8,teamrankings,2025-04-15,2026-03-17T14:27:13.157Z,Cal State Northridge Matadors,CSUN
+2024-25,2024,california-baptist-lancers,102.1,100.3,48.3,50.1,15,15.8,32.3,22.2,35,-1.5,69.8,teamrankings,2025-04-15,2026-03-17T14:27:13.157Z,California Baptist Lancers,California Baptist
+2024-25,2024,california-golden-bears,105.3,106.9,47.8,53,14,14.2,32.2,28.4,37.8,5.1,71.8,teamrankings,2025-04-15,2026-03-17T14:27:13.157Z,California Golden Bears,California
+2024-25,2024,campbell-fighting-camels,101.8,102.5,50,52.4,14,16.6,22.4,22.4,41.8,-3.7,67.7,teamrankings,2025-04-15,2026-03-17T14:27:13.157Z,Campbell Fighting Camels,Campbell
+2024-25,2024,canisius-golden-griffins,95.9,116.3,51.2,56.9,17.1,14.1,14.8,17.5,41.4,-5.1,67.6,teamrankings,2025-04-15,2026-03-17T14:27:13.157Z,Canisius Golden Griffins,Canisius
+2024-25,2024,central-arkansas-bears,96.1,111.3,47.4,56.8,15.8,14.5,25.5,21.4,47.8,-7,71.3,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Central Arkansas Bears,Central Ark.
+2024-25,2024,central-conn-st-blue-devils,103.2,93.2,52.2,47.7,15.2,15.9,24.8,19.6,34.8,-7.5,67.7,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Central Connecticut Blue Devils,Central Conn. St.
+2024-25,2024,central-michigan-chippewas,102.8,105.2,49.8,53.1,15.3,15.8,29.5,26,33.3,-3.9,70.7,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Central Michigan Chippewas,Central Mich.
+2024-25,2024,charleston-cougars,105.5,101.7,52.4,50.1,14.3,14.3,24,25.5,40,-1.6,72.7,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Charleston Cougars,Col. of Charleston
+2024-25,2024,charleston-southern-buccaneers,97.6,109.6,48.7,53.4,17.2,11.8,28.4,30.1,42,-3.3,71.9,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Charleston Southern Buccaneers,Charleston So.
+2024-25,2024,charlotte-49ers,103,110.1,48.3,54.2,13.4,12.8,22.7,31,40.9,-1.2,68.1,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Charlotte 49ers,Charlotte
+2024-25,2024,chattanooga-mocs,112.9,105.3,56.2,51.8,13.2,14.2,23.2,23.4,45.6,-0.2,70.4,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Chattanooga Mocs,Chattanooga
+2024-25,2024,chicago-st-cougars,87.8,110.5,44.4,54.9,16.5,15.7,19.9,19.9,40.9,-6,71.2,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Chicago State Cougars,Chicago St.
+2024-25,2024,cincinnati-bearcats,104.3,97.1,51.1,48.8,13.2,17.1,31,17.9,38.3,10.2,68.2,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Cincinnati Bearcats,Cincinnati
+2024-25,2024,clemson-tigers,111.9,96.8,53.4,48.8,13.6,17.3,32,21.6,38.8,8.8,68,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Clemson Tigers,Clemson
+2024-25,2024,cleveland-st-vikings,103.1,99.8,49.5,51.2,15.2,18.9,33,22.8,32.3,-3.4,68.2,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Cleveland State Vikings,Cleveland St.
+2024-25,2024,coastal-carolina-chanticleers,99.9,109.3,49.4,48.6,15.8,9,26.4,24.9,39.2,-5.9,66,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Coastal Carolina Chanticleers,Coastal Carolina
+2024-25,2024,colgate-raiders,104.4,106.3,54.2,53.3,15,14.4,22.1,17.2,42.2,-4.3,68.4,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Colgate Raiders,Colgate
+2024-25,2024,colorado-buffaloes,99.2,102.2,50.4,49.9,18.4,14.2,27.1,25,37.3,9.7,70.3,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Colorado Buffaloes,Colorado
+2024-25,2024,colorado-st-rams,110.1,98.6,55.5,48.5,15.2,14.7,25.3,23.2,42.8,6.5,68.3,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Colorado State Rams,Colorado St.
+2024-25,2024,columbia-lions,105.9,110.7,52.6,56.4,13.7,14.5,23.6,22.3,39.1,-5.2,72.8,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Columbia Lions,Columbia
+2024-25,2024,connecticut-huskies,114.5,101.2,55,48.1,14.4,13.8,34.6,22.9,42.7,11,67.3,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Connecticut Huskies,UConn
+2024-25,2024,coppin-st-eagles,86.6,108.6,44,55.6,19,17.7,23.2,25.3,32.1,-7.3,70.8,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Coppin State Eagles,Coppin St.
+2024-25,2024,cornell-big-red,113.3,106.9,58.7,52.2,14.9,13.5,24,21.2,48.6,-1.7,73.6,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Cornell Big Red,Cornell
+2024-25,2024,creighton-bluejays,108.6,100.7,56.1,47.2,15.9,10.1,25,21.1,48.9,11.2,69.5,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Creighton Bluejays,Creighton
+2024-25,2024,dartmouth-big-green,100.8,99.8,50.3,49.1,14.5,12.2,21,22.7,46.5,-3.3,73.6,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Dartmouth Big Green,Dartmouth
+2024-25,2024,davidson-wildcats,106.5,105.7,52.4,52.3,13,13.5,22,22.3,42.1,0.4,67.6,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Davidson Wildcats,Davidson
+2024-25,2024,dayton-flyers,109.8,103.8,53,51.1,13.5,15.4,27.1,27.4,41,4.5,68.7,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Dayton Flyers,Dayton
+2024-25,2024,delaware-blue-hens,107,109.8,55.1,52.2,15,13.4,19.8,22.3,39.9,-2.9,71.7,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Delaware Blue Hens,Delaware
+2024-25,2024,delaware-state-hornets,102.2,106.5,48.8,53.8,15.5,17.5,32.2,26.2,20.7,-8.2,73.8,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Delaware State Hornets,Delaware St.
+2024-25,2024,denver-pioneers,99.3,109.8,50.3,54.3,16.4,15.5,23.2,23,36.9,-5.4,70.8,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Denver Pioneers,Denver
+2024-25,2024,depaul-blue-demons,102.7,105.6,52.5,51.6,16,13.5,24.7,20.7,46.2,6.1,70.5,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,DePaul Blue Demons,DePaul
+2024-25,2024,detroit-mercy-titans,94,108.7,45.6,51.2,16.3,13.2,29.7,21.3,28.4,-4.1,70.5,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Detroit Mercy Titans,Detroit Mercy
+2024-25,2024,drake-bulldogs,110.6,97.1,53.9,51.4,15.7,19.6,35.1,29.9,36.2,1.9,62,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Drake Bulldogs,Drake
+2024-25,2024,drexel-dragons,104.2,101.3,52.2,47.8,15.9,12.4,32,18.2,37.1,-3.1,66.8,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Drexel Dragons,Drexel
+2024-25,2024,duke-blue-devils,121.9,91.9,57.9,44.4,12,14.9,33,24.8,44.6,14.2,68.3,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Duke Blue Devils,Duke
+2024-25,2024,duquesne-dukes,101.3,100.9,50,50.2,15.5,17.4,32.1,22.1,43.2,1.1,67.5,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Duquesne Dukes,Duquesne
+2024-25,2024,east-carolina-pirates,105.5,105.4,48.4,51.7,13.2,15.1,32.6,26.2,35.2,-1.4,70.1,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,East Carolina Pirates,East Carolina
+2024-25,2024,east-tennessee-st-buccaneers,106.6,100.4,50.2,50.3,13.5,16.3,33.1,24.9,41.8,-2.7,67.2,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,East Tennessee State Buccaneers,ETSU
+2024-25,2024,east-texas-am-lions,92.2,107.2,49.2,53.8,19.7,17,25.3,19.9,48.3,-3.7,69.8,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,East Texas A&M Lions,East Texas A&M
+2024-25,2024,eastern-illinois-panthers,91.5,101.1,44.1,51,16,17.9,26.3,24,29.7,-7.6,69.5,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Eastern Illinois Panthers,Eastern Ill.
+2024-25,2024,eastern-kentucky-colonels,108.2,107.4,49.7,52.6,11.7,15.3,31,20.4,42.2,-3.8,70.7,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Eastern Kentucky Colonels,Eastern Ky.
+2024-25,2024,eastern-michigan-eagles,104.3,109.8,52.4,53.7,16.4,15.4,26.7,23.9,38.2,-4.3,70.3,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Eastern Michigan Eagles,Eastern Mich.
+2024-25,2024,eastern-washington-eagles,100.4,110.1,50.9,54.4,16.6,16.5,24.7,22.4,37.6,-3.6,69.3,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Eastern Washington Eagles,Eastern Wash.
+2024-25,2024,elon-university-phoenix,106.1,105.2,50.4,48,16.1,11,35.4,27.3,41.5,-3.2,67.4,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Elon Phoenix,Elon
+2024-25,2024,evansville-purple-aces,95,104.3,48.8,50.2,15.9,14.5,19.9,22.7,40.6,-0.6,68.5,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Evansville Purple Aces,Evansville
+2024-25,2024,fairfield-stags,97.8,107.8,46.3,53.7,13.4,15.9,27.1,19.6,38.3,-5.8,68.2,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Fairfield Stags,Fairfield
+2024-25,2024,fairleigh-dickinson-knights,98.8,104.2,49.1,50.5,15,15.2,23.8,23.6,41.5,-7.6,71.3,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Fairleigh Dickinson Knights,FDU
+2024-25,2024,florida-am-rattlers,98.1,108.6,50.6,51.4,18.1,13.2,25,25.5,46.6,-7.6,70.1,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Florida A&M Rattlers,Florida A&M
+2024-25,2024,florida-atlantic-owls,107.9,105.5,53.4,50.1,14.1,13.7,28.3,24.6,40.3,2.1,72.4,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Florida Atlantic Owls,Fla. Atlantic
+2024-25,2024,florida-gators,117.5,96.5,54.9,45.5,13.1,14.3,37.5,25.9,43.7,15.4,72.1,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Florida Gators,Florida
+2024-25,2024,florida-gulf-coast-eagles,107,103.9,53.6,50.2,14.1,12.4,28.1,17.9,38.2,-3.4,67.3,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Florida Gulf Coast Eagles,FGCU
+2024-25,2024,florida-international-panthers,93.5,100.5,46.1,51.6,16.8,18.1,28.2,25.5,30.1,-2.6,72.6,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Florida International Panthers,FIU
+2024-25,2024,florida-state-seminoles,102.9,100.2,50.7,48.5,15.2,16.5,27.6,27.9,33.7,5.9,72.3,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Florida State Seminoles,Florida St.
+2024-25,2024,fordham-rams,101,107.9,48.7,52.8,15.8,14.5,30.2,24,41.5,-0.1,72.8,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Fordham Rams,Fordham
+2024-25,2024,fresno-st-bulldogs,95.1,108.6,46.1,54,15.5,15.3,24.9,26.4,35.3,0.8,74.3,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Fresno State Bulldogs,Fresno St.
+2024-25,2024,furman-paladins,108.3,103.7,53.7,49.5,14.8,14.1,27.9,25.3,51.5,-1.4,68.5,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Furman Paladins,Furman
+2024-25,2024,gardner-webb-runnin-bulldogs,102.6,108.7,51.9,52,17.8,12.8,31.8,25.4,33.1,-2.5,71.9,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Gardner-Webb Runnin' Bulldogs,Gardner-Webb
+2024-25,2024,george-mason-patriots,103.3,94,51.7,45.6,17.2,16.5,29.1,29.4,36.4,2.3,68.1,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,George Mason Patriots,George Mason
+2024-25,2024,george-washington-revolutionaries,103.6,98.3,50.6,48.7,16.1,16.3,28.1,29.1,42.2,-0.3,69.8,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,George Washington Revolutionaries,George Washington
+2024-25,2024,georgetown-hoyas,102.8,99.3,50.4,49.7,14.6,16.9,29.5,19.5,38.1,6.3,70,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Georgetown Hoyas,Georgetown
+2024-25,2024,georgia-bulldogs,106.8,99.1,52.1,47.7,16.1,15.4,33.8,28.3,37,11.6,70.5,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Georgia Bulldogs,Georgia
+2024-25,2024,georgia-southern-eagles,101,103.9,50.6,50.1,16.1,15.7,30.7,19.8,44.3,-4.4,73.3,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Georgia Southern Eagles,Ga. Southern
+2024-25,2024,georgia-st-panthers,103.5,109.8,50.4,51.1,14.5,11,30.6,24.8,33.3,-3.6,71.6,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Georgia State Panthers,Georgia St.
+2024-25,2024,georgia-tech-yellow-jackets,101.9,101.3,50.2,49.3,15.1,13.7,27.7,22.8,36.8,5.4,71.7,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Georgia Tech Yellow Jackets,Georgia Tech
+2024-25,2024,gonzaga-bulldogs,118.2,95.6,56,47.5,11.6,15.8,30.3,23.5,33.6,9.7,73.1,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Gonzaga Bulldogs,Gonzaga
+2024-25,2024,grambling-state-tigers,94.9,102.1,47.3,49.3,17,15.8,24,25,35,-8.1,67.9,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Grambling Tigers,Grambling
+2024-25,2024,grand-canyon-lopes,104.5,94.2,50.8,47.3,16,17.8,30.4,30.3,33.8,-0.7,74.3,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Grand Canyon Lopes,Grand Canyon
+2024-25,2024,green-bay-phoenix,99,114.1,50.9,54.8,16.5,12.6,16.3,26.2,46.2,-3.9,70.6,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Green Bay Phoenix,Green Bay
+2024-25,2024,hampton-pirates,102.5,104.3,47.5,52.6,13.4,16.6,32.3,23,36.7,-3.3,67.9,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Hampton Pirates,Hampton
+2024-25,2024,harvard-crimson,99.2,104.9,50.6,52.2,16,15.4,21.8,18.4,39.9,-2.7,68.9,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Harvard Crimson,Harvard
+2024-25,2024,hawaii-rainbow-warriors,100.8,104.5,50.6,49.5,18.1,11.6,28.5,27.5,37.4,-3.2,68.8,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Hawai'i Rainbow Warriors,Hawaii
+2024-25,2024,high-point-panthers,117.9,102.7,56.3,49.1,13.2,14.1,32.2,27.4,39.4,-2.3,68.8,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,High Point Panthers,High Point
+2024-25,2024,hofstra-pride,96.2,97.9,48.9,45.9,15.5,14.2,23.5,19,42.3,-2.8,67,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Hofstra Pride,Hofstra
+2024-25,2024,holy-cross-crusaders,101.4,109,53.1,53.5,16.1,11.9,21.4,16.8,42.3,-6.2,67.6,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Holy Cross Crusaders,Holy Cross
+2024-25,2024,houston-christian-huskies,97.4,105.3,49.1,52.6,15.8,15.5,24.4,22.4,44,-5.1,66.4,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Houston Christian Huskies,Houston Christian
+2024-25,2024,houston-cougars,112.6,89.6,51.7,44.8,11.8,18.2,36.1,21.2,34.7,15.5,65.4,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Houston Cougars,Houston
+2024-25,2024,howard-bison,103.8,110.9,53.5,52.3,18.7,14.2,27.8,24.9,38.4,-7.4,72.8,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Howard Bison,Howard
+2024-25,2024,idaho-state-bengals,105.6,105.5,47.8,54.1,13.6,15.8,37.5,25.5,36.6,-4.4,68.4,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Idaho State Bengals,Idaho St.
+2024-25,2024,idaho-vandals,105.1,111.7,51.8,54,15.6,13,26.7,24.5,47.9,-4.1,68.6,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Idaho Vandals,Idaho
+2024-25,2024,illinois-chicago-flames,103.3,105,51.1,51.6,15.3,13.8,26.5,25.5,39.4,0.1,71.7,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Illinois Chicago Flames,UIC
+2024-25,2024,illinois-fighting-illini,112.3,100.5,52.4,47.4,13.6,10.9,35,25.5,47.2,13.7,74.4,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Illinois Fighting Illini,Illinois
+2024-25,2024,illinois-st-redbirds,111,107.3,56.3,53.1,14.2,14.6,23.7,23.5,46.7,-0.1,67.4,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Illinois State Redbirds,Illinois St.
+2024-25,2024,incarnate-word-cardinals,105.3,105.9,51.5,51.9,14.8,15,31.9,21.6,35.8,-6.1,67.3,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Incarnate Word Cardinals,UIW
+2024-25,2024,indiana-hoosiers,104.9,101.2,51.1,49.8,14.4,14.3,29.1,24.5,33.2,11,71.2,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Indiana Hoosiers,Indiana
+2024-25,2024,indiana-st-sycamores,106,109.4,54.6,54.3,17.3,14,23.8,25.4,50.1,-1,74.5,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Indiana State Sycamores,Indiana St.
+2024-25,2024,iona-gaels,98,99.1,47.5,51.7,17.3,19.9,37.4,20.4,34.7,-4.9,71.1,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Iona Gaels,Iona
+2024-25,2024,iowa-hawkeyes,113.2,109.4,56.7,54.4,12.2,15.5,23.4,20.2,40.9,10.2,72.8,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Iowa Hawkeyes,Iowa
+2024-25,2024,iowa-state-cyclones,111.8,95.1,54.9,48.9,14.9,19,30.7,27.2,36.8,12.8,71.9,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Iowa State Cyclones,Iowa St.
+2024-25,2024,iu-indy-jaguars,107.1,117.8,50.4,57,13.5,13.6,27.8,25.5,47.3,-5.9,67.6,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,IU Indy Jaguars,IU Indy
+2024-25,2024,jackson-state-tigers,98.6,102.9,47.7,50.6,16.8,15,28.5,26.6,33.7,-4.7,72.5,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Jackson State Tigers,Jackson St.
+2024-25,2024,jacksonville-dolphins,101.4,102.1,50.2,51.1,16.6,16.2,33,21,33.9,-3.6,70.4,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Jacksonville Dolphins,Jacksonville
+2024-25,2024,jacksonville-st-gamecocks,105,102.5,49.7,49.2,13.7,11.8,29.2,23.9,36.9,0,67.6,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Jacksonville State Gamecocks,Jacksonville St.
+2024-25,2024,james-madison-dukes,107,105.5,50.7,50.9,13.7,13.9,30.8,22.9,45.2,-1.6,67.6,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,James Madison Dukes,James Madison
+2024-25,2024,kansas-city-roos,100.7,104.6,48.4,51.2,15.9,14.7,31,22.6,44,-4.5,67.2,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Kansas City Roos,Kansas City
+2024-25,2024,kansas-jayhawks,106.1,97,53.1,46.3,14.7,13.5,28,18.6,34.1,13.7,71.7,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Kansas Jayhawks,Kansas
+2024-25,2024,kansas-state-wildcats,101.9,100.1,50.6,49,15.4,15.6,27.6,20.8,40.2,9.9,69.5,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Kansas State Wildcats,Kansas St.
+2024-25,2024,kennesaw-st-owls,100.9,101.4,49.3,48.3,17,13.3,30.6,27.2,45.5,-0.2,73,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Kennesaw State Owls,Kennesaw St.
+2024-25,2024,kent-st-golden-flashes,104.2,98.4,48.7,48.4,14.6,16.1,33.9,22.7,37,-1.4,69.5,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Kent State Golden Flashes,Kent St.
+2024-25,2024,kentucky-wildcats,114.1,104.4,55.9,50.3,13.2,12.4,26.3,26.2,41.2,14.3,74,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Kentucky Wildcats,Kentucky
+2024-25,2024,la-salle-explorers,98.9,105.3,46.1,52.6,13.4,14.4,27.5,23.9,33.2,0.3,71.7,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,La Salle Explorers,La Salle
+2024-25,2024,lafayette-leopards,99.8,102.5,50.2,50.4,14.7,14.6,22.4,22.7,40.3,-6.3,67.9,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Lafayette Leopards,Lafayette
+2024-25,2024,lamar-cardinals,98.8,98.1,47.2,47.6,15.8,15,33.4,21.5,32.8,-3.4,68.3,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Lamar Cardinals,Lamar University
+2024-25,2024,le-moyne-dolphins,100.6,113.9,51.5,54.7,17.5,14.1,24.4,26.4,41.3,-8.3,71.5,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Le Moyne Dolphins,Le Moyne
+2024-25,2024,lehigh-mountain-hawks,99.8,105,51.1,50.7,14.1,14,18.7,23.5,37.3,-5.8,68.8,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Lehigh Mountain Hawks,Lehigh
+2024-25,2024,liberty-flames,108.3,96,57.8,46.5,14.1,14.9,17.7,22.6,48.2,0.4,68,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Liberty Flames,Liberty
+2024-25,2024,lindenwood-lions,93.7,101.8,45,50.7,15.4,16.8,28.3,25.8,34.6,-8.2,72.9,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Lindenwood Lions,Lindenwood
+2024-25,2024,lipscomb-bisons,112,99.2,55.6,49.1,13.3,13.9,21.5,23.5,47.6,-1.8,68.8,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Lipscomb Bisons,Lipscomb
+2024-25,2024,little-rock-trojans,97.7,96.6,49.5,46.7,17.6,18.2,29.4,20.9,30.3,-6.3,70.1,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Little Rock Trojans,Little Rock
+2024-25,2024,long-beach-st-beach,96,110.2,49.2,53.4,18.6,15,25.1,24.7,37.1,-3.9,68.6,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Long Beach State Beach,Long Beach St.
+2024-25,2024,liu-sharks,96.4,97.9,47.7,48,17.2,17,30.7,20.2,33.4,-8.2,67.9,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Long Island Sharks,LIU
+2024-25,2024,longwood-lancers,106.8,106.2,51.3,55.9,15.6,18.3,30.6,31.6,33.9,-3.9,71.7,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Longwood Lancers,Longwood
+2024-25,2024,ul-lafayette-ragin-cajuns,94.6,106.8,45.7,51.3,14.1,16.2,22.8,22.5,38.1,-3.8,68.6,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Louisiana Ragin' Cajuns,Louisiana
+2024-25,2024,louisiana-state-tigers,102.1,101.7,51.1,48.3,16.2,14,26.9,23.5,43.5,9.4,72.4,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Louisiana State Tigers,LSU
+2024-25,2024,louisiana-tech-bulldogs,104.2,101.1,52.5,47.8,16.6,12.7,27.5,24.9,41.4,-1,68.6,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Louisiana Tech Bulldogs,Louisiana Tech
+2024-25,2024,louisville-cardinals,111,98.3,53.2,49.7,14,16.2,30.7,25,47.8,10.2,70.7,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Louisville Cardinals,Louisville
+2024-25,2024,loyola-chicago-ramblers,104.3,99.7,52.7,48.8,15,15.1,27.1,23.3,42.9,1.4,69.7,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Loyola Chicago Ramblers,Loyola Chicago
+2024-25,2024,loyola-md-greyhounds,100.6,105.6,50.1,52.8,15.4,14.9,26.9,21.8,39.6,-6.6,68.3,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Loyola Maryland Greyhounds,Loyola Maryland
+2024-25,2024,loyola-marymount-lions,100.8,103.3,50.2,48.5,13.6,13.6,22,21.9,40.4,0.5,69.7,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Loyola Marymount Lions,LMU (CA)
+2024-25,2024,maine-black-bears,101.3,98.6,51.6,50.4,14,18.9,18.7,21.3,33,-4.5,68.1,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Maine Black Bears,Maine
+2024-25,2024,manhattan-jaspers,107.8,106.8,50.8,50.9,14.3,12.8,30.5,23.7,41.6,-6,70.4,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Manhattan Jaspers,Manhattan
+2024-25,2024,marist-red-foxes,99.1,96.9,49.9,46.9,15.8,14.4,28.8,17,37.6,-6.7,66.5,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Marist Red Foxes,Marist
+2024-25,2024,marquette-golden-eagles,108.8,97.7,52,49.9,11.8,18.6,28,20.3,46.4,11.5,70.4,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Marquette Golden Eagles,Marquette
+2024-25,2024,marshall-thundering-herd,104.6,101.5,49.9,49.3,14,14.6,31,25.7,39.6,-3.3,71.4,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Marshall Thundering Herd,Marshall
+2024-25,2024,maryland-eastern-shore-hawks,91.8,115.3,45.7,55.3,17.2,13.3,25.1,25.3,37.2,-9.4,69,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Maryland Eastern Shore Hawks,UMES
+2024-25,2024,maryland-terrapins,112.4,93.1,53.6,47.1,12.5,17.6,28.6,25.1,35.4,12.3,72.2,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Maryland Terrapins,Maryland
+2024-25,2024,massachusetts-minutemen,98.1,102.5,45.1,49.8,13.4,15.1,32.7,25.4,32.2,0,73.9,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Massachusetts Minutemen,Massachusetts
+2024-25,2024,mcneese-st-cowboys,110.9,95.8,53,47.7,13.7,18.6,33.7,25.9,36.6,0.5,67.4,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,McNeese Cowboys,McNeese
+2024-25,2024,memphis-tigers,108.4,99.6,53.5,48.6,16.4,16.3,34.1,27.6,33.3,6.2,73.7,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Memphis Tigers,Memphis
+2024-25,2024,mercer-bears,99.6,104.1,48.9,50.8,14.4,14.6,26.3,22.4,40.1,-3.6,74,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Mercer Bears,Mercer
+2024-25,2024,mercyhurst-lakers,99,108,48.6,55,14.7,17.7,20.8,22.9,36.4,-9.4,66.4,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Mercyhurst Lakers,Mercyhurst
+2024-25,2024,merrimack-warriors,98.6,96.5,49.4,46.9,12.3,19.3,18.4,19,42.9,-3.2,66.6,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Merrimack Warriors,Merrimack
+2024-25,2024,miami-oh-redhawks,108.2,102,55.4,51.3,15.5,16.6,25.5,21,44,-3.6,71.8,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Miami (OH) RedHawks,Miami (OH)
+2024-25,2024,miami-hurricanes,106.3,115.9,51.9,57.4,14.1,13.1,26.8,20.2,38.5,4.7,69.6,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Miami Hurricanes,Miami (FL)
+2024-25,2024,michigan-st-spartans,110,95.1,50.9,46.2,14,14.1,33.8,27.6,32.9,13,70.6,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Michigan State Spartans,Michigan St.
+2024-25,2024,michigan-wolverines,106.6,97.7,53.8,46.1,16.9,13.6,31.4,25.3,42,13.1,73.1,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Michigan Wolverines,Michigan
+2024-25,2024,middle-tennessee-st-blue-raiders,103.8,101.8,50.9,48.9,14.3,13.9,28.9,24,39.6,0.5,72.5,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Middle Tennessee Blue Raiders,Middle Tenn.
+2024-25,2024,milwaukee-panthers,107.4,101.6,51.4,51.5,16.2,16.3,38.9,27,31.5,-2.5,71.4,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Milwaukee Panthers,Milwaukee
+2024-25,2024,minnesota-golden-gophers,101.4,103.8,49.9,50.1,14.3,14.1,27.1,23.5,35.9,8.5,67.1,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Minnesota Golden Gophers,Minnesota
+2024-25,2024,mississippi-rebels,108,100.4,51.4,50.5,11.4,17.6,23.2,26.8,40,13.5,71.5,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Mississippi Rebels,Ole Miss
+2024-25,2024,mississippi-state-bulldogs,110.6,103.1,51.9,51.8,12.9,16.4,32.2,23.9,42.7,12.1,71.9,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Mississippi State Bulldogs,Mississippi St.
+2024-25,2024,mississippi-valley-state-delta-devils,77.4,121.4,42.1,57.9,21.8,12.7,19.9,20.6,30.6,-15.4,67.8,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Mississippi Valley State Delta Devils,Mississippi Val.
+2024-25,2024,missouri-st-bears,99.3,105.9,50.9,54.7,17.9,16.9,30.1,24.2,37,-0.9,67.9,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Missouri State Bears,Missouri St.
+2024-25,2024,missouri-tigers,117,103,55.8,50.9,13.4,17.4,32.4,33.3,41.4,11.9,71.5,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Missouri Tigers,Missouri
+2024-25,2024,monmouth-nj-hawks,100.9,108.1,47.2,50.7,14,14,27.9,27,34.6,-1.7,69.7,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Monmouth Hawks,Monmouth
+2024-25,2024,montana-grizzlies,108.5,108.3,56,52.5,14.6,13.6,19.7,25.8,36.8,-2.4,69.3,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Montana Grizzlies,Montana
+2024-25,2024,montana-st-bobcats,103.6,103.7,52.8,48.8,13.7,13.4,18.3,23.8,43,-2.3,68.2,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Montana State Bobcats,Montana St.
+2024-25,2024,morehead-st-eagles,95.3,104.5,45.9,50.3,15.8,12.8,28.2,26.9,34.1,-7.8,66.8,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Morehead State Eagles,Morehead St.
+2024-25,2024,morgan-st-bears,102.3,111.1,49,52.4,15.3,14.2,32.2,25.8,21.7,-8.9,74.5,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Morgan State Bears,Morgan St.
+2024-25,2024,mount-st-marys-mountaineers,99.1,101.2,50.9,48.7,18.7,13.5,28.1,21.7,41.1,-4.8,69.9,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Mount St. Mary's Mountaineers,Mount St. Mary's
+2024-25,2024,murray-st-racers,103,102.4,49.3,51.2,14.7,15.3,26.7,29.5,40.1,1.2,68.5,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Murray State Racers,Murray St.
+2024-25,2024,navy-midshipmen,102.4,104.1,48,52.5,13.8,15.7,29.6,25.1,37.1,-5.9,68.4,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Navy Midshipmen,Navy
+2024-25,2024,nc-state-wolfpack,103.3,104.5,48.3,51,12.4,16.1,27.7,24.4,36.2,5.9,67.4,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,NC State Wolfpack,NC State
+2024-25,2024,nebraska-cornhuskers,106.2,101.5,52.1,50.5,14.3,15.3,24.8,26,38.5,10.2,71.5,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Nebraska Cornhuskers,Nebraska
+2024-25,2024,nevada-wolf-pack,108.2,102,53.7,51.3,13.7,16.6,25.9,27.2,37.5,4.6,66.8,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Nevada Wolf Pack,Nevada
+2024-25,2024,new-hampshire-wildcats,92.2,109.7,47.1,54.4,16.6,14.5,23.5,19.7,40.8,-6.9,70.4,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,New Hampshire Wildcats,New Hampshire
+2024-25,2024,new-haven-chargers,,,,,,,,,,,,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,New Haven Chargers,New Haven
+2024-25,2024,new-mexico-lobos,105.7,94.1,50.8,49.2,13.5,17.9,28.8,27.4,31.7,7.1,75.1,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,New Mexico Lobos,New Mexico
+2024-25,2024,new-mexico-st-aggies,100.1,99.4,46.2,46.9,13.3,13.1,31,25.9,37,-0.6,67.6,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,New Mexico State Aggies,New Mexico St.
+2024-25,2024,new-orleans-privateers,94,114.1,45.9,54.9,16.1,13.5,28,24.6,30.7,-3.6,72.3,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,New Orleans Privateers,New Orleans
+2024-25,2024,niagara-purple-eagles,100.7,107,52,53,16.7,14.8,21,22.1,42.8,-6.6,66.9,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Niagara Purple Eagles,Niagara
+2024-25,2024,nicholls-state-colonels,101.7,101.3,48.1,48.1,13,14.3,29.3,24.9,36.8,-3.1,70.8,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Nicholls Colonels,Nicholls
+2024-25,2024,njit-highlanders,92.8,107.4,45.3,50,15.6,11.8,25.6,20.4,37.8,-6.3,68.8,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,NJIT Highlanders,NJIT
+2024-25,2024,norfolk-state-spartans,107.5,103.3,52.2,50,15.9,15.7,29.8,27.7,27.6,-4.2,69.5,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Norfolk State Spartans,Norfolk St.
+2024-25,2024,north-alabama-lions,111.9,102.5,51.3,50.4,10.8,14.4,31.7,24.2,34.5,-3.6,69.3,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,North Alabama Lions,North Ala.
+2024-25,2024,north-carolina-at-aggies,95.9,108.5,45.8,51.5,13.4,13.1,24.6,23.6,36,-4.4,70.9,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,North Carolina A&T Aggies,N.C. A&T
+2024-25,2024,north-carolina-central-eagles,103.3,110.1,50.1,54.8,16.4,17.9,32.6,28,34,-7.3,71.6,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,North Carolina Central Eagles,N.C. Central
+2024-25,2024,north-carolina-tar-heels,110.7,102.4,54.1,49.5,13.3,13.4,25.5,25.9,37.2,11.8,73,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,North Carolina Tar Heels,North Carolina
+2024-25,2024,north-dakota-fighting-hawks,106.4,114.6,49.7,56.5,14,13.2,32.5,25.1,40,-3.7,71.7,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,North Dakota Fighting Hawks,North Dakota
+2024-25,2024,north-dakota-state-bison,117.2,110.4,58.2,51.4,13.9,9.6,24.6,24.3,53.6,-3.2,68.9,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,North Dakota State Bison,North Dakota St.
+2024-25,2024,north-florida-ospreys,107.7,114,53.2,54.1,13.1,12.5,25.5,19.4,54,-4.7,75.1,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,North Florida Ospreys,North Florida
+2024-25,2024,north-texas-mean-green,107.6,96.6,51.1,47.3,14.3,17,30.7,25.8,36.4,2.1,62.7,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,North Texas Mean Green,North Texas
+2024-25,2024,northeastern-huskies,101.4,100.8,51.1,50.3,16,15.7,28.8,20.8,34.8,-2.6,69.1,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Northeastern Huskies,Northeastern
+2024-25,2024,northern-arizona-lumberjacks,105.4,106.6,50.3,53.7,13,13.3,29.3,22.1,37.8,-5.9,68.7,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Northern Arizona Lumberjacks,Northern Ariz.
+2024-25,2024,northern-colorado-bears,112.3,105.3,57,52.3,14.2,13.8,24,24.5,37.5,-2.7,70.7,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Northern Colorado Bears,Northern Colo.
+2024-25,2024,northern-illinois-huskies,92.6,109.2,47.1,53.2,14.9,14.4,14.5,23.5,49.2,-6.9,72.8,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Northern Illinois Huskies,NIU
+2024-25,2024,northern-iowa-panthers,108.4,101.3,55.2,51.4,14.3,15.3,21.7,25.9,36.3,0.9,66.9,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Northern Iowa Panthers,UNI
+2024-25,2024,northern-kentucky-norse,101.8,104.2,49.8,52.5,14.9,17.2,29.6,23.2,40.3,-3.4,69.3,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Northern Kentucky Norse,Northern Ky.
+2024-25,2024,northwestern-st-demons,98.2,103.7,48.7,49.8,17.2,14.8,31.2,23.1,35.7,-3.5,66.6,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Northwestern State Demons,Northwestern St.
+2024-25,2024,northwestern-wildcats,105.1,100.4,49.8,49.9,12.8,17.3,28.6,23.7,34.2,10.4,68.9,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Northwestern Wildcats,Northwestern
+2024-25,2024,notre-dame-fighting-irish,105.5,105.3,51.7,51.4,14.4,13.2,27.1,23.6,37.5,6.5,68.9,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Notre Dame Fighting Irish,Notre Dame
+2024-25,2024,oakland-golden-grizzlies,104.2,106.7,50.1,51.4,15.3,13.8,32.6,23.4,42.3,-1.3,67.7,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Oakland Golden Grizzlies,Oakland
+2024-25,2024,ohio-bobcats,106.9,104.6,53.4,52.3,13.4,15.6,20.6,24.9,40.1,-2.9,74,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Ohio Bobcats,Ohio
+2024-25,2024,ohio-st-buckeyes,109.8,102.4,53.5,48.6,13.7,14.6,26.6,26.5,37.7,12.3,71.8,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Ohio State Buckeyes,Ohio St.
+2024-25,2024,oklahoma-sooners,109.9,104.8,54.4,51,15.4,15.7,25.2,28.3,41.6,11.5,71.2,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Oklahoma Sooners,Oklahoma
+2024-25,2024,oklahoma-state-cowboys,99.1,103.5,48.6,53,16.6,17.7,28.1,28.6,34.7,8.1,73.7,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Oklahoma State Cowboys,Oklahoma St.
+2024-25,2024,old-dominion-monarchs,98,106,44.1,51.2,14,13.7,34.2,23.4,35.8,-4.6,68.7,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Old Dominion Monarchs,Old Dominion
+2024-25,2024,nebraska-omaha-mavericks,109.1,108,52.6,53.2,13.6,13.2,28.3,26.6,39.1,-2.6,70.6,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Omaha Mavericks,Omaha
+2024-25,2024,oral-roberts-golden-eagles,101.3,116.9,50,55,14.6,12,19.1,25.8,45.7,-5.3,70.2,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Oral Roberts Golden Eagles,Oral Roberts
+2024-25,2024,oregon-ducks,107.7,99.7,52.5,48.9,14.2,15.1,27.4,24.5,38.3,12,71.1,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Oregon Ducks,Oregon
+2024-25,2024,oregon-st-beavers,113,103.5,54.5,51,14.5,14.4,29.7,28,35.8,2.2,67,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Oregon State Beavers,Oregon St.
+2024-25,2024,pacific-tigers,97.3,110.4,48.1,53.2,16.8,13.5,26.4,23.7,37.8,-3.2,69.9,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Pacific Tigers,Pacific
+2024-25,2024,pennsylvania-quakers,99.7,110.9,49.4,53,14.4,11.6,23.4,21.9,44.4,-2.3,69.7,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Penn Quakers,Penn
+2024-25,2024,penn-st-nittany-lions,108.9,100.9,54.1,51.9,15.4,17.4,26.2,27.3,36.2,9.1,72.6,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Penn State Nittany Lions,Penn St.
+2024-25,2024,pepperdine-waves,101.2,108.7,49.6,52.5,14.1,13.2,25.2,23.6,34.7,-0.9,71,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Pepperdine Waves,Pepperdine
+2024-25,2024,pittsburgh-panthers,109.8,102.5,52.2,51.1,12.9,16,27.2,25.5,41.4,8.4,69.1,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Pittsburgh Panthers,Pittsburgh
+2024-25,2024,portland-pilots,99.9,113,50.1,54.6,16.1,11.5,20.9,23.5,43.6,-2.9,71.8,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Portland Pilots,Portland
+2024-25,2024,portland-st-vikings,101.8,100.6,50.5,50,15.7,17,32.2,24.9,31.7,-4.6,70.5,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Portland State Vikings,Portland St.
+2024-25,2024,prairie-view-am-panthers,96.4,112.9,48.2,56.2,14.9,17,21.8,24.7,33.7,-8.7,72.8,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Prairie View A&M Panthers,Prairie View
+2024-25,2024,presbyterian-blue-hose,104,107.5,51.1,53,14.1,15.5,27.3,23.3,33.9,-3.6,67.8,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Presbyterian Blue Hose,Presbyterian
+2024-25,2024,princeton-tigers,104,104.5,51.5,53.4,13.4,15.6,24,19.1,48.7,-1.4,69.3,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Princeton Tigers,Princeton
+2024-25,2024,providence-friars,103.6,105.3,52.1,49.5,16.2,12,30.8,21.6,45.5,7.5,68.9,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Providence Friars,Providence
+2024-25,2024,purdue-boilermakers,114.6,104.4,55.9,51.8,13.7,15.3,30,25.7,38.4,13.5,67.4,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Purdue Boilermakers,Purdue
+2024-25,2024,purdue-fort-wayne-mastodons,109.6,105.3,54.7,53.3,12.5,17.5,19.8,22.3,45.6,-2.8,72.4,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Purdue Fort Wayne Mastodons,Purdue Fort Wayne
+2024-25,2024,queens-university-of-charlotte-royals,105.8,106.5,52.8,52.1,15.7,13.9,29.9,24.7,43.6,-4.2,71.7,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Queens Royals,Queens (NC)
+2024-25,2024,quinnipiac-bobcats,101.7,99.3,48.4,49.5,15.4,15.1,31.8,22.9,38,-4.6,72.7,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Quinnipiac Bobcats,Quinnipiac
+2024-25,2024,radford-highlanders,108.4,107.3,51.1,51,15.1,14.3,32.8,29.2,36.3,-2.1,66.2,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Radford Highlanders,Radford
+2024-25,2024,rhode-island-rams,105.4,102.7,52.8,49.3,15.7,13.9,26.7,28.9,37.7,-0.3,73.2,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Rhode Island Rams,Rhode Island
+2024-25,2024,rice-owls,102.8,102.8,48.6,47.8,15,12,31.6,30.5,38.8,-1.8,68.4,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Rice Owls,Rice
+2024-25,2024,richmond-spiders,98.1,108.4,48.4,52.7,14,13.9,17.7,22.3,45.6,-0.4,66.9,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Richmond Spiders,Richmond
+2024-25,2024,rider-broncs,100.3,107.5,47.7,53.1,14.6,13.8,31,22.2,30.1,-5.1,66.8,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Rider Broncs,Rider
+2024-25,2024,robert-morris-colonials,107.3,99.9,51.2,50.7,15.4,16.5,34.7,27,36.7,-3.4,71.7,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Robert Morris Colonials,Robert Morris
+2024-25,2024,rutgers-scarlet-knights,106,106.7,50.6,52.8,13.3,15,28.8,26.7,36.3,10,72.7,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Rutgers Scarlet Knights,Rutgers
+2024-25,2024,sacramento-state-hornets,94.6,109.6,48,55.1,17.6,15.2,26.9,22.4,44.9,-6.4,67,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Sacramento State Hornets,Sacramento St.
+2024-25,2024,sacred-heart-pioneers,103.6,104.4,51,51.8,15.2,15.2,28.1,19.9,44.6,-5.7,72.5,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Sacred Heart Pioneers,Sacred Heart
+2024-25,2024,saint-josephs-hawks,106.2,97.1,51.6,46.9,14.2,14.1,28.2,23.6,46.5,2.4,70.7,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Saint Joseph's Hawks,Saint Joseph's
+2024-25,2024,saint-louis-billikens,105.2,103.8,56.3,49.2,16.7,12.3,21.4,21.7,50.1,2.2,69.9,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Saint Louis Billikens,Saint Louis
+2024-25,2024,saint-marys-gaels,110.7,94,50.3,46.5,12.3,14.4,38.4,23.8,33.2,7.1,65.7,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Saint Mary's Gaels,Saint Mary's (CA)
+2024-25,2024,saint-peters-peacocks,95.9,99.1,44.7,47.3,17.2,15.1,34.8,24.8,38.5,-5.5,66.9,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Saint Peter's Peacocks,Saint Peter's
+2024-25,2024,sam-houston-st-bearkats,103.1,108.9,51,53.1,15.9,14.8,28.1,26,38.6,-0.1,70.8,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Sam Houston Bearkats,Sam Houston
+2024-25,2024,samford-bulldogs,110.3,104,54.6,53.4,15.8,18.6,32.1,21.8,47.1,-0.9,73.9,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Samford Bulldogs,Samford
+2024-25,2024,san-diego-st-aztecs,101.6,94.9,50.5,45.9,14.6,16.7,26.8,23.9,39.6,7.2,68.7,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,San Diego State Aztecs,San Diego St.
+2024-25,2024,san-diego-toreros,95.4,108.9,45.7,54,15.9,16.1,27.3,22.5,35.8,-3.2,73.6,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,San Diego Toreros,San Diego
+2024-25,2024,san-francisco-dons,107.3,98.1,52.8,48.5,14.5,15.7,27.9,25.3,43.7,4.1,71,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,San Francisco Dons,San Francisco
+2024-25,2024,san-jose-st-spartans,101.2,106.3,50.3,52,15.2,14.3,24.1,23.4,40.8,0.8,69.3,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,San Jose State Spartans,San Jose St.
+2024-25,2024,santa-clara-broncos,113.4,101,56,49.5,14.4,14.6,31.1,21.4,46.4,4.3,72.3,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Santa Clara Broncos,Santa Clara
+2024-25,2024,seattle-redhawks,99.4,97.8,46.5,51.2,14.7,18.6,27.6,30.2,36.3,-0.8,69.1,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Seattle Redhawks,Seattle U
+2024-25,2024,seton-hall-pirates,91.8,104.7,44.7,54.7,16.4,19.4,28.7,23.8,30.5,5.8,67,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Seton Hall Pirates,Seton Hall
+2024-25,2024,siena-saints,103.3,103.1,49.4,51.7,15.1,15.9,27.6,27.1,39.9,-4.9,69.9,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Siena Saints,Siena
+2024-25,2024,siu-edwardsville-cougars,100,98.1,48.5,47.6,14.7,14.7,28.4,24.5,36.6,-6.9,69.6,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,SIU Edwardsville Cougars,SIUE
+2024-25,2024,southern-methodist-mustangs,111.8,99.7,54.5,48.1,14.6,15.4,33.8,26.5,35.1,6.6,71.5,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,SMU Mustangs,SMU
+2024-25,2024,south-alabama-jaguars,106.1,97.7,50.8,48.5,12.7,17.4,26.2,25.3,45.6,-2.5,67,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,South Alabama Jaguars,South Alabama
+2024-25,2024,south-carolina-gamecocks,101.1,103.5,48.9,51.5,16,13.7,27.7,30.4,39,9.8,69,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,South Carolina Gamecocks,South Carolina
+2024-25,2024,south-carolina-state-bulldogs,103.5,97.5,50.8,50.1,16.9,19.8,33.5,29.6,33,-5.6,73.4,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,South Carolina State Bulldogs,South Carolina St.
+2024-25,2024,south-carolina-upstate-spartans,96.7,114,49.8,56.1,17,14.4,22.6,22.2,36.9,-5.4,75,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,South Carolina Upstate Spartans,USC Upstate
+2024-25,2024,south-dakota-coyotes,109.6,112.5,50.1,54.8,10.9,14.8,27.6,33.3,37.5,-4.7,77,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,South Dakota Coyotes,South Dakota
+2024-25,2024,south-dakota-state-jackrabbits,110.7,105.1,53.6,50.9,15.2,11.4,31.5,23.2,40,-2.1,71.4,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,South Dakota State Jackrabbits,South Dakota St.
+2024-25,2024,south-florida-bulls,101.3,104,49.7,49.7,14.1,15.7,25,25.5,37.6,-0.3,72.4,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,South Florida Bulls,South Fla.
+2024-25,2024,se-missouri-st-redhawks,102.5,98.3,51.3,47.6,13.9,16.7,22.4,21.8,36,-6.2,70.5,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Southeast Missouri State Redhawks,Southeast Mo. St.
+2024-25,2024,southeastern-louisiana-lions,103,102,49.2,51.4,15,16.3,29.1,25.4,31.6,-4.3,69.2,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Southeastern Louisiana Lions,Southeastern La.
+2024-25,2024,southern-illinois-salukis,102.8,107.5,51.6,52.6,15.8,13.4,29.7,24.6,33.6,-0.4,70.2,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Southern Illinois Salukis,Southern Ill.
+2024-25,2024,southern-indiana-screaming-eagles,98.6,106.3,47.9,51.8,15.1,14.3,25,22.9,33.5,-7.8,70.6,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Southern Indiana Screaming Eagles,Southern Ind.
+2024-25,2024,southern-jaguars,98,96.5,47.2,49.2,15.7,18.5,32.2,27.2,33.3,-6.1,72,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Southern Jaguars,Southern U.
+2024-25,2024,southern-miss-golden-eagles,94.8,103.7,47.9,50.2,17.3,14,24.9,24.2,36.9,-4.2,73.8,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Southern Miss Golden Eagles,Southern Miss.
+2024-25,2024,southern-utah-thunderbirds,92.9,104.8,46.8,49.9,18.8,12.9,27.8,25.1,32.6,-4.5,71.9,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Southern Utah Thunderbirds,Southern Utah
+2024-25,2024,st-bonaventure-bonnies,102.6,98.4,49.9,50,13.9,16.6,25.5,23,35.2,1.3,66.7,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,St. Bonaventure Bonnies,St. Bonaventure
+2024-25,2024,st-francis-pa-red-flash,98.4,106.1,51.8,51.2,17.5,14,23.4,17.7,42,-7.5,69.1,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,St. Francis (PA) Red Flash,Saint Francis
+2024-25,2024,st-johns-red-storm,107,89.7,49.2,45.9,12.7,18.4,36.3,23.2,31,10.1,73.3,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,St. John's Red Storm,St. John's (NY)
+2024-25,2024,st-thomas-mn-tommies,114.6,106.9,57.8,52.5,12.5,16.1,18.6,25.5,46.8,-3.4,71.2,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,St. Thomas Tommies,St. Thomas (MN)
+2024-25,2024,stanford-cardinal,107,103,50.7,50.5,13.5,15.2,29.3,22.6,41.7,5.4,68.7,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Stanford Cardinal,Stanford
+2024-25,2024,stephen-f-austin-lumberjacks,92.1,98.8,46.7,49.2,18.8,17.2,32.6,22.7,36.9,-5,70.2,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Stephen F. Austin Lumberjacks,SFA
+2024-25,2024,stetson-hatters,98.1,115,50.3,53.1,16.7,11.1,21.7,23.8,37.6,-7.5,71.2,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Stetson Hatters,Stetson
+2024-25,2024,stonehill-skyhawks,100.5,105.9,51.1,50.9,16.2,14,24.3,22.9,44.5,-8.6,67,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Stonehill Skyhawks,Stonehill
+2024-25,2024,stony-brook-seawolves,99,113.2,47.7,56,15.9,12.9,26.3,23.4,39,-3.9,66.3,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Stony Brook Seawolves,Stony Brook
+2024-25,2024,syracuse-orange,104,108.3,51,52.9,15.6,12.3,28.2,24.4,32.7,6.5,71.8,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Syracuse Orange,Syracuse
+2024-25,2024,tarleton-state-texans,87.6,102.1,45.9,52.1,22.2,20.2,25.8,26.9,25.6,-3,68.8,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Tarleton State Texans,Tarleton St.
+2024-25,2024,texas-christian-horned-frogs,98,99.6,46.8,50.9,14.7,17,30.9,24.8,34.7,9.7,69,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,TCU Horned Frogs,TCU
+2024-25,2024,temple-owls,106.6,106.4,49.9,50.6,13.6,13,28.5,32.3,31.3,-0.1,72.9,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Temple Owls,Temple
+2024-25,2024,tennessee-st-tigers,102.2,101.3,51.3,48.8,18.1,15,32.8,28.3,33.6,-7.3,74.4,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Tennessee State Tigers,Tennessee St.
+2024-25,2024,tennessee-tech-golden-eagles,99.9,104.5,50.7,49.6,15.3,13,23.2,21.4,46.4,-7.7,70.9,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Tennessee Tech Golden Eagles,Tennessee Tech
+2024-25,2024,tennessee-volunteers,110.5,94.1,52.5,45,13.6,15.2,33.8,26,43.4,15,67,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Tennessee Volunteers,Tennessee
+2024-25,2024,texas-am-aggies,105.9,97.5,47.6,48.3,14.5,16.9,39.7,29.7,37.7,13.1,70.4,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Texas A&M Aggies,Texas A&M
+2024-25,2024,texas-am-cc-islanders,104.9,101.5,52.8,49.9,15.3,15.7,29.7,26.6,29.2,-4.1,69.1,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Texas A&M-Corpus Christi Islanders,A&M-Corpus Christi
+2024-25,2024,texas-longhorns,110.9,102.6,52.6,48.9,12.5,14.3,28.7,27.2,35.3,11.3,70.8,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Texas Longhorns,Texas
+2024-25,2024,texas-southern-tigers,95.6,98.4,47.5,47.4,17,16.4,28.9,21.1,35.8,-7.1,73.7,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Texas Southern Tigers,Texas Southern
+2024-25,2024,texas-state-bobcats,106.2,106,50.7,49.9,15.5,13.8,32.3,26.1,27.8,-2.7,70.3,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Texas State Bobcats,Texas St.
+2024-25,2024,texas-tech-red-raiders,116.9,98.9,54.7,48.1,12.1,14.8,32.3,22.6,44.5,12.6,69.2,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Texas Tech Red Raiders,Texas Tech
+2024-25,2024,the-citadel-bulldogs,92.9,113.4,46.9,54.5,17,13.1,25.2,23.8,45.2,-9,67.8,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,The Citadel Bulldogs,The Citadel
+2024-25,2024,toledo-rockets,109.4,113.9,50.5,56.4,11.8,13.5,28.7,26.8,28.6,-2.5,71.2,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Toledo Rockets,Toledo
+2024-25,2024,towson-tigers,104.5,102,47.9,50.8,12.1,15.2,34.2,22,37.2,-1.4,66.4,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Towson Tigers,Towson
+2024-25,2024,troy-trojans,104.8,96.5,49.8,47.5,16.5,16.8,37.1,26.2,45,-0.5,68.7,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Troy Trojans,Troy
+2024-25,2024,tulane-green-wave,105.2,102.4,51.7,49,14.1,14.9,23.2,25.9,39.4,-0.7,70,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Tulane Green Wave,Tulane
+2024-25,2024,tulsa-golden-hurricane,99.6,105.3,49.5,49.7,14.7,12.4,24.9,25,42.3,-2.6,70.4,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Tulsa Golden Hurricane,Tulsa
+2024-25,2024,uab-blazers,112.5,105.8,50.2,51.2,11.4,13.2,36,24.2,29.3,1.5,72.4,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,UAB Blazers,UAB
+2024-25,2024,uc-davis-aggies,94.4,101.4,46.3,50,17.3,18.7,25.7,26.8,35.5,-2.7,70.1,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,UC Davis Aggies,UC Davis
+2024-25,2024,uc-irvine-anteaters,104.9,93.3,51.7,45.8,15.9,15,25.6,25.8,35.3,0.9,72.2,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,UC Irvine Anteaters,UC Irvine
+2024-25,2024,uc-riverside-highlanders,104.5,107.1,49.4,52.2,13.7,13.6,29.7,21.4,42.3,-0.8,71.3,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,UC Riverside Highlanders,UC Riverside
+2024-25,2024,uc-san-diego-tritons,112.6,91.5,55.1,47.8,11.8,20.4,23,25.3,49.6,0.9,68.9,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,UC San Diego Tritons,UC San Diego
+2024-25,2024,uc-santa-barbara-gauchos,107.1,101.5,54.6,48.9,16,15,25.4,21.7,47.4,-2.9,68.4,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,UC Santa Barbara Gauchos,UC Santa Barbara
+2024-25,2024,central-florida-knights,105.2,106,49.7,51.1,14.2,15,29.5,26,41.7,9.6,75.8,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,UCF Knights,UCF
+2024-25,2024,ucla-bruins,110,96.7,52.8,50.1,13.7,20,31.9,24.2,36.5,12.4,67.5,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,UCLA Bruins,UCLA
+2024-25,2024,ul-monroe-warhawks,94.5,109.9,45,53.6,14.8,13.8,27.3,23.2,33.9,-6.1,70,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,UL Monroe Warhawks,ULM
+2024-25,2024,massachusetts-lowell-river-hawks,107,107,54.6,51.6,16.1,12.7,24.8,23,34.6,-5.1,71.1,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,UMass Lowell River Hawks,UMass Lowell
+2024-25,2024,umbc-retrievers,105.3,109.9,55.2,54.1,14.6,15,17.4,23.4,38.4,-6.3,73.4,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,UMBC Retrievers,UMBC
+2024-25,2024,unc-asheville-bulldogs,108.6,109.5,52,53.4,12.8,15.5,28.9,25.7,35,-4,72.6,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,UNC Asheville Bulldogs,UNC Asheville
+2024-25,2024,unc-greensboro-spartans,105.5,100.8,50.7,47.8,13.1,14.1,28.1,22.6,42.4,-2.4,66.7,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,UNC Greensboro Spartans,UNC Greensboro
+2024-25,2024,unc-wilmington-seahawks,111.5,102.4,52.1,50.8,13.6,14.9,34.4,27.3,36.4,-2.2,68.7,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,UNC Wilmington Seahawks,UNCW
+2024-25,2024,unlv-rebels,102.7,101,49.7,49.3,14.1,15.4,25.6,26.2,34.6,4.1,67.4,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,UNLV Rebels,UNLV
+2024-25,2024,southern-california-trojans,108.3,105.3,54.8,51.9,15.7,15.5,26.6,25.6,34.8,9.7,70.8,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,USC Trojans,Southern California
+2024-25,2024,texas-arlington-mavericks,102.7,106.5,51.7,50.4,16.5,14,30.9,26.2,42.2,-2.4,71.1,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,UT Arlington Mavericks,UT Arlington
+2024-25,2024,tenn-martin-skyhawks,99.9,104.2,47.6,52.3,16.4,16.3,32.5,24.9,47.3,-7.4,70.2,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,UT Martin Skyhawks,UT Martin
+2024-25,2024,texas-rio-grande-valley-vaqueros,102,105.7,51.7,51.4,16.5,15,28.5,17.2,49,-5.8,72.7,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,UT Rio Grande Valley Vaqueros,UTRGV
+2024-25,2024,utah-st-aggies,114.2,102.3,55.3,51.9,13.7,17.5,32.2,27.1,42.6,5.8,69,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Utah State Aggies,Utah St.
+2024-25,2024,utah-tech-trailblazers,96.6,108.9,48.8,53,16.1,15.1,23.9,24.3,39.8,-3.3,70.6,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Utah Tech Trailblazers,Utah Tech
+2024-25,2024,utah-utes,105.9,101.8,51.8,49,15.1,13.5,32.8,26.6,43.9,8.8,71.3,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Utah Utes,Utah
+2024-25,2024,utah-valley-wolverines,104.1,96.8,50.6,47.6,15,14.8,28.9,29.8,31.2,-0.9,71.3,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Utah Valley Wolverines,Utah Valley
+2024-25,2024,texas-el-paso-miners,100.6,102,49.3,52.4,15.1,18.7,23.3,26.9,36.2,-0.8,70.7,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,UTEP Miners,UTEP
+2024-25,2024,texas-san-antonio-roadrunners,103.6,107.9,49.7,53.3,13.6,17.7,25.3,22,44.1,-0.6,71.8,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,UTSA Roadrunners,UTSA
+2024-25,2024,valparaiso-beacons,103,107,47.7,53.7,12.2,15.1,25.2,25.4,38.4,-1.1,70.4,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Valparaiso Beacons,Valparaiso
+2024-25,2024,vanderbilt-commodores,109.9,103.5,51.5,52.7,12.5,17.4,29.1,25.3,40.4,10.1,71.8,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Vanderbilt Commodores,Vanderbilt
+2024-25,2024,vcu-rams,111.5,92.3,52.4,44.8,14,17.7,36.1,23.4,47.8,3.9,68.3,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,VCU Rams,VCU
+2024-25,2024,vermont-catamounts,98.7,99.4,49,48.8,15,13.8,24.1,22.1,43.5,-4.7,65.4,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Vermont Catamounts,Vermont
+2024-25,2024,villanova-wildcats,112.6,103.7,54.5,51.1,13.3,13.8,28.2,22.2,43.7,8.6,65.7,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Villanova Wildcats,Villanova
+2024-25,2024,virginia-cavaliers,102.9,106.1,52.7,50.8,14.7,13.6,20.6,19.9,42.8,6.4,62.9,teamrankings,2025-04-15,2026-03-17T14:27:13.158Z,Virginia Cavaliers,Virginia
+2024-25,2024,virginia-tech-hokies,101,106.8,51.2,52.3,17.5,14.1,28.4,22.3,40.4,4.9,68.5,teamrankings,2025-04-15,2026-03-17T14:27:13.159Z,Virginia Tech Hokies,Virginia Tech
+2024-25,2024,vmi-keydets,99.1,108.2,48.5,54.2,15.9,15.1,22.9,26.7,46.9,-5.8,69.8,teamrankings,2025-04-15,2026-03-17T14:27:13.159Z,VMI Keydets,VMI
+2024-25,2024,wagner-seahawks,91.7,100.4,43.7,50.4,16.4,16.2,30.1,21.5,37.6,-10.3,62.8,teamrankings,2025-04-15,2026-03-17T14:27:13.159Z,Wagner Seahawks,Wagner
+2024-25,2024,wake-forest-demon-deacons,100.8,97.7,49.4,47.2,14.7,17,24.8,26.1,35.2,8.1,69.6,teamrankings,2025-04-15,2026-03-17T14:27:13.159Z,Wake Forest Demon Deacons,Wake Forest
+2024-25,2024,washington-huskies,101.5,107.9,50.6,53,15.4,14.8,25.9,25,35.7,7.8,70.3,teamrankings,2025-04-15,2026-03-17T14:27:13.159Z,Washington Huskies,Washington
+2024-25,2024,washington-st-cougars,107,106.5,56.6,51.2,17.7,14.6,28.9,23.1,41.3,2.9,73.7,teamrankings,2025-04-15,2026-03-17T14:27:13.159Z,Washington State Cougars,Washington St.
+2024-25,2024,weber-st-wildcats,100.2,109.8,50.2,53.4,15.1,14.3,21.8,25.4,37.2,-4.4,67.7,teamrankings,2025-04-15,2026-03-17T14:27:13.159Z,Weber State Wildcats,Weber St.
+2024-25,2024,west-georgia-wolves,96.2,111.9,47.2,56.1,14.2,14.6,24.5,21.8,30.1,-5.5,70.5,teamrankings,2025-04-15,2026-03-17T14:27:13.159Z,West Georgia Wolves,West Ga.
+2024-25,2024,west-virginia-mountaineers,100.7,95.7,50,46.3,14.3,16.7,23.9,19.6,46.1,11.1,67.7,teamrankings,2025-04-15,2026-03-17T14:27:13.159Z,West Virginia Mountaineers,West Virginia
+2024-25,2024,western-carolina-catamounts,91,109.3,45.4,51.1,16.6,11.7,24.3,19.9,48.2,-6,73.7,teamrankings,2025-04-15,2026-03-17T14:27:13.159Z,Western Carolina Catamounts,Western Caro.
+2024-25,2024,western-illinois-leathernecks,98.9,108.9,50.1,51.1,15.9,12.3,25.3,20.2,37.2,-8.9,67.3,teamrankings,2025-04-15,2026-03-17T14:27:13.159Z,Western Illinois Leathernecks,Western Ill.
+2024-25,2024,western-kentucky-hilltoppers,98.3,100.3,47.9,47.4,13.8,14.8,21.1,24.1,39.7,-0.4,74.6,teamrankings,2025-04-15,2026-03-17T14:27:13.159Z,Western Kentucky Hilltoppers,Western Ky.
+2024-25,2024,western-michigan-broncos,101,108.6,47,54.5,13.3,14.6,32.3,23.5,32.9,-4.5,70.9,teamrankings,2025-04-15,2026-03-17T14:27:13.159Z,Western Michigan Broncos,Western Mich.
+2024-25,2024,wichita-st-shockers,102.5,101.9,48.6,50,14,13.5,29.9,25.8,28.4,1.4,71.8,teamrankings,2025-04-15,2026-03-17T14:27:13.159Z,Wichita State Shockers,Wichita St.
+2024-25,2024,william--mary-tribe,106,108.8,53.7,53.5,16.1,15.2,24.4,25.5,51.5,-3,72.1,teamrankings,2025-04-15,2026-03-17T14:27:13.159Z,William & Mary Tribe,William & Mary
+2024-25,2024,winthrop-eagles,107.2,104,53.3,51.4,15.4,16.2,28.6,33,38.4,-2.7,76.8,teamrankings,2025-04-15,2026-03-17T14:27:13.159Z,Winthrop Eagles,Winthrop
+2024-25,2024,wisconsin-badgers,113.5,100.4,53.8,48.1,12.3,12.6,24.8,25.8,48.2,12.6,70.6,teamrankings,2025-04-15,2026-03-17T14:27:13.159Z,Wisconsin Badgers,Wisconsin
+2024-25,2024,wofford-terriers,109.8,106.5,53.2,51.9,14.3,12.9,33.6,22.9,47.7,-0.5,66.5,teamrankings,2025-04-15,2026-03-17T14:27:13.159Z,Wofford Terriers,Wofford
+2024-25,2024,wright-st-raiders,108.7,110.2,56.3,53.2,15.7,12.4,25.7,20.1,37.8,-3.6,70.4,teamrankings,2025-04-15,2026-03-17T14:27:13.159Z,Wright State Raiders,Wright St.
+2024-25,2024,wyoming-cowboys,98,105.3,50.3,51,17.2,13.8,27.6,22,40.7,1.1,67.2,teamrankings,2025-04-15,2026-03-17T14:27:13.159Z,Wyoming Cowboys,Wyoming
+2024-25,2024,xavier-musketeers,109.3,100.2,54.1,51,14.1,15.6,20.9,27,37.6,9.8,71.4,teamrankings,2025-04-15,2026-03-17T14:27:13.159Z,Xavier Musketeers,Xavier
+2024-25,2024,yale-bulldogs,114.3,100.5,54.7,49.1,12.6,14.1,30.2,24.2,32.2,0.6,70.6,teamrankings,2025-04-15,2026-03-17T14:27:13.159Z,Yale Bulldogs,Yale
+2024-25,2024,youngstown-st-penguins,102.1,100.5,49.8,48.8,15.3,15.6,27.8,26.1,46.2,-4,72.2,teamrankings,2025-04-15,2026-03-17T14:27:13.159Z,Youngstown State Penguins,Youngstown St.

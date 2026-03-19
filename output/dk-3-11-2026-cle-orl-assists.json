@@ -1,0 +1,287 @@
+[
+  {
+    "playerName": "James Harden",
+    "statType": "A/G",
+    "statValue": "8.1",
+    "lines": [
+      {
+        "line": "4+",
+        "odds": "−1600"
+      },
+      {
+        "line": "5+",
+        "odds": "−630"
+      },
+      {
+        "line": "6+",
+        "odds": "−307"
+      },
+      {
+        "line": "7+",
+        "odds": "−165"
+      },
+      {
+        "line": "8+",
+        "odds": "+104"
+      },
+      {
+        "line": "9+",
+        "odds": "+175"
+      },
+      {
+        "line": "10+",
+        "odds": "+288"
+      },
+      {
+        "line": "11+",
+        "odds": "+483"
+      },
+      {
+        "line": "12+",
+        "odds": "+790"
+      },
+      {
+        "line": "13+",
+        "odds": "+1240"
+      },
+      {
+        "line": "14+",
+        "odds": "+1860"
+      },
+      {
+        "line": "15+",
+        "odds": "+2600"
+      }
+    ]
+  },
+  {
+    "playerName": "Jalen Suggs",
+    "statType": "A/G",
+    "statValue": "5.3",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−1660"
+      },
+      {
+        "line": "4+",
+        "odds": "−550"
+      },
+      {
+        "line": "5+",
+        "odds": "−245"
+      },
+      {
+        "line": "6+",
+        "odds": "−123"
+      },
+      {
+        "line": "7+",
+        "odds": "+149"
+      },
+      {
+        "line": "8+",
+        "odds": "+268"
+      },
+      {
+        "line": "9+",
+        "odds": "+476"
+      },
+      {
+        "line": "10+",
+        "odds": "+830"
+      },
+      {
+        "line": "11+",
+        "odds": "+1400"
+      },
+      {
+        "line": "12+",
+        "odds": "+2100"
+      }
+    ]
+  },
+  {
+    "playerName": "Donovan Mitchell",
+    "statType": "A/G",
+    "statValue": "5.8",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−900"
+      },
+      {
+        "line": "4+",
+        "odds": "−319"
+      },
+      {
+        "line": "5+",
+        "odds": "−148"
+      },
+      {
+        "line": "6+",
+        "odds": "+136"
+      },
+      {
+        "line": "7+",
+        "odds": "+260"
+      },
+      {
+        "line": "8+",
+        "odds": "+476"
+      },
+      {
+        "line": "9+",
+        "odds": "+870"
+      },
+      {
+        "line": "10+",
+        "odds": "+1540"
+      },
+      {
+        "line": "11+",
+        "odds": "+2400"
+      }
+    ]
+  },
+  {
+    "playerName": "Paolo Banchero",
+    "statType": "A/G",
+    "statValue": "5",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−500"
+      },
+      {
+        "line": "4+",
+        "odds": "−218"
+      },
+      {
+        "line": "5+",
+        "odds": "−107"
+      },
+      {
+        "line": "6+",
+        "odds": "+177"
+      },
+      {
+        "line": "7+",
+        "odds": "+322"
+      },
+      {
+        "line": "8+",
+        "odds": "+571"
+      },
+      {
+        "line": "9+",
+        "odds": "+980"
+      },
+      {
+        "line": "10+",
+        "odds": "+1620"
+      },
+      {
+        "line": "11+",
+        "odds": "+2400"
+      }
+    ]
+  },
+  {
+    "playerName": "Desmond Bane",
+    "statType": "A/G",
+    "statValue": "4.2",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−465"
+      },
+      {
+        "line": "4+",
+        "odds": "−183"
+      },
+      {
+        "line": "5+",
+        "odds": "+118"
+      },
+      {
+        "line": "6+",
+        "odds": "+238"
+      },
+      {
+        "line": "7+",
+        "odds": "+461"
+      },
+      {
+        "line": "8+",
+        "odds": "+870"
+      },
+      {
+        "line": "9+",
+        "odds": "+1580"
+      },
+      {
+        "line": "10+",
+        "odds": "+2500"
+      }
+    ]
+  },
+  {
+    "playerName": "Dennis Schroder",
+    "statType": "A/G",
+    "statValue": "5",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−184"
+      },
+      {
+        "line": "4+",
+        "odds": "+130"
+      },
+      {
+        "line": "5+",
+        "odds": "+288"
+      },
+      {
+        "line": "6+",
+        "odds": "+600"
+      },
+      {
+        "line": "7+",
+        "odds": "+1200"
+      },
+      {
+        "line": "8+",
+        "odds": "+2200"
+      }
+    ]
+  },
+  {
+    "playerName": "Jaylon Tyson",
+    "statType": "A/G",
+    "statValue": "2.2",
+    "lines": [
+      {
+        "line": "2+",
+        "odds": "−189"
+      },
+      {
+        "line": "3+",
+        "odds": "+152"
+      },
+      {
+        "line": "4+",
+        "odds": "+390"
+      },
+      {
+        "line": "5+",
+        "odds": "+920"
+      },
+      {
+        "line": "6+",
+        "odds": "+1900"
+      }
+    ]
+  }
+]

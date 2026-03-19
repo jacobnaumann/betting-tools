@@ -1,0 +1,337 @@
+[
+  {
+    "playerName": "LaMelo Ball",
+    "statType": "A/G",
+    "statValue": "7.2",
+    "lines": [
+      {
+        "line": "4+",
+        "odds": "−1400"
+      },
+      {
+        "line": "5+",
+        "odds": "−560"
+      },
+      {
+        "line": "6+",
+        "odds": "−279"
+      },
+      {
+        "line": "7+",
+        "odds": "−155"
+      },
+      {
+        "line": "8+",
+        "odds": "+111"
+      },
+      {
+        "line": "9+",
+        "odds": "+184"
+      },
+      {
+        "line": "10+",
+        "odds": "+304"
+      },
+      {
+        "line": "11+",
+        "odds": "+505"
+      },
+      {
+        "line": "12+",
+        "odds": "+800"
+      },
+      {
+        "line": "13+",
+        "odds": "+1260"
+      },
+      {
+        "line": "14+",
+        "odds": "+1960"
+      },
+      {
+        "line": "15+",
+        "odds": "+2700"
+      }
+    ]
+  },
+  {
+    "playerName": "Russell Westbrook",
+    "statType": "A/G",
+    "statValue": "6.5",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−1260"
+      },
+      {
+        "line": "4+",
+        "odds": "−512"
+      },
+      {
+        "line": "5+",
+        "odds": "−256"
+      },
+      {
+        "line": "6+",
+        "odds": "−143"
+      },
+      {
+        "line": "7+",
+        "odds": "+117"
+      },
+      {
+        "line": "8+",
+        "odds": "+191"
+      },
+      {
+        "line": "9+",
+        "odds": "+305"
+      },
+      {
+        "line": "10+",
+        "odds": "+486"
+      },
+      {
+        "line": "11+",
+        "odds": "+740"
+      },
+      {
+        "line": "12+",
+        "odds": "+1120"
+      },
+      {
+        "line": "13+",
+        "odds": "+1660"
+      },
+      {
+        "line": "14+",
+        "odds": "+2200"
+      }
+    ]
+  },
+  {
+    "playerName": "Brandon Miller",
+    "statType": "A/G",
+    "statValue": "3.4",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−233"
+      },
+      {
+        "line": "4+",
+        "odds": "+104"
+      },
+      {
+        "line": "5+",
+        "odds": "+230"
+      },
+      {
+        "line": "6+",
+        "odds": "+484"
+      },
+      {
+        "line": "7+",
+        "odds": "+960"
+      },
+      {
+        "line": "8+",
+        "odds": "+1800"
+      },
+      {
+        "line": "9+",
+        "odds": "+2900"
+      }
+    ]
+  },
+  {
+    "playerName": "DeMar DeRozan",
+    "statType": "A/G",
+    "statValue": "3.8",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−211"
+      },
+      {
+        "line": "4+",
+        "odds": "+114"
+      },
+      {
+        "line": "5+",
+        "odds": "+244"
+      },
+      {
+        "line": "6+",
+        "odds": "+490"
+      },
+      {
+        "line": "7+",
+        "odds": "+960"
+      },
+      {
+        "line": "8+",
+        "odds": "+1840"
+      },
+      {
+        "line": "9+",
+        "odds": "+2900"
+      }
+    ]
+  },
+  {
+    "playerName": "Nique Clifford",
+    "statType": "A/G",
+    "statValue": "1.9",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−184"
+      },
+      {
+        "line": "4+",
+        "odds": "+127"
+      },
+      {
+        "line": "5+",
+        "odds": "+268"
+      },
+      {
+        "line": "6+",
+        "odds": "+555"
+      },
+      {
+        "line": "7+",
+        "odds": "+1080"
+      },
+      {
+        "line": "8+",
+        "odds": "+1920"
+      },
+      {
+        "line": "9+",
+        "odds": "+2900"
+      }
+    ]
+  },
+  {
+    "playerName": "Coby White",
+    "statType": "A/G",
+    "statValue": "4.6",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−205"
+      },
+      {
+        "line": "4+",
+        "odds": "+120"
+      },
+      {
+        "line": "5+",
+        "odds": "+271"
+      },
+      {
+        "line": "6+",
+        "odds": "+563"
+      },
+      {
+        "line": "7+",
+        "odds": "+1120"
+      },
+      {
+        "line": "8+",
+        "odds": "+1900"
+      }
+    ]
+  },
+  {
+    "playerName": "Kon Knueppel",
+    "statType": "A/G",
+    "statValue": "3.4",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−180"
+      },
+      {
+        "line": "4+",
+        "odds": "+131"
+      },
+      {
+        "line": "5+",
+        "odds": "+288"
+      },
+      {
+        "line": "6+",
+        "odds": "+600"
+      },
+      {
+        "line": "7+",
+        "odds": "+1200"
+      },
+      {
+        "line": "8+",
+        "odds": "+2200"
+      }
+    ]
+  },
+  {
+    "playerName": "Miles Bridges",
+    "statType": "A/G",
+    "statValue": "3.4",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−182"
+      },
+      {
+        "line": "4+",
+        "odds": "+135"
+      },
+      {
+        "line": "5+",
+        "odds": "+303"
+      },
+      {
+        "line": "6+",
+        "odds": "+630"
+      },
+      {
+        "line": "7+",
+        "odds": "+1320"
+      },
+      {
+        "line": "8+",
+        "odds": "+2300"
+      }
+    ]
+  },
+  {
+    "playerName": "Moussa Diabate",
+    "statType": "A/G",
+    "statValue": "1.8",
+    "lines": [
+      {
+        "line": "2+",
+        "odds": "−185"
+      },
+      {
+        "line": "3+",
+        "odds": "+159"
+      },
+      {
+        "line": "4+",
+        "odds": "+407"
+      },
+      {
+        "line": "5+",
+        "odds": "+940"
+      },
+      {
+        "line": "6+",
+        "odds": "+1900"
+      }
+    ]
+  }
+]

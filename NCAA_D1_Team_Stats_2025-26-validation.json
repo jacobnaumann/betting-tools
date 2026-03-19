@@ -1,0 +1,55 @@
+{
+  "season": "2025-26",
+  "startYear": 2025,
+  "asOfDate": "2026-04-15",
+  "expectedTeams": 365,
+  "rowsWritten": 365,
+  "source": "teamrankings",
+  "metricUrls": {
+    "offensive_efficiency": "https://www.teamrankings.com/ncaa-basketball/stat/offensive-efficiency?date=2026-04-15",
+    "defensive_efficiency": "https://www.teamrankings.com/ncaa-basketball/stat/defensive-efficiency?date=2026-04-15",
+    "effective_fg_pct": "https://www.teamrankings.com/ncaa-basketball/stat/effective-field-goal-pct?date=2026-04-15",
+    "opp_effective_fg_pct": "https://www.teamrankings.com/ncaa-basketball/stat/opponent-effective-field-goal-pct?date=2026-04-15",
+    "turnover_rate": "https://www.teamrankings.com/ncaa-basketball/stat/turnover-pct?date=2026-04-15",
+    "opp_turnover_rate": "https://www.teamrankings.com/ncaa-basketball/stat/opponent-turnover-pct?date=2026-04-15",
+    "offensive_rebound_rate": "https://www.teamrankings.com/ncaa-basketball/stat/offensive-rebounding-pct?date=2026-04-15",
+    "free_throw_rate": "https://www.teamrankings.com/ncaa-basketball/stat/free-throw-rate?date=2026-04-15",
+    "pace": "https://www.teamrankings.com/ncaa-basketball/stat/possessions-per-game?date=2026-04-15"
+  },
+  "metricCoverage": {
+    "offensive_efficiency": 365,
+    "defensive_efficiency": 365,
+    "effective_fg_pct": 365,
+    "opp_effective_fg_pct": 365,
+    "turnover_rate": 365,
+    "opp_turnover_rate": 365,
+    "offensive_rebound_rate": 365,
+    "free_throw_rate": 365,
+    "pace": 365
+  },
+  "missingByMetric": {
+    "offensive_efficiency": 0,
+    "defensive_efficiency": 0,
+    "effective_fg_pct": 0,
+    "opp_effective_fg_pct": 0,
+    "turnover_rate": 0,
+    "opp_turnover_rate": 0,
+    "offensive_rebound_rate": 0,
+    "free_throw_rate": 0,
+    "pace": 0
+  },
+  "teamsMissingAtLeastOneMetric": 0,
+  "unresolvedMetricTeamSlugs": {
+    "offensive_efficiency": [],
+    "defensive_efficiency": [],
+    "effective_fg_pct": [],
+    "opp_effective_fg_pct": [],
+    "turnover_rate": [],
+    "opp_turnover_rate": [],
+    "offensive_rebound_rate": [],
+    "free_throw_rate": [],
+    "pace": []
+  },
+  "scrapeErrors": [],
+  "generatedAtUtc": "2026-03-16T03:53:09.001Z"
+}

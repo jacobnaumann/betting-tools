@@ -1,0 +1,31 @@
+---
+description: BetLab backend API conventions
+alwaysApply: false
+---
+
+# BetLab Backend
+
+- Backend runtime is Node.js + Express (CommonJS).
+- Server entrypoint is `backend/src/server.js`.
+- Express app setup belongs in `backend/src/app.js`.
+- Maintain backend process docs in `docs/backend-process.md`.
+
+# Routing Conventions
+
+- Mount all API endpoints under `/api`.
+- Keep route modules in `backend/src/routes`.
+- Keep a simple health endpoint at `/api/health`.
+
+# Middleware Conventions
+
+- Keep middleware in `backend/src/middleware`.
+- Use centralized not-found and error-handler middleware.
+- Return JSON errors using `{ ok: false, error: "<message>" }`.
+- Log unexpected 5xx errors in the centralized error handler.
+
+# Environment Conventions
+
+- Keep local environment template in `backend/.env.example`.
+- Expected vars:
+  - `PORT`
+  - `CORS_ORIGIN`

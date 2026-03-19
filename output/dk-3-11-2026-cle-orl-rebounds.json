@@ -1,0 +1,447 @@
+[
+  {
+    "playerName": "Evan Mobley",
+    "statType": "RPG",
+    "statValue": "8.6",
+    "lines": [
+      {
+        "line": "5+",
+        "odds": "−2700"
+      },
+      {
+        "line": "6+",
+        "odds": "−950"
+      },
+      {
+        "line": "7+",
+        "odds": "−440"
+      },
+      {
+        "line": "8+",
+        "odds": "−236"
+      },
+      {
+        "line": "9+",
+        "odds": "−137"
+      },
+      {
+        "line": "10+",
+        "odds": "+119"
+      },
+      {
+        "line": "11+",
+        "odds": "+189"
+      },
+      {
+        "line": "12+",
+        "odds": "+300"
+      },
+      {
+        "line": "13+",
+        "odds": "+474"
+      },
+      {
+        "line": "14+",
+        "odds": "+750"
+      },
+      {
+        "line": "15+",
+        "odds": "+1160"
+      },
+      {
+        "line": "16+",
+        "odds": "+1740"
+      }
+    ]
+  },
+  {
+    "playerName": "Paolo Banchero",
+    "statType": "RPG",
+    "statValue": "8.6",
+    "lines": [
+      {
+        "line": "5+",
+        "odds": "−1660"
+      },
+      {
+        "line": "6+",
+        "odds": "−640"
+      },
+      {
+        "line": "7+",
+        "odds": "−314"
+      },
+      {
+        "line": "8+",
+        "odds": "−174"
+      },
+      {
+        "line": "9+",
+        "odds": "+100"
+      },
+      {
+        "line": "10+",
+        "odds": "+164"
+      },
+      {
+        "line": "11+",
+        "odds": "+269"
+      },
+      {
+        "line": "12+",
+        "odds": "+443"
+      },
+      {
+        "line": "13+",
+        "odds": "+720"
+      },
+      {
+        "line": "14+",
+        "odds": "+1180"
+      }
+    ]
+  },
+  {
+    "playerName": "Wendell Carter Jr.",
+    "statType": "RPG",
+    "statValue": "7.5",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−3300"
+      },
+      {
+        "line": "4+",
+        "odds": "−900"
+      },
+      {
+        "line": "5+",
+        "odds": "−404"
+      },
+      {
+        "line": "6+",
+        "odds": "−210"
+      },
+      {
+        "line": "7+",
+        "odds": "−120"
+      },
+      {
+        "line": "8+",
+        "odds": "+141"
+      },
+      {
+        "line": "9+",
+        "odds": "+229"
+      },
+      {
+        "line": "10+",
+        "odds": "+383"
+      },
+      {
+        "line": "11+",
+        "odds": "+610"
+      },
+      {
+        "line": "12+",
+        "odds": "+940"
+      },
+      {
+        "line": "13+",
+        "odds": "+1420"
+      }
+    ]
+  },
+  {
+    "playerName": "James Harden",
+    "statType": "RPG",
+    "statValue": "4.9",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−720"
+      },
+      {
+        "line": "4+",
+        "odds": "−292"
+      },
+      {
+        "line": "5+",
+        "odds": "−141"
+      },
+      {
+        "line": "6+",
+        "odds": "+132"
+      },
+      {
+        "line": "7+",
+        "odds": "+242"
+      },
+      {
+        "line": "8+",
+        "odds": "+426"
+      },
+      {
+        "line": "9+",
+        "odds": "+730"
+      },
+      {
+        "line": "10+",
+        "odds": "+1200"
+      }
+    ]
+  },
+  {
+    "playerName": "Moritz Wagner",
+    "statType": "RPG",
+    "statValue": "3.4",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−271"
+      },
+      {
+        "line": "4+",
+        "odds": "−138"
+      },
+      {
+        "line": "5+",
+        "odds": "+128"
+      },
+      {
+        "line": "6+",
+        "odds": "+216"
+      },
+      {
+        "line": "7+",
+        "odds": "+350"
+      },
+      {
+        "line": "8+",
+        "odds": "+537"
+      },
+      {
+        "line": "9+",
+        "odds": "+810"
+      },
+      {
+        "line": "10+",
+        "odds": "+1220"
+      }
+    ]
+  },
+  {
+    "playerName": "Tristan da Silva",
+    "statType": "RPG",
+    "statValue": "3.7",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−538"
+      },
+      {
+        "line": "4+",
+        "odds": "−233"
+      },
+      {
+        "line": "5+",
+        "odds": "−119"
+      },
+      {
+        "line": "6+",
+        "odds": "+155"
+      },
+      {
+        "line": "7+",
+        "odds": "+268"
+      },
+      {
+        "line": "8+",
+        "odds": "+458"
+      },
+      {
+        "line": "9+",
+        "odds": "+750"
+      },
+      {
+        "line": "10+",
+        "odds": "+1240"
+      }
+    ]
+  },
+  {
+    "playerName": "Jaylon Tyson",
+    "statType": "RPG",
+    "statValue": "5.2",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−620"
+      },
+      {
+        "line": "4+",
+        "odds": "−251"
+      },
+      {
+        "line": "5+",
+        "odds": "−118"
+      },
+      {
+        "line": "6+",
+        "odds": "+162"
+      },
+      {
+        "line": "7+",
+        "odds": "+297"
+      },
+      {
+        "line": "8+",
+        "odds": "+543"
+      },
+      {
+        "line": "9+",
+        "odds": "+930"
+      },
+      {
+        "line": "10+",
+        "odds": "+1560"
+      }
+    ]
+  },
+  {
+    "playerName": "Donovan Mitchell",
+    "statType": "RPG",
+    "statValue": "4.5",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−569"
+      },
+      {
+        "line": "4+",
+        "odds": "−218"
+      },
+      {
+        "line": "5+",
+        "odds": "+101"
+      },
+      {
+        "line": "6+",
+        "odds": "+204"
+      },
+      {
+        "line": "7+",
+        "odds": "+392"
+      },
+      {
+        "line": "8+",
+        "odds": "+760"
+      },
+      {
+        "line": "9+",
+        "odds": "+1340"
+      }
+    ]
+  },
+  {
+    "playerName": "Dean Wade",
+    "statType": "RPG",
+    "statValue": "4.3",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−405"
+      },
+      {
+        "line": "4+",
+        "odds": "−169"
+      },
+      {
+        "line": "5+",
+        "odds": "+125"
+      },
+      {
+        "line": "6+",
+        "odds": "+246"
+      },
+      {
+        "line": "7+",
+        "odds": "+458"
+      },
+      {
+        "line": "8+",
+        "odds": "+820"
+      },
+      {
+        "line": "9+",
+        "odds": "+1440"
+      }
+    ]
+  },
+  {
+    "playerName": "Desmond Bane",
+    "statType": "RPG",
+    "statValue": "4.2",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−492"
+      },
+      {
+        "line": "4+",
+        "odds": "−194"
+      },
+      {
+        "line": "5+",
+        "odds": "+111"
+      },
+      {
+        "line": "6+",
+        "odds": "+223"
+      },
+      {
+        "line": "7+",
+        "odds": "+439"
+      },
+      {
+        "line": "8+",
+        "odds": "+830"
+      },
+      {
+        "line": "9+",
+        "odds": "+1460"
+      }
+    ]
+  },
+  {
+    "playerName": "Jalen Suggs",
+    "statType": "RPG",
+    "statValue": "3.8",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−243"
+      },
+      {
+        "line": "4+",
+        "odds": "−101"
+      },
+      {
+        "line": "5+",
+        "odds": "+213"
+      },
+      {
+        "line": "6+",
+        "odds": "+439"
+      },
+      {
+        "line": "7+",
+        "odds": "+870"
+      },
+      {
+        "line": "8+",
+        "odds": "+1620"
+      }
+    ]
+  }
+]

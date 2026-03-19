@@ -1,0 +1,431 @@
+[
+  {
+    "playerName": "Jakob Poeltl",
+    "statType": "RPG",
+    "statValue": "7.5",
+    "lines": [
+      {
+        "line": "5+",
+        "odds": "−1240"
+      },
+      {
+        "line": "6+",
+        "odds": "−544"
+      },
+      {
+        "line": "7+",
+        "odds": "−280"
+      },
+      {
+        "line": "8+",
+        "odds": "−155"
+      },
+      {
+        "line": "9+",
+        "odds": "+110"
+      },
+      {
+        "line": "10+",
+        "odds": "+183"
+      },
+      {
+        "line": "11+",
+        "odds": "+290"
+      },
+      {
+        "line": "12+",
+        "odds": "+467"
+      },
+      {
+        "line": "13+",
+        "odds": "+750"
+      },
+      {
+        "line": "14+",
+        "odds": "+1160"
+      },
+      {
+        "line": "15+",
+        "odds": "+1680"
+      }
+    ]
+  },
+  {
+    "playerName": "RJ Barrett",
+    "statType": "RPG",
+    "statValue": "5.4",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−1760"
+      },
+      {
+        "line": "4+",
+        "odds": "−583"
+      },
+      {
+        "line": "5+",
+        "odds": "−261"
+      },
+      {
+        "line": "6+",
+        "odds": "−133"
+      },
+      {
+        "line": "7+",
+        "odds": "+139"
+      },
+      {
+        "line": "8+",
+        "odds": "+247"
+      },
+      {
+        "line": "9+",
+        "odds": "+423"
+      },
+      {
+        "line": "10+",
+        "odds": "+720"
+      },
+      {
+        "line": "11+",
+        "odds": "+1200"
+      }
+    ]
+  },
+  {
+    "playerName": "Zion Williamson",
+    "statType": "RPG",
+    "statValue": "5.9",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−2500"
+      },
+      {
+        "line": "4+",
+        "odds": "−720"
+      },
+      {
+        "line": "5+",
+        "odds": "−302"
+      },
+      {
+        "line": "6+",
+        "odds": "−149"
+      },
+      {
+        "line": "7+",
+        "odds": "+126"
+      },
+      {
+        "line": "8+",
+        "odds": "+231"
+      },
+      {
+        "line": "9+",
+        "odds": "+412"
+      },
+      {
+        "line": "10+",
+        "odds": "+730"
+      },
+      {
+        "line": "11+",
+        "odds": "+1240"
+      }
+    ]
+  },
+  {
+    "playerName": "Saddiq Bey",
+    "statType": "RPG",
+    "statValue": "5.8",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−1720"
+      },
+      {
+        "line": "4+",
+        "odds": "−568"
+      },
+      {
+        "line": "5+",
+        "odds": "−255"
+      },
+      {
+        "line": "6+",
+        "odds": "−130"
+      },
+      {
+        "line": "7+",
+        "odds": "+140"
+      },
+      {
+        "line": "8+",
+        "odds": "+246"
+      },
+      {
+        "line": "9+",
+        "odds": "+439"
+      },
+      {
+        "line": "10+",
+        "odds": "+770"
+      },
+      {
+        "line": "11+",
+        "odds": "+1260"
+      }
+    ]
+  },
+  {
+    "playerName": "Dejounte Murray",
+    "statType": "RPG",
+    "statValue": "5.3",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−1100"
+      },
+      {
+        "line": "4+",
+        "odds": "−407"
+      },
+      {
+        "line": "5+",
+        "odds": "−185"
+      },
+      {
+        "line": "6+",
+        "odds": "+103"
+      },
+      {
+        "line": "7+",
+        "odds": "+185"
+      },
+      {
+        "line": "8+",
+        "odds": "+325"
+      },
+      {
+        "line": "9+",
+        "odds": "+554"
+      },
+      {
+        "line": "10+",
+        "odds": "+950"
+      },
+      {
+        "line": "11+",
+        "odds": "+1500"
+      }
+    ]
+  },
+  {
+    "playerName": "Brandon Ingram",
+    "statType": "RPG",
+    "statValue": "5.7",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−1340"
+      },
+      {
+        "line": "4+",
+        "odds": "−462"
+      },
+      {
+        "line": "5+",
+        "odds": "−204"
+      },
+      {
+        "line": "6+",
+        "odds": "−104"
+      },
+      {
+        "line": "7+",
+        "odds": "+176"
+      },
+      {
+        "line": "8+",
+        "odds": "+317"
+      },
+      {
+        "line": "9+",
+        "odds": "+572"
+      },
+      {
+        "line": "10+",
+        "odds": "+1000"
+      },
+      {
+        "line": "11+",
+        "odds": "+1640"
+      }
+    ]
+  },
+  {
+    "playerName": "Derik Queen",
+    "statType": "RPG",
+    "statValue": "7.1",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−473"
+      },
+      {
+        "line": "4+",
+        "odds": "−211"
+      },
+      {
+        "line": "5+",
+        "odds": "+100"
+      },
+      {
+        "line": "6+",
+        "odds": "+174"
+      },
+      {
+        "line": "7+",
+        "odds": "+288"
+      },
+      {
+        "line": "8+",
+        "odds": "+480"
+      },
+      {
+        "line": "9+",
+        "odds": "+760"
+      },
+      {
+        "line": "10+",
+        "odds": "+1160"
+      }
+    ]
+  },
+  {
+    "playerName": "Trey Murphy III",
+    "statType": "RPG",
+    "statValue": "5.6",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−840"
+      },
+      {
+        "line": "4+",
+        "odds": "−301"
+      },
+      {
+        "line": "5+",
+        "odds": "−137"
+      },
+      {
+        "line": "6+",
+        "odds": "+145"
+      },
+      {
+        "line": "7+",
+        "odds": "+279"
+      },
+      {
+        "line": "8+",
+        "odds": "+513"
+      },
+      {
+        "line": "9+",
+        "odds": "+930"
+      },
+      {
+        "line": "10+",
+        "odds": "+1620"
+      }
+    ]
+  },
+  {
+    "playerName": "Immanuel Quickley",
+    "statType": "RPG",
+    "statValue": "4.1",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−277"
+      },
+      {
+        "line": "4+",
+        "odds": "−112"
+      },
+      {
+        "line": "5+",
+        "odds": "+189"
+      },
+      {
+        "line": "6+",
+        "odds": "+384"
+      },
+      {
+        "line": "7+",
+        "odds": "+760"
+      },
+      {
+        "line": "8+",
+        "odds": "+1400"
+      }
+    ]
+  },
+  {
+    "playerName": "Herbert Jones",
+    "statType": "RPG",
+    "statValue": "3.5",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−191"
+      },
+      {
+        "line": "4+",
+        "odds": "+130"
+      },
+      {
+        "line": "5+",
+        "odds": "+290"
+      },
+      {
+        "line": "6+",
+        "odds": "+610"
+      },
+      {
+        "line": "7+",
+        "odds": "+1240"
+      }
+    ]
+  },
+  {
+    "playerName": "Jeremiah Fears",
+    "statType": "RPG",
+    "statValue": "3.7",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−159"
+      },
+      {
+        "line": "4+",
+        "odds": "+151"
+      },
+      {
+        "line": "5+",
+        "odds": "+328"
+      },
+      {
+        "line": "6+",
+        "odds": "+670"
+      },
+      {
+        "line": "7+",
+        "odds": "+1240"
+      }
+    ]
+  }
+]

@@ -1,0 +1,808 @@
+year,month,day,team,opponent,location,teamscore,oppscore,d1
+2025,11,3,Abilene Christian Wildcats,McMurry,H,92,55,1
+2025,11,6,Abilene Christian Wildcats,Omaha,H,73,71,2
+2025,11,11,Abilene Christian Wildcats,SW Adventist,H,104,63,1
+2025,11,14,Abilene Christian Wildcats,SF Austin,V,66,76,2
+2025,11,18,Abilene Christian Wildcats,Texas St,V,49,63,2
+2025,11,24,Abilene Christian Wildcats,UTSA,N,61,50,2
+2025,11,25,Abilene Christian Wildcats,William & Mary,N,58,92,2
+2025,11,28,Abilene Christian Wildcats,Jarvis Christian,H,87,55,1
+2025,12,2,Abilene Christian Wildcats,Pepperdine,V,71,63,2
+2025,12,6,Abilene Christian Wildcats,New Mexico St,H,77,69,2
+2025,12,16,Abilene Christian Wildcats,Arizona,V,62,96,2
+2025,12,19,Abilene Christian Wildcats,BYU,V,67,85,2
+2025,12,22,Abilene Christian Wildcats,Texas So,V,75,68,2
+2026,1,1,Abilene Christian Wildcats,Utah Tech,H,64,79,2
+2026,1,3,Abilene Christian Wildcats,Utah Valley,H,85,68,2
+2026,1,8,Abilene Christian Wildcats,Tarleton St,V,84,80,2
+2026,1,10,Abilene Christian Wildcats,UT Arlington,V,72,82,2
+2026,1,15,Abilene Christian Wildcats,Cal Baptist,H,58,74,2
+2026,1,17,Abilene Christian Wildcats,S Utah,V,52,74,2
+2026,1,29,Abilene Christian Wildcats,Utah Tech,H,70,76,2
+2026,1,31,Abilene Christian Wildcats,S Utah,H,76,79,2
+2026,2,5,Abilene Christian Wildcats,Utah Valley,V,55,68,2
+2026,2,7,Abilene Christian Wildcats,Cal Baptist,V,63,65,2
+2026,2,12,Abilene Christian Wildcats,UT Arlington,H,67,63,2
+2026,2,14,Abilene Christian Wildcats,Tarleton St,H,73,59,2
+2026,2,16,Abilene Christian Wildcats,Tarleton St,V,62,65,2
+2026,2,21,Abilene Christian Wildcats,S Utah,H,87,83,2
+2026,2,26,Abilene Christian Wildcats,Utah Tech,V,81,85,2
+2026,2,28,Abilene Christian Wildcats,Utah Valley,V,67,74,2
+2026,3,5,Abilene Christian Wildcats,Cal Baptist,V,48,87,2
+2026,3,7,Abilene Christian Wildcats,UT Arlington,H,57,64,2
+2026,3,11,Abilene Christian Wildcats,Tarleton St,N,84,78,2
+2026,3,12,Abilene Christian Wildcats,Utah Tech,N,74,80,2
+2025,11,3,Air Force Falcons,Belmont,V,63,79,2
+2025,11,8,Air Force Falcons,Austin Peay,H,54,74,2
+2025,11,11,Air Force Falcons,LIU,H,72,76,2
+2025,11,15,Air Force Falcons,Miami OH,H,61,76,2
+2025,11,19,Air Force Falcons,Alabama St,H,66,64,2
+2025,11,21,Air Force Falcons,SIU Edward,H,77,63,2
+2025,11,23,Air Force Falcons,IU Indy,H,98,85,2
+2025,11,26,Air Force Falcons,N Colorado,H,53,71,2
+2025,11,29,Air Force Falcons,South Dakota,N,63,80,2
+2025,12,3,Air Force Falcons,Pacific,H,65,80,2
+2025,12,7,Air Force Falcons,Navy,V,56,61,2
+2025,12,17,Air Force Falcons,San Diego St,V,58,81,2
+2025,12,30,Air Force Falcons,Wyoming,H,56,68,2
+2026,1,3,Air Force Falcons,UNLV,V,39,67,2
+2026,1,6,Air Force Falcons,Utah St,H,62,99,2
+2026,1,10,Air Force Falcons,New Mexico,H,49,91,2
+2026,1,13,Air Force Falcons,San Jose St,V,62,70,2
+2026,1,17,Air Force Falcons,Nevada,H,66,81,2
+2026,1,20,Air Force Falcons,Colorado St,V,52,81,2
+2026,1,24,Air Force Falcons,Boise St,V,54,96,2
+2026,1,31,Air Force Falcons,Fresno St,H,62,79,2
+2026,2,3,Air Force Falcons,Grand Canyon,V,57,81,2
+2026,2,7,Air Force Falcons,San Diego St,H,54,88,2
+2026,2,10,Air Force Falcons,Colorado St,H,74,91,2
+2026,2,14,Air Force Falcons,Fresno St,V,63,93,2
+2026,2,17,Air Force Falcons,New Mexico,V,61,98,2
+2026,2,21,Air Force Falcons,UNLV,H,66,91,2
+2026,2,24,Air Force Falcons,San Jose St,H,80,86,2
+2026,2,28,Air Force Falcons,Wyoming,V,62,66,2
+2026,3,3,Air Force Falcons,Grand Canyon,H,60,86,2
+2026,3,7,Air Force Falcons,Nevada,V,59,74,2
+2026,3,11,Air Force Falcons,Nevada,N,45,80,2
+2025,11,3,Akron Zips,J Madison,H,85,71,2
+2025,11,8,Akron Zips,Princeton,H,104,69,2
+2025,11,12,Akron Zips,Penn State Shenango,H,109,51,1
+2025,11,16,Akron Zips,Purdue,V,79,97,2
+2025,11,21,Akron Zips,Iona,N,96,75,2
+2025,11,23,Akron Zips,Evansville,N,97,59,2
+2025,11,24,Akron Zips,Yale,N,94,97,2
+2025,11,29,Akron Zips,Milwaukee,H,105,81,2
+2025,12,3,Akron Zips,Bucknell,H,97,77,2
+2025,12,6,Akron Zips,Tulane,V,88,71,2
+2025,12,13,Akron Zips,Murray St,N,100,115,2
+2025,12,19,Akron Zips,E Michigan,H,93,72,2
+2025,12,29,Akron Zips,Concord College,H,115,64,1
+2026,1,3,Akron Zips,Miami OH,V,73,76,2
+2026,1,6,Akron Zips,C Michigan,H,82,69,2
+2026,1,9,Akron Zips,Bowling Green,V,77,67,2
+2026,1,13,Akron Zips,Ball St,H,87,77,2
+2026,1,17,Akron Zips,W Michigan,H,104,89,2
+2026,1,20,Akron Zips,Buffalo,V,82,63,2
+2026,1,23,Akron Zips,Ohio,V,86,65,2
+2026,1,27,Akron Zips,Toledo,H,91,81,2
+2026,1,30,Akron Zips,Kent St,H,69,52,2
+2026,2,3,Akron Zips,E Michigan,V,66,64,2
+2026,2,7,Akron Zips,Troy,V,69,79,2
+2026,2,13,Akron Zips,UMass,H,99,92,2
+2026,2,17,Akron Zips,W Michigan,V,90,73,2
+2026,2,20,Akron Zips,Ball St,V,78,65,2
+2026,2,24,Akron Zips,Buffalo,H,99,85,2
+2026,2,27,Akron Zips,Kent St,V,92,70,2
+2026,3,3,Akron Zips,C Michigan,V,77,64,2
+2026,3,6,Akron Zips,N Illinois,H,94,55,2
+2026,3,12,Akron Zips,Buffalo,N,73,70,2
+2026,3,13,Akron Zips,Kent St,N,75,68,2
+2026,3,14,Akron Zips,Toledo,N,79,76,2
+2025,11,3,Alabama A&M Bulldogs,Blue Mountain College,H,80,60,1
+2025,11,5,Alabama A&M Bulldogs,Indiana,V,51,98,2
+2025,11,13,Alabama A&M Bulldogs,Charleston So,H,68,64,2
+2025,11,16,Alabama A&M Bulldogs,Lindenwood,H,74,65,2
+2025,11,28,Alabama A&M Bulldogs,Clemson,V,56,92,2
+2025,11,30,Alabama A&M Bulldogs,Coastal Car,V,60,67,2
+2025,12,3,Alabama A&M Bulldogs,Tennessee St,H,80,53,2
+2025,12,7,Alabama A&M Bulldogs,Lipscomb,V,58,92,2
+2025,12,13,Alabama A&M Bulldogs,Arkansas Baptist,H,67,59,1
+2025,12,15,Alabama A&M Bulldogs,N Alabama,H,68,60,2
+2025,12,17,Alabama A&M Bulldogs,Mississippi,N,66,80,2
+2025,12,21,Alabama A&M Bulldogs,Chattanooga,H,66,73,2
+2025,12,30,Alabama A&M Bulldogs,Fisk,H,90,58,1
+2026,1,3,Alabama A&M Bulldogs,AR-Pine Bluff,V,83,95,2
+2026,1,5,Alabama A&M Bulldogs,Miss Valley St,V,71,51,2
+2026,1,10,Alabama A&M Bulldogs,Alcorn St,H,62,64,2
+2026,1,12,Alabama A&M Bulldogs,Jackson St,H,100,91,2
+2026,1,19,Alabama A&M Bulldogs,Alabama St,N,73,69,2
+2026,1,24,Alabama A&M Bulldogs,Texas So,V,74,89,2
+2026,1,27,Alabama A&M Bulldogs,Prairie View,V,80,60,2
+2026,1,31,Alabama A&M Bulldogs,Florida A&M,H,72,65,2
+2026,2,2,Alabama A&M Bulldogs,Bethune,H,62,80,2
+2026,2,7,Alabama A&M Bulldogs,Southern,V,68,81,2
+2026,2,9,Alabama A&M Bulldogs,Grambling,V,66,58,2
+2026,2,14,Alabama A&M Bulldogs,Miss Valley St,H,72,65,2
+2026,2,16,Alabama A&M Bulldogs,AR-Pine Bluff,H,82,70,2
+2026,2,19,Alabama A&M Bulldogs,Florida A&M,V,63,61,2
+2026,2,21,Alabama A&M Bulldogs,Bethune,V,76,85,2
+2026,2,28,Alabama A&M Bulldogs,Alabama St,H,88,89,2
+2026,3,3,Alabama A&M Bulldogs,Grambling,H,77,63,2
+2026,3,5,Alabama A&M Bulldogs,Southern,H,85,88,2
+2026,3,12,Alabama A&M Bulldogs,Texas So,N,85,74,2
+2026,3,13,Alabama A&M Bulldogs,Prairie View,N,55,74,2
+2025,11,3,Alabama Crimson Tide,North Dakota,H,91,62,2
+2025,11,8,Alabama Crimson Tide,St John's,V,103,96,2
+2025,11,13,Alabama Crimson Tide,Purdue,H,80,87,2
+2025,11,19,Alabama Crimson Tide,Illinois,N,90,86,2
+2025,11,24,Alabama Crimson Tide,Gonzaga,N,85,95,2
+2025,11,25,Alabama Crimson Tide,UNLV,N,115,76,2
+2025,11,26,Alabama Crimson Tide,Maryland,N,105,72,2
+2025,12,3,Alabama Crimson Tide,Clemson,H,90,84,2
+2025,12,7,Alabama Crimson Tide,UTSA,H,97,55,2
+2025,12,13,Alabama Crimson Tide,Arizona,N,75,96,2
+2025,12,17,Alabama Crimson Tide,S Florida,H,104,93,2
+2025,12,21,Alabama Crimson Tide,Kennesaw St,N,92,81,2
+2025,12,29,Alabama Crimson Tide,Yale,H,102,78,2
+2026,1,3,Alabama Crimson Tide,Kentucky,H,89,74,2
+2026,1,7,Alabama Crimson Tide,Vanderbilt,V,90,96,2
+2026,1,10,Alabama Crimson Tide,Texas,H,88,92,2
+2026,1,13,Alabama Crimson Tide,Mississippi St,V,97,82,2
+2026,1,17,Alabama Crimson Tide,Oklahoma,V,83,81,2
+2026,1,24,Alabama Crimson Tide,Tennessee,H,73,79,2
+2026,1,27,Alabama Crimson Tide,Missouri,H,90,64,2
+2026,2,1,Alabama Crimson Tide,Florida,V,77,100,2
+2026,2,4,Alabama Crimson Tide,Texas A&M,H,100,97,2
+2026,2,7,Alabama Crimson Tide,Auburn,V,96,92,2
+2026,2,11,Alabama Crimson Tide,Mississippi,V,93,74,2
+2026,2,14,Alabama Crimson Tide,South Carolina,H,89,75,2
+2026,2,18,Alabama Crimson Tide,Arkansas,H,117,115,2
+2026,2,21,Alabama Crimson Tide,LSU,V,90,83,2
+2026,2,25,Alabama Crimson Tide,Mississippi St,H,100,75,2
+2026,2,28,Alabama Crimson Tide,Tennessee,V,71,69,2
+2026,3,3,Alabama Crimson Tide,Georgia,V,88,98,2
+2026,3,7,Alabama Crimson Tide,Auburn,H,96,84,2
+2026,3,13,Alabama Crimson Tide,Mississippi,N,79,80,2
+2025,11,7,Alabama State Hornets,Florida St,V,64,101,2
+2025,11,11,Alabama State Hornets,UAB,V,77,74,2
+2025,11,14,Alabama State Hornets,Virginia-Lynchburg,H,124,68,1
+2025,11,17,Alabama State Hornets,Colorado,V,66,94,2
+2025,11,19,Alabama State Hornets,Air Force,V,64,66,2
+2025,11,21,Alabama State Hornets,IU Indy,N,101,80,2
+2025,11,23,Alabama State Hornets,SIU Edward,N,68,83,2
+2025,11,26,Alabama State Hornets,New Mexico,V,87,93,2
+2025,12,7,Alabama State Hornets,UT Martin,V,64,74,2
+2025,12,11,Alabama State Hornets,Missouri,V,77,85,2
+2025,12,17,Alabama State Hornets,Cincinnati,V,51,88,2
+2025,12,22,Alabama State Hornets,Memphis,V,67,88,2
+2025,12,29,Alabama State Hornets,Mississippi St,V,56,94,2
+2026,1,3,Alabama State Hornets,Miss Valley St,V,89,69,2
+2026,1,5,Alabama State Hornets,AR-Pine Bluff,V,79,90,2
+2026,1,10,Alabama State Hornets,Jackson St,H,64,75,2
+2026,1,12,Alabama State Hornets,Alcorn St,H,81,66,2
+2026,1,19,Alabama State Hornets,Alabama A&M,N,69,73,2
+2026,1,24,Alabama State Hornets,Prairie View,V,95,80,2
+2026,1,27,Alabama State Hornets,Texas So,V,64,96,2
+2026,1,31,Alabama State Hornets,Bethune,H,54,69,2
+2026,2,2,Alabama State Hornets,Florida A&M,H,79,66,2
+2026,2,7,Alabama State Hornets,Grambling,V,47,57,2
+2026,2,9,Alabama State Hornets,Southern,V,68,69,2
+2026,2,14,Alabama State Hornets,AR-Pine Bluff,H,79,61,2
+2026,2,16,Alabama State Hornets,Miss Valley St,H,92,55,2
+2026,2,19,Alabama State Hornets,Bethune,V,71,82,2
+2026,2,21,Alabama State Hornets,Florida A&M,V,63,76,2
+2026,2,28,Alabama State Hornets,Alabama A&M,V,89,88,2
+2026,3,3,Alabama State Hornets,Southern,H,64,71,2
+2026,3,5,Alabama State Hornets,Grambling,H,63,65,2
+2026,3,9,Alabama State Hornets,Alcorn St,N,65,77,2
+2025,11,3,Albany Great Danes,Marquette,V,53,80,2
+2025,11,8,Albany Great Danes,UMass,V,62,83,2
+2025,11,11,Albany Great Danes,SUNY-Delhi,H,115,52,1
+2025,11,14,Albany Great Danes,Rhode Island,V,61,80,2
+2025,11,18,Albany Great Danes,Paul Smith's College,H,106,57,1
+2025,11,21,Albany Great Danes,Siena,V,63,73,2
+2025,11,28,Albany Great Danes,Colgate,N,67,69,2
+2025,11,29,Albany Great Danes,Fordham,N,68,88,2
+2025,11,30,Albany Great Danes,SUNY-Oneonta,N,90,62,1
+2025,12,6,Albany Great Danes,Columbia,V,65,93,2
+2025,12,10,Albany Great Danes,Yale,N,82,93,2
+2025,12,13,Albany Great Danes,Florida Atlantic,V,79,105,2
+2025,12,17,Albany Great Danes,Stony Brook,V,71,55,2
+2025,12,21,Albany Great Danes,Cornell,H,75,83,2
+2025,12,30,Albany Great Danes,South Carolina,V,67,96,2
+2026,1,3,Albany Great Danes,UMass Lowell,V,71,83,2
+2026,1,10,Albany Great Danes,Bryant,H,71,46,2
+2026,1,15,Albany Great Danes,Binghamton,H,69,53,2
+2026,1,19,Albany Great Danes,Vermont,H,75,68,2
+2026,1,22,Albany Great Danes,Maine,V,49,52,2
+2026,1,24,Albany Great Danes,New Hampshire,V,72,80,2
+2026,1,29,Albany Great Danes,NJIT,H,68,77,2
+2026,1,31,Albany Great Danes,UMBC,H,65,68,2
+2026,2,5,Albany Great Danes,Bryant,V,65,63,2
+2026,2,7,Albany Great Danes,UMass Lowell,H,79,89,2
+2026,2,14,Albany Great Danes,Binghamton,V,77,74,2
+2026,2,19,Albany Great Danes,NJIT,V,81,63,2
+2026,2,21,Albany Great Danes,UMBC,V,62,66,2
+2026,2,26,Albany Great Danes,Maine,H,59,70,2
+2026,2,28,Albany Great Danes,New Hampshire,H,84,61,2
+2026,3,3,Albany Great Danes,Vermont,V,56,69,2
+2026,3,7,Albany Great Danes,UMass Lowell,V,76,81,2
+2025,11,4,Alcorn State Braves,Florida St,V,76,108,2
+2025,11,6,Alcorn State Braves,S Alabama,V,70,76,2
+2025,11,8,Alcorn State Braves,Minnesota,V,50,95,2
+2025,11,11,Alcorn State Braves,Maryland,V,64,84,2
+2025,11,13,Alcorn State Braves,Howard,V,64,72,2
+2025,11,18,Alcorn State Braves,LSU,V,81,107,2
+2025,11,23,Alcorn State Braves,Oklahoma,V,53,72,2
+2025,11,28,Alcorn State Braves,Indiana St,V,81,74,2
+2025,11,29,Alcorn State Braves,Louisiana Tech,V,58,83,2
+2025,12,3,Alcorn State Braves,Iowa St,V,68,132,2
+2025,12,19,Alcorn State Braves,Baylor,V,56,113,2
+2025,12,29,Alcorn State Braves,Mississippi,V,43,79,2
+2026,1,3,Alcorn State Braves,Jackson St,V,86,89,2
+2026,1,10,Alcorn State Braves,Alabama A&M,V,64,62,2
+2026,1,12,Alcorn State Braves,Alabama St,V,66,81,2
+2026,1,17,Alcorn State Braves,Texas So,H,71,72,2
+2026,1,19,Alcorn State Braves,Prairie View,H,76,75,2
+2026,1,24,Alcorn State Braves,Florida A&M,V,58,66,2
+2026,1,26,Alcorn State Braves,Bethune,V,73,82,2
+2026,1,31,Alcorn State Braves,Southern,H,78,73,2
+2026,2,2,Alcorn State Braves,Grambling,H,50,74,2
+2026,2,7,Alcorn State Braves,AR-Pine Bluff,V,77,84,2
+2026,2,9,Alcorn State Braves,Miss Valley St,V,74,66,2
+2026,2,14,Alcorn State Braves,Bethune,H,57,55,2
+2026,2,16,Alcorn State Braves,Florida A&M,H,78,86,2
+2026,2,21,Alcorn State Braves,Jackson St,H,83,65,2
+2026,2,26,Alcorn State Braves,Texas So,V,87,92,2
+2026,2,28,Alcorn State Braves,Prairie View,V,51,72,2
+2026,3,3,Alcorn State Braves,Miss Valley St,H,67,64,2
+2026,3,5,Alcorn State Braves,AR-Pine Bluff,H,48,83,2
+2026,3,9,Alcorn State Braves,Alabama St,N,77,65,2
+2026,3,10,Alcorn State Braves,Prairie View,N,56,65,2
+2025,11,3,American Eagles,Wake Forest,V,74,88,2
+2025,11,9,American Eagles,Penn,H,84,78,2
+2025,11,12,American Eagles,G Washington,V,67,107,2
+2025,11,15,American Eagles,Central Pennsylvania College,H,115,50,1
+2025,11,18,American Eagles,Rutgers,V,71,80,2
+2025,11,24,American Eagles,Marywood,H,113,53,1
+2025,11,28,American Eagles,Maine,H,74,61,2
+2025,11,29,American Eagles,Siena,H,55,59,2
+2025,11,30,American Eagles,Longwood,H,92,66,2
+2025,12,3,American Eagles,Drexel,H,75,73,2
+2025,12,6,American Eagles,Maryland ES,H,78,60,2
+2025,12,18,American Eagles,VCU,V,83,105,2
+2025,12,22,American Eagles,Virginia,V,51,95,2
+2025,12,31,American Eagles,Loyola MD,H,84,69,2
+2026,1,3,American Eagles,Boston U,V,64,62,2
+2026,1,7,American Eagles,Colgate,V,62,64,2
+2026,1,10,American Eagles,Holy Cross,H,73,84,2
+2026,1,12,American Eagles,Navy,H,65,51,2
+2026,1,18,American Eagles,Army,V,78,67,2
+2026,1,21,American Eagles,Colgate,H,70,66,2
+2026,1,24,American Eagles,Holy Cross,V,76,67,2
+2026,1,28,American Eagles,Loyola MD,V,68,77,2
+2026,1,31,American Eagles,Lafayette,H,65,67,2
+2026,2,4,American Eagles,Bucknell,H,59,60,2
+2026,2,7,American Eagles,Navy,V,73,82,2
+2026,2,11,American Eagles,Lehigh,V,82,90,2
+2026,2,14,American Eagles,Army,H,75,63,2
+2026,2,18,American Eagles,Bucknell,V,75,57,2
+2026,2,22,American Eagles,Lafayette,V,75,61,2
+2026,2,25,American Eagles,Lehigh,H,73,78,2
+2026,2,28,American Eagles,Boston U,H,65,68,2
+2026,3,5,American Eagles,Boston U,V,73,75,2
+2025,11,3,App State Mountaineers,C Michigan,V,66,82,2
+2025,11,5,App State Mountaineers,Piedmont International,H,92,46,1
+2025,11,9,App State Mountaineers,NC Central,H,76,54,2
+2025,11,11,App State Mountaineers,Ohio St,V,53,75,2
+2025,11,16,App State Mountaineers,Dartmouth,V,85,77,2
+2025,11,21,App State Mountaineers,Charlotte,H,65,63,2
+2025,11,24,App State Mountaineers,Elon,H,53,88,2
+2025,11,26,App State Mountaineers,Mercer,V,67,75,2
+2025,11,30,App State Mountaineers,NC Asheville,N,55,67,2
+2025,12,3,App State Mountaineers,Virginia-Lynchburg,H,133,45,1
+2025,12,11,App State Mountaineers,E Carolina,V,67,54,2
+2025,12,14,App State Mountaineers,High Point,N,86,78,2
+2025,12,18,App State Mountaineers,Coastal Car,H,67,49,2
+2025,12,20,App State Mountaineers,Georgia St,H,63,70,2
+2025,12,31,App State Mountaineers,Old Dominion,V,81,73,2
+2026,1,3,App State Mountaineers,Marshall,V,81,88,2
+2026,1,8,App State Mountaineers,Georgia St,V,52,50,2
+2026,1,10,App State Mountaineers,Coastal Car,V,62,67,2
+2026,1,15,App State Mountaineers,J Madison,H,80,65,2
+2026,1,17,App State Mountaineers,Old Dominion,H,73,75,2
+2026,1,22,App State Mountaineers,Louisiana,H,72,58,2
+2026,1,23,App State Mountaineers,UL Monroe,H,59,43,2
+2026,1,29,App State Mountaineers,Southern Miss,V,70,63,2
+2026,1,31,App State Mountaineers,Troy,V,66,44,2
+2026,2,4,App State Mountaineers,S Alabama,H,65,57,2
+2026,2,7,App State Mountaineers,E Michigan,H,65,60,2
+2026,2,11,App State Mountaineers,Georgia So,V,81,65,2
+2026,2,14,App State Mountaineers,J Madison,V,58,69,2
+2026,2,19,App State Mountaineers,Marshall,H,93,94,2
+2026,2,21,App State Mountaineers,Georgia So,H,89,74,2
+2026,2,27,App State Mountaineers,Texas St,V,57,60,2
+2026,3,7,App State Mountaineers,Southern Miss,N,73,86,2
+2025,11,4,Arizona State Sun Devils,S Utah,H,81,64,2
+2025,11,9,Arizona State Sun Devils,Utah Tech,H,81,66,2
+2025,11,14,Arizona State Sun Devils,Gonzaga,H,65,77,2
+2025,11,17,Arizona State Sun Devils,Georgia St,H,75,62,2
+2025,11,20,Arizona State Sun Devils,Hawai'i,V,83,76,2
+2025,11,24,Arizona State Sun Devils,Texas,N,87,86,2
+2025,11,25,Arizona State Sun Devils,Washington St,N,100,94,2
+2025,11,26,Arizona State Sun Devils,USC,N,75,88,2
+2025,12,6,Arizona State Sun Devils,Oklahoma,N,86,70,2
+2025,12,9,Arizona State Sun Devils,N Arizona,H,73,48,2
+2025,12,13,Arizona State Sun Devils,Santa Clara,N,82,79,2
+2025,12,17,Arizona State Sun Devils,UCLA,V,77,90,2
+2025,12,21,Arizona State Sun Devils,Oregon St,H,75,78,2
+2026,1,3,Arizona State Sun Devils,Colorado,H,89,95,2
+2026,1,7,Arizona State Sun Devils,BYU,V,76,104,2
+2026,1,10,Arizona State Sun Devils,Kansas St,H,87,84,2
+2026,1,14,Arizona State Sun Devils,Arizona,V,82,89,2
+2026,1,18,Arizona State Sun Devils,Houston,V,73,103,2
+2026,1,21,Arizona State Sun Devils,West Virginia,H,63,75,2
+2026,1,24,Arizona State Sun Devils,Cincinnati,H,82,68,2
+2026,1,27,Arizona State Sun Devils,UCF,V,76,79,2
+2026,1,31,Arizona State Sun Devils,Arizona,H,74,87,2
+2026,2,4,Arizona State Sun Devils,Utah,V,71,63,2
+2026,2,7,Arizona State Sun Devils,Colorado,V,70,78,2
+2026,2,10,Arizona State Sun Devils,Oklahoma St,H,85,76,2
+2026,2,17,Arizona State Sun Devils,Texas Tech,H,72,67,2
+2026,2,21,Arizona State Sun Devils,Baylor,V,68,73,2
+2026,2,24,Arizona State Sun Devils,TCU,V,78,90,2
+2026,2,28,Arizona State Sun Devils,Utah,H,73,60,2
+2026,3,3,Arizona State Sun Devils,Kansas,H,70,60,2
+2026,3,7,Arizona State Sun Devils,Iowa St,V,65,86,2
+2026,3,10,Arizona State Sun Devils,Baylor,N,83,79,2
+2026,3,11,Arizona State Sun Devils,Iowa St,N,42,91,2
+2025,11,3,Arizona Wildcats,Florida,N,93,87,2
+2025,11,7,Arizona Wildcats,Utah Tech,H,93,67,2
+2025,11,11,Arizona Wildcats,N Arizona,H,84,49,2
+2025,11,14,Arizona Wildcats,UCLA,N,69,65,2
+2025,11,19,Arizona Wildcats,UConn,V,71,67,2
+2025,11,24,Arizona Wildcats,Denver,H,103,73,2
+2025,11,29,Arizona Wildcats,Norfolk St,H,98,61,2
+2025,12,6,Arizona Wildcats,Auburn,H,97,68,2
+2025,12,13,Arizona Wildcats,Alabama,N,96,75,2
+2025,12,16,Arizona Wildcats,Abl Christian,H,96,62,2
+2025,12,20,Arizona Wildcats,San Diego St,N,68,45,2
+2025,12,22,Arizona Wildcats,Bethune,H,107,71,2
+2025,12,29,Arizona Wildcats,S Dakota St,H,99,71,2
+2026,1,3,Arizona Wildcats,Utah,V,97,78,2
+2026,1,7,Arizona Wildcats,Kansas St,H,101,76,2
+2026,1,10,Arizona Wildcats,TCU,V,86,73,2
+2026,1,14,Arizona Wildcats,Arizona St,H,89,82,2
+2026,1,17,Arizona Wildcats,UCF,V,84,77,2
+2026,1,21,Arizona Wildcats,Cincinnati,H,77,51,2
+2026,1,24,Arizona Wildcats,West Virginia,H,88,53,2
+2026,1,26,Arizona Wildcats,BYU,V,86,83,2
+2026,1,31,Arizona Wildcats,Arizona St,V,87,74,2
+2026,2,7,Arizona Wildcats,Oklahoma St,H,84,47,2
+2026,2,9,Arizona Wildcats,Kansas,V,78,82,2
+2026,2,14,Arizona Wildcats,Texas Tech,H,75,78,2
+2026,2,18,Arizona Wildcats,BYU,H,75,68,2
+2026,2,21,Arizona Wildcats,Houston,V,73,66,2
+2026,2,24,Arizona Wildcats,Baylor,V,87,80,2
+2026,2,28,Arizona Wildcats,Kansas,H,84,61,2
+2026,3,2,Arizona Wildcats,Iowa St,H,73,57,2
+2026,3,7,Arizona Wildcats,Colorado,V,89,79,2
+2026,3,12,Arizona Wildcats,UCF,N,81,59,2
+2026,3,13,Arizona Wildcats,Iowa St,N,82,80,2
+2026,3,14,Arizona Wildcats,Houston,N,79,74,2
+2025,11,3,Arkansas Razorbacks,Southern,H,109,77,2
+2025,11,8,Arkansas Razorbacks,Michigan St,V,66,69,2
+2025,11,11,Arkansas Razorbacks,C Arkansas,H,93,56,2
+2025,11,14,Arkansas Razorbacks,Samford,H,79,75,2
+2025,11,18,Arkansas Razorbacks,Winthrop,H,84,83,2
+2025,11,21,Arkansas Razorbacks,Jackson St,H,115,61,2
+2025,11,27,Arkansas Razorbacks,Duke,N,71,80,2
+2025,12,3,Arkansas Razorbacks,Louisville,H,89,80,2
+2025,12,6,Arkansas Razorbacks,Fresno St,N,82,58,2
+2025,12,13,Arkansas Razorbacks,Texas Tech,N,93,86,2
+2025,12,16,Arkansas Razorbacks,Queens,H,108,80,2
+2025,12,20,Arkansas Razorbacks,Houston,N,85,94,2
+2025,12,29,Arkansas Razorbacks,J Madison,H,103,74,2
+2026,1,3,Arkansas Razorbacks,Tennessee,H,86,75,2
+2026,1,7,Arkansas Razorbacks,Mississippi,V,94,87,2
+2026,1,10,Arkansas Razorbacks,Auburn,V,73,95,2
+2026,1,14,Arkansas Razorbacks,South Carolina,H,108,74,2
+2026,1,17,Arkansas Razorbacks,Georgia,V,76,90,2
+2026,1,20,Arkansas Razorbacks,Vanderbilt,H,93,68,2
+2026,1,24,Arkansas Razorbacks,LSU,H,85,81,2
+2026,1,27,Arkansas Razorbacks,Oklahoma,V,83,79,2
+2026,1,31,Arkansas Razorbacks,Kentucky,H,77,85,2
+2026,2,7,Arkansas Razorbacks,Mississippi St,V,88,68,2
+2026,2,10,Arkansas Razorbacks,LSU,V,91,62,2
+2026,2,14,Arkansas Razorbacks,Auburn,H,88,75,2
+2026,2,18,Arkansas Razorbacks,Alabama,V,115,117,2
+2026,2,21,Arkansas Razorbacks,Missouri,H,94,86,2
+2026,2,25,Arkansas Razorbacks,Texas A&M,H,99,84,2
+2026,2,28,Arkansas Razorbacks,Florida,V,77,111,2
+2026,3,4,Arkansas Razorbacks,Texas,H,105,85,2
+2026,3,7,Arkansas Razorbacks,Missouri,V,88,84,2
+2026,3,13,Arkansas Razorbacks,Oklahoma,N,82,79,2
+2026,3,14,Arkansas Razorbacks,Mississippi,N,93,90,2
+2026,3,15,Arkansas Razorbacks,Vanderbilt,N,86,75,2
+2025,11,3,Arkansas State Red Wolves,Ohio,V,89,85,2
+2025,11,7,Arkansas State Red Wolves,SF Austin,V,65,90,2
+2025,11,11,Arkansas State Red Wolves,Missouri St,V,86,85,2
+2025,11,15,Arkansas State Red Wolves,Christian Brothers,H,95,67,1
+2025,11,19,Arkansas State Red Wolves,Saint Mary's,V,72,85,2
+2025,11,21,Arkansas State Red Wolves,SMU,V,69,100,2
+2025,11,24,Arkansas State Red Wolves,Jacksonville St,H,74,63,2
+2025,11,28,Arkansas State Red Wolves,N Dakota St,H,85,80,2
+2025,12,2,Arkansas State Red Wolves,UT Arlington,H,83,63,2
+2025,12,6,Arkansas State Red Wolves,Little Rock,V,90,78,2
+2025,12,13,Arkansas State Red Wolves,Rice,V,76,77,2
+2025,12,17,Arkansas State Red Wolves,Texas St,V,89,70,2
+2025,12,20,Arkansas State Red Wolves,Southern Miss,V,93,86,2
+2025,12,30,Arkansas State Red Wolves,Arkansas Tech,H,107,63,1
+2026,1,3,Arkansas State Red Wolves,J Madison,H,74,78,2
+2026,1,7,Arkansas State Red Wolves,Troy,H,86,74,2
+2026,1,10,Arkansas State Red Wolves,Texas St,H,83,82,2
+2026,1,15,Arkansas State Red Wolves,S Alabama,V,87,91,2
+2026,1,17,Arkansas State Red Wolves,Troy,V,74,99,2
+2026,1,22,Arkansas State Red Wolves,Georgia So,V,85,68,2
+2026,1,24,Arkansas State Red Wolves,Georgia St,V,81,82,2
+2026,1,28,Arkansas State Red Wolves,Old Dominion,H,71,75,2
+2026,1,31,Arkansas State Red Wolves,Marshall,H,61,70,2
+2026,2,4,Arkansas State Red Wolves,Coastal Car,V,70,66,2
+2026,2,7,Arkansas State Red Wolves,Bowling Green,H,91,54,2
+2026,2,11,Arkansas State Red Wolves,UL Monroe,H,103,70,2
+2026,2,14,Arkansas State Red Wolves,S Alabama,H,88,92,2
+2026,2,19,Arkansas State Red Wolves,Louisiana,V,79,62,2
+2026,2,21,Arkansas State Red Wolves,UL Monroe,V,102,94,2
+2026,2,24,Arkansas State Red Wolves,Southern Miss,H,89,84,2
+2026,2,27,Arkansas State Red Wolves,Louisiana,H,81,58,2
+2026,3,5,Arkansas State Red Wolves,Georgia So,N,77,80,2
+2025,11,3,Arkansas-Pine Bluff Golden Lions,Washington,V,50,94,2
+2025,11,6,Arkansas-Pine Bluff Golden Lions,Portland,V,74,83,2
+2025,11,8,Arkansas-Pine Bluff Golden Lions,Loyola Mymt,V,72,94,2
+2025,11,11,Arkansas-Pine Bluff Golden Lions,Oklahoma,V,69,95,2
+2025,11,15,Arkansas-Pine Bluff Golden Lions,Vanderbilt,V,75,104,2
+2025,11,18,Arkansas-Pine Bluff Golden Lions,SMU,V,60,106,2
+2025,11,20,Arkansas-Pine Bluff Golden Lions,Marshall,V,70,98,2
+2025,11,23,Arkansas-Pine Bluff Golden Lions,Miami OH,V,84,111,2
+2025,12,3,Arkansas-Pine Bluff Golden Lions,Illinois Chicago,V,63,62,2
+2025,12,6,Arkansas-Pine Bluff Golden Lions,DePaul,V,72,76,2
+2025,12,10,Arkansas-Pine Bluff Golden Lions,Tulsa,V,84,117,2
+2025,12,15,Arkansas-Pine Bluff Golden Lions,Ecclesia College,H,114,64,1
+2025,12,17,Arkansas-Pine Bluff Golden Lions,Champion Baptist,H,138,73,1
+2026,1,3,Arkansas-Pine Bluff Golden Lions,Alabama A&M,H,95,83,2
+2026,1,5,Arkansas-Pine Bluff Golden Lions,Alabama St,H,90,79,2
+2026,1,10,Arkansas-Pine Bluff Golden Lions,Texas So,V,74,66,2
+2026,1,12,Arkansas-Pine Bluff Golden Lions,Prairie View,V,61,73,2
+2026,1,17,Arkansas-Pine Bluff Golden Lions,Florida A&M,H,67,71,2
+2026,1,19,Arkansas-Pine Bluff Golden Lions,Bethune,H,82,87,2
+2026,1,24,Arkansas-Pine Bluff Golden Lions,Southern,V,75,74,2
+2026,1,31,Arkansas-Pine Bluff Golden Lions,Miss Valley St,V,78,70,2
+2026,2,4,Arkansas-Pine Bluff Golden Lions,Grambling,V,67,64,2
+2026,2,7,Arkansas-Pine Bluff Golden Lions,Alcorn St,H,84,77,2
+2026,2,9,Arkansas-Pine Bluff Golden Lions,Jackson St,H,84,63,2
+2026,2,14,Arkansas-Pine Bluff Golden Lions,Alabama St,V,61,79,2
+2026,2,16,Arkansas-Pine Bluff Golden Lions,Alabama A&M,V,70,82,2
+2026,2,19,Arkansas-Pine Bluff Golden Lions,Texas So,H,64,83,2
+2026,2,21,Arkansas-Pine Bluff Golden Lions,Prairie View,H,84,82,2
+2026,2,28,Arkansas-Pine Bluff Golden Lions,Miss Valley St,H,69,70,2
+2026,3,3,Arkansas-Pine Bluff Golden Lions,Jackson St,V,78,81,2
+2026,3,5,Arkansas-Pine Bluff Golden Lions,Alcorn St,V,83,48,2
+2026,3,12,Arkansas-Pine Bluff Golden Lions,Southern,N,81,84,2
+2025,11,3,Army Black Knights,SUNY-Maritime,H,73,49,1
+2025,11,8,Army Black Knights,St Thomas,V,76,83,2
+2025,11,11,Army Black Knights,Duke,H,59,114,2
+2025,11,15,Army Black Knights,Harvard,H,52,75,2
+2025,11,18,Army Black Knights,Cornell,V,73,86,2
+2025,11,21,Army Black Knights,Marist,V,65,76,2
+2025,11,25,Army Black Knights,E Texas A&M,N,67,84,2
+2025,11,26,Army Black Knights,F Dickinson,V,81,73,2
+2025,11,29,Army Black Knights,Manhattan,H,81,78,2
+2025,12,2,Army Black Knights,G Washington,H,70,84,2
+2025,12,7,Army Black Knights,Gallaudet University,H,111,53,1
+2025,12,12,Army Black Knights,UMBC,V,63,60,2
+2025,12,23,Army Black Knights,Binghamton,H,95,85,2
+2025,12,31,Army Black Knights,Lehigh,V,85,78,2
+2026,1,3,Army Black Knights,Colgate,H,69,76,2
+2026,1,7,Army Black Knights,Loyola MD,H,76,84,2
+2026,1,10,Army Black Knights,Boston U,V,91,100,2
+2026,1,14,Army Black Knights,Holy Cross,V,75,82,2
+2026,1,18,Army Black Knights,American,H,67,78,2
+2026,1,21,Army Black Knights,Bucknell,V,87,84,2
+2026,1,24,Army Black Knights,Navy,V,56,84,2
+2026,1,28,Army Black Knights,Lehigh,H,67,64,2
+2026,1,31,Army Black Knights,Holy Cross,H,69,68,2
+2026,2,4,Army Black Knights,Colgate,V,55,69,2
+2026,2,7,Army Black Knights,Lafayette,H,60,63,2
+2026,2,11,Army Black Knights,Boston U,H,68,85,2
+2026,2,14,Army Black Knights,American,V,63,75,2
+2026,2,18,Army Black Knights,Loyola MD,V,87,77,2
+2026,2,21,Army Black Knights,Navy,H,63,81,2
+2026,2,25,Army Black Knights,Bucknell,H,73,75,2
+2026,2,28,Army Black Knights,Lafayette,V,77,83,2
+2026,3,3,Army Black Knights,Bucknell,V,55,65,2
+2025,11,3,Auburn Tigers,Bethune,H,95,90,2
+2025,11,6,Auburn Tigers,Merrimack,H,95,57,2
+2025,11,11,Auburn Tigers,Wofford,H,93,62,2
+2025,11,16,Auburn Tigers,Houston,N,72,73,2
+2025,11,19,Auburn Tigers,Jackson St,H,112,66,2
+2025,11,24,Auburn Tigers,Oregon,N,84,73,2
+2025,11,25,Auburn Tigers,Michigan,N,72,102,2
+2025,11,26,Auburn Tigers,St John's,N,85,74,2
+2025,12,3,Auburn Tigers,NC State,H,83,73,2
+2025,12,6,Auburn Tigers,Arizona,V,68,97,2
+2025,12,13,Auburn Tigers,Chattanooga,N,92,78,2
+2025,12,20,Auburn Tigers,Purdue,N,60,88,2
+2025,12,29,Auburn Tigers,Queens,H,106,65,2
+2026,1,3,Auburn Tigers,Georgia,V,100,104,2
+2026,1,6,Auburn Tigers,Texas A&M,H,88,90,2
+2026,1,10,Auburn Tigers,Arkansas,H,95,73,2
+2026,1,14,Auburn Tigers,Missouri,V,74,84,2
+2026,1,17,Auburn Tigers,South Carolina,H,71,67,2
+2026,1,20,Auburn Tigers,Mississippi,V,78,66,2
+2026,1,24,Auburn Tigers,Florida,V,76,67,2
+2026,1,28,Auburn Tigers,Texas,H,88,82,2
+2026,1,31,Auburn Tigers,Tennessee,V,69,77,2
+2026,2,7,Auburn Tigers,Alabama,H,92,96,2
+2026,2,10,Auburn Tigers,Vanderbilt,H,76,84,2
+2026,2,14,Auburn Tigers,Arkansas,V,75,88,2
+2026,2,18,Auburn Tigers,Mississippi St,V,85,91,2
+2026,2,21,Auburn Tigers,Kentucky,H,75,74,2
+2026,2,24,Auburn Tigers,Oklahoma,V,79,91,2
+2026,2,28,Auburn Tigers,Mississippi,H,79,85,2
+2026,3,3,Auburn Tigers,LSU,H,88,74,2
+2026,3,7,Auburn Tigers,Alabama,V,84,96,2
+2026,3,11,Auburn Tigers,Mississippi St,N,79,61,2
+2026,3,12,Auburn Tigers,Tennessee,N,62,72,2
+2025,11,3,Austin Peay Governors,Bryan,H,128,47,1
+2025,11,8,Austin Peay Governors,Air Force,V,74,54,2
+2025,11,11,Austin Peay Governors,Wyoming,V,65,79,2
+2025,11,15,Austin Peay Governors,NC Greensboro,V,69,63,2
+2025,11,18,Austin Peay Governors,Mississippi,V,65,72,2
+2025,11,21,Austin Peay Governors,Tulsa,V,75,84,2
+2025,11,25,Austin Peay Governors,N Illinois,H,77,59,2
+2025,12,3,Austin Peay Governors,Kent St,V,84,96,2
+2025,12,7,Austin Peay Governors,UT Rio Grande,V,50,63,2
+2025,12,12,Austin Peay Governors,E Tennessee St,H,76,75,2
+2025,12,28,Austin Peay Governors,Fisk,H,110,59,1
+2026,1,1,Austin Peay Governors,N Florida,H,102,83,2
+2026,1,3,Austin Peay Governors,Jacksonville,H,71,68,2
+2026,1,8,Austin Peay Governors,FGCU,V,82,71,2
+2026,1,10,Austin Peay Governors,Stetson,V,81,69,2
+2026,1,15,Austin Peay Governors,E Kentucky,H,74,72,2
+2026,1,17,Austin Peay Governors,Lipscomb,V,78,82,2
+2026,1,22,Austin Peay Governors,FGCU,H,83,62,2
+2026,1,23,Austin Peay Governors,Stetson,H,73,65,2
+2026,1,28,Austin Peay Governors,E Kentucky,V,90,82,2
+2026,1,31,Austin Peay Governors,W Georgia,V,81,78,2
+2026,2,4,Austin Peay Governors,Lipscomb,H,87,76,2
+2026,2,7,Austin Peay Governors,N Alabama,H,91,62,2
+2026,2,11,Austin Peay Governors,Queens,V,95,87,2
+2026,2,14,Austin Peay Governors,Bellarmine,H,90,70,2
+2026,2,19,Austin Peay Governors,N Florida,V,77,76,2
+2026,2,21,Austin Peay Governors,Jacksonville,V,65,61,2
+2026,2,25,Austin Peay Governors,C Arkansas,H,88,93,2
+2026,2,28,Austin Peay Governors,Bellarmine,V,97,111,2
+2026,3,6,Austin Peay Governors,Stetson,N,69,60,2
+2026,3,7,Austin Peay Governors,Queens,N,83,90,2
+2025,11,3,Ball State Cardinals,Louisiana,H,75,64,2
+2025,11,7,Ball State Cardinals,Mansfield,H,84,54,1
+2025,11,11,Ball State Cardinals,Wisconsin,V,55,86,2
+2025,11,15,Ball State Cardinals,Little Rock,H,62,68,2
+2025,11,22,Ball State Cardinals,Indiana St,V,52,70,2
+2025,11,28,Ball State Cardinals,Monmouth,N,73,80,2
+2025,11,29,Ball State Cardinals,Lafayette,V,37,55,2
+2025,11,30,Ball State Cardinals,Le Moyne,N,96,85,2
+2025,12,3,Ball State Cardinals,Evansville,V,52,64,2
+2025,12,9,Ball State Cardinals,S Dakota St,H,64,68,2
+2025,12,14,Ball State Cardinals,Campbell,V,64,69,2
+2025,12,20,Ball State Cardinals,Miami OH,H,77,86,2
+2025,12,29,Ball State Cardinals,Earlham,H,93,30,1
+2026,1,3,Ball State Cardinals,Buffalo,V,72,85,2
+2026,1,6,Ball State Cardinals,E Michigan,H,52,74,2
+2026,1,10,Ball State Cardinals,UMass,V,71,79,2
+2026,1,13,Ball State Cardinals,Akron,V,77,87,2
+2026,1,16,Ball State Cardinals,Ohio,H,76,71,2
+2026,1,20,Ball State Cardinals,C Michigan,V,68,67,2
+2026,1,24,Ball State Cardinals,N Illinois,H,58,53,2
+2026,1,31,Ball State Cardinals,Toledo,V,55,73,2
+2026,2,3,Ball State Cardinals,Bowling Green,V,52,77,2
+2026,2,7,Ball State Cardinals,UL Monroe,V,73,68,2
+2026,2,11,Ball State Cardinals,Buffalo,H,53,63,2
+2026,2,14,Ball State Cardinals,Kent St,H,68,75,2
+2026,2,17,Ball State Cardinals,Ohio,V,57,69,2
+2026,2,20,Ball State Cardinals,Akron,H,65,78,2
+2026,2,24,Ball State Cardinals,UMass,H,74,73,2
+2026,2,28,Ball State Cardinals,N Illinois,V,79,43,2
+2026,3,3,Ball State Cardinals,W Michigan,V,74,71,2
+2026,3,6,Ball State Cardinals,C Michigan,H,85,69,2
+2025,11,3,Baylor Bears,UT Rio Grande,H,96,81,2
+2025,11,9,Baylor Bears,Washington,H,78,69,2
+2025,11,14,Baylor Bears,Tarleton St,H,94,81,2
+2025,11,24,Baylor Bears,Creighton,N,81,74,2
+2025,11,25,Baylor Bears,St John's,N,81,96,2
+2025,11,26,Baylor Bears,San Diego St,N,91,81,2
+2025,12,2,Baylor Bears,Sacramento St,H,110,88,2
+2025,12,6,Baylor Bears,Memphis,V,71,78,2
+2025,12,10,Baylor Bears,Norfolk St,H,97,67,2
+2025,12,19,Baylor Bears,Alcorn St,H,113,56,2
+2025,12,21,Baylor Bears,Southern,H,111,67,2
+2025,12,29,Baylor Bears,Arlington Baptist College,H,124,61,1
+2026,1,3,Baylor Bears,TCU,V,63,69,2
+2026,1,7,Baylor Bears,Iowa St,H,60,70,2
+2026,1,10,Baylor Bears,Houston,H,55,77,2
+2026,1,13,Baylor Bears,Oklahoma St,V,94,79,2
+2026,1,16,Baylor Bears,Kansas,V,62,80,2
+2026,1,20,Baylor Bears,Texas Tech,H,73,92,2
+2026,1,24,Baylor Bears,TCU,H,90,97,2
+2026,1,28,Baylor Bears,Cincinnati,V,57,67,2
+2026,1,31,Baylor Bears,West Virginia,V,63,53,2
+2026,2,4,Baylor Bears,Colorado,H,86,67,2
+2026,2,7,Baylor Bears,Iowa St,V,69,72,2
+2026,2,10,Baylor Bears,BYU,H,94,99,2
+2026,2,14,Baylor Bears,Louisville,N,71,82,2
+2026,2,17,Baylor Bears,Kansas St,V,74,90,2
+2026,2,21,Baylor Bears,Arizona St,H,73,68,2
+2026,2,24,Baylor Bears,Arizona,H,80,87,2
+2026,2,28,Baylor Bears,UCF,V,87,86,2
+2026,3,4,Baylor Bears,Houston,V,64,77,2
+2026,3,7,Baylor Bears,Utah,H,101,75,2
+2026,3,10,Baylor Bears,Arizona St,N,79,83,2
+2025,11,3,Bellarmine Knights,Georgia,V,59,104,2
+2025,11,8,Bellarmine Knights,Kansas St,V,71,98,2
+2025,11,12,Bellarmine Knights,Hanover,H,94,55,1
+2025,11,15,Bellarmine Knights,Wofford,H,86,94,2
+2025,11,19,Bellarmine Knights,Notre Dame,V,79,86,2
+2025,11,24,Bellarmine Knights,The Citadel,V,70,58,2
+2025,11,25,Bellarmine Knights,Hou Christian,H,74,69,2
+2025,12,3,Bellarmine Knights,Midway,H,99,60,1
+2025,12,6,Bellarmine Knights,Murray St,V,68,81,2
+2025,12,13,Bellarmine Knights,N Kentucky,H,76,80,2
+2025,12,17,Bellarmine Knights,Chattanooga,H,79,64,2
+2025,12,23,Bellarmine Knights,Kentucky,V,85,99,2
+2026,1,1,Bellarmine Knights,W Georgia,V,85,87,2
+2026,1,3,Bellarmine Knights,Queens,V,76,98,2
+2026,1,8,Bellarmine Knights,C Arkansas,H,84,78,2
+2026,1,10,Bellarmine Knights,N Alabama,H,73,82,2
+2026,1,15,Bellarmine Knights,Lipscomb,V,71,81,2
+2026,1,17,Bellarmine Knights,E Kentucky,V,69,89,2
+2026,1,22,Bellarmine Knights,Jacksonville,V,77,70,2
+2026,1,24,Bellarmine Knights,N Florida,V,114,117,2
+2026,1,28,Bellarmine Knights,W Georgia,H,77,74,2
+2026,1,31,Bellarmine Knights,Queens,H,78,75,2
+2026,2,5,Bellarmine Knights,Stetson,H,92,71,2
+2026,2,7,Bellarmine Knights,FGCU,H,81,65,2
+2026,2,11,Bellarmine Knights,C Arkansas,V,76,84,2
+2026,2,14,Bellarmine Knights,Austin Peay,V,70,90,2
+2026,2,18,Bellarmine Knights,Lipscomb,H,72,75,2
+2026,2,21,Bellarmine Knights,E Kentucky,H,92,95,2
+2026,2,25,Bellarmine Knights,N Alabama,V,68,73,2
+2026,2,28,Bellarmine Knights,Austin Peay,H,111,97,2
+2026,3,4,Bellarmine Knights,Jacksonville,N,82,79,2
+2026,3,6,Bellarmine Knights,C Arkansas,N,73,86,2
+2025,11,3,Belmont Bruins,Air Force,H,79,63,2
+2025,11,8,Belmont Bruins,Tennessee St,H,87,79,2
+2025,11,15,Belmont Bruins,Oral Roberts,V,83,60,2
+2025,11,19,Belmont Bruins,Lipscomb,H,75,68,2
+2025,11,21,Belmont Bruins,Fisk,H,96,49,1
+2025,11,24,Belmont Bruins,St Francis PA,N,94,57,2
+2025,11,26,Belmont Bruins,Toledo,N,87,72,2
+2025,11,30,Belmont Bruins,Charleston,V,96,73,2
+2025,12,3,Belmont Bruins,Richmond,H,76,84,2
+2025,12,7,Belmont Bruins,Middle Tenn,V,83,62,2
+2025,12,13,Belmont Bruins,Illinois Chicago,H,87,84,2
+2025,12,16,Belmont Bruins,Evansville,V,83,78,2
+2025,12,19,Belmont Bruins,UC Irvine,V,84,58,2
+2025,12,29,Belmont Bruins,Indiana St,V,80,81,2
+2026,1,1,Belmont Bruins,Bradley,H,88,78,2
+2026,1,4,Belmont Bruins,S Illinois,H,67,68,2
+2026,1,7,Belmont Bruins,N Iowa,V,78,65,2
+2026,1,10,Belmont Bruins,Drake,V,78,76,2
+2026,1,13,Belmont Bruins,Valparaiso,H,78,74,2
+2026,1,17,Belmont Bruins,S Illinois,V,73,68,2
+2026,1,24,Belmont Bruins,Illinois St,H,80,69,2
+2026,1,28,Belmont Bruins,Valparaiso,V,78,77,2
+2026,1,31,Belmont Bruins,Murray St,H,103,86,2
+2026,2,3,Belmont Bruins,Drake,H,103,90,2
+2026,2,6,Belmont Bruins,Illinois Chicago,V,68,62,2
+2026,2,9,Belmont Bruins,Bradley,V,84,95,2
+2026,2,12,Belmont Bruins,N Iowa,H,91,86,2
+2026,2,15,Belmont Bruins,Murray St,V,87,70,2
+2026,2,21,Belmont Bruins,Indiana St,H,87,70,2
+2026,2,25,Belmont Bruins,Evansville,H,98,64,2
+2026,3,1,Belmont Bruins,Illinois St,V,74,81,2
+2026,3,6,Belmont Bruins,Drake,N,79,100,2
+2025,11,3,Bethune-Cookman Wildcats,Auburn,V,90,95,2
+2025,11,6,Bethune-Cookman Wildcats,Miami,V,61,101,2
+2025,11,11,Bethune-Cookman Wildcats,Coastal Georgia,H,101,60,1
+2025,11,15,Bethune-Cookman Wildcats,Dayton,V,82,91,2
+2025,11,19,Bethune-Cookman Wildcats,Ohio,V,76,73,2
+2025,11,24,Bethune-Cookman Wildcats,Jacksonville,N,64,69,2
+2025,11,25,Bethune-Cookman Wildcats,Stony Brook,N,54,61,2
+2025,11,29,Bethune-Cookman Wildcats,Indiana,V,56,100,2
+2025,12,5,Bethune-Cookman Wildcats,S Carolina St,H,80,59,2
+2025,12,14,Bethune-Cookman Wildcats,Missouri,V,60,82,2
+2025,12,17,Bethune-Cookman Wildcats,Saint Louis,V,53,112,2
+2025,12,22,Bethune-Cookman Wildcats,Arizona,V,71,107,2
+2025,12,29,Bethune-Cookman Wildcats,Oklahoma St,V,77,103,2
+2026,1,3,Bethune-Cookman Wildcats,Florida A&M,H,87,83,2
+2026,1,10,Bethune-Cookman Wildcats,Grambling,H,74,65,2
+2026,1,12,Bethune-Cookman Wildcats,Southern,H,73,77,2
+2026,1,17,Bethune-Cookman Wildcats,Miss Valley St,V,79,63,2
+2026,1,19,Bethune-Cookman Wildcats,AR-Pine Bluff,V,87,82,2
+2026,1,24,Bethune-Cookman Wildcats,Jackson St,H,85,48,2
+2026,1,26,Bethune-Cookman Wildcats,Alcorn St,H,82,73,2
+2026,1,31,Bethune-Cookman Wildcats,Alabama St,V,69,54,2
+2026,2,2,Bethune-Cookman Wildcats,Alabama A&M,V,80,62,2
+2026,2,7,Bethune-Cookman Wildcats,Prairie View,H,82,76,2
+2026,2,9,Bethune-Cookman Wildcats,Texas So,H,79,69,2
+2026,2,14,Bethune-Cookman Wildcats,Alcorn St,V,55,57,2
+2026,2,16,Bethune-Cookman Wildcats,Jackson St,V,86,91,2
+2026,2,19,Bethune-Cookman Wildcats,Alabama St,H,82,71,2
+2026,2,21,Bethune-Cookman Wildcats,Alabama A&M,H,85,76,2
+2026,2,26,Bethune-Cookman Wildcats,Grambling,V,76,71,2
+2026,2,28,Bethune-Cookman Wildcats,Southern,V,82,79,2
+2026,3,5,Bethune-Cookman Wildcats,Florida A&M,V,77,81,2
+2026,3,11,Bethune-Cookman Wildcats,Prairie View,N,67,71,2
+2025,11,3,Binghamton Bearcats,Syracuse,V,47,85,2
+2025,11,5,Binghamton Bearcats,RIT,H,66,56,1
+2025,11,8,Binghamton Bearcats,Niagara,H,59,67,2
+2025,11,12,Binghamton Bearcats,Georgetown,V,70,83,2
+2025,11,15,Binghamton Bearcats,Longwood,V,82,90,2
+2025,11,19,Binghamton Bearcats,Misericordia,H,69,58,1
+2025,11,22,Binghamton Bearcats,Maryland ES,N,52,63,2
+2025,11,23,Binghamton Bearcats,Canisius,V,66,75,2
+2025,12,2,Binghamton Bearcats,Lehigh,H,80,71,2
+2025,12,6,Binghamton Bearcats,Le Moyne,H,63,78,2
+2025,12,13,Binghamton Bearcats,C Connecticut,H,67,84,2
+2025,12,17,Binghamton Bearcats,Pittsburgh,V,63,103,2
+2025,12,20,Binghamton Bearcats,Mercyhurst,V,61,82,2
+2025,12,23,Binghamton Bearcats,Army,V,85,95,2
+2025,12,29,Binghamton Bearcats,Elmira,H,100,60,1
+2026,1,3,Binghamton Bearcats,NJIT,H,65,73,2
+2026,1,8,Binghamton Bearcats,Vermont,V,59,60,2
+2026,1,10,Binghamton Bearcats,UMass Lowell,H,68,73,2
+2026,1,15,Binghamton Bearcats,Albany,V,53,69,2
+2026,1,19,Binghamton Bearcats,UMBC,H,60,78,2
+2026,1,22,Binghamton Bearcats,New Hampshire,V,82,88,2
+2026,1,24,Binghamton Bearcats,Maine,V,63,79,2
+2026,1,29,Binghamton Bearcats,Bryant,H,63,60,2
+2026,2,5,Binghamton Bearcats,UMBC,V,62,79,2
+2026,2,7,Binghamton Bearcats,NJIT,V,64,73,2
+2026,2,12,Binghamton Bearcats,Vermont,H,65,73,2
+2026,2,14,Binghamton Bearcats,Albany,H,74,77,2
+2026,2,19,Binghamton Bearcats,Bryant,V,79,67,2
+2026,2,21,Binghamton Bearcats,UMass Lowell,V,79,92,2
+2026,2,26,Binghamton Bearcats,New Hampshire,H,65,63,2
+2026,2,28,Binghamton Bearcats,Maine,H,74,67,2
+2025,11,3,Boise State Broncos,Hawaii Pacific,H,78,79,1
+2025,11,8,Boise State Broncos,Utah Valley,H,101,77,2
+2025,11,11,Boise State Broncos,UT Rio Grande,H,85,65,2
+2025,11,15,Boise State Broncos,Montana St,H,62,58,2
+2025,11,18,Boise State Broncos,Wichita St,H,62,59,2
+2025,11,24,Boise State Broncos,USC,N,67,70,2
+2025,11,25,Boise State Broncos,NC State,N,70,81,2
+2025,11,26,Boise State Broncos,Chaminade,N,102,76,1
+2025,12,6,Boise State Broncos,Butler,V,77,68,2
+2025,12,10,Boise State Broncos,Duquesne,H,86,64,2
+2025,12,14,Boise State Broncos,Saint Mary's,N,68,67,2
+2025,12,20,Boise State Broncos,Nevada,V,66,81,2
+2025,12,30,Boise State Broncos,New Mexico,H,62,53,2
+2026,1,3,Boise State Broncos,San Diego St,V,107,110,2
+2026,1,7,Boise State Broncos,Grand Canyon,H,58,75,2
+2026,1,10,Boise State Broncos,Utah St,H,68,93,2
+2026,1,13,Boise State Broncos,UNLV,V,85,89,2
+2026,1,16,Boise State Broncos,Colorado St,H,79,73,2
+2026,1,20,Boise State Broncos,Wyoming,V,81,65,2
+2026,1,24,Boise State Broncos,Air Force,H,96,54,2
+2026,1,27,Boise State Broncos,San Jose St,V,89,58,2
+2026,1,30,Boise State Broncos,Grand Canyon,V,69,86,2
+2026,2,3,Boise State Broncos,Nevada,H,91,87,2
+2026,2,7,Boise State Broncos,New Mexico,V,91,90,2
+2026,2,13,Boise State Broncos,UNLV,H,83,86,2
+2026,2,18,Boise State Broncos,Utah St,V,56,75,2
+2026,2,21,Boise State Broncos,San Jose St,H,84,69,2
+2026,2,24,Boise State Broncos,Wyoming,H,72,62,2
+2026,2,28,Boise State Broncos,Fresno St,V,69,53,2
+2026,3,3,Boise State Broncos,San Diego St,H,86,77,2
+2026,3,7,Boise State Broncos,Colorado St,V,78,67,2
+2026,3,11,Boise State Broncos,San Jose St,N,74,84,2

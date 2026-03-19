@@ -1,0 +1,280 @@
+[
+  {
+    "playerName": "Nikola Jokic",
+    "statType": "A/G",
+    "statValue": "1.0.3",
+    "lines": [
+      {
+        "line": "6+",
+        "odds": "−1480"
+      },
+      {
+        "line": "7+",
+        "odds": "−680"
+      },
+      {
+        "line": "8+",
+        "odds": "−353"
+      },
+      {
+        "line": "9+",
+        "odds": "−202"
+      },
+      {
+        "line": "10+",
+        "odds": "−119"
+      },
+      {
+        "line": "11+",
+        "odds": "+137"
+      },
+      {
+        "line": "12+",
+        "odds": "+220"
+      },
+      {
+        "line": "13+",
+        "odds": "+347"
+      },
+      {
+        "line": "14+",
+        "odds": "+549"
+      },
+      {
+        "line": "15+",
+        "odds": "+860"
+      },
+      {
+        "line": "16+",
+        "odds": "+1380"
+      },
+      {
+        "line": "17+",
+        "odds": "+2000"
+      },
+      {
+        "line": "18+",
+        "odds": "+2700"
+      }
+    ]
+  },
+  {
+    "playerName": "Alperen Sengun",
+    "statType": "A/G",
+    "statValue": "6.1",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−1200"
+      },
+      {
+        "line": "4+",
+        "odds": "−453"
+      },
+      {
+        "line": "5+",
+        "odds": "−212"
+      },
+      {
+        "line": "6+",
+        "odds": "−112"
+      },
+      {
+        "line": "7+",
+        "odds": "+156"
+      },
+      {
+        "line": "8+",
+        "odds": "+267"
+      },
+      {
+        "line": "9+",
+        "odds": "+472"
+      },
+      {
+        "line": "10+",
+        "odds": "+790"
+      },
+      {
+        "line": "11+",
+        "odds": "+1240"
+      },
+      {
+        "line": "12+",
+        "odds": "+1960"
+      },
+      {
+        "line": "13+",
+        "odds": "+2700"
+      }
+    ]
+  },
+  {
+    "playerName": "Jamal Murray",
+    "statType": "A/G",
+    "statValue": "7.2",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−2700"
+      },
+      {
+        "line": "4+",
+        "odds": "−740"
+      },
+      {
+        "line": "5+",
+        "odds": "−306"
+      },
+      {
+        "line": "6+",
+        "odds": "−151"
+      },
+      {
+        "line": "7+",
+        "odds": "+125"
+      },
+      {
+        "line": "8+",
+        "odds": "+228"
+      },
+      {
+        "line": "9+",
+        "odds": "+403"
+      },
+      {
+        "line": "10+",
+        "odds": "+720"
+      },
+      {
+        "line": "11+",
+        "odds": "+1240"
+      },
+      {
+        "line": "12+",
+        "odds": "+2100"
+      }
+    ]
+  },
+  {
+    "playerName": "Amen Thompson",
+    "statType": "A/G",
+    "statValue": "5.3",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−1020"
+      },
+      {
+        "line": "4+",
+        "odds": "−365"
+      },
+      {
+        "line": "5+",
+        "odds": "−166"
+      },
+      {
+        "line": "6+",
+        "odds": "+117"
+      },
+      {
+        "line": "7+",
+        "odds": "+218"
+      },
+      {
+        "line": "8+",
+        "odds": "+409"
+      },
+      {
+        "line": "9+",
+        "odds": "+730"
+      },
+      {
+        "line": "10+",
+        "odds": "+1280"
+      },
+      {
+        "line": "11+",
+        "odds": "+2100"
+      },
+      {
+        "line": "12+",
+        "odds": "+2900"
+      }
+    ]
+  },
+  {
+    "playerName": "Kevin Durant",
+    "statType": "A/G",
+    "statValue": "4.5",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−502"
+      },
+      {
+        "line": "4+",
+        "odds": "−203"
+      },
+      {
+        "line": "5+",
+        "odds": "+102"
+      },
+      {
+        "line": "6+",
+        "odds": "+201"
+      },
+      {
+        "line": "7+",
+        "odds": "+380"
+      },
+      {
+        "line": "8+",
+        "odds": "+720"
+      },
+      {
+        "line": "9+",
+        "odds": "+1300"
+      },
+      {
+        "line": "10+",
+        "odds": "+2100"
+      }
+    ]
+  },
+  {
+    "playerName": "Reed Sheppard",
+    "statType": "A/G",
+    "statValue": "3.2",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−257"
+      },
+      {
+        "line": "4+",
+        "odds": "−104"
+      },
+      {
+        "line": "5+",
+        "odds": "+208"
+      },
+      {
+        "line": "6+",
+        "odds": "+429"
+      },
+      {
+        "line": "7+",
+        "odds": "+890"
+      },
+      {
+        "line": "8+",
+        "odds": "+1680"
+      },
+      {
+        "line": "9+",
+        "odds": "+2800"
+      }
+    ]
+  }
+]

@@ -1,0 +1,459 @@
+[
+  {
+    "playerName": "Karl-Anthony Towns",
+    "statType": "RPG",
+    "statValue": "1.1.9",
+    "lines": [
+      {
+        "line": "8+",
+        "odds": "−1700"
+      },
+      {
+        "line": "9+",
+        "odds": "−840"
+      },
+      {
+        "line": "10+",
+        "odds": "−476"
+      },
+      {
+        "line": "11+",
+        "odds": "−292"
+      },
+      {
+        "line": "12+",
+        "odds": "−186"
+      },
+      {
+        "line": "13+",
+        "odds": "−122"
+      },
+      {
+        "line": "14+",
+        "odds": "+123"
+      },
+      {
+        "line": "15+",
+        "odds": "+182"
+      },
+      {
+        "line": "16+",
+        "odds": "+268"
+      },
+      {
+        "line": "17+",
+        "odds": "+391"
+      },
+      {
+        "line": "18+",
+        "odds": "+568"
+      },
+      {
+        "line": "19+",
+        "odds": "+830"
+      },
+      {
+        "line": "20+",
+        "odds": "+1180"
+      }
+    ]
+  },
+  {
+    "playerName": "Kyle Filipowski",
+    "statType": "RPG",
+    "statValue": "7",
+    "lines": [
+      {
+        "line": "4+",
+        "odds": "−4200"
+      },
+      {
+        "line": "5+",
+        "odds": "−1240"
+      },
+      {
+        "line": "6+",
+        "odds": "−551"
+      },
+      {
+        "line": "7+",
+        "odds": "−298"
+      },
+      {
+        "line": "8+",
+        "odds": "−173"
+      },
+      {
+        "line": "9+",
+        "odds": "−105"
+      },
+      {
+        "line": "10+",
+        "odds": "+150"
+      },
+      {
+        "line": "11+",
+        "odds": "+235"
+      },
+      {
+        "line": "12+",
+        "odds": "+366"
+      },
+      {
+        "line": "13+",
+        "odds": "+553"
+      },
+      {
+        "line": "14+",
+        "odds": "+810"
+      },
+      {
+        "line": "15+",
+        "odds": "+1220"
+      }
+    ]
+  },
+  {
+    "playerName": "Josh Hart",
+    "statType": "RPG",
+    "statValue": "7.6",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−3600"
+      },
+      {
+        "line": "4+",
+        "odds": "−1060"
+      },
+      {
+        "line": "5+",
+        "odds": "−474"
+      },
+      {
+        "line": "6+",
+        "odds": "−255"
+      },
+      {
+        "line": "7+",
+        "odds": "−151"
+      },
+      {
+        "line": "8+",
+        "odds": "+105"
+      },
+      {
+        "line": "9+",
+        "odds": "+164"
+      },
+      {
+        "line": "10+",
+        "odds": "+250"
+      },
+      {
+        "line": "11+",
+        "odds": "+375"
+      },
+      {
+        "line": "12+",
+        "odds": "+553"
+      },
+      {
+        "line": "13+",
+        "odds": "+820"
+      },
+      {
+        "line": "14+",
+        "odds": "+1160"
+      },
+      {
+        "line": "15+",
+        "odds": "+1620"
+      }
+    ]
+  },
+  {
+    "playerName": "Mitchell Robinson",
+    "statType": "RPG",
+    "statValue": "8.6",
+    "lines": [
+      {
+        "line": "4+",
+        "odds": "−1480"
+      },
+      {
+        "line": "5+",
+        "odds": "−599"
+      },
+      {
+        "line": "6+",
+        "odds": "−299"
+      },
+      {
+        "line": "7+",
+        "odds": "−168"
+      },
+      {
+        "line": "8+",
+        "odds": "+101"
+      },
+      {
+        "line": "9+",
+        "odds": "+164"
+      },
+      {
+        "line": "10+",
+        "odds": "+257"
+      },
+      {
+        "line": "11+",
+        "odds": "+403"
+      },
+      {
+        "line": "12+",
+        "odds": "+630"
+      },
+      {
+        "line": "13+",
+        "odds": "+990"
+      },
+      {
+        "line": "14+",
+        "odds": "+1500"
+      }
+    ]
+  },
+  {
+    "playerName": "OG Anunoby",
+    "statType": "RPG",
+    "statValue": "5.4",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−860"
+      },
+      {
+        "line": "4+",
+        "odds": "−333"
+      },
+      {
+        "line": "5+",
+        "odds": "−163"
+      },
+      {
+        "line": "6+",
+        "odds": "+115"
+      },
+      {
+        "line": "7+",
+        "odds": "+207"
+      },
+      {
+        "line": "8+",
+        "odds": "+351"
+      },
+      {
+        "line": "9+",
+        "odds": "+595"
+      },
+      {
+        "line": "10+",
+        "odds": "+970"
+      },
+      {
+        "line": "11+",
+        "odds": "+1520"
+      }
+    ]
+  },
+  {
+    "playerName": "John Konchar",
+    "statType": "RPG",
+    "statValue": "3.4",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−558"
+      },
+      {
+        "line": "4+",
+        "odds": "−244"
+      },
+      {
+        "line": "5+",
+        "odds": "−125"
+      },
+      {
+        "line": "6+",
+        "odds": "+147"
+      },
+      {
+        "line": "7+",
+        "odds": "+250"
+      },
+      {
+        "line": "8+",
+        "odds": "+428"
+      },
+      {
+        "line": "9+",
+        "odds": "+710"
+      },
+      {
+        "line": "10+",
+        "odds": "+1140"
+      }
+    ]
+  },
+  {
+    "playerName": "Ace Bailey",
+    "statType": "RPG",
+    "statValue": "4",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−700"
+      },
+      {
+        "line": "4+",
+        "odds": "−273"
+      },
+      {
+        "line": "5+",
+        "odds": "−130"
+      },
+      {
+        "line": "6+",
+        "odds": "+146"
+      },
+      {
+        "line": "7+",
+        "odds": "+267"
+      },
+      {
+        "line": "8+",
+        "odds": "+473"
+      },
+      {
+        "line": "9+",
+        "odds": "+810"
+      },
+      {
+        "line": "10+",
+        "odds": "+1360"
+      }
+    ]
+  },
+  {
+    "playerName": "Mikal Bridges",
+    "statType": "RPG",
+    "statValue": "4.1",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−422"
+      },
+      {
+        "line": "4+",
+        "odds": "−178"
+      },
+      {
+        "line": "5+",
+        "odds": "+113"
+      },
+      {
+        "line": "6+",
+        "odds": "+214"
+      },
+      {
+        "line": "7+",
+        "odds": "+381"
+      },
+      {
+        "line": "8+",
+        "odds": "+680"
+      },
+      {
+        "line": "9+",
+        "odds": "+1160"
+      }
+    ]
+  },
+  {
+    "playerName": "Jalen Brunson",
+    "statType": "RPG",
+    "statValue": "3.5",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−270"
+      },
+      {
+        "line": "4+",
+        "odds": "−112"
+      },
+      {
+        "line": "5+",
+        "odds": "+195"
+      },
+      {
+        "line": "6+",
+        "odds": "+395"
+      },
+      {
+        "line": "7+",
+        "odds": "+780"
+      },
+      {
+        "line": "8+",
+        "odds": "+1480"
+      }
+    ]
+  },
+  {
+    "playerName": "Cody Williams",
+    "statType": "RPG",
+    "statValue": "2.6",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−214"
+      },
+      {
+        "line": "4+",
+        "odds": "+112"
+      },
+      {
+        "line": "5+",
+        "odds": "+239"
+      },
+      {
+        "line": "6+",
+        "odds": "+495"
+      },
+      {
+        "line": "7+",
+        "odds": "+980"
+      }
+    ]
+  },
+  {
+    "playerName": "Karl-Anthony Towns",
+    "statType": "",
+    "statValue": "",
+    "lines": [
+      {
+        "line": "1+",
+        "odds": "−334"
+      },
+      {
+        "line": "2+",
+        "odds": "+140"
+      },
+      {
+        "line": "3+",
+        "odds": "+495"
+      }
+    ]
+  }
+]

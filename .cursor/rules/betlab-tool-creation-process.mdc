@@ -1,0 +1,34 @@
+---
+description: BetLab end-to-end tool implementation process
+alwaysApply: false
+---
+
+# Tool Creation Process
+
+- Follow `docs/tool-creation-process.md` for every new BetLab tool.
+- Start by defining explicit inputs, outputs, formulas, and edge cases.
+- Implement frontend tool module in `frontend/src/tools`.
+- Register tool in both:
+  - `frontend/src/data/tools.js`
+  - `frontend/src/App.jsx` route table
+
+# Quality and UX
+
+- Validate calculations with representative sample values.
+- Ensure tool UX works in both dark and light themes.
+- Keep tool components focused; split large logic into `frontend/src/utils` helpers.
+- Default numeric inputs to `type="number"` with incremental stepping (`step="1"` unless precision requires another step).
+- Apply scoped incrementer styling in `frontend/src/styles.css` and verify in both themes.
+- Save notable outputs to history when useful.
+
+# Optional Backend Integration
+
+- If persistence/API is needed, define endpoint contract before coding.
+- Mount new routes under `/api` via `backend/src/routes/index.js`.
+- Keep success/error JSON shape consistent with backend conventions.
+
+# Completion Checklist
+
+- Frontend build passes.
+- No new lint issues in changed files.
+- Docs and relevant `.cursor/rules` are updated.

@@ -1,0 +1,48 @@
+---
+description: BetLab frontend architecture and conventions
+alwaysApply: false
+---
+
+# BetLab Frontend
+
+- Frontend app name is `BetLab`.
+- Build frontend with Vite + React + JavaScript (`.jsx` / `.js`), not TypeScript.
+- Keep tools modular and independent in `frontend/src/tools`.
+- Route each tool from `frontend/src/App.jsx` so tools can be added without touching shared logic heavily.
+- Maintain process/style docs in `docs/frontend-process.md`.
+
+# Core UI Structure
+
+- Global layout component: `frontend/src/components/AppLayout.jsx`.
+- Shared app state (favorites, history, notes): `frontend/src/state/BetLabContext.jsx`.
+- Tool metadata source of truth: `frontend/src/data/tools.js`.
+- Reusable utilities (odds conversion, storage, formatters) belong in `frontend/src/utils`.
+- Reusable hooks belong in `frontend/src/hooks`.
+- Theme state is stored in `betlab.theme` and applied via `data-theme` on document root.
+- For numeric tool inputs, default to `type="number"` with incremental stepping (`step="1"` unless tool-specific precision needs differ).
+- Numeric incrementers must be visually validated in dark/light mode and styled via scoped classes in `frontend/src/styles.css`.
+
+# MVP Tool Set
+
+- Odds Converter (`/tools/odds-converter`)
+- Bet Size Calculator (`/tools/bet-size`)
+- Parlay Builder (`/tools/parlay`)
+- Quick Notes (`/tools/quick-notes`)
+- Overlay Calculator (`/tools/overlay-calculator`)
+- Round Leader Projection (`/tools/round-leader-projection`)
+- Probability Calculator (`/tools/probability-calculator`)
+
+# Local Persistence
+
+- Use localStorage for early-stage persistence:
+  - `betlab.favorites`
+  - `betlab.history`
+  - `betlab.notes`
+  - `betlab.theme`
+- Keep history capped to latest 25 entries.
+- Ensure UI remains readable and functional in both dark and light themes.
+
+# Growth Direction
+
+- Add future tools as isolated modules in `src/tools`.
+- Keep frontend API calls behind a dedicated client layer before wiring Express/Mongo persistence.

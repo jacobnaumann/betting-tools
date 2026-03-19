@@ -1,0 +1,287 @@
+[
+  {
+    "playerName": "Jalen Brunson",
+    "statType": "A/G",
+    "statValue": "6.5",
+    "lines": [
+      {
+        "line": "4+",
+        "odds": "−1680"
+      },
+      {
+        "line": "5+",
+        "odds": "−630"
+      },
+      {
+        "line": "6+",
+        "odds": "−299"
+      },
+      {
+        "line": "7+",
+        "odds": "−160"
+      },
+      {
+        "line": "8+",
+        "odds": "+108"
+      },
+      {
+        "line": "9+",
+        "odds": "+187"
+      },
+      {
+        "line": "10+",
+        "odds": "+314"
+      },
+      {
+        "line": "11+",
+        "odds": "+522"
+      },
+      {
+        "line": "12+",
+        "odds": "+840"
+      },
+      {
+        "line": "13+",
+        "odds": "+1360"
+      },
+      {
+        "line": "14+",
+        "odds": "+2000"
+      },
+      {
+        "line": "15+",
+        "odds": "+2900"
+      }
+    ]
+  },
+  {
+    "playerName": "Josh Hart",
+    "statType": "A/G",
+    "statValue": "5",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−680"
+      },
+      {
+        "line": "4+",
+        "odds": "−296"
+      },
+      {
+        "line": "5+",
+        "odds": "−152"
+      },
+      {
+        "line": "6+",
+        "odds": "+120"
+      },
+      {
+        "line": "7+",
+        "odds": "+208"
+      },
+      {
+        "line": "8+",
+        "odds": "+346"
+      },
+      {
+        "line": "9+",
+        "odds": "+555"
+      },
+      {
+        "line": "10+",
+        "odds": "+900"
+      },
+      {
+        "line": "11+",
+        "odds": "+1400"
+      },
+      {
+        "line": "12+",
+        "odds": "+2000"
+      },
+      {
+        "line": "13+",
+        "odds": "+2600"
+      }
+    ]
+  },
+  {
+    "playerName": "Keyonte George",
+    "statType": "A/G",
+    "statValue": "6.2",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−610"
+      },
+      {
+        "line": "4+",
+        "odds": "−266"
+      },
+      {
+        "line": "5+",
+        "odds": "−137"
+      },
+      {
+        "line": "6+",
+        "odds": "+133"
+      },
+      {
+        "line": "7+",
+        "odds": "+232"
+      },
+      {
+        "line": "8+",
+        "odds": "+393"
+      },
+      {
+        "line": "9+",
+        "odds": "+670"
+      },
+      {
+        "line": "10+",
+        "odds": "+1120"
+      },
+      {
+        "line": "11+",
+        "odds": "+1800"
+      },
+      {
+        "line": "12+",
+        "odds": "+2600"
+      }
+    ]
+  },
+  {
+    "playerName": "Mikal Bridges",
+    "statType": "A/G",
+    "statValue": "4",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−276"
+      },
+      {
+        "line": "4+",
+        "odds": "−123"
+      },
+      {
+        "line": "5+",
+        "odds": "+162"
+      },
+      {
+        "line": "6+",
+        "odds": "+303"
+      },
+      {
+        "line": "7+",
+        "odds": "+566"
+      },
+      {
+        "line": "8+",
+        "odds": "+1040"
+      },
+      {
+        "line": "9+",
+        "odds": "+1740"
+      },
+      {
+        "line": "10+",
+        "odds": "+2700"
+      }
+    ]
+  },
+  {
+    "playerName": "Kyle Filipowski",
+    "statType": "A/G",
+    "statValue": "2.3",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−201"
+      },
+      {
+        "line": "4+",
+        "odds": "+117"
+      },
+      {
+        "line": "5+",
+        "odds": "+248"
+      },
+      {
+        "line": "6+",
+        "odds": "+508"
+      },
+      {
+        "line": "7+",
+        "odds": "+970"
+      },
+      {
+        "line": "8+",
+        "odds": "+1760"
+      },
+      {
+        "line": "9+",
+        "odds": "+2700"
+      }
+    ]
+  },
+  {
+    "playerName": "Karl-Anthony Towns",
+    "statType": "A/G",
+    "statValue": "2.8",
+    "lines": [
+      {
+        "line": "3+",
+        "odds": "−163"
+      },
+      {
+        "line": "4+",
+        "odds": "+149"
+      },
+      {
+        "line": "5+",
+        "odds": "+331"
+      },
+      {
+        "line": "6+",
+        "odds": "+690"
+      },
+      {
+        "line": "7+",
+        "odds": "+1360"
+      },
+      {
+        "line": "8+",
+        "odds": "+2400"
+      }
+    ]
+  },
+  {
+    "playerName": "Ace Bailey",
+    "statType": "A/G",
+    "statValue": "1.7",
+    "lines": [
+      {
+        "line": "2+",
+        "odds": "−177"
+      },
+      {
+        "line": "3+",
+        "odds": "+167"
+      },
+      {
+        "line": "4+",
+        "odds": "+427"
+      },
+      {
+        "line": "5+",
+        "odds": "+970"
+      },
+      {
+        "line": "6+",
+        "odds": "+2000"
+      }
+    ]
+  }
+]
