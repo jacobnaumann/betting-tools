@@ -32,3 +32,4 @@ alwaysApply: false
 - Frontend build passes.
 - No new lint issues in changed files.
 - Docs and relevant `.cursor/rules` are updated.
+- For major tools, maintain one main source-of-truth doc and focused backend/frontend/debugging references.

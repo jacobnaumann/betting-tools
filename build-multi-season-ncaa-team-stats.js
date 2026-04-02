@@ -22,8 +22,9 @@ function parseInteger(value, fallback) {
 function parseArgs() {
   const args = process.argv.slice(2);
   const currentStartYear = defaultCurrentSeasonStartYear();
+  let seasonsBackOverride = 0;
   const out = {
-    seasonsBack: 8,
+    startStartYear: 2016,
     endStartYear: currentStartYear,
     requestDelayMs: 2600,
     outputDir: path.resolve(process.cwd(), 'multi-season-team-stats'),
@@ -34,8 +35,13 @@ function parseArgs() {
   for (let i = 0; i < args.length; i += 1) {
     const arg = args[i];
     const next = args[i + 1];
+    if (arg === '--start-start-year' && next) {
+      out.startStartYear = parseInteger(next, out.startStartYear);
+      i += 1;
+      continue;
+    }
     if (arg === '--seasons-back' && next) {
-      out.seasonsBack = parseInteger(next, out.seasonsBack);
+      seasonsBackOverride = parseInteger(next, seasonsBackOverride);
       i += 1;
       continue;
     }
@@ -66,8 +72,8 @@ function parseArgs() {
     }
   }
 
-  if (!Number.isInteger(out.seasonsBack) || out.seasonsBack < 1) {
-    throw new Error(`Invalid --seasons-back: ${out.seasonsBack}`);
+  if (!Number.isInteger(out.startStartYear) || out.startStartYear < 2000) {
+    throw new Error(`Invalid --start-start-year: ${out.startStartYear}`);
   }
   if (!Number.isInteger(out.endStartYear) || out.endStartYear < 2000) {
     throw new Error(`Invalid --end-start-year: ${out.endStartYear}`);
@@ -75,8 +81,16 @@ function parseArgs() {
   if (!Number.isInteger(out.requestDelayMs) || out.requestDelayMs < 500) {
     throw new Error(`Invalid --request-delay-ms: ${out.requestDelayMs}`);
   }
+  if (seasonsBackOverride > 0) {
+    out.startStartYear = out.endStartYear - seasonsBackOverride + 1;
+  }
+  if (out.startStartYear > out.endStartYear) {
+    throw new Error(
+      `Invalid season range: start ${out.startStartYear} is after end ${out.endStartYear}.`
+    );
+  }
 
-  const firstStartYear = out.endStartYear - out.seasonsBack + 1;
+  const firstStartYear = out.startStartYear;
   if (!out.combinedFile) {
     out.combinedFile = path.resolve(
       out.outputDir,
@@ -109,7 +123,7 @@ async function run() {
   await fs.mkdir(config.outputDir, { recursive: true });
 
   const startYears = [];
-  for (let year = config.endStartYear - config.seasonsBack + 1; year <= config.endStartYear; year += 1) {
+  for (let year = config.startStartYear; year <= config.endStartYear; year += 1) {
     startYears.push(year);
   }
 

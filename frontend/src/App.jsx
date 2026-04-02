@@ -10,6 +10,7 @@ import { QuickNotesTool } from './tools/QuickNotesTool';
 import { OverlayCalculatorTool } from './tools/OverlayCalculatorTool';
 import { RoundLeaderProjectionTool } from './tools/RoundLeaderProjectionTool';
 import { ProbabilityCalculatorTool } from './tools/ProbabilityCalculatorTool';
+import { BasketballModelingTool } from './tools/BasketballModelingTool';
 import { NotFoundPage } from './pages/NotFoundPage';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path="/tools/overlay-calculator" element={<OverlayCalculatorTool />} />
         <Route path="/tools/round-leader-projection" element={<RoundLeaderProjectionTool />} />
         <Route path="/tools/probability-calculator" element={<ProbabilityCalculatorTool />} />
+        <Route path="/tools/basketball-modeling" element={<BasketballModelingTool />} />
         <Route path="/history" element={<HistoryPage />} />
         <Route path="/404" element={<NotFoundPage />} />
         <Route path="*" element={<Navigate to="/404" replace />} />

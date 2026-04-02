@@ -32,6 +32,7 @@ This document defines the standard backend workflow for BetLab APIs.
 - Current variables:
   - `PORT`
   - `CORS_ORIGIN`
+  - `MONGO_DB_URI` (or legacy `mongo_db_uri`)
 - Start commands:
   - Dev: `npm run dev`
   - Prod-like: `npm run start`

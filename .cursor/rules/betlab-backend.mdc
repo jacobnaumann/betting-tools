@@ -29,3 +29,12 @@ alwaysApply: false
 - Expected vars:
   - `PORT`
   - `CORS_ORIGIN`
+  - `MONGO_DB_URI` (or `mongo_db_uri`)
+  - `BASKETBALL_MODEL_RESULTS_DIR` (optional override)
+  - `BASKETBALL_MODEL_STATS_DIR` (optional override)
+
+# Round Leader Projection Conventions
+
+- PGA schedule picker data is cached in `backend/data/round-leader-projection-events.json`.
+- Read cached schedule events via `GET /api/tools/round-leader-projection/events`.
+- Refresh and overwrite cached schedule events via `POST /api/tools/round-leader-projection/events/refresh`.

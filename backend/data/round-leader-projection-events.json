@@ -1,0 +1,438 @@
+{
+  "sourceUrl": "https://www.pgatour.com/schedule",
+  "updatedAt": "2026-03-26T15:37:55.496Z",
+  "events": [
+    {
+      "id": "R2026006",
+      "name": "Sony Open in Hawaii",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/sony-open-in-hawaii/R2026006/",
+      "status": "COMPLETED",
+      "roundLabel": null,
+      "displayDate": "Jan 15 - 18",
+      "startDate": "2026-01-15"
+    },
+    {
+      "id": "R2026002",
+      "name": "The American Express",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/the-american-express/R2026002/",
+      "status": "COMPLETED",
+      "roundLabel": null,
+      "displayDate": "Jan 22 - 25",
+      "startDate": "2026-01-22"
+    },
+    {
+      "id": "R2026004",
+      "name": "Farmers Insurance Open",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/farmers-insurance-open/R2026004/",
+      "status": "COMPLETED",
+      "roundLabel": null,
+      "displayDate": "Jan 29 - Feb 1",
+      "startDate": "2026-01-29"
+    },
+    {
+      "id": "R2026003",
+      "name": "WM Phoenix Open",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/wm-phoenix-open/R2026003/",
+      "status": "COMPLETED",
+      "roundLabel": null,
+      "displayDate": "Feb 5 - 8",
+      "startDate": "2026-02-05"
+    },
+    {
+      "id": "R2026005",
+      "name": "AT&T Pebble Beach Pro-Am",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/at-and-t-pebble-beach-pro-am/R2026005/",
+      "status": "COMPLETED",
+      "roundLabel": null,
+      "displayDate": "Feb 12 - 15",
+      "startDate": "2026-02-12"
+    },
+    {
+      "id": "R2026007",
+      "name": "The Genesis Invitational",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/the-genesis-invitational/R2026007/",
+      "status": "COMPLETED",
+      "roundLabel": null,
+      "displayDate": "Feb 19 - 22",
+      "startDate": "2026-02-19"
+    },
+    {
+      "id": "R2026010",
+      "name": "Cognizant Classic in The Palm Beaches",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/cognizant-classic-in-the-palm-beaches/R2026010/",
+      "status": "COMPLETED",
+      "roundLabel": null,
+      "displayDate": "Feb 26 - Mar 1",
+      "startDate": "2026-02-26"
+    },
+    {
+      "id": "R2026009",
+      "name": "Arnold Palmer Invitational presented by Mastercard",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/arnold-palmer-invitational-presented-by-mastercard/R2026009/",
+      "status": "COMPLETED",
+      "roundLabel": null,
+      "displayDate": "Mar 5 - 8",
+      "startDate": "2026-03-05"
+    },
+    {
+      "id": "R2026483",
+      "name": "Puerto Rico Open",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/puerto-rico-open/R2026483/",
+      "status": "COMPLETED",
+      "roundLabel": null,
+      "displayDate": "Mar 5 - 8",
+      "startDate": "2026-03-05"
+    },
+    {
+      "id": "R2026011",
+      "name": "THE PLAYERS Championship",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/the-players-championship/R2026011/",
+      "status": "COMPLETED",
+      "roundLabel": null,
+      "displayDate": "Mar 12 - 15",
+      "startDate": "2026-03-12"
+    },
+    {
+      "id": "R2026475",
+      "name": "Valspar Championship",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/valspar-championship/R2026475/",
+      "status": "COMPLETED",
+      "roundLabel": null,
+      "displayDate": "Mar 19 - 22",
+      "startDate": "2026-03-19"
+    },
+    {
+      "id": "R2026020",
+      "name": "Texas Children's Houston Open",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/texas-childrens-houston-open/R2026020/",
+      "status": "IN_PROGRESS",
+      "roundLabel": null,
+      "displayDate": "Mar 26 - 29",
+      "startDate": "2026-03-26"
+    },
+    {
+      "id": "R2026041",
+      "name": "Valero Texas Open",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/valero-texas-open/R2026041/",
+      "status": "UPCOMING",
+      "roundLabel": null,
+      "displayDate": "Apr 2 - 5",
+      "startDate": "2026-04-02"
+    },
+    {
+      "id": "R2026014",
+      "name": "Masters Tournament",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/masters-tournament/R2026014/",
+      "status": "UPCOMING",
+      "roundLabel": null,
+      "displayDate": "Apr 9 - 12",
+      "startDate": "2026-04-09"
+    },
+    {
+      "id": "R2026012",
+      "name": "RBC Heritage",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/rbc-heritage/R2026012/",
+      "status": "UPCOMING",
+      "roundLabel": null,
+      "displayDate": "Apr 16 - 19",
+      "startDate": "2026-04-16"
+    },
+    {
+      "id": "R2026018",
+      "name": "Zurich Classic of New Orleans",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/zurich-classic-of-new-orleans/R2026018/",
+      "status": "UPCOMING",
+      "roundLabel": null,
+      "displayDate": "Apr 23 - 26",
+      "startDate": "2026-04-23"
+    },
+    {
+      "id": "R2026556",
+      "name": "Cadillac Championship",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/cadillac-championship/R2026556/",
+      "status": "UPCOMING",
+      "roundLabel": null,
+      "displayDate": "Apr 30 - May 3",
+      "startDate": "2026-04-30"
+    },
+    {
+      "id": "R2026553",
+      "name": "ONEflight Myrtle Beach Classic",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/oneflight-myrtle-beach-classic/R2026553/",
+      "status": "UPCOMING",
+      "roundLabel": null,
+      "displayDate": "May 7 - 10",
+      "startDate": "2026-05-07"
+    },
+    {
+      "id": "R2026480",
+      "name": "Truist Championship",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/truist-championship/R2026480/",
+      "status": "UPCOMING",
+      "roundLabel": null,
+      "displayDate": "May 7 - 10",
+      "startDate": "2026-05-07"
+    },
+    {
+      "id": "R2026033",
+      "name": "PGA Championship",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/pga-championship/R2026033/",
+      "status": "UPCOMING",
+      "roundLabel": null,
+      "displayDate": "May 14 - 17",
+      "startDate": "2026-05-14"
+    },
+    {
+      "id": "R2026019",
+      "name": "THE CJ CUP Byron Nelson",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/the-cj-cup-byron-nelson/R2026019/",
+      "status": "UPCOMING",
+      "roundLabel": null,
+      "displayDate": "May 21 - 24",
+      "startDate": "2026-05-21"
+    },
+    {
+      "id": "R2026021",
+      "name": "Charles Schwab Challenge",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/charles-schwab-challenge/R2026021/",
+      "status": "UPCOMING",
+      "roundLabel": null,
+      "displayDate": "May 28 - 31",
+      "startDate": "2026-05-28"
+    },
+    {
+      "id": "R2026023",
+      "name": "the Memorial Tournament presented by Workday",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/the-memorial-tournament-presented-by-workday/R2026023/",
+      "status": "UPCOMING",
+      "roundLabel": null,
+      "displayDate": "Jun 4 - 7",
+      "startDate": "2026-06-04"
+    },
+    {
+      "id": "R2026032",
+      "name": "RBC Canadian Open",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/rbc-canadian-open/R2026032/",
+      "status": "UPCOMING",
+      "roundLabel": null,
+      "displayDate": "Jun 11 - 14",
+      "startDate": "2026-06-11"
+    },
+    {
+      "id": "R2026026",
+      "name": "U.S. Open",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/u-s-open/R2026026/",
+      "status": "UPCOMING",
+      "roundLabel": null,
+      "displayDate": "Jun 18 - 21",
+      "startDate": "2026-06-18"
+    },
+    {
+      "id": "R2026034",
+      "name": "Travelers Championship",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/travelers-championship/R2026034/",
+      "status": "UPCOMING",
+      "roundLabel": null,
+      "displayDate": "Jun 25 - 28",
+      "startDate": "2026-06-25"
+    },
+    {
+      "id": "R2026030",
+      "name": "John Deere Classic",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/john-deere-classic/R2026030/",
+      "status": "UPCOMING",
+      "roundLabel": null,
+      "displayDate": "Jul 2 - 5",
+      "startDate": "2026-07-02"
+    },
+    {
+      "id": "R2026541",
+      "name": "Genesis Scottish Open",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/genesis-scottish-open/R2026541/",
+      "status": "UPCOMING",
+      "roundLabel": null,
+      "displayDate": "Jul 9 - 12",
+      "startDate": "2026-07-09"
+    },
+    {
+      "id": "R2026518",
+      "name": "ISCO Championship",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/isco-championship/R2026518/",
+      "status": "UPCOMING",
+      "roundLabel": null,
+      "displayDate": "Jul 9 - 12",
+      "startDate": "2026-07-09"
+    },
+    {
+      "id": "R2026522",
+      "name": "Corales Puntacana Championship",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/corales-puntacana-championship/R2026522/",
+      "status": "UPCOMING",
+      "roundLabel": null,
+      "displayDate": "Jul 16 - 19",
+      "startDate": "2026-07-16"
+    },
+    {
+      "id": "R2026100",
+      "name": "The Open Championship",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/the-open-championship/R2026100/",
+      "status": "UPCOMING",
+      "roundLabel": null,
+      "displayDate": "Jul 16 - 19",
+      "startDate": "2026-07-16"
+    },
+    {
+      "id": "R2026525",
+      "name": "3M Open",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/3m-open/R2026525/",
+      "status": "UPCOMING",
+      "roundLabel": null,
+      "displayDate": "Jul 23 - 26",
+      "startDate": "2026-07-23"
+    },
+    {
+      "id": "R2026524",
+      "name": "Rocket Classic",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/rocket-classic/R2026524/",
+      "status": "UPCOMING",
+      "roundLabel": null,
+      "displayDate": "Jul 30 - Aug 2",
+      "startDate": "2026-07-30"
+    },
+    {
+      "id": "R2026013",
+      "name": "Wyndham Championship",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/wyndham-championship/R2026013/",
+      "status": "UPCOMING",
+      "roundLabel": null,
+      "displayDate": "Aug 6 - 9",
+      "startDate": "2026-08-06"
+    },
+    {
+      "id": "R2026027",
+      "name": "FedEx St. Jude Championship",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/fedex-st-jude-championship/R2026027/",
+      "status": "UPCOMING",
+      "roundLabel": null,
+      "displayDate": "Aug 13 - 16",
+      "startDate": "2026-08-13"
+    },
+    {
+      "id": "R2026028",
+      "name": "BMW Championship",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/bmw-championship/R2026028/",
+      "status": "UPCOMING",
+      "roundLabel": null,
+      "displayDate": "Aug 20 - 23",
+      "startDate": "2026-08-20"
+    },
+    {
+      "id": "R2026060",
+      "name": "TOUR Championship",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/tour-championship/R2026060/",
+      "status": "UPCOMING",
+      "roundLabel": null,
+      "displayDate": "Aug 27 - 30",
+      "startDate": "2026-08-27"
+    },
+    {
+      "id": "R2026557",
+      "name": "Biltmore Championship Asheville",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/biltmore-championship-asheville/R2026557/",
+      "status": "UPCOMING",
+      "roundLabel": null,
+      "displayDate": "Sep 17 - 20",
+      "startDate": "2026-09-17"
+    },
+    {
+      "id": "R2026500",
+      "name": "Presidents Cup",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/presidents-cup/R2026500/",
+      "status": "UPCOMING",
+      "roundLabel": null,
+      "displayDate": "Sep 24 - 27",
+      "startDate": "2026-09-24"
+    },
+    {
+      "id": "R2026554",
+      "name": "Bank of Utah Championship",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/bank-of-utah-championship/R2026554/",
+      "status": "UPCOMING",
+      "roundLabel": null,
+      "displayDate": "Oct 1 - 4",
+      "startDate": "2026-10-01"
+    },
+    {
+      "id": "R2026527",
+      "name": "Baycurrent Classic",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/baycurrent-classic/R2026527/",
+      "status": "UPCOMING",
+      "roundLabel": null,
+      "displayDate": "Oct 8 - 11",
+      "startDate": "2026-10-08"
+    },
+    {
+      "id": "R2026528",
+      "name": "Butterfield Bermuda Championship",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/butterfield-bermuda-championship/R2026528/",
+      "status": "UPCOMING",
+      "roundLabel": null,
+      "displayDate": "Oct 22 - 25",
+      "startDate": "2026-10-22"
+    },
+    {
+      "id": "R2026540",
+      "name": "VidantaWorld Mexico Open",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/vidantaworld-mexico-open/R2026540/",
+      "status": "UPCOMING",
+      "roundLabel": null,
+      "displayDate": "Oct 29 - Nov 1",
+      "startDate": "2026-10-29"
+    },
+    {
+      "id": "R2026457",
+      "name": "World Wide Technology Championship",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/world-wide-technology-championship/R2026457/",
+      "status": "UPCOMING",
+      "roundLabel": null,
+      "displayDate": "Nov 5 - 8",
+      "startDate": "2026-11-05"
+    },
+    {
+      "id": "R2026558",
+      "name": "Good Good Championship",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/good-good-championship/R2026558/",
+      "status": "UPCOMING",
+      "roundLabel": null,
+      "displayDate": "Nov 12 - 15",
+      "startDate": "2026-11-12"
+    },
+    {
+      "id": "R2026493",
+      "name": "The RSM Classic",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/the-rsm-classic/R2026493/",
+      "status": "UPCOMING",
+      "roundLabel": null,
+      "displayDate": "Nov 19 - 22",
+      "startDate": "2026-11-19"
+    },
+    {
+      "id": "R2026478",
+      "name": "Hero World Challenge",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/hero-world-challenge/R2026478/",
+      "status": "UPCOMING",
+      "roundLabel": null,
+      "displayDate": "Dec 3 - 6",
+      "startDate": "2026-12-03"
+    },
+    {
+      "id": "R2026551",
+      "name": "Grant Thornton Invitational",
+      "tournamentUrl": "https://www.pgatour.com/tournaments/2026/grant-thornton-invitational/R2026551/",
+      "status": "UPCOMING",
+      "roundLabel": null,
+      "displayDate": "Dec 11 - 13",
+      "startDate": "2026-12-11"
+    }
+  ]
+}

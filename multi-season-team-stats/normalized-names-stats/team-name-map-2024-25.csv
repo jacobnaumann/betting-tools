@@ -1,0 +1,366 @@
+stats_team,team_slug,results_team,method,confidence,needs_review
+Abilene Christian Wildcats,abilene-christian-wildcats,Abilene Christian,prefix_exact,1,no
+Air Force Falcons,air-force-falcons,Air Force,prefix_exact,1,no
+Akron Zips,akron-zips,Akron,prefix_exact,1,no
+Alabama A&M Bulldogs,alabama-am-bulldogs,Alabama A&M,prefix_exact,1,no
+Alabama Crimson Tide,alabama-crimson-tide,Alabama,prefix_multi_bestfit,0.93,no
+Alabama State Hornets,alabama-st-hornets,Alabama St.,prefix_exact,1,no
+Albany Great Danes,albany-great-danes,UAlbany,prefix_exact,1,no
+Alcorn State Braves,alcorn-st-braves,Alcorn,prefix_exact,1,no
+American Eagles,american-eagles,American,prefix_exact,1,no
+App State Mountaineers,appalachian-st-mountaineers,App State,prefix_exact,1,no
+Arizona State Sun Devils,arizona-state-sun-devils,Arizona St.,prefix_exact,1,no
+Arizona Wildcats,arizona-wildcats,Arizona,prefix_multi_bestfit,0.94,no
+Arkansas Razorbacks,arkansas-razorbacks,Arkansas,prefix_multi_bestfit,0.94,no
+Arkansas State Red Wolves,arkansas-st-red-wolves,Arkansas St.,prefix_exact,1,no
+Arkansas-Pine Bluff Golden Lions,arkansas-pine-bluff-golden-lions,Ark.-Pine Bluff,prefix_exact,1,no
+Army Black Knights,army-black-knights,Army West Point,prefix_exact,1,no
+Auburn Tigers,auburn-tigers,Auburn,prefix_exact,1,no
+Austin Peay Governors,austin-peay-governors,Austin Peay,prefix_exact,1,no
+Ball State Cardinals,ball-st-cardinals,Ball St.,prefix_exact,1,no
+Baylor Bears,baylor-bears,Baylor,prefix_exact,1,no
+Bellarmine Knights,bellarmine-knights,Bellarmine,prefix_exact,1,no
+Belmont Bruins,belmont-bruins,Belmont,prefix_exact,1,no
+Bethune-Cookman Wildcats,bethune-cookman-wildcats,Bethune-Cookman,prefix_exact,1,no
+Binghamton Bearcats,binghamton-bearcats,Binghamton,prefix_exact,1,no
+Boise State Broncos,boise-st-broncos,Boise St.,prefix_exact,1,no
+Boston College Eagles,boston-college-eagles,Boston College,prefix_exact,1,no
+Boston University Terriers,boston-u-terriers,Boston U.,prefix_exact,1,no
+Bowling Green Falcons,bowling-green-falcons,Bowling Green,prefix_exact,1,no
+Bradley Braves,bradley-braves,Bradley,prefix_exact,1,no
+Brown Bears,brown-bears,Brown,prefix_exact,1,no
+Bryant Bulldogs,bryant-bulldogs,Bryant,prefix_exact,1,no
+Bucknell Bison,bucknell-bison,Bucknell,prefix_exact,1,no
+Buffalo Bulls,buffalo-bulls,Buffalo,prefix_exact,1,no
+Butler Bulldogs,butler-bulldogs,Butler,prefix_exact,1,no
+BYU Cougars,brigham-young-cougars,BYU,prefix_exact,1,no
+Cal Poly Mustangs,cal-poly-slo-mustangs,Cal Poly,prefix_exact,1,no
+Cal State Bakersfield Roadrunners,csu-bakersfield-roadrunners,CSU Bakersfield,prefix_exact,1,no
+Cal State Fullerton Titans,csu-fullerton-titans,Cal St. Fullerton,prefix_exact,1,no
+Cal State Northridge Matadors,csu-northridge-matadors,CSUN,prefix_exact,1,no
+California Baptist Lancers,california-baptist-lancers,California Baptist,prefix_exact,1,no
+California Golden Bears,california-golden-bears,California,prefix_multi_bestfit,0.93,no
+Campbell Fighting Camels,campbell-fighting-camels,Campbell,prefix_exact,1,no
+Canisius Golden Griffins,canisius-golden-griffins,Canisius,prefix_exact,1,no
+Central Arkansas Bears,central-arkansas-bears,Central Ark.,prefix_exact,1,no
+Central Connecticut Blue Devils,central-conn-st-blue-devils,Central Conn. St.,prefix_exact,1,no
+Central Michigan Chippewas,central-michigan-chippewas,Central Mich.,prefix_exact,1,no
+Charleston Cougars,charleston-cougars,Col. of Charleston,prefix_multi_bestfit,0.95,no
+Charleston Southern Buccaneers,charleston-southern-buccaneers,Charleston So.,prefix_exact,1,no
+Charlotte 49ers,charlotte-49ers,Charlotte,prefix_exact,1,no
+Chattanooga Mocs,chattanooga-mocs,Chattanooga,prefix_exact,1,no
+Chicago State Cougars,chicago-st-cougars,Chicago St.,prefix_exact,1,no
+Cincinnati Bearcats,cincinnati-bearcats,Cincinnati,prefix_exact,1,no
+Clemson Tigers,clemson-tigers,Clemson,prefix_exact,1,no
+Cleveland State Vikings,cleveland-st-vikings,Cleveland St.,prefix_exact,1,no
+Coastal Carolina Chanticleers,coastal-carolina-chanticleers,Coastal Carolina,prefix_exact,1,no
+Colgate Raiders,colgate-raiders,Colgate,prefix_exact,1,no
+Colorado Buffaloes,colorado-buffaloes,Colorado,prefix_multi_bestfit,0.94,no
+Colorado State Rams,colorado-st-rams,Colorado St.,prefix_exact,1,no
+Columbia Lions,columbia-lions,Columbia,prefix_exact,1,no
+Connecticut Huskies,connecticut-huskies,UConn,prefix_exact,1,no
+Coppin State Eagles,coppin-st-eagles,Coppin St.,prefix_exact,1,no
+Cornell Big Red,cornell-big-red,Cornell,prefix_exact,1,no
+Creighton Bluejays,creighton-bluejays,Creighton,prefix_exact,1,no
+Dartmouth Big Green,dartmouth-big-green,Dartmouth,prefix_exact,1,no
+Davidson Wildcats,davidson-wildcats,Davidson,prefix_exact,1,no
+Dayton Flyers,dayton-flyers,Dayton,prefix_exact,1,no
+Delaware Blue Hens,delaware-blue-hens,Delaware,prefix_multi_bestfit,0.93,no
+Delaware State Hornets,delaware-state-hornets,Delaware St.,prefix_exact,1,no
+Denver Pioneers,denver-pioneers,Denver,prefix_exact,1,no
+DePaul Blue Demons,depaul-blue-demons,DePaul,prefix_exact,1,no
+Detroit Mercy Titans,detroit-mercy-titans,Detroit Mercy,prefix_exact,1,no
+Drake Bulldogs,drake-bulldogs,Drake,prefix_exact,1,no
+Drexel Dragons,drexel-dragons,Drexel,prefix_exact,1,no
+Duke Blue Devils,duke-blue-devils,Duke,prefix_exact,1,no
+Duquesne Dukes,duquesne-dukes,Duquesne,prefix_exact,1,no
+East Carolina Pirates,east-carolina-pirates,East Carolina,prefix_exact,1,no
+East Tennessee State Buccaneers,east-tennessee-st-buccaneers,ETSU,prefix_exact,1,no
+East Texas A&M Lions,east-texas-am-lions,East Texas A&M,prefix_exact,1,no
+Eastern Illinois Panthers,eastern-illinois-panthers,Eastern Ill.,prefix_exact,1,no
+Eastern Kentucky Colonels,eastern-kentucky-colonels,Eastern Ky.,prefix_exact,1,no
+Eastern Michigan Eagles,eastern-michigan-eagles,Eastern Mich.,prefix_exact,1,no
+Eastern Washington Eagles,eastern-washington-eagles,Eastern Wash.,prefix_exact,1,no
+Elon Phoenix,elon-university-phoenix,Elon,prefix_exact,1,no
+Evansville Purple Aces,evansville-purple-aces,Evansville,prefix_exact,1,no
+Fairfield Stags,fairfield-stags,Fairfield,prefix_exact,1,no
+Fairleigh Dickinson Knights,fairleigh-dickinson-knights,FDU,prefix_exact,1,no
+Florida A&M Rattlers,florida-am-rattlers,Florida A&M,prefix_exact,1,no
+Florida Atlantic Owls,florida-atlantic-owls,Fla. Atlantic,prefix_exact,1,no
+Florida Gators,florida-gators,Florida,prefix_multi_bestfit,0.94,no
+Florida Gulf Coast Eagles,florida-gulf-coast-eagles,FGCU,prefix_exact,1,no
+Florida International Panthers,florida-international-panthers,FIU,prefix_exact,1,no
+Florida State Seminoles,florida-state-seminoles,Florida St.,prefix_exact,1,no
+Fordham Rams,fordham-rams,Fordham,prefix_exact,1,no
+Fresno State Bulldogs,fresno-st-bulldogs,Fresno St.,prefix_exact,1,no
+Furman Paladins,furman-paladins,Furman,prefix_exact,1,no
+Gardner-Webb Runnin' Bulldogs,gardner-webb-runnin-bulldogs,Gardner-Webb,prefix_exact,1,no
+George Mason Patriots,george-mason-patriots,George Mason,prefix_exact,1,no
+George Washington Revolutionaries,george-washington-revolutionaries,George Washington,prefix_exact,1,no
+Georgetown Hoyas,georgetown-hoyas,Georgetown,prefix_exact,1,no
+Georgia Bulldogs,georgia-bulldogs,Georgia,prefix_multi_bestfit,0.94,no
+Georgia Southern Eagles,georgia-southern-eagles,Ga. Southern,prefix_exact,1,no
+Georgia State Panthers,georgia-st-panthers,Georgia St.,prefix_exact,1,no
+Georgia Tech Yellow Jackets,georgia-tech-yellow-jackets,Georgia Tech,prefix_exact,1,no
+Gonzaga Bulldogs,gonzaga-bulldogs,Gonzaga,prefix_exact,1,no
+Grambling Tigers,grambling-state-tigers,Grambling,prefix_exact,1,no
+Grand Canyon Lopes,grand-canyon-lopes,Grand Canyon,prefix_exact,1,no
+Green Bay Phoenix,green-bay-phoenix,Green Bay,prefix_exact,1,no
+Hampton Pirates,hampton-pirates,Hampton,prefix_exact,1,no
+Harvard Crimson,harvard-crimson,Harvard,prefix_exact,1,no
+Hawai'i Rainbow Warriors,hawaii-rainbow-warriors,Hawaii,prefix_exact,1,no
+High Point Panthers,high-point-panthers,High Point,prefix_exact,1,no
+Hofstra Pride,hofstra-pride,Hofstra,prefix_exact,1,no
+Holy Cross Crusaders,holy-cross-crusaders,Holy Cross,prefix_exact,1,no
+Houston Christian Huskies,houston-christian-huskies,Houston Christian,prefix_exact,1,no
+Houston Cougars,houston-cougars,Houston,prefix_multi_bestfit,0.94,no
+Howard Bison,howard-bison,Howard,prefix_exact,1,no
+Idaho State Bengals,idaho-state-bengals,Idaho St.,prefix_exact,1,no
+Idaho Vandals,idaho-vandals,Idaho,prefix_multi_bestfit,0.94,no
+Illinois Chicago Flames,illinois-chicago-flames,UIC,prefix_exact,1,no
+Illinois Fighting Illini,illinois-fighting-illini,Illinois,prefix_multi_bestfit,0.93,no
+Illinois State Redbirds,illinois-st-redbirds,Illinois St.,prefix_exact,1,no
+Incarnate Word Cardinals,incarnate-word-cardinals,UIW,prefix_exact,1,no
+Indiana Hoosiers,indiana-hoosiers,Indiana,prefix_multi_bestfit,0.94,no
+Indiana State Sycamores,indiana-st-sycamores,Indiana St.,prefix_exact,1,no
+Iona Gaels,iona-gaels,Iona,prefix_exact,1,no
+Iowa Hawkeyes,iowa-hawkeyes,Iowa,prefix_multi_bestfit,0.94,no
+Iowa State Cyclones,iowa-state-cyclones,Iowa St.,prefix_exact,1,no
+IU Indy Jaguars,iu-indy-jaguars,IU Indy,prefix_exact,1,no
+Jackson State Tigers,jackson-state-tigers,Jackson St.,prefix_exact,1,no
+Jacksonville Dolphins,jacksonville-dolphins,Jacksonville,prefix_multi_bestfit,0.94,no
+Jacksonville State Gamecocks,jacksonville-st-gamecocks,Jacksonville St.,prefix_exact,1,no
+James Madison Dukes,james-madison-dukes,James Madison,prefix_exact,1,no
+Kansas City Roos,kansas-city-roos,Kansas City,prefix_exact,1,no
+Kansas Jayhawks,kansas-jayhawks,Kansas,prefix_multi_bestfit,0.94,no
+Kansas State Wildcats,kansas-state-wildcats,Kansas St.,prefix_exact,1,no
+Kennesaw State Owls,kennesaw-st-owls,Kennesaw St.,prefix_exact,1,no
+Kent State Golden Flashes,kent-st-golden-flashes,Kent St.,prefix_exact,1,no
+Kentucky Wildcats,kentucky-wildcats,Kentucky,prefix_exact,1,no
+La Salle Explorers,la-salle-explorers,La Salle,prefix_exact,1,no
+Lafayette Leopards,lafayette-leopards,Lafayette,prefix_exact,1,no
+Lamar Cardinals,lamar-cardinals,Lamar University,prefix_exact,1,no
+Le Moyne Dolphins,le-moyne-dolphins,Le Moyne,prefix_exact,1,no
+Lehigh Mountain Hawks,lehigh-mountain-hawks,Lehigh,prefix_exact,1,no
+Liberty Flames,liberty-flames,Liberty,prefix_exact,1,no
+Lindenwood Lions,lindenwood-lions,Lindenwood,prefix_exact,1,no
+Lipscomb Bisons,lipscomb-bisons,Lipscomb,prefix_exact,1,no
+Little Rock Trojans,little-rock-trojans,Little Rock,prefix_exact,1,no
+Long Beach State Beach,long-beach-st-beach,Long Beach St.,prefix_exact,1,no
+Long Island Sharks,liu-sharks,LIU,prefix_exact,1,no
+Longwood Lancers,longwood-lancers,Longwood,prefix_exact,1,no
+Louisiana Ragin' Cajuns,ul-lafayette-ragin-cajuns,Louisiana,prefix_multi_bestfit,0.93,no
+Louisiana State Tigers,louisiana-state-tigers,LSU,prefix_exact,1,no
+Louisiana Tech Bulldogs,louisiana-tech-bulldogs,Louisiana Tech,prefix_exact,1,no
+Louisville Cardinals,louisville-cardinals,Louisville,prefix_exact,1,no
+Loyola Chicago Ramblers,loyola-chicago-ramblers,Loyola Chicago,prefix_exact,1,no
+Loyola Maryland Greyhounds,loyola-md-greyhounds,Loyola Maryland,prefix_exact,1,no
+Loyola Marymount Lions,loyola-marymount-lions,LMU (CA),prefix_exact,1,no
+Maine Black Bears,maine-black-bears,Maine,prefix_exact,1,no
+Manhattan Jaspers,manhattan-jaspers,Manhattan,prefix_exact,1,no
+Marist Red Foxes,marist-red-foxes,Marist,prefix_exact,1,no
+Marquette Golden Eagles,marquette-golden-eagles,Marquette,prefix_exact,1,no
+Marshall Thundering Herd,marshall-thundering-herd,Marshall,prefix_exact,1,no
+Maryland Eastern Shore Hawks,maryland-eastern-shore-hawks,UMES,prefix_exact,1,no
+Maryland Terrapins,maryland-terrapins,Maryland,prefix_multi_bestfit,0.94,no
+Massachusetts Minutemen,massachusetts-minutemen,Massachusetts,prefix_exact,1,no
+McNeese Cowboys,mcneese-st-cowboys,McNeese,prefix_exact,1,no
+Memphis Tigers,memphis-tigers,Memphis,prefix_exact,1,no
+Mercer Bears,mercer-bears,Mercer,prefix_exact,1,no
+Mercyhurst Lakers,mercyhurst-lakers,Mercyhurst,prefix_exact,1,no
+Merrimack Warriors,merrimack-warriors,Merrimack,prefix_exact,1,no
+Miami (OH) RedHawks,miami-oh-redhawks,Miami (OH),prefix_exact,1,no
+Miami Hurricanes,miami-hurricanes,Miami (FL),prefix_multi_bestfit,0.95,no
+Michigan State Spartans,michigan-st-spartans,Michigan St.,prefix_exact,1,no
+Michigan Wolverines,michigan-wolverines,Michigan,prefix_multi_bestfit,0.94,no
+Middle Tennessee Blue Raiders,middle-tennessee-st-blue-raiders,Middle Tenn.,prefix_exact,1,no
+Milwaukee Panthers,milwaukee-panthers,Milwaukee,prefix_exact,1,no
+Minnesota Golden Gophers,minnesota-golden-gophers,Minnesota,prefix_exact,1,no
+Mississippi Rebels,mississippi-rebels,Ole Miss,prefix_multi_bestfit,0.95,no
+Mississippi State Bulldogs,mississippi-state-bulldogs,Mississippi St.,prefix_exact,1,no
+Mississippi Valley State Delta Devils,mississippi-valley-state-delta-devils,Mississippi Val.,prefix_exact,1,no
+Missouri State Bears,missouri-st-bears,Missouri St.,prefix_exact,1,no
+Missouri Tigers,missouri-tigers,Missouri,prefix_multi_bestfit,0.94,no
+Monmouth Hawks,monmouth-nj-hawks,Monmouth,prefix_exact,1,no
+Montana Grizzlies,montana-grizzlies,Montana,prefix_multi_bestfit,0.94,no
+Montana State Bobcats,montana-st-bobcats,Montana St.,prefix_exact,1,no
+Morehead State Eagles,morehead-st-eagles,Morehead St.,prefix_exact,1,no
+Morgan State Bears,morgan-st-bears,Morgan St.,prefix_exact,1,no
+Mount St. Mary's Mountaineers,mount-st-marys-mountaineers,Mount St. Mary's,prefix_exact,1,no
+Murray State Racers,murray-st-racers,Murray St.,prefix_exact,1,no
+Navy Midshipmen,navy-midshipmen,Navy,prefix_exact,1,no
+NC State Wolfpack,nc-state-wolfpack,NC State,prefix_exact,1,no
+Nebraska Cornhuskers,nebraska-cornhuskers,Nebraska,prefix_exact,1,no
+Nevada Wolf Pack,nevada-wolf-pack,Nevada,prefix_exact,1,no
+New Hampshire Wildcats,new-hampshire-wildcats,New Hampshire,prefix_exact,1,no
+New Haven Chargers,new-haven-chargers,New Haven,prefix_exact,1,no
+New Mexico Lobos,new-mexico-lobos,New Mexico,prefix_multi_bestfit,0.94,no
+New Mexico State Aggies,new-mexico-st-aggies,New Mexico St.,prefix_exact,1,no
+New Orleans Privateers,new-orleans-privateers,New Orleans,prefix_exact,1,no
+Niagara Purple Eagles,niagara-purple-eagles,Niagara,prefix_exact,1,no
+Nicholls Colonels,nicholls-state-colonels,Nicholls,prefix_exact,1,no
+NJIT Highlanders,njit-highlanders,NJIT,prefix_exact,1,no
+Norfolk State Spartans,norfolk-state-spartans,Norfolk St.,prefix_exact,1,no
+North Alabama Lions,north-alabama-lions,North Ala.,prefix_exact,1,no
+North Carolina A&T Aggies,north-carolina-at-aggies,N.C. A&T,prefix_exact,1,no
+North Carolina Central Eagles,north-carolina-central-eagles,N.C. Central,prefix_exact,1,no
+North Carolina Tar Heels,north-carolina-tar-heels,North Carolina,prefix_multi_bestfit,0.93,no
+North Dakota Fighting Hawks,north-dakota-fighting-hawks,North Dakota,prefix_multi_bestfit,0.93,no
+North Dakota State Bison,north-dakota-state-bison,North Dakota St.,prefix_exact,1,no
+North Florida Ospreys,north-florida-ospreys,North Florida,prefix_exact,1,no
+North Texas Mean Green,north-texas-mean-green,North Texas,prefix_exact,1,no
+Northeastern Huskies,northeastern-huskies,Northeastern,prefix_exact,1,no
+Northern Arizona Lumberjacks,northern-arizona-lumberjacks,Northern Ariz.,prefix_exact,1,no
+Northern Colorado Bears,northern-colorado-bears,Northern Colo.,prefix_exact,1,no
+Northern Illinois Huskies,northern-illinois-huskies,NIU,prefix_exact,1,no
+Northern Iowa Panthers,northern-iowa-panthers,UNI,prefix_exact,1,no
+Northern Kentucky Norse,northern-kentucky-norse,Northern Ky.,prefix_exact,1,no
+Northwestern State Demons,northwestern-st-demons,Northwestern St.,prefix_exact,1,no
+Northwestern Wildcats,northwestern-wildcats,Northwestern,prefix_multi_bestfit,0.94,no
+Notre Dame Fighting Irish,notre-dame-fighting-irish,Notre Dame,prefix_exact,1,no
+Oakland Golden Grizzlies,oakland-golden-grizzlies,Oakland,prefix_exact,1,no
+Ohio Bobcats,ohio-bobcats,Ohio,prefix_multi_bestfit,0.94,no
+Ohio State Buckeyes,ohio-st-buckeyes,Ohio St.,prefix_exact,1,no
+Oklahoma Sooners,oklahoma-sooners,Oklahoma,prefix_multi_bestfit,0.94,no
+Oklahoma State Cowboys,oklahoma-state-cowboys,Oklahoma St.,prefix_exact,1,no
+Old Dominion Monarchs,old-dominion-monarchs,Old Dominion,prefix_exact,1,no
+Omaha Mavericks,nebraska-omaha-mavericks,Omaha,prefix_exact,1,no
+Oral Roberts Golden Eagles,oral-roberts-golden-eagles,Oral Roberts,prefix_exact,1,no
+Oregon Ducks,oregon-ducks,Oregon,prefix_multi_bestfit,0.94,no
+Oregon State Beavers,oregon-st-beavers,Oregon St.,prefix_exact,1,no
+Pacific Tigers,pacific-tigers,Pacific,prefix_exact,1,no
+Penn Quakers,pennsylvania-quakers,Penn,prefix_multi_bestfit,0.94,no
+Penn State Nittany Lions,penn-st-nittany-lions,Penn St.,prefix_exact,1,no
+Pepperdine Waves,pepperdine-waves,Pepperdine,prefix_exact,1,no
+Pittsburgh Panthers,pittsburgh-panthers,Pittsburgh,prefix_exact,1,no
+Portland Pilots,portland-pilots,Portland,prefix_multi_bestfit,0.94,no
+Portland State Vikings,portland-st-vikings,Portland St.,prefix_exact,1,no
+Prairie View A&M Panthers,prairie-view-am-panthers,Prairie View,prefix_exact,1,no
+Presbyterian Blue Hose,presbyterian-blue-hose,Presbyterian,prefix_exact,1,no
+Princeton Tigers,princeton-tigers,Princeton,prefix_exact,1,no
+Providence Friars,providence-friars,Providence,prefix_exact,1,no
+Purdue Boilermakers,purdue-boilermakers,Purdue,prefix_multi_bestfit,0.94,no
+Purdue Fort Wayne Mastodons,purdue-fort-wayne-mastodons,Purdue Fort Wayne,prefix_exact,1,no
+Queens Royals,queens-university-of-charlotte-royals,Queens (NC),prefix_exact,1,no
+Quinnipiac Bobcats,quinnipiac-bobcats,Quinnipiac,prefix_exact,1,no
+Radford Highlanders,radford-highlanders,Radford,prefix_exact,1,no
+Rhode Island Rams,rhode-island-rams,Rhode Island,prefix_exact,1,no
+Rice Owls,rice-owls,Rice,prefix_exact,1,no
+Richmond Spiders,richmond-spiders,Richmond,prefix_exact,1,no
+Rider Broncs,rider-broncs,Rider,prefix_exact,1,no
+Robert Morris Colonials,robert-morris-colonials,Robert Morris,prefix_exact,1,no
+Rutgers Scarlet Knights,rutgers-scarlet-knights,Rutgers,prefix_exact,1,no
+Sacramento State Hornets,sacramento-state-hornets,Sacramento St.,prefix_exact,1,no
+Sacred Heart Pioneers,sacred-heart-pioneers,Sacred Heart,prefix_exact,1,no
+Saint Joseph's Hawks,saint-josephs-hawks,Saint Joseph's,prefix_exact,1,no
+Saint Louis Billikens,saint-louis-billikens,Saint Louis,prefix_exact,1,no
+Saint Mary's Gaels,saint-marys-gaels,Saint Mary's (CA),prefix_exact,1,no
+Saint Peter's Peacocks,saint-peters-peacocks,Saint Peter's,prefix_exact,1,no
+Sam Houston Bearkats,sam-houston-st-bearkats,Sam Houston,prefix_exact,1,no
+Samford Bulldogs,samford-bulldogs,Samford,prefix_exact,1,no
+San Diego State Aztecs,san-diego-st-aztecs,San Diego St.,prefix_exact,1,no
+San Diego Toreros,san-diego-toreros,San Diego,prefix_multi_bestfit,0.94,no
+San Francisco Dons,san-francisco-dons,San Francisco,prefix_exact,1,no
+San Jose State Spartans,san-jose-st-spartans,San Jose St.,prefix_exact,1,no
+Santa Clara Broncos,santa-clara-broncos,Santa Clara,prefix_exact,1,no
+Seattle Redhawks,seattle-redhawks,Seattle U,prefix_exact,1,no
+Seton Hall Pirates,seton-hall-pirates,Seton Hall,prefix_exact,1,no
+Siena Saints,siena-saints,Siena,prefix_exact,1,no
+SIU Edwardsville Cougars,siu-edwardsville-cougars,SIUE,prefix_exact,1,no
+SMU Mustangs,southern-methodist-mustangs,SMU,prefix_exact,1,no
+South Alabama Jaguars,south-alabama-jaguars,South Alabama,prefix_exact,1,no
+South Carolina Gamecocks,south-carolina-gamecocks,South Carolina,prefix_multi_bestfit,0.94,no
+South Carolina State Bulldogs,south-carolina-state-bulldogs,South Carolina St.,prefix_exact,1,no
+South Carolina Upstate Spartans,south-carolina-upstate-spartans,USC Upstate,prefix_exact,1,no
+South Dakota Coyotes,south-dakota-coyotes,South Dakota,prefix_multi_bestfit,0.94,no
+South Dakota State Jackrabbits,south-dakota-state-jackrabbits,South Dakota St.,prefix_exact,1,no
+South Florida Bulls,south-florida-bulls,South Fla.,prefix_exact,1,no
+Southeast Missouri State Redhawks,se-missouri-st-redhawks,Southeast Mo. St.,prefix_exact,1,no
+Southeastern Louisiana Lions,southeastern-louisiana-lions,Southeastern La.,prefix_exact,1,no
+Southern Illinois Salukis,southern-illinois-salukis,Southern Ill.,prefix_exact,1,no
+Southern Indiana Screaming Eagles,southern-indiana-screaming-eagles,Southern Ind.,prefix_exact,1,no
+Southern Jaguars,southern-jaguars,Southern U.,prefix_multi_bestfit,0.95,no
+Southern Miss Golden Eagles,southern-miss-golden-eagles,Southern Miss.,prefix_exact,1,no
+Southern Utah Thunderbirds,southern-utah-thunderbirds,Southern Utah,prefix_exact,1,no
+St. Bonaventure Bonnies,st-bonaventure-bonnies,St. Bonaventure,prefix_exact,1,no
+St. Francis (PA) Red Flash,st-francis-pa-red-flash,Saint Francis,prefix_exact,1,no
+St. John's Red Storm,st-johns-red-storm,St. John's (NY),prefix_exact,1,no
+St. Thomas Tommies,st-thomas-mn-tommies,St. Thomas (MN),prefix_exact,1,no
+Stanford Cardinal,stanford-cardinal,Stanford,prefix_exact,1,no
+Stephen F. Austin Lumberjacks,stephen-f-austin-lumberjacks,SFA,prefix_exact,1,no
+Stetson Hatters,stetson-hatters,Stetson,prefix_exact,1,no
+Stonehill Skyhawks,stonehill-skyhawks,Stonehill,prefix_exact,1,no
+Stony Brook Seawolves,stony-brook-seawolves,Stony Brook,prefix_exact,1,no
+Syracuse Orange,syracuse-orange,Syracuse,prefix_exact,1,no
+Tarleton State Texans,tarleton-state-texans,Tarleton St.,prefix_exact,1,no
+TCU Horned Frogs,texas-christian-horned-frogs,TCU,prefix_exact,1,no
+Temple Owls,temple-owls,Temple,prefix_exact,1,no
+Tennessee State Tigers,tennessee-st-tigers,Tennessee St.,prefix_exact,1,no
+Tennessee Tech Golden Eagles,tennessee-tech-golden-eagles,Tennessee Tech,prefix_exact,1,no
+Tennessee Volunteers,tennessee-volunteers,Tennessee,prefix_multi_bestfit,0.94,no
+Texas A&M Aggies,texas-am-aggies,Texas A&M,prefix_multi_bestfit,0.94,no
+Texas A&M-Corpus Christi Islanders,texas-am-cc-islanders,A&M-Corpus Christi,prefix_exact,1,no
+Texas Longhorns,texas-longhorns,Texas,prefix_multi_bestfit,0.94,no
+Texas Southern Tigers,texas-southern-tigers,Texas Southern,prefix_exact,1,no
+Texas State Bobcats,texas-state-bobcats,Texas St.,prefix_exact,1,no
+Texas Tech Red Raiders,texas-tech-red-raiders,Texas Tech,prefix_exact,1,no
+The Citadel Bulldogs,the-citadel-bulldogs,The Citadel,prefix_exact,1,no
+Toledo Rockets,toledo-rockets,Toledo,prefix_exact,1,no
+Towson Tigers,towson-tigers,Towson,prefix_exact,1,no
+Troy Trojans,troy-trojans,Troy,prefix_exact,1,no
+Tulane Green Wave,tulane-green-wave,Tulane,prefix_exact,1,no
+Tulsa Golden Hurricane,tulsa-golden-hurricane,Tulsa,prefix_exact,1,no
+UAB Blazers,uab-blazers,UAB,prefix_exact,1,no
+UC Davis Aggies,uc-davis-aggies,UC Davis,prefix_exact,1,no
+UC Irvine Anteaters,uc-irvine-anteaters,UC Irvine,prefix_exact,1,no
+UC Riverside Highlanders,uc-riverside-highlanders,UC Riverside,prefix_exact,1,no
+UC San Diego Tritons,uc-san-diego-tritons,UC San Diego,prefix_exact,1,no
+UC Santa Barbara Gauchos,uc-santa-barbara-gauchos,UC Santa Barbara,prefix_exact,1,no
+UCF Knights,central-florida-knights,UCF,prefix_exact,1,no
+UCLA Bruins,ucla-bruins,UCLA,prefix_exact,1,no
+UL Monroe Warhawks,ul-monroe-warhawks,ULM,prefix_exact,1,no
+UMass Lowell River Hawks,massachusetts-lowell-river-hawks,UMass Lowell,prefix_exact,1,no
+UMBC Retrievers,umbc-retrievers,UMBC,prefix_exact,1,no
+UNC Asheville Bulldogs,unc-asheville-bulldogs,UNC Asheville,prefix_exact,1,no
+UNC Greensboro Spartans,unc-greensboro-spartans,UNC Greensboro,prefix_exact,1,no
+UNC Wilmington Seahawks,unc-wilmington-seahawks,UNCW,prefix_exact,1,no
+UNLV Rebels,unlv-rebels,UNLV,prefix_exact,1,no
+USC Trojans,southern-california-trojans,Southern California,prefix_exact,1,no
+UT Arlington Mavericks,texas-arlington-mavericks,UT Arlington,prefix_exact,1,no
+UT Martin Skyhawks,tenn-martin-skyhawks,UT Martin,prefix_exact,1,no
+UT Rio Grande Valley Vaqueros,texas-rio-grande-valley-vaqueros,UTRGV,prefix_exact,1,no
+Utah State Aggies,utah-st-aggies,Utah St.,prefix_exact,1,no
+Utah Tech Trailblazers,utah-tech-trailblazers,Utah Tech,prefix_exact,1,no
+Utah Utes,utah-utes,Utah,prefix_multi_bestfit,0.94,no
+Utah Valley Wolverines,utah-valley-wolverines,Utah Valley,prefix_exact,1,no
+UTEP Miners,texas-el-paso-miners,UTEP,prefix_exact,1,no
+UTSA Roadrunners,texas-san-antonio-roadrunners,UTSA,prefix_exact,1,no
+Valparaiso Beacons,valparaiso-beacons,Valparaiso,prefix_exact,1,no
+Vanderbilt Commodores,vanderbilt-commodores,Vanderbilt,prefix_exact,1,no
+VCU Rams,vcu-rams,VCU,prefix_exact,1,no
+Vermont Catamounts,vermont-catamounts,Vermont,prefix_exact,1,no
+Villanova Wildcats,villanova-wildcats,Villanova,prefix_exact,1,no
+Virginia Cavaliers,virginia-cavaliers,Virginia,prefix_multi_bestfit,0.94,no
+Virginia Tech Hokies,virginia-tech-hokies,Virginia Tech,prefix_exact,1,no
+VMI Keydets,vmi-keydets,VMI,prefix_exact,1,no
+Wagner Seahawks,wagner-seahawks,Wagner,prefix_exact,1,no
+Wake Forest Demon Deacons,wake-forest-demon-deacons,Wake Forest,prefix_exact,1,no
+Washington Huskies,washington-huskies,Washington,prefix_multi_bestfit,0.94,no
+Washington State Cougars,washington-st-cougars,Washington St.,prefix_exact,1,no
+Weber State Wildcats,weber-st-wildcats,Weber St.,prefix_exact,1,no
+West Georgia Wolves,west-georgia-wolves,West Ga.,prefix_exact,1,no
+West Virginia Mountaineers,west-virginia-mountaineers,West Virginia,prefix_exact,1,no
+Western Carolina Catamounts,western-carolina-catamounts,Western Caro.,prefix_exact,1,no
+Western Illinois Leathernecks,western-illinois-leathernecks,Western Ill.,prefix_exact,1,no
+Western Kentucky Hilltoppers,western-kentucky-hilltoppers,Western Ky.,prefix_exact,1,no
+Western Michigan Broncos,western-michigan-broncos,Western Mich.,prefix_exact,1,no
+Wichita State Shockers,wichita-st-shockers,Wichita St.,prefix_exact,1,no
+William & Mary Tribe,william--mary-tribe,William & Mary,prefix_exact,1,no
+Winthrop Eagles,winthrop-eagles,Winthrop,prefix_exact,1,no
+Wisconsin Badgers,wisconsin-badgers,Wisconsin,prefix_exact,1,no
+Wofford Terriers,wofford-terriers,Wofford,prefix_exact,1,no
+Wright State Raiders,wright-st-raiders,Wright St.,prefix_exact,1,no
+Wyoming Cowboys,wyoming-cowboys,Wyoming,prefix_exact,1,no
+Xavier Musketeers,xavier-musketeers,Xavier,prefix_exact,1,no
+Yale Bulldogs,yale-bulldogs,Yale,prefix_exact,1,no
+Youngstown State Penguins,youngstown-st-penguins,Youngstown St.,prefix_exact,1,no

@@ -48,6 +48,13 @@ export const TOOL_DEFINITIONS = [
     path: '/tools/probability-calculator',
     category: 'Calculator',
   },
+  {
+    id: 'basketball-modeling',
+    name: 'Basketball Modeling',
+    description: 'Build custom pools, engineer features, train ridge models, and predict matchups.',
+    path: '/tools/basketball-modeling',
+    category: 'Modeling',
+  },
 ];
 
 export function getToolById(toolId) {

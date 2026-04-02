@@ -8,28 +8,46 @@ const TEAMRANKINGS_TEAM_URL_PREFIX = `${TEAMRANKINGS_BASE}/ncaa-basketball/team/
 const USER_AGENT =
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36';
 
-const METRICS = [
-  { key: 'offensive_efficiency', path: '/ncaa-basketball/stat/offensive-efficiency' },
-  { key: 'defensive_efficiency', path: '/ncaa-basketball/stat/defensive-efficiency' },
-  { key: 'effective_fg_pct', path: '/ncaa-basketball/stat/effective-field-goal-pct' },
-  { key: 'opp_effective_fg_pct', path: '/ncaa-basketball/stat/opponent-effective-field-goal-pct' },
-  { key: 'turnover_rate', path: '/ncaa-basketball/stat/turnover-pct' },
-  { key: 'opp_turnover_rate', path: '/ncaa-basketball/stat/opponent-turnover-pct' },
-  { key: 'offensive_rebound_rate', path: '/ncaa-basketball/stat/offensive-rebounding-pct' },
-  { key: 'free_throw_rate', path: '/ncaa-basketball/stat/free-throw-rate' },
-  { key: 'three_point_rate', path: '/ncaa-basketball/stat/three-point-rate' },
-  {
-    key: 'sos',
-    path: '/ncaa-basketball/ranking/schedule-strength-by-other',
-    valueColumn: 'rating',
-  },
-  { key: 'pace', path: '/ncaa-basketball/stat/possessions-per-game' },
-];
+const DEFAULT_METRIC_CATALOG_FILE = path.resolve(
+  process.cwd(),
+  'scripts',
+  'teamrankings-ncaa-team-stat-urls.json'
+);
+
+const LEGACY_METRIC_ALIASES = {
+  offensive_efficiency: 'offensive_efficiency',
+  defensive_efficiency: 'defensive_efficiency',
+  effective_field_goal_pct: 'effective_fg_pct',
+  opponent_effective_field_goal_pct: 'opp_effective_fg_pct',
+  turnover_pct: 'turnover_rate',
+  opponent_turnover_pct: 'opp_turnover_rate',
+  offensive_rebounding_pct: 'offensive_rebound_rate',
+  free_throw_rate: 'free_throw_rate',
+  three_point_rate: 'three_point_rate',
+  possessions_per_game: 'pace',
+};
 
 const PER_100_METRICS = new Set(['offensive_efficiency', 'defensive_efficiency']);
 
 function normalizeWhitespace(value) {
   return String(value || '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function metricKeyFromPath(statPath) {
+  const slug = normalizeWhitespace(statPath).split('/').filter(Boolean).pop() || '';
+  return slug
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '_')
+    .replace(/^_+|_+$/g, '')
+    .replace(/_{2,}/g, '_');
+}
+
+function metricLabelFromPath(statPath) {
+  const slug = normalizeWhitespace(statPath).split('/').filter(Boolean).pop() || '';
+  return slug
+    .replace(/-/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
 }
@@ -112,6 +130,7 @@ function parseArgs() {
     maxAttempts: 6,
     timeoutMs: 25000,
     limitTeams: 0,
+    metricCatalogFile: DEFAULT_METRIC_CATALOG_FILE,
   };
 
   for (let i = 0; i < args.length; i += 1) {
@@ -182,6 +201,12 @@ function parseArgs() {
       continue;
     }
 
+    const metricCatalogFileValue = maybeValue('--metric-catalog-file');
+    if (metricCatalogFileValue) {
+      out.metricCatalogFile = path.resolve(process.cwd(), metricCatalogFileValue);
+      continue;
+    }
+
     // npm can sometimes pass a bare positional value (for example "2025") after script args.
     if (/^\d{4}$/.test(current)) {
       out.startYear = parseInteger(current, out.startYear);
@@ -218,6 +243,45 @@ function parseArgs() {
   }
 
   return out;
+}
+
+async function loadMetricCatalog(metricCatalogFile) {
+  const raw = await fs.readFile(metricCatalogFile, 'utf8');
+  const parsed = JSON.parse(raw);
+  if (!Array.isArray(parsed) || parsed.length === 0) {
+    throw new Error(`Metric catalog must be a non-empty JSON array: ${metricCatalogFile}`);
+  }
+
+  const seen = new Set();
+  const metrics = [];
+  for (const entry of parsed) {
+    const href = normalizeWhitespace(entry);
+    if (!href) {
+      continue;
+    }
+    const absoluteUrl = toAbsoluteUrl(href);
+    const parsedUrl = new URL(absoluteUrl);
+    const statPath = normalizeWhitespace(parsedUrl.pathname);
+    if (!statPath.startsWith('/ncaa-basketball/stat/')) {
+      continue;
+    }
+
+    const key = metricKeyFromPath(statPath);
+    if (!key || seen.has(key)) {
+      continue;
+    }
+    seen.add(key);
+    metrics.push({
+      key,
+      path: statPath,
+      label: metricLabelFromPath(statPath),
+    });
+  }
+
+  if (metrics.length === 0) {
+    throw new Error(`No /ncaa-basketball/stat/ entries found in metric catalog: ${metricCatalogFile}`);
+  }
+  return metrics;
 }
 
 function getWorkbookLinks(sheet) {
@@ -461,39 +525,36 @@ async function scrapeMetric(metric, config) {
   return { url, rows };
 }
 
-function buildRowsByTeam(teams, metricsData, limitTeams = 0) {
+function buildRowsByTeam(teams, metrics, metricsData, limitTeams = 0) {
   const rowsBySlug = new Map();
   const unresolvedMetricTeams = {};
 
-  for (const metric of METRICS) {
+  for (const metric of metrics) {
     unresolvedMetricTeams[metric.key] = [];
   }
 
   const teamsBase = limitTeams > 0 ? teams.slice(0, limitTeams) : teams;
   for (const team of teamsBase) {
-    rowsBySlug.set(team.slug, {
+    const row = {
       season: seasonLabel(metricsData.startYear),
       start_year: metricsData.startYear,
       team: team.team,
       team_slug: team.slug,
-      offensive_efficiency: null,
-      defensive_efficiency: null,
-      effective_fg_pct: null,
-      opp_effective_fg_pct: null,
-      turnover_rate: null,
-      opp_turnover_rate: null,
-      offensive_rebound_rate: null,
-      free_throw_rate: null,
-      three_point_rate: null,
-      sos: null,
-      pace: null,
       source: 'teamrankings',
       source_as_of_date: metricsData.asOfDate,
       scraped_at_utc: new Date().toISOString(),
-    });
+    };
+    for (const metric of metrics) {
+      row[metric.key] = null;
+      const legacyAlias = LEGACY_METRIC_ALIASES[metric.key];
+      if (legacyAlias) {
+        row[legacyAlias] = null;
+      }
+    }
+    rowsBySlug.set(team.slug, row);
   }
 
-  for (const metric of METRICS) {
+  for (const metric of metrics) {
     const metricRows = metricsData.byMetric.get(metric.key) || [];
     for (const metricRow of metricRows) {
       const existing = rowsBySlug.get(metricRow.slug);
@@ -501,20 +562,25 @@ function buildRowsByTeam(teams, metricsData, limitTeams = 0) {
         unresolvedMetricTeams[metric.key].push(metricRow.slug);
         continue;
       }
-      existing[metric.key] = transformMetricValue(metric.key, metricRow.value);
+      const transformed = transformMetricValue(metric.key, metricRow.value);
+      existing[metric.key] = transformed;
+      const legacyAlias = LEGACY_METRIC_ALIASES[metric.key];
+      if (legacyAlias) {
+        existing[legacyAlias] = transformed;
+      }
     }
   }
 
   return { rowsBySlug, unresolvedMetricTeams };
 }
 
-function countMissingByMetric(rows) {
+function countMissingByMetric(rows, metrics) {
   const output = {};
-  for (const metric of METRICS) {
+  for (const metric of metrics) {
     output[metric.key] = 0;
   }
   for (const row of rows) {
-    for (const metric of METRICS) {
+    for (const metric of metrics) {
       if (row[metric.key] === null || row[metric.key] === undefined || Number.isNaN(row[metric.key])) {
         output[metric.key] += 1;
       }
@@ -525,10 +591,11 @@ function countMissingByMetric(rows) {
 
 async function run() {
   const config = parseArgs();
+  const metrics = await loadMetricCatalog(config.metricCatalogFile);
   const teams = readTeamsFromWorkbook(config.teamsFile);
   console.log(`Loaded ${teams.length} D1 teams from workbook.`);
   console.log(
-    `Scraping ${METRICS.length} TeamRankings stat pages with ${config.requestDelayMs}ms request delay (as-of ${config.asOfDate}).`
+    `Scraping ${metrics.length} TeamRankings stat pages with ${config.requestDelayMs}ms request delay (as-of ${config.asOfDate}).`
   );
 
   const byMetric = new Map();
@@ -536,9 +603,9 @@ async function run() {
   const metricUrls = {};
   const errors = [];
 
-  for (let i = 0; i < METRICS.length; i += 1) {
-    const metric = METRICS[i];
-    console.log(`[${i + 1}/${METRICS.length}] ${metric.key}`);
+  for (let i = 0; i < metrics.length; i += 1) {
+    const metric = metrics[i];
+    console.log(`[${i + 1}/${metrics.length}] ${metric.key}`);
     try {
       const result = await scrapeMetric(metric, config);
       byMetric.set(metric.key, result.rows);
@@ -554,40 +621,37 @@ async function run() {
       });
     }
 
-    if (i < METRICS.length - 1) {
+    if (i < metrics.length - 1) {
       // TeamRankings can rate-limit bursty traffic, so we keep spacing conservative.
       const jitter = Math.floor(Math.random() * 450);
       await sleep(config.requestDelayMs + jitter);
     }
   }
 
-  const { rowsBySlug, unresolvedMetricTeams } = buildRowsByTeam(teams, {
-    startYear: config.startYear,
-    asOfDate: config.asOfDate,
-    byMetric,
-  }, config.limitTeams);
+  const { rowsBySlug, unresolvedMetricTeams } = buildRowsByTeam(
+    teams,
+    metrics,
+    {
+      startYear: config.startYear,
+      asOfDate: config.asOfDate,
+      byMetric,
+    },
+    config.limitTeams
+  );
 
   const outputRows = [...rowsBySlug.values()].sort((a, b) => a.team.localeCompare(b.team));
-  const csvColumns = [
+  const metadataColumns = [
     'season',
     'start_year',
     'team',
     'team_slug',
-    'offensive_efficiency',
-    'defensive_efficiency',
-    'effective_fg_pct',
-    'opp_effective_fg_pct',
-    'turnover_rate',
-    'opp_turnover_rate',
-    'offensive_rebound_rate',
-    'free_throw_rate',
-    'three_point_rate',
-    'sos',
-    'pace',
     'source',
     'source_as_of_date',
     'scraped_at_utc',
   ];
+  const metricColumns = metrics.map((metric) => metric.key);
+  const legacyColumns = Object.values(LEGACY_METRIC_ALIASES);
+  const csvColumns = [...metadataColumns.slice(0, 4), ...metricColumns, ...legacyColumns, ...metadataColumns.slice(4)];
 
   const csvLines = [toCsvLine(csvColumns)];
   for (const row of outputRows) {
@@ -598,9 +662,9 @@ async function run() {
   await fs.mkdir(outputDir, { recursive: true });
   await fs.writeFile(config.outputFile, `${csvLines.join('\n')}\n`, 'utf8');
 
-  const missingByMetric = countMissingByMetric(outputRows);
+  const missingByMetric = countMissingByMetric(outputRows, metrics);
   const missingAnyMetricCount = outputRows.filter((row) =>
-    METRICS.some((metric) => row[metric.key] === null || row[metric.key] === undefined || Number.isNaN(row[metric.key]))
+    metrics.some((metric) => row[metric.key] === null || row[metric.key] === undefined || Number.isNaN(row[metric.key]))
   ).length;
 
   const report = {
@@ -610,6 +674,8 @@ async function run() {
     expectedTeams: config.limitTeams > 0 ? Math.min(config.limitTeams, teams.length) : teams.length,
     rowsWritten: outputRows.length,
     source: 'teamrankings',
+    metricCatalogFile: config.metricCatalogFile,
+    metricCount: metrics.length,
     metricUrls,
     metricCoverage,
     missingByMetric,

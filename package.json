@@ -8,6 +8,8 @@
     "scrape:ncaa-results": "node scrape-teamrankings-ncaa-results.js",
     "scrape:ncaa-team-stats": "node scrape-teamrankings-ncaa-team-stats.js",
     "scrape:ncaa-team-stats:multi": "node build-multi-season-ncaa-team-stats.js",
+    "apply:adjusted-diff-team-changes": "node scripts/apply-adjusted-diff-team-name-changes.js",
+    "enrich:adjusted-diff-context": "node scripts/enrich-adjusted-diff-conference-and-phase.js",
     "map:ncaa-team-names": "node build-team-name-map.js",
     "apply:ncaa-team-names": "node apply-team-name-map.js --allow-review-rows",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,6 +21,7 @@
   "dependencies": {
     "cheerio": "^1.2.0",
     "playwright": "^1.58.2",
+    "puppeteer": "^24.40.0",
     "xlsx": "^0.18.5"
   }
 }

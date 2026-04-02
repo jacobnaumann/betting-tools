@@ -31,6 +31,7 @@ alwaysApply: false
 - Overlay Calculator (`/tools/overlay-calculator`)
 - Round Leader Projection (`/tools/round-leader-projection`)
 - Probability Calculator (`/tools/probability-calculator`)
+- Basketball Modeling (`/tools/basketball-modeling`)
 
 # Local Persistence
 
@@ -41,6 +42,12 @@ alwaysApply: false
   - `betlab.theme`
 - Keep history capped to latest 25 entries.
 - Ensure UI remains readable and functional in both dark and light themes.
+
+# Round Leader Projection UX
+
+- Keep manual tournament URL input available as a fallback.
+- Prefer loading event-picker options from backend cached schedule data.
+- Include a subtle refresh affordance so users can explicitly update schedule events on demand.
 
 # Growth Direction
 

@@ -11,27 +11,37 @@ alwaysApply: true
 - Required output columns are `year,month,day,team,opponent,location,teamscore,oppscore,d1`.
 - `location` uses `H` (home), `V` (away), `N` (neutral).
 - `d1` is `2` when opponent is D1, otherwise `1`.
+- For adjusted-diff workbook cleanup, use `npm run apply:adjusted-diff-team-changes`.
+- The cleanup script reads `output/team-name-changes.txt` and updates every file in `NCAA Results/Raw results/adjusted-diff-excel-files`.
+- `remove` mappings delete rows where `team` or `opponent` matches the listed source team.
+- To append modeling context columns, use `npm run enrich:adjusted-diff-context`.
+- This enrichment script sets `season_phase` (`early`, `mid`, `late`) and `is_conference` in adjusted-diff `.xlsx` files.
+- It also appends `conference` to season stats files under `multi-season-team-stats/normalized-names-results`.
+- Conference source of truth for enrichment is `output/team-conferences.xlsx`, with manual team/year overrides in the enrichment script for naming and realignment edge cases.
 
 # NCAA Team Stats Data Pipeline
 
 - Build team-level season statistics from TeamRankings stat pages.
+- Team stat catalog source: `scripts/teamrankings-ncaa-team-stat-urls.json` (all TeamRankings team stats from `https://www.teamrankings.com/ncb/stats/`).
+- Regenerate catalog with Puppeteer script: `node scripts/discover-teamrankings-stat-urls-puppeteer.js`.
 - Use `npm run scrape:ncaa-team-stats -- --start-year 2025` for the 2025-26 season.
 - Output filename format is `NCAA_D1_Team_Stats_YYYY-YY.csv` (example: `NCAA_D1_Team_Stats_2025-26.csv`).
 - Validation filename format is `NCAA_D1_Team_Stats_YYYY-YY-validation.json`.
-- Required metric columns are:
-  - `offensive_efficiency` (per 100 possessions)
-  - `defensive_efficiency` (per 100 possessions)
-  - `effective_fg_pct`
-  - `opp_effective_fg_pct`
-  - `turnover_rate`
-  - `opp_turnover_rate`
+- Metric output columns include every catalog stat key (`/ncaa-basketball/stat/...`) plus legacy aliases for backward compatibility:
+  - `effective_fg_pct`, `opp_effective_fg_pct`
+  - `turnover_rate`, `opp_turnover_rate`
   - `offensive_rebound_rate`
-  - `free_throw_rate`
-  - `three_point_rate`
-  - `sos`
+  - `free_throw_rate`, `three_point_rate`
   - `pace`
+- `offensive_efficiency` and `defensive_efficiency` are converted from per-possession to per-100 possessions.
+- SOS (`sos`) is sourced from TeamRankings ranking endpoint (`/ncaa-basketball/ranking/schedule-strength-by-other`) and can be backfilled into normalized master stats files with `node scripts/add-sos-to-master-stats-sos.js`.
+- Build combined SOS master exports (CSV + XLSX) from season SOS files with `node scripts/build-master-sos-schedule.js`.
 - Use conservative request spacing and retries to avoid TeamRankings rate-limits.
-- Multi-season build (last 8 seasons including current): `npm run scrape:ncaa-team-stats:multi`.
+- Multi-season build default range: 2016-17 through current season via `npm run scrape:ncaa-team-stats:multi`.
+- Override range with:
+  - `--start-start-year=<YYYY>`
+  - `--end-start-year=<YYYY>`
+  - or legacy `--seasons-back=<N>`.
 
 # Team Name Standardization Pipeline
 

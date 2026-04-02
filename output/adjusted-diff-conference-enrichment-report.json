@@ -1,0 +1,506 @@
+{
+  "generatedAtUtc": "2026-03-21T02:44:58.713Z",
+  "dryRun": false,
+  "conferenceSource": "C:\\Users\\Jacob\\OneDrive\\Desktop\\Programming\\Betting Tools\\output\\team-conferences.xlsx",
+  "statsFiles": [
+    {
+      "fileName": "NCAA_D1_Team_Stats_2016-17-results-names.csv",
+      "rows": 365,
+      "conferenceAssignedRows": 353
+    },
+    {
+      "fileName": "NCAA_D1_Team_Stats_2017-18-results-names.csv",
+      "rows": 365,
+      "conferenceAssignedRows": 353
+    },
+    {
+      "fileName": "NCAA_D1_Team_Stats_2018-19-results-names.csv",
+      "rows": 365,
+      "conferenceAssignedRows": 355
+    },
+    {
+      "fileName": "NCAA_D1_Team_Stats_2019-20-results-names.csv",
+      "rows": 365,
+      "conferenceAssignedRows": 356
+    },
+    {
+      "fileName": "NCAA_D1_Team_Stats_2020-21-results-names.csv",
+      "rows": 365,
+      "conferenceAssignedRows": 358
+    },
+    {
+      "fileName": "NCAA_D1_Team_Stats_2021-22-results-names.csv",
+      "rows": 365,
+      "conferenceAssignedRows": 360
+    },
+    {
+      "fileName": "NCAA_D1_Team_Stats_2022-23-results-names.csv",
+      "rows": 365,
+      "conferenceAssignedRows": 362
+    },
+    {
+      "fileName": "NCAA_D1_Team_Stats_2023-24-results-names.csv",
+      "rows": 365,
+      "conferenceAssignedRows": 362
+    },
+    {
+      "fileName": "NCAA_D1_Team_Stats_2024-25-results-names.csv",
+      "rows": 365,
+      "conferenceAssignedRows": 365
+    },
+    {
+      "fileName": "NCAA_D1_Team_Stats_2025-26-results-names.csv",
+      "rows": 365,
+      "conferenceAssignedRows": 365
+    }
+  ],
+  "resultsFiles": [
+    {
+      "fileName": "ncaa-2016-17-adjusted-diff - Copy.xlsx",
+      "seasonStartYear": 2016,
+      "seasonPhaseAssignedRows": 5546,
+      "isConferenceAssignedRows": 5488,
+      "isConferenceUnknownRows": 58
+    },
+    {
+      "fileName": "ncaa-2016-17-adjusted-diff.xlsx",
+      "seasonStartYear": 2016,
+      "seasonPhaseAssignedRows": 5546,
+      "isConferenceAssignedRows": 5488,
+      "isConferenceUnknownRows": 58
+    },
+    {
+      "fileName": "ncaa-2017-18-adjusted-diff - Copy.xlsx",
+      "seasonStartYear": 2017,
+      "seasonPhaseAssignedRows": 5692,
+      "isConferenceAssignedRows": 5634,
+      "isConferenceUnknownRows": 58
+    },
+    {
+      "fileName": "ncaa-2017-18-adjusted-diff.xlsx",
+      "seasonStartYear": 2017,
+      "seasonPhaseAssignedRows": 5692,
+      "isConferenceAssignedRows": 5634,
+      "isConferenceUnknownRows": 58
+    },
+    {
+      "fileName": "ncaa-2018-19-adjusted-diff - Copy.xlsx",
+      "seasonStartYear": 2018,
+      "seasonPhaseAssignedRows": 6144,
+      "isConferenceAssignedRows": 6071,
+      "isConferenceUnknownRows": 73
+    },
+    {
+      "fileName": "ncaa-2018-19-adjusted-diff.xlsx",
+      "seasonStartYear": 2018,
+      "seasonPhaseAssignedRows": 6144,
+      "isConferenceAssignedRows": 6071,
+      "isConferenceUnknownRows": 73
+    },
+    {
+      "fileName": "ncaa-2019-20-adjusted-diff - Copy.xlsx",
+      "seasonStartYear": 2019,
+      "seasonPhaseAssignedRows": 5494,
+      "isConferenceAssignedRows": 5436,
+      "isConferenceUnknownRows": 58
+    },
+    {
+      "fileName": "ncaa-2019-20-adjusted-diff.xlsx",
+      "seasonStartYear": 2019,
+      "seasonPhaseAssignedRows": 5494,
+      "isConferenceAssignedRows": 5436,
+      "isConferenceUnknownRows": 58
+    },
+    {
+      "fileName": "ncaa-2020-21-adjusted-diff - Copy.xlsx",
+      "seasonStartYear": 2020,
+      "seasonPhaseAssignedRows": 4356,
+      "isConferenceAssignedRows": 4329,
+      "isConferenceUnknownRows": 27
+    },
+    {
+      "fileName": "ncaa-2020-21-adjusted-diff.xlsx",
+      "seasonStartYear": 2020,
+      "seasonPhaseAssignedRows": 4356,
+      "isConferenceAssignedRows": 4329,
+      "isConferenceUnknownRows": 27
+    },
+    {
+      "fileName": "ncaa-2021-22-adjusted-diff - Copy.xlsx",
+      "seasonStartYear": 2021,
+      "seasonPhaseAssignedRows": 5515,
+      "isConferenceAssignedRows": 5453,
+      "isConferenceUnknownRows": 62
+    },
+    {
+      "fileName": "ncaa-2021-22-adjusted-diff.xlsx",
+      "seasonStartYear": 2021,
+      "seasonPhaseAssignedRows": 5515,
+      "isConferenceAssignedRows": 5453,
+      "isConferenceUnknownRows": 62
+    },
+    {
+      "fileName": "ncaa-2022-23-adjusted-diff - Copy.xlsx",
+      "seasonStartYear": 2022,
+      "seasonPhaseAssignedRows": 6354,
+      "isConferenceAssignedRows": 6270,
+      "isConferenceUnknownRows": 84
+    },
+    {
+      "fileName": "ncaa-2022-23-adjusted-diff.xlsx",
+      "seasonStartYear": 2022,
+      "seasonPhaseAssignedRows": 6354,
+      "isConferenceAssignedRows": 6270,
+      "isConferenceUnknownRows": 84
+    },
+    {
+      "fileName": "ncaa-2023-24-adjusted-diff - Copy.xlsx",
+      "seasonStartYear": 2023,
+      "seasonPhaseAssignedRows": 5670,
+      "isConferenceAssignedRows": 5583,
+      "isConferenceUnknownRows": 87
+    },
+    {
+      "fileName": "ncaa-2023-24-adjusted-diff.xlsx",
+      "seasonStartYear": 2023,
+      "seasonPhaseAssignedRows": 5670,
+      "isConferenceAssignedRows": 5583,
+      "isConferenceUnknownRows": 87
+    },
+    {
+      "fileName": "ncaa-2024-25-adjusted-diff - Copy.xlsx",
+      "seasonStartYear": 2024,
+      "seasonPhaseAssignedRows": 5835,
+      "isConferenceAssignedRows": 5776,
+      "isConferenceUnknownRows": 59
+    },
+    {
+      "fileName": "ncaa-2024-25-adjusted-diff.xlsx",
+      "seasonStartYear": 2024,
+      "seasonPhaseAssignedRows": 5835,
+      "isConferenceAssignedRows": 5776,
+      "isConferenceUnknownRows": 59
+    },
+    {
+      "fileName": "ncaa-2025-26-adjusted-diff - Copy.xlsx",
+      "seasonStartYear": 2025,
+      "seasonPhaseAssignedRows": 6206,
+      "isConferenceAssignedRows": 6143,
+      "isConferenceUnknownRows": 63
+    },
+    {
+      "fileName": "ncaa-2025-26-adjusted-diff.xlsx",
+      "seasonStartYear": 2025,
+      "seasonPhaseAssignedRows": 6206,
+      "isConferenceAssignedRows": 6143,
+      "isConferenceUnknownRows": 63
+    }
+  ],
+  "unresolvedStatsTeams": [
+    {
+      "seasonStartYear": 2016,
+      "team": "California Baptist",
+      "fileName": "NCAA_D1_Team_Stats_2016-17-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2016,
+      "team": "East Texas A&M",
+      "fileName": "NCAA_D1_Team_Stats_2016-17-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2016,
+      "team": "Mercyhurst",
+      "fileName": "NCAA_D1_Team_Stats_2016-17-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2016,
+      "team": "Merrimack",
+      "fileName": "NCAA_D1_Team_Stats_2016-17-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2016,
+      "team": "North Ala.",
+      "fileName": "NCAA_D1_Team_Stats_2016-17-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2016,
+      "team": "Southern Ind.",
+      "fileName": "NCAA_D1_Team_Stats_2016-17-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2016,
+      "team": "St. Thomas (MN)",
+      "fileName": "NCAA_D1_Team_Stats_2016-17-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2016,
+      "team": "Stonehill",
+      "fileName": "NCAA_D1_Team_Stats_2016-17-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2016,
+      "team": "Tarleton St.",
+      "fileName": "NCAA_D1_Team_Stats_2016-17-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2016,
+      "team": "UC San Diego",
+      "fileName": "NCAA_D1_Team_Stats_2016-17-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2016,
+      "team": "Utah Tech",
+      "fileName": "NCAA_D1_Team_Stats_2016-17-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2016,
+      "team": "West Ga.",
+      "fileName": "NCAA_D1_Team_Stats_2016-17-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2017,
+      "team": "California Baptist",
+      "fileName": "NCAA_D1_Team_Stats_2017-18-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2017,
+      "team": "East Texas A&M",
+      "fileName": "NCAA_D1_Team_Stats_2017-18-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2017,
+      "team": "Mercyhurst",
+      "fileName": "NCAA_D1_Team_Stats_2017-18-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2017,
+      "team": "Merrimack",
+      "fileName": "NCAA_D1_Team_Stats_2017-18-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2017,
+      "team": "North Ala.",
+      "fileName": "NCAA_D1_Team_Stats_2017-18-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2017,
+      "team": "Southern Ind.",
+      "fileName": "NCAA_D1_Team_Stats_2017-18-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2017,
+      "team": "St. Thomas (MN)",
+      "fileName": "NCAA_D1_Team_Stats_2017-18-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2017,
+      "team": "Stonehill",
+      "fileName": "NCAA_D1_Team_Stats_2017-18-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2017,
+      "team": "Tarleton St.",
+      "fileName": "NCAA_D1_Team_Stats_2017-18-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2017,
+      "team": "UC San Diego",
+      "fileName": "NCAA_D1_Team_Stats_2017-18-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2017,
+      "team": "Utah Tech",
+      "fileName": "NCAA_D1_Team_Stats_2017-18-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2017,
+      "team": "West Ga.",
+      "fileName": "NCAA_D1_Team_Stats_2017-18-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2018,
+      "team": "East Texas A&M",
+      "fileName": "NCAA_D1_Team_Stats_2018-19-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2018,
+      "team": "Mercyhurst",
+      "fileName": "NCAA_D1_Team_Stats_2018-19-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2018,
+      "team": "Merrimack",
+      "fileName": "NCAA_D1_Team_Stats_2018-19-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2018,
+      "team": "Southern Ind.",
+      "fileName": "NCAA_D1_Team_Stats_2018-19-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2018,
+      "team": "St. Thomas (MN)",
+      "fileName": "NCAA_D1_Team_Stats_2018-19-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2018,
+      "team": "Stonehill",
+      "fileName": "NCAA_D1_Team_Stats_2018-19-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2018,
+      "team": "Tarleton St.",
+      "fileName": "NCAA_D1_Team_Stats_2018-19-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2018,
+      "team": "UC San Diego",
+      "fileName": "NCAA_D1_Team_Stats_2018-19-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2018,
+      "team": "Utah Tech",
+      "fileName": "NCAA_D1_Team_Stats_2018-19-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2018,
+      "team": "West Ga.",
+      "fileName": "NCAA_D1_Team_Stats_2018-19-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2019,
+      "team": "East Texas A&M",
+      "fileName": "NCAA_D1_Team_Stats_2019-20-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2019,
+      "team": "Mercyhurst",
+      "fileName": "NCAA_D1_Team_Stats_2019-20-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2019,
+      "team": "Southern Ind.",
+      "fileName": "NCAA_D1_Team_Stats_2019-20-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2019,
+      "team": "St. Thomas (MN)",
+      "fileName": "NCAA_D1_Team_Stats_2019-20-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2019,
+      "team": "Stonehill",
+      "fileName": "NCAA_D1_Team_Stats_2019-20-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2019,
+      "team": "Tarleton St.",
+      "fileName": "NCAA_D1_Team_Stats_2019-20-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2019,
+      "team": "UC San Diego",
+      "fileName": "NCAA_D1_Team_Stats_2019-20-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2019,
+      "team": "Utah Tech",
+      "fileName": "NCAA_D1_Team_Stats_2019-20-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2019,
+      "team": "West Ga.",
+      "fileName": "NCAA_D1_Team_Stats_2019-20-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2020,
+      "team": "Bethune-Cookman",
+      "fileName": "NCAA_D1_Team_Stats_2020-21-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2020,
+      "team": "East Texas A&M",
+      "fileName": "NCAA_D1_Team_Stats_2020-21-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2020,
+      "team": "Mercyhurst",
+      "fileName": "NCAA_D1_Team_Stats_2020-21-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2020,
+      "team": "Southern Ind.",
+      "fileName": "NCAA_D1_Team_Stats_2020-21-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2020,
+      "team": "St. Thomas (MN)",
+      "fileName": "NCAA_D1_Team_Stats_2020-21-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2020,
+      "team": "Stonehill",
+      "fileName": "NCAA_D1_Team_Stats_2020-21-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2020,
+      "team": "West Ga.",
+      "fileName": "NCAA_D1_Team_Stats_2020-21-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2021,
+      "team": "East Texas A&M",
+      "fileName": "NCAA_D1_Team_Stats_2021-22-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2021,
+      "team": "Mercyhurst",
+      "fileName": "NCAA_D1_Team_Stats_2021-22-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2021,
+      "team": "Southern Ind.",
+      "fileName": "NCAA_D1_Team_Stats_2021-22-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2021,
+      "team": "Stonehill",
+      "fileName": "NCAA_D1_Team_Stats_2021-22-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2021,
+      "team": "West Ga.",
+      "fileName": "NCAA_D1_Team_Stats_2021-22-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2022,
+      "team": "Chicago St.",
+      "fileName": "NCAA_D1_Team_Stats_2022-23-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2022,
+      "team": "Mercyhurst",
+      "fileName": "NCAA_D1_Team_Stats_2022-23-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2022,
+      "team": "West Ga.",
+      "fileName": "NCAA_D1_Team_Stats_2022-23-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2023,
+      "team": "Chicago St.",
+      "fileName": "NCAA_D1_Team_Stats_2023-24-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2023,
+      "team": "Mercyhurst",
+      "fileName": "NCAA_D1_Team_Stats_2023-24-results-names.csv"
+    },
+    {
+      "seasonStartYear": 2023,
+      "team": "West Ga.",
+      "fileName": "NCAA_D1_Team_Stats_2023-24-results-names.csv"
+    }
+  ]
+}

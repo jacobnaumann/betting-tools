@@ -1,6 +1,7 @@
 const NEXT_DATA_REGEX = /<script id="__NEXT_DATA__" type="application\/json">([\s\S]*?)<\/script>/;
 const GRAPHQL_CONFIG_REGEX =
   /"graphqlHostname":"([^"]+)","graphqlKey":"([^"]+)","graphqlWebSocket":"[^"]*"/;
+const PGA_URL_SUFFIXES = new Set(['leaderboard', 'tourcast', 'course-stats']);
 
 const HOLE_DETAILS_QUERY = `
   query GetHoleStats($courseId: ID!, $hole: Int!, $tournamentId: ID!) {
@@ -19,6 +20,73 @@ function createHttpError(status, message) {
   const error = new Error(message);
   error.status = status;
   return error;
+}
+
+function toNumberOrNull(value) {
+  if (typeof value === 'number' && Number.isFinite(value)) return value;
+  if (typeof value !== 'string') return null;
+  const cleaned = value.replace(/,/g, '').trim();
+  if (!cleaned) return null;
+  const parsed = Number(cleaned);
+  return Number.isFinite(parsed) ? parsed : null;
+}
+
+function toIntegerOrNull(value) {
+  const parsed = toNumberOrNull(value);
+  if (!Number.isFinite(parsed)) return null;
+  return Math.trunc(parsed);
+}
+
+function normalizeTournamentBaseUrl(inputUrl) {
+  let parsedUrl;
+  try {
+    parsedUrl = new URL(inputUrl);
+  } catch (_error) {
+    throw createHttpError(400, `Invalid URL: ${inputUrl}`);
+  }
+
+  if (!['http:', 'https:'].includes(parsedUrl.protocol)) {
+    throw createHttpError(400, `Unsupported protocol: ${parsedUrl.protocol}`);
+  }
+
+  const segments = parsedUrl.pathname.split('/').filter(Boolean);
+  if (!segments.length) {
+    throw createHttpError(400, 'Tournament URL path is required.');
+  }
+
+  const lastSegment = String(segments[segments.length - 1] || '').toLowerCase();
+  if (PGA_URL_SUFFIXES.has(lastSegment)) {
+    segments.pop();
+  }
+
+  if (!segments.length) {
+    throw createHttpError(400, 'Tournament URL path is required.');
+  }
+
+  parsedUrl.search = '';
+  parsedUrl.hash = '';
+  parsedUrl.pathname = `/${segments.join('/')}/`;
+  return parsedUrl.toString();
+}
+
+function resolveSourceUrls({
+  baseUrl,
+  leaderboardUrl,
+  tourcastUrl,
+  courseStatsUrl,
+}) {
+  const baseCandidate = baseUrl || leaderboardUrl || tourcastUrl || courseStatsUrl;
+  if (!baseCandidate) {
+    throw createHttpError(400, 'A tournament URL is required.');
+  }
+
+  const normalizedBaseUrl = normalizeTournamentBaseUrl(baseCandidate);
+  return {
+    normalizedBaseUrl,
+    leaderboardUrl: `${normalizedBaseUrl}leaderboard`,
+    tourcastUrl: `${normalizedBaseUrl}tourcast`,
+    courseStatsUrl: `${normalizedBaseUrl}course-stats`,
+  };
 }
 
 async function fetchText(url) {
@@ -88,7 +156,36 @@ function parseGraphqlConfigFromTourcastHtml(html) {
   };
 }
 
+function getCourseStatsData(nextData) {
+  const queries = nextData?.props?.pageProps?.dehydratedState?.queries;
+  if (!Array.isArray(queries)) {
+    throw createHttpError(502, 'Unexpected course-stats page structure.');
+  }
+
+  const courseStatsQuery = queries.find((query) => query?.queryKey?.[0] === 'courseStats');
+  const courseStatsData = courseStatsQuery?.state?.data;
+  if (!courseStatsData || !Array.isArray(courseStatsData.courses)) {
+    throw createHttpError(502, 'Course stats payload did not include course rows.');
+  }
+
+  return courseStatsData;
+}
+
+function getTournamentData(nextData, tournamentId) {
+  const queries = nextData?.props?.pageProps?.dehydratedState?.queries;
+  if (!Array.isArray(queries)) return null;
+
+  const exactMatch = queries.find(
+    (query) => query?.queryKey?.[0] === 'tournament' && query?.queryKey?.[1]?.id === tournamentId
+  );
+  if (exactMatch?.state?.data) return exactMatch.state.data;
+
+  const fallback = queries.find((query) => query?.queryKey?.[0] === 'tournament');
+  return fallback?.state?.data || null;
+}
+
 function toScoreNumber(scoreRaw) {
+  if (scoreRaw === '-') return null;
   if (scoreRaw === 'E') return 0;
   const parsed = Number(scoreRaw);
   return Number.isFinite(parsed) ? parsed : null;
@@ -148,6 +245,89 @@ function formatTeeTime(teeTimeMs, timezone) {
   }
 }
 
+function selectCourse(courses, courseId) {
+  if (!Array.isArray(courses) || !courses.length) return null;
+  const exact = courses.find((course) => String(course?.courseId) === String(courseId));
+  if (exact) return exact;
+  const host = courses.find((course) => course?.hostCourse);
+  return host || courses[0];
+}
+
+function selectRoundHoleStats(roundHoleStats, currentRound) {
+  if (!Array.isArray(roundHoleStats) || !roundHoleStats.length) return null;
+  return (
+    roundHoleStats.find((roundStats) => roundStats?.live) ||
+    roundHoleStats.find((roundStats) => Number(roundStats?.roundNum) === currentRound) ||
+    roundHoleStats.find((roundStats) => roundStats?.roundNum === null) ||
+    roundHoleStats[0]
+  );
+}
+
+function buildCourseContext({
+  courseStatsData,
+  tournamentData,
+  courseId,
+}) {
+  const selectedCourse = selectCourse(courseStatsData?.courses, courseId);
+  const currentRound = toIntegerOrNull(tournamentData?.currentRound);
+  const selectedRoundStats = selectRoundHoleStats(selectedCourse?.roundHoleStats, currentRound);
+  const selectedHoleStats = Array.isArray(selectedRoundStats?.holeStats) ? selectedRoundStats.holeStats : [];
+
+  const holeStatsByHoleNumber = new Map();
+  selectedHoleStats.forEach((hole) => {
+    const holeNumber = toIntegerOrNull(hole?.courseHoleNum);
+    if (!Number.isFinite(holeNumber)) return;
+    holeStatsByHoleNumber.set(holeNumber, {
+      difficultyRank: toIntegerOrNull(hole?.rank),
+      scoringAverage: toNumberOrNull(hole?.scoringAverage),
+      scoringAverageDiffDisplay: hole?.scoringAverageDiff || null,
+      scoringAverageDiff: toNumberOrNull(hole?.scoringAverageDiff),
+      scoringDiffTendency: hole?.scoringDiffTendency || null,
+      eagles: toIntegerOrNull(hole?.eagles),
+      birdies: toIntegerOrNull(hole?.birdies),
+      pars: toIntegerOrNull(hole?.pars),
+      bogeys: toIntegerOrNull(hole?.bogeys),
+      doubleBogeys: toIntegerOrNull(hole?.doubleBogey),
+      yards: toIntegerOrNull(hole?.yards),
+      par: toIntegerOrNull(hole?.parValue),
+    });
+  });
+
+  return {
+    tournamentName: tournamentData?.tournamentName || null,
+    roundDisplay: tournamentData?.roundDisplay || null,
+    roundStatusDisplay: tournamentData?.roundStatusDisplay || null,
+    courseName: selectedCourse?.courseName || null,
+    coursePar: toIntegerOrNull(selectedCourse?.par),
+    courseYardageDisplay: selectedCourse?.yardage || null,
+    courseYardage: toIntegerOrNull(selectedCourse?.yardage),
+    holeStatsByHoleNumber,
+  };
+}
+
+function enrichHoleStats(baseHoleStats, courseHoleStatsByHoleNumber) {
+  return baseHoleStats.map((holeStats) => {
+    const courseHoleStats = courseHoleStatsByHoleNumber.get(holeStats.holeNumber);
+    return {
+      ...holeStats,
+      par: courseHoleStats?.par ?? holeStats.par,
+      yards: courseHoleStats?.yards ?? holeStats.yards,
+      scoringAverage: courseHoleStats?.scoringAverage ?? holeStats.averageScore,
+      scoringAverageDiff: courseHoleStats?.scoringAverageDiff ?? holeStats.averageDiffFromPar,
+      scoringAverageDiffDisplay:
+        courseHoleStats?.scoringAverageDiffDisplay ||
+        toDisplayScore(courseHoleStats?.scoringAverageDiff ?? holeStats.averageDiffFromPar),
+      scoringDiffTendency: courseHoleStats?.scoringDiffTendency || null,
+      difficultyRank: courseHoleStats?.difficultyRank ?? null,
+      eagles: courseHoleStats?.eagles ?? null,
+      birdies: courseHoleStats?.birdies ?? null,
+      pars: courseHoleStats?.pars ?? null,
+      bogeys: courseHoleStats?.bogeys ?? null,
+      doubleBogeys: courseHoleStats?.doubleBogeys ?? null,
+    };
+  });
+}
+
 function buildProjectedPlayers(players, holeStatsByHoleNumber, timezone) {
   return players
     .map((row) => {
@@ -155,6 +335,8 @@ function buildProjectedPlayers(players, holeStatsByHoleNumber, timezone) {
       const scoringData = row?.scoringData || {};
       const scoreRaw = scoringData.total ?? '-';
       const scoreNumber = toScoreNumber(scoreRaw);
+      const roundScoreRaw = scoringData.score ?? '-';
+      const roundScoreNumber = toScoreNumber(roundScoreRaw);
       const thruRaw = scoringData.thru ?? '-';
       const startedOnBackNine = Boolean(scoringData.backNine) || String(thruRaw).includes('*');
       const teeOrder = buildTeeOrder(startedOnBackNine);
@@ -186,6 +368,8 @@ function buildProjectedPlayers(players, holeStatsByHoleNumber, timezone) {
         playerName,
         scoreRaw,
         scoreNumber,
+        roundScoreRaw,
+        roundScoreNumber,
         thruRaw,
         startedOnBackNine,
         playerState,
@@ -267,10 +451,19 @@ async function fetchHoleStats({
 }
 
 async function buildRoundLeaderProjection({
+  baseUrl,
   leaderboardUrl,
   tourcastUrl,
+  courseStatsUrl,
 }) {
-  const leaderboardHtml = await fetchText(leaderboardUrl);
+  const resolvedUrls = resolveSourceUrls({
+    baseUrl,
+    leaderboardUrl,
+    tourcastUrl,
+    courseStatsUrl,
+  });
+
+  const leaderboardHtml = await fetchText(resolvedUrls.leaderboardUrl);
   const leaderboardNextData = parseNextDataFromHtml(leaderboardHtml, 'leaderboard');
   const leaderboardData = getLeaderboardData(leaderboardNextData);
 
@@ -282,7 +475,7 @@ async function buildRoundLeaderProjection({
   }
 
   const tourcastCandidates = [
-    tourcastUrl,
+    resolvedUrls.tourcastUrl,
     leaderboardData.tourcastURLWeb,
     leaderboardData.tourcastURL,
   ].filter(Boolean);
@@ -313,23 +506,42 @@ async function buildRoundLeaderProjection({
     throw createHttpError(502, 'Failed to resolve Tourcast GraphQL endpoint from provided URLs.');
   }
 
+  const courseStatsHtml = await fetchText(resolvedUrls.courseStatsUrl);
+  const courseStatsNextData = parseNextDataFromHtml(courseStatsHtml, 'course-stats');
+  const courseStatsData = getCourseStatsData(courseStatsNextData);
+  const tournamentData = getTournamentData(courseStatsNextData, tournamentId);
+  const courseContext = buildCourseContext({
+    courseStatsData,
+    tournamentData,
+    courseId,
+  });
+
   const { graphqlHostname, graphqlKey } = graphqlConfig;
-  const holeStats = await fetchHoleStats({
+  const baseHoleStats = await fetchHoleStats({
     graphqlHostname,
     graphqlKey,
     tournamentId,
     courseId,
   });
 
-  const holeStatsByHoleNumber = new Map(holeStats.map((hole) => [hole.holeNumber, hole]));
+  const holeStatsByHoleNumber = new Map(baseHoleStats.map((hole) => [hole.holeNumber, hole]));
+  const holeStats = enrichHoleStats(baseHoleStats, courseContext.holeStatsByHoleNumber);
   const players = buildProjectedPlayers(leaderboardData.players, holeStatsByHoleNumber, leaderboardData.timezone);
 
   return {
     tournamentId,
+    tournamentName: courseContext.tournamentName,
+    roundDisplay: courseContext.roundDisplay,
+    roundStatusDisplay: courseContext.roundStatusDisplay,
     courseId,
+    courseName: courseContext.courseName,
+    coursePar: courseContext.coursePar,
+    courseYardageDisplay: courseContext.courseYardageDisplay,
+    courseYardage: courseContext.courseYardage,
     timezone: leaderboardData.timezone || null,
     playerCount: players.length,
     fetchedAt: new Date().toISOString(),
+    sourceBaseUrl: resolvedUrls.normalizedBaseUrl,
     holeStats,
     players,
   };

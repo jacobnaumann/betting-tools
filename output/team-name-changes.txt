@@ -1,0 +1,29 @@
+A&M-Corpus Chris - A&M-Corpus Christi
+Albany (NY) - UAlbany
+Appalachian St. - App State
+Coastal Caro. - Coastal Carolina
+Hartford - remove
+Houston Baptist - Houston Christian
+Ill.-Chicago - UIC
+Incarnate Word - UIW
+IUPUI - IU Indy
+Fairleigh Dickinson - FDU
+La.-Monroe - remove
+LIU Brooklyn - LIU
+Loyola Marymount - LMU (CA)
+Mississippi Val. - remove
+Mt. St. Mary's - Mount St. Mary's
+Nicholls St. - Nicholls
+North Carolina St. - NC State
+Northern Ill. - NIU
+Penn - Pennsylvania
+Fort Wayne - Purdue Fort Wayne
+Saint Francis (PA) - Saint Francis
+Sam Houston St. - Sam Houston
+Savannah St. - remove
+South Ala. - South Alabama
+Southeastern La. - SE Louisiana
+St. Francis Brooklyn - remove
+St. Mary's (CA) - Saint Mary's (CA)
+UMKC - Kansas City (add to team map)
+UNCG - UNC Greensboro
