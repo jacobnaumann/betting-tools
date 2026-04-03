@@ -2,6 +2,13 @@ const NEXT_DATA_REGEX = /<script id="__NEXT_DATA__" type="application\/json">([\
 const GRAPHQL_CONFIG_REGEX =
   /"graphqlHostname":"([^"]+)","graphqlKey":"([^"]+)","graphqlWebSocket":"[^"]*"/;
 const PGA_URL_SUFFIXES = new Set(['leaderboard', 'tourcast', 'course-stats']);
+const {
+  DEFAULT_SELECTED_STATS,
+  normalizePlayerName,
+  normalizeStatSelection,
+  scrapeRoundLeaderProjectionStats,
+} = require('./roundLeaderProjectionStatService');
+const { getOrCreateRoundLeaderProjectionStatSnapshot } = require('./roundLeaderProjectionStatCacheService');
 
 const HOLE_DETAILS_QUERY = `
   query GetHoleStats($courseId: ID!, $hole: Int!, $tournamentId: ID!) {
@@ -295,6 +302,7 @@ function buildCourseContext({
 
   return {
     tournamentName: tournamentData?.tournamentName || null,
+    currentRound,
     roundDisplay: tournamentData?.roundDisplay || null,
     roundStatusDisplay: tournamentData?.roundStatusDisplay || null,
     courseName: selectedCourse?.courseName || null,
@@ -328,10 +336,44 @@ function enrichHoleStats(baseHoleStats, courseHoleStatsByHoleNumber) {
   });
 }
 
-function buildProjectedPlayers(players, holeStatsByHoleNumber, timezone) {
+function countRemainingHolesByPar(remainingHoles, holeStatsByHoleNumber) {
+  const counts = {
+    3: 0,
+    4: 0,
+    5: 0,
+  };
+
+  remainingHoles.forEach((holeNumber) => {
+    const par = Number(holeStatsByHoleNumber.get(holeNumber)?.par);
+    if (par === 3 || par === 4 || par === 5) {
+      counts[par] += 1;
+    }
+  });
+
+  return counts;
+}
+
+function roundBreakdownMap(valuesByKey) {
+  return Object.fromEntries(
+    Object.entries(valuesByKey).map(([key, value]) => [key, roundTo(Number(value) || 0, 4)])
+  );
+}
+
+function buildProjectedPlayers({
+  players,
+  holeStatsByHoleNumber,
+  timezone,
+  selectedStats,
+  statSnapshot,
+}) {
+  const selectedStatSet = new Set(selectedStats);
+  const statMaps = statSnapshot?.byStatKey || {};
+  const fieldMeans = statSnapshot?.fieldMeans || {};
+
   return players
     .map((row) => {
       const playerName = row?.player?.displayName || 'Unknown Player';
+      const normalizedPlayerName = normalizePlayerName(playerName);
       const scoringData = row?.scoringData || {};
       const scoreRaw = scoringData.total ?? '-';
       const scoreNumber = toScoreNumber(scoreRaw);
@@ -355,17 +397,99 @@ function buildProjectedPlayers(players, holeStatsByHoleNumber, timezone) {
             ? 'F'
             : String(teeOrder[completedHoles]);
 
-      const remainingScoreDelta = remainingHoles.reduce((accumulator, holeNumber) => {
+      const baselineRemaining = selectedStatSet.has('course_hole_model')
+        ? remainingHoles.reduce((accumulator, holeNumber) => {
+            const holeStats = holeStatsByHoleNumber.get(holeNumber);
+            if (!holeStats) return accumulator;
+            return accumulator + holeStats.averageDiffFromPar;
+          }, 0)
+        : 0;
+
+      const holesRemaining = remainingHoles.length;
+      const remainingParCounts = countRemainingHolesByPar(remainingHoles, holeStatsByHoleNumber);
+      const parDeltasByType = {
+        3: 0,
+        4: 0,
+        5: 0,
+      };
+      const parAdjustments = {
+        par3_scoring_avg: 0,
+        par4_scoring_avg: 0,
+        par5_scoring_avg: 0,
+      };
+      const parToStatKeyMap = {
+        3: 'par3_scoring_avg',
+        4: 'par4_scoring_avg',
+        5: 'par5_scoring_avg',
+      };
+      [3, 4, 5].forEach((parType) => {
+        const statKey = parToStatKeyMap[parType];
+        if (!selectedStatSet.has(statKey)) return;
+        const playerValue = Number(statMaps?.[statKey]?.[normalizedPlayerName]);
+        const fieldMean = Number(fieldMeans?.[statKey]);
+        const safePlayerValue = Number.isFinite(playerValue) ? playerValue : Number.isFinite(fieldMean) ? fieldMean : 0;
+        const safeFieldMean = Number.isFinite(fieldMean) ? fieldMean : 0;
+        parDeltasByType[parType] = safePlayerValue - safeFieldMean;
+        parAdjustments[statKey] = parDeltasByType[parType] * remainingParCounts[parType];
+      });
+
+      const sgPerHoleDeltas = {
+        sg_total: 0,
+        sg_t2g: 0,
+        sg_ott: 0,
+        sg_app: 0,
+        sg_arg: 0,
+        sg_putt: 0,
+      };
+      const sgAdjustments = {
+        sg_total: 0,
+        sg_t2g: 0,
+        sg_ott: 0,
+        sg_app: 0,
+        sg_arg: 0,
+        sg_putt: 0,
+      };
+      Object.keys(sgAdjustments).forEach((statKey) => {
+        if (!selectedStatSet.has(statKey)) return;
+        const playerValue = Number(statMaps?.[statKey]?.[normalizedPlayerName]);
+        const fieldMean = Number(fieldMeans?.[statKey]);
+        const safePlayerValue = Number.isFinite(playerValue) ? playerValue : Number.isFinite(fieldMean) ? fieldMean : 0;
+        const safeFieldMean = Number.isFinite(fieldMean) ? fieldMean : 0;
+        const perHoleDelta = (safePlayerValue - safeFieldMean) / 18;
+        sgPerHoleDeltas[statKey] = perHoleDelta;
+        sgAdjustments[statKey] = perHoleDelta * holesRemaining;
+      });
+
+      const holeBreakdown = remainingHoles.map((holeNumber) => {
         const holeStats = holeStatsByHoleNumber.get(holeNumber);
-        if (!holeStats) return accumulator;
-        return accumulator + holeStats.averageDiffFromPar;
-      }, 0);
+        const par = Number(holeStats?.par);
+        const base = selectedStatSet.has('course_hole_model') ? Number(holeStats?.averageDiffFromPar) || 0 : 0;
+        const parAdjustment = parDeltasByType[par] || 0;
+        const sgAdjustment = Object.entries(sgPerHoleDeltas).reduce((accumulator, [statKey, value]) => {
+          if (!selectedStatSet.has(statKey)) return accumulator;
+          return accumulator + value;
+        }, 0);
+        const total = base + parAdjustment + sgAdjustment;
+        return {
+          holeNumber,
+          par: Number.isFinite(par) ? par : null,
+          base: roundTo(base, 4),
+          parAdjustment: roundTo(parAdjustment, 4),
+          sgAdjustment: roundTo(sgAdjustment, 4),
+          total: roundTo(total, 4),
+        };
+      });
+
+      const totalParAdjustment = Object.values(parAdjustments).reduce((accumulator, value) => accumulator + value, 0);
+      const totalSgAdjustment = Object.values(sgAdjustments).reduce((accumulator, value) => accumulator + value, 0);
+      const totalAdjustment = baselineRemaining + totalParAdjustment + totalSgAdjustment;
 
       const expectedFinalScoreNumber =
-        scoreNumber === null ? null : roundTo(scoreNumber + remainingScoreDelta, 2);
+        scoreNumber === null ? null : roundTo(scoreNumber + totalAdjustment, 2);
 
       return {
         playerName,
+        normalizedPlayerName,
         scoreRaw,
         scoreNumber,
         roundScoreRaw,
@@ -374,13 +498,28 @@ function buildProjectedPlayers(players, holeStatsByHoleNumber, timezone) {
         startedOnBackNine,
         playerState,
         currentHole,
-        holesRemaining: remainingHoles.length,
+        holesRemaining,
         remainingHoles,
+        remainingParCounts,
         teeTimeMs: Number.isFinite(teeTimeMs) ? teeTimeMs : null,
         teeTimeDisplay,
         currentScoreDisplay: isNotStarted && teeTimeDisplay ? teeTimeDisplay : scoreRaw,
         expectedFinalScoreNumber,
         expectedFinalScoreDisplay: toDisplayScore(expectedFinalScoreNumber),
+        projectionBreakdown: {
+          baselineRemaining: roundTo(baselineRemaining, 4),
+          parAdjustments: roundBreakdownMap(parAdjustments),
+          sgAdjustments: roundBreakdownMap(sgAdjustments),
+          parDeltasByType: roundBreakdownMap({
+            par3: parDeltasByType[3],
+            par4: parDeltasByType[4],
+            par5: parDeltasByType[5],
+          }),
+          sgPerHoleDeltas: roundBreakdownMap(sgPerHoleDeltas),
+          totalAdjustment: roundTo(totalAdjustment, 4),
+          selectedStats,
+          holeBreakdown,
+        },
       };
     })
     .sort((a, b) => {
@@ -455,7 +594,9 @@ async function buildRoundLeaderProjection({
   leaderboardUrl,
   tourcastUrl,
   courseStatsUrl,
+  selectedStats: selectedStatsInput = DEFAULT_SELECTED_STATS,
 }) {
+  const selectedStats = normalizeStatSelection(selectedStatsInput);
   const resolvedUrls = resolveSourceUrls({
     baseUrl,
     leaderboardUrl,
@@ -526,7 +667,19 @@ async function buildRoundLeaderProjection({
 
   const holeStatsByHoleNumber = new Map(baseHoleStats.map((hole) => [hole.holeNumber, hole]));
   const holeStats = enrichHoleStats(baseHoleStats, courseContext.holeStatsByHoleNumber);
-  const players = buildProjectedPlayers(leaderboardData.players, holeStatsByHoleNumber, leaderboardData.timezone);
+  const statSnapshotResult = await getOrCreateRoundLeaderProjectionStatSnapshot({
+    tournamentId,
+    currentRound: courseContext.currentRound,
+    selectedStats,
+    scrapeSnapshot: async () => scrapeRoundLeaderProjectionStats(selectedStats),
+  });
+  const players = buildProjectedPlayers({
+    players: leaderboardData.players,
+    holeStatsByHoleNumber,
+    timezone: leaderboardData.timezone,
+    selectedStats,
+    statSnapshot: statSnapshotResult.snapshot,
+  });
 
   return {
     tournamentId,
@@ -542,6 +695,10 @@ async function buildRoundLeaderProjection({
     playerCount: players.length,
     fetchedAt: new Date().toISOString(),
     sourceBaseUrl: resolvedUrls.normalizedBaseUrl,
+    selectedStats,
+    statDataSource: statSnapshotResult.source,
+    statDataFetchedAt: statSnapshotResult.fetchedAt || statSnapshotResult.snapshot?.fetchedAt || null,
+    statSources: statSnapshotResult.snapshot?.sourceStats || [],
     holeStats,
     players,
   };

@@ -14,6 +14,7 @@ alwaysApply: false
 # Core UI Structure
 
 - Global layout component: `frontend/src/components/AppLayout.jsx`.
+- App navigation uses a top-header system with primary links and grouped dropdown menus, with a mobile menu pattern at smaller widths.
 - Shared app state (favorites, history, notes): `frontend/src/state/BetLabContext.jsx`.
 - Tool metadata source of truth: `frontend/src/data/tools.js`.
 - Reusable utilities (odds conversion, storage, formatters) belong in `frontend/src/utils`.
@@ -48,6 +49,9 @@ alwaysApply: false
 - Keep manual tournament URL input available as a fallback.
 - Prefer loading event-picker options from backend cached schedule data.
 - Include a subtle refresh affordance so users can explicitly update schedule events on demand.
+- Selecting an event in the event picker should only set/highlight the URL target; do not auto-scrape until the user presses `Scrape and Project`.
+- Show a stat-selection panel below the tournament URL input with defaults: `Course (Hole) Model`, `Par 3 Scoring Avg`, `Par 4 Scoring Avg`, `Par 5 Scoring Avg`.
+- Enforce SG exclusivity in UI: if `SG: Total` is selected, SG component stats must be unselected/disabled, and vice versa.
 
 # Growth Direction
 

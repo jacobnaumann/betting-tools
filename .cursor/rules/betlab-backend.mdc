@@ -38,3 +38,7 @@ alwaysApply: false
 - PGA schedule picker data is cached in `backend/data/round-leader-projection-events.json`.
 - Read cached schedule events via `GET /api/tools/round-leader-projection/events`.
 - Refresh and overwrite cached schedule events via `POST /api/tools/round-leader-projection/events/refresh`.
+- Projection requests accept `selectedStats` so users can define custom stat groups.
+- Supported stat keys: `course_hole_model`, `par3_scoring_avg`, `par4_scoring_avg`, `par5_scoring_avg`, `sg_total`, `sg_t2g`, `sg_ott`, `sg_app`, `sg_arg`, `sg_putt`.
+- If `sg_total` is selected, reject any payload that includes other SG keys to avoid redundant SG stacking.
+- Cache stat snapshots by `tournamentId + currentRound + sorted(selectedStats)` in `backend/data/round-leader-projection-stats-cache.json`.

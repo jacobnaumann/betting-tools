@@ -30,6 +30,7 @@ toolsRouter.post('/round-leader-projection', async (req, res) => {
     leaderboardUrl,
     tourcastUrl,
     courseStatsUrl,
+    selectedStats,
   } = req.body || {};
 
   if (!baseUrl && !leaderboardUrl && !tourcastUrl && !courseStatsUrl) {
@@ -44,6 +45,7 @@ toolsRouter.post('/round-leader-projection', async (req, res) => {
     leaderboardUrl,
     tourcastUrl,
     courseStatsUrl,
+    selectedStats,
   });
 
   return res.json({
