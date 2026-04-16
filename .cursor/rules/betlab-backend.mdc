@@ -41,4 +41,18 @@ alwaysApply: false
 - Projection requests accept `selectedStats` so users can define custom stat groups.
 - Supported stat keys: `course_hole_model`, `par3_scoring_avg`, `par4_scoring_avg`, `par5_scoring_avg`, `sg_total`, `sg_t2g`, `sg_ott`, `sg_app`, `sg_arg`, `sg_putt`.
 - If `sg_total` is selected, reject any payload that includes other SG keys to avoid redundant SG stacking.
+- If Tourcast GraphQL endpoint discovery fails, fall back to hole-level scoring data from `course-stats` instead of failing the request.
 - Cache stat snapshots by `tournamentId + currentRound + sorted(selectedStats)` in `backend/data/round-leader-projection-stats-cache.json`.
+- Source SG stats from latest `backend/data/YYYY-MM-DD-strokes-gained.csv` instead of PGA SG stat pages.
+- SG player mapping should tolerate ordering/punctuation differences and minor name variations.
+- Projection payload player rows include win/tie probabilities (`winSoloProbability`, `tieForLeadProbability`) plus tie-splitting share probability fields and FV fields (`fairValueYesProbability`, `fairValueYesCents`) from Monte Carlo simulation.
+- Projection payload should include dual scope datasets in `projectionScopes` for `round` and `tournament`, with `players` retaining round-scope compatibility.
+- Include tournament progress metadata (`currentRound`, `totalRounds`, `roundsRemainingAfterCurrent`) so frontend can display days/rounds remaining.
+- Tournament-scope tie resolution should model playoff single-winner outcomes with SG-weighted softmax allocation (fallback to equal split if SG signal is unavailable).
+- Tournament-scope player rows should include `top20/top10/top5` probabilities using dead-heat settlement shares when ties cross a top-finish cutoff (for example, tie for 10th splits top-10 payout share).
+- Projection requests can include per-player `statOverrides` (par averages and SG keys) and `scoreOverrides` (`totalScoreNumber`, `roundScoreNumber`, `completedHoles`), and player responses should expose effective input metadata (`playerStatInputs`, `playerScoreInputs`).
+- Always populate `playerStatInputs` for all editable projection stat keys (par + SG) so frontend exports/edit flows have a complete per-player stat payload regardless selected stats.
+- For pre-tournament/not-started players with missing live totals, treat projection baseline score as `E` (0) while preserving raw feed display values.
+- If PGA feed marks a player as `ACTIVE` but score fields are blank and a tee time exists, infer `not started` for projection baseline and score display purposes.
+- Projection requests can include optional `uploadedSgCsv` payloads (`fileName`, `content`) to override the default backend SG CSV source for that request.
+- Validate uploaded SG CSV structure via `POST /api/tools/round-leader-projection/validate-sg-csv` and require columns: `player_name`, `sg_total_pred`, `sg_ott_pred`, `sg_app_pred`, `sg_arg_pred`, `sg_putt_pred`.

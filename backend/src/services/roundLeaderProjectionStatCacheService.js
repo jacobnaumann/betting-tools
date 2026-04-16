@@ -4,10 +4,11 @@ const path = require('path');
 const CACHE_FILE_PATH = path.resolve(__dirname, '../../data/round-leader-projection-stats-cache.json');
 const MAX_CACHE_ENTRIES = 50;
 
-function buildStatsCacheKey({ tournamentId, currentRound, selectedStats }) {
+function buildStatsCacheKey({ tournamentId, currentRound, selectedStats, cacheVersionKey }) {
   const roundPart = Number.isFinite(Number(currentRound)) ? String(Number(currentRound)) : 'unknown-round';
   const statsPart = [...selectedStats].sort().join('|');
-  return `${String(tournamentId)}::${roundPart}::${statsPart}`;
+  const versionPart = String(cacheVersionKey || 'default');
+  return `${String(tournamentId)}::${roundPart}::${statsPart}::${versionPart}`;
 }
 
 async function readCacheFile() {
@@ -40,12 +41,14 @@ async function getOrCreateRoundLeaderProjectionStatSnapshot({
   tournamentId,
   currentRound,
   selectedStats,
+  cacheVersionKey,
   scrapeSnapshot,
 }) {
   const cacheKey = buildStatsCacheKey({
     tournamentId,
     currentRound,
     selectedStats,
+    cacheVersionKey,
   });
 
   const cache = await readCacheFile();

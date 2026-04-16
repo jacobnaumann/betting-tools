@@ -113,7 +113,7 @@ export function AppLayout({ children }) {
                 </button>
                 <div className="dropdown-menu">
                   <NavLink to="/tools/round-leader-projection" onClick={handleNavLinkClick}>
-                    Golf Round Leader
+                    Golf Projection
                   </NavLink>
                   <NavLink to="/tools/basketball-modeling" onClick={handleNavLinkClick}>
                     Basketball Regression

@@ -51,7 +51,18 @@ alwaysApply: false
 - Include a subtle refresh affordance so users can explicitly update schedule events on demand.
 - Selecting an event in the event picker should only set/highlight the URL target; do not auto-scrape until the user presses `Scrape and Project`.
 - Show a stat-selection panel below the tournament URL input with defaults: `Course (Hole) Model`, `Par 3 Scoring Avg`, `Par 4 Scoring Avg`, `Par 5 Scoring Avg`.
+- Provide an optional SG CSV file input below the stat-selection panel; when no file is uploaded, fall back to the latest backend SG CSV.
+- Validate uploaded SG CSV structure at upload time and show clear inline status feedback (`validating`, `OK`, or error) near the file input.
 - Enforce SG exclusivity in UI: if `SG: Total` is selected, SG component stats must be unselected/disabled, and vice versa.
+- Brand the module as `Golf Projection`.
+- Player projections should support tabbing between `Round Leader` and `Tournament` projection scopes.
+- Player projections table should include sortable `Win/Tie Pct` and `FV` columns between `Remaining` and `Projected`.
+- On the `Tournament` tab, include sortable `Top 20`, `Top 10`, and `Top 5` columns using dead-heat adjusted top-finish fair values (cents), and keep trailing column order as `Top 20`, `Top 10`, `Top 5`, `Win`, `Projected`.
+- Show a warning icon next to player names when SG data is missing from the SG CSV source.
+- Show an edit icon next to each player in projections that opens a modal for stat overrides on currently selected per-player stats.
+- The edit modal should also support manual score overrides (`Total Score`, `Round Score`, `Completed Holes`) for faster live correction.
+- Applying modal edits should trigger a projection refresh and preserve table scope/tab context.
+- Keep an `Export CSV` button beside the projections refresh control and export every player row in the active projection scope with grid values plus all per-player stat input columns.
 
 # Growth Direction
 

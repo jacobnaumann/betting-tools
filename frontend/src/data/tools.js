@@ -36,8 +36,8 @@ export const TOOL_DEFINITIONS = [
   },
   {
     id: 'round-leader-projection',
-    name: 'Round Leader Projection',
-    description: 'Project final round score using live leaderboard and hole scoring data.',
+    name: 'Golf Projection',
+    description: 'Project player outcomes for current round or full tournament using live leaderboard and hole data.',
     path: '/tools/round-leader-projection',
     category: 'Projection',
   },

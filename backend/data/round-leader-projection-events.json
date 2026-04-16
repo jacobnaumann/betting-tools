@@ -1,6 +1,6 @@
 {
   "sourceUrl": "https://www.pgatour.com/schedule",
-  "updatedAt": "2026-03-26T15:37:55.496Z",
+  "updatedAt": "2026-04-16T12:34:24.079Z",
   "events": [
     {
       "id": "R2026006",
@@ -105,7 +105,7 @@
       "id": "R2026020",
       "name": "Texas Children's Houston Open",
       "tournamentUrl": "https://www.pgatour.com/tournaments/2026/texas-childrens-houston-open/R2026020/",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETED",
       "roundLabel": null,
       "displayDate": "Mar 26 - 29",
       "startDate": "2026-03-26"
@@ -114,7 +114,7 @@
       "id": "R2026041",
       "name": "Valero Texas Open",
       "tournamentUrl": "https://www.pgatour.com/tournaments/2026/valero-texas-open/R2026041/",
-      "status": "UPCOMING",
+      "status": "COMPLETED",
       "roundLabel": null,
       "displayDate": "Apr 2 - 5",
       "startDate": "2026-04-02"
@@ -123,7 +123,7 @@
       "id": "R2026014",
       "name": "Masters Tournament",
       "tournamentUrl": "https://www.pgatour.com/tournaments/2026/masters-tournament/R2026014/",
-      "status": "UPCOMING",
+      "status": "COMPLETED",
       "roundLabel": null,
       "displayDate": "Apr 9 - 12",
       "startDate": "2026-04-09"
@@ -132,7 +132,7 @@
       "id": "R2026012",
       "name": "RBC Heritage",
       "tournamentUrl": "https://www.pgatour.com/tournaments/2026/rbc-heritage/R2026012/",
-      "status": "UPCOMING",
+      "status": "IN_PROGRESS",
       "roundLabel": null,
       "displayDate": "Apr 16 - 19",
       "startDate": "2026-04-16"
