@@ -4,7 +4,9 @@ const GRAPHQL_CONFIG_REGEX =
 const PGA_URL_SUFFIXES = new Set(['leaderboard', 'tourcast', 'course-stats']);
 const {
   DEFAULT_SELECTED_STATS,
+  RECENT_FORM_STAT_KEYS,
   SG_STAT_KEYS,
+  getRoundLeaderProjectionRecentFormDataVersionKey,
   getRoundLeaderProjectionSgDataVersionKey,
   normalizePlayerName,
   normalizeStatSelection,
@@ -30,16 +32,42 @@ const SCORE_TIE_EPSILON = 0.000001;
 const FINAL_SCORE_BUCKET_DECIMALS = 0;
 const PLAYOFF_SG_SOFTMAX_TEMPERATURE = 0.65;
 const TOP_FINISH_CUTOFFS = [20, 10, 5];
+const WEATHER_VOLATILITY_MULTIPLIER_MIN = 0.4;
+const WEATHER_VOLATILITY_MULTIPLIER_MAX = 2.5;
+const WEATHER_WAVE_ADJUSTMENT_MIN = -6;
+const WEATHER_WAVE_ADJUSTMENT_MAX = 6;
+const PROJECTION_MODEL_STANDARD = 'standard';
+const PROJECTION_MODEL_BLENDED = 'blended';
+const BLENDED_MODEL_PAR_WEIGHT = 0.65;
+const BLENDED_MODEL_SG_WEIGHT = 0.35;
+const DEFAULT_RECENT_FORM_WEIGHT = 0.3;
+const RECENT_FORM_WEIGHT_MIN = 0;
+const RECENT_FORM_WEIGHT_MAX = 1;
+const DEFAULT_WEATHER_OVERRIDES = {
+  enabled: false,
+  amWaveAdjustmentPerRound: 0,
+  pmWaveAdjustmentPerRound: 0,
+  windVolatilityMultiplier: 1,
+};
 const DEFAULT_HOLE_STD_DEV_BY_PAR = {
   3: 0.72,
   4: 0.84,
   5: 0.93,
+};
+const SG_HOLE_WEIGHTS_BY_STAT_KEY = {
+  sg_total: { 3: 1, 4: 1, 5: 1 },
+  sg_t2g: { 3: 1, 4: 1, 5: 1 },
+  sg_ott: { 3: 0, 4: 1, 5: 1 },
+  sg_app: { 3: 1.35, 4: 1, 5: 0.9 },
+  sg_arg: { 3: 1, 4: 1, 5: 1 },
+  sg_putt: { 3: 1, 4: 1, 5: 1 },
 };
 const PLAYER_EDITABLE_STAT_KEYS = new Set([
   'par3_scoring_avg',
   'par4_scoring_avg',
   'par5_scoring_avg',
   ...SG_STAT_KEYS,
+  ...RECENT_FORM_STAT_KEYS,
 ]);
 const ALL_PLAYER_PROJECTION_STAT_KEYS = [
   'par3_scoring_avg',
@@ -173,6 +201,17 @@ function getLeaderboardData(nextData) {
   }
 
   return leaderboardData;
+}
+
+function getPlayerStatusData(nextData, tournamentId) {
+  const queries = nextData?.props?.pageProps?.dehydratedState?.queries;
+  if (!Array.isArray(queries)) return null;
+  const exactMatch = queries.find(
+    (query) => query?.queryKey?.[0] === 'tcotrPlayerStatus' && query?.queryKey?.[1]?.tournamentId === tournamentId
+  );
+  if (exactMatch?.state?.data) return exactMatch.state.data;
+  const fallback = queries.find((query) => query?.queryKey?.[0] === 'tcotrPlayerStatus');
+  return fallback?.state?.data || null;
 }
 
 function parseGraphqlConfigFromTourcastHtml(html) {
@@ -417,6 +456,53 @@ function normalizeScoreOverrides(input) {
   return normalizedByPlayer;
 }
 
+function normalizeWeatherOverrides(input) {
+  if (!input || typeof input !== 'object' || Array.isArray(input)) {
+    return {
+      ...DEFAULT_WEATHER_OVERRIDES,
+    };
+  }
+
+  const enabled = Boolean(input.enabled ?? input.isEnabled ?? input.useWeather);
+  const amWaveAdjustmentRaw = toNumberOrNull(
+    input.amWaveAdjustmentPerRound ?? input.amWaveAdjustment ?? input.amAdjustmentPerRound ?? input.amAdjustment
+  );
+  const pmWaveAdjustmentRaw = toNumberOrNull(
+    input.pmWaveAdjustmentPerRound ?? input.pmWaveAdjustment ?? input.pmAdjustmentPerRound ?? input.pmAdjustment
+  );
+  const windVolatilityMultiplierRaw = toNumberOrNull(
+    input.windVolatilityMultiplier ?? input.volatilityMultiplier ?? input.windStdDevMultiplier
+  );
+
+  const amWaveAdjustmentPerRound = Number.isFinite(amWaveAdjustmentRaw)
+    ? clampNumber(amWaveAdjustmentRaw, WEATHER_WAVE_ADJUSTMENT_MIN, WEATHER_WAVE_ADJUSTMENT_MAX)
+    : DEFAULT_WEATHER_OVERRIDES.amWaveAdjustmentPerRound;
+  const pmWaveAdjustmentPerRound = Number.isFinite(pmWaveAdjustmentRaw)
+    ? clampNumber(pmWaveAdjustmentRaw, WEATHER_WAVE_ADJUSTMENT_MIN, WEATHER_WAVE_ADJUSTMENT_MAX)
+    : DEFAULT_WEATHER_OVERRIDES.pmWaveAdjustmentPerRound;
+  const windVolatilityMultiplier = Number.isFinite(windVolatilityMultiplierRaw)
+    ? clampNumber(windVolatilityMultiplierRaw, WEATHER_VOLATILITY_MULTIPLIER_MIN, WEATHER_VOLATILITY_MULTIPLIER_MAX)
+    : DEFAULT_WEATHER_OVERRIDES.windVolatilityMultiplier;
+
+  return {
+    enabled,
+    amWaveAdjustmentPerRound: roundTo(amWaveAdjustmentPerRound, 3),
+    pmWaveAdjustmentPerRound: roundTo(pmWaveAdjustmentPerRound, 3),
+    windVolatilityMultiplier: roundTo(windVolatilityMultiplier, 3),
+  };
+}
+
+function normalizeProjectionModel(input) {
+  const normalized = String(input || '').trim().toLowerCase();
+  return normalized === PROJECTION_MODEL_BLENDED ? PROJECTION_MODEL_BLENDED : PROJECTION_MODEL_STANDARD;
+}
+
+function normalizeRecentFormWeight(input) {
+  const numericValue = toNumberOrNull(input);
+  if (!Number.isFinite(numericValue)) return DEFAULT_RECENT_FORM_WEIGHT;
+  return Math.min(RECENT_FORM_WEIGHT_MAX, Math.max(RECENT_FORM_WEIGHT_MIN, numericValue));
+}
+
 function roundTo(value, decimals) {
   const factor = 10 ** decimals;
   return Math.round(value * factor) / factor;
@@ -631,6 +717,25 @@ function buildTopFinishOutcomeShares({ scoresByIndex, cutoff }) {
   };
 }
 
+function computePlayerScoreStdDev(player, holeStdDevByNumber, scoreStdDevMultiplier = 1) {
+  const expectedScore = toSimulationNumberOrNull(player?.expectedFinalScoreNumber);
+  if (!Number.isFinite(expectedScore)) return null;
+
+  const normalizedStdDevMultiplier =
+    Number.isFinite(scoreStdDevMultiplier) && scoreStdDevMultiplier > 0 ? scoreStdDevMultiplier : 1;
+  const remainingHoles = Array.isArray(player?.remainingHoles) ? player.remainingHoles : [];
+  const varianceSum = remainingHoles.reduce((sum, holeNumberRaw) => {
+    const holeNumber = toIntegerOrNull(holeNumberRaw);
+    const holeStdDev =
+      Number.isFinite(holeNumber) && Number.isFinite(holeStdDevByNumber.get(holeNumber))
+        ? holeStdDevByNumber.get(holeNumber)
+        : DEFAULT_HOLE_STD_DEV_BY_PAR[4];
+    return sum + holeStdDev * holeStdDev;
+  }, 0);
+
+  return varianceSum > 0 ? Math.sqrt(varianceSum) * normalizedStdDevMultiplier : 0;
+}
+
 function attachWinProbabilities({
   players,
   holeStdDevByNumber,
@@ -638,7 +743,10 @@ function attachWinProbabilities({
   seedInput,
   tieResolutionMode = 'tie_split',
   playoffTemperature = PLAYOFF_SG_SOFTMAX_TEMPERATURE,
+  scoreStdDevMultiplier = 1,
 }) {
+  const normalizedStdDevMultiplier =
+    Number.isFinite(scoreStdDevMultiplier) && scoreStdDevMultiplier > 0 ? scoreStdDevMultiplier : 1;
   const projectedPlayers = Array.isArray(players) ? players : [];
   if (!projectedPlayers.length) {
     return {
@@ -652,21 +760,9 @@ function attachWinProbabilities({
     };
   }
 
-  const scoreStdDevs = projectedPlayers.map((player) => {
-    const expectedScore = toSimulationNumberOrNull(player?.expectedFinalScoreNumber);
-    if (!Number.isFinite(expectedScore)) return null;
-
-    const remainingHoles = Array.isArray(player?.remainingHoles) ? player.remainingHoles : [];
-    const varianceSum = remainingHoles.reduce((sum, holeNumberRaw) => {
-      const holeNumber = toIntegerOrNull(holeNumberRaw);
-      const holeStdDev =
-        Number.isFinite(holeNumber) && Number.isFinite(holeStdDevByNumber.get(holeNumber))
-          ? holeStdDevByNumber.get(holeNumber)
-          : DEFAULT_HOLE_STD_DEV_BY_PAR[4];
-      return sum + holeStdDev * holeStdDev;
-    }, 0);
-    return varianceSum > 0 ? Math.sqrt(varianceSum) : 0;
-  });
+  const scoreStdDevs = projectedPlayers.map((player) =>
+    computePlayerScoreStdDev(player, holeStdDevByNumber, normalizedStdDevMultiplier)
+  );
 
   const hasAnyValidScore = projectedPlayers.some((player) =>
     Number.isFinite(toSimulationNumberOrNull(player?.expectedFinalScoreNumber))
@@ -789,6 +885,7 @@ function attachWinProbabilities({
 
       return {
         ...player,
+        scoreStdDev: Number.isFinite(scoreStdDevs[index]) ? roundTo(scoreStdDevs[index], 6) : null,
         winProbability: Number.isFinite(shareProbability) ? roundTo(shareProbability, 6) : null,
         winProbabilityPct: Number.isFinite(shareProbability) ? roundTo(shareProbability * 100, 2) : null,
         winSoloProbability: Number.isFinite(winSoloProbability) ? roundTo(winSoloProbability, 6) : null,
@@ -809,6 +906,7 @@ function attachWinProbabilities({
       tieHandling: tieResolutionMode === 'single_winner_sg_weighted' ? 'playoff-weighted-single-winner' : 'split',
       tieResolutionMode,
       playoffTemperature: tieResolutionMode === 'single_winner_sg_weighted' ? playoffTemperature : null,
+      scoreStdDevMultiplier: roundTo(normalizedStdDevMultiplier, 4),
       trials: canRunSimulation ? simulationTrials : 0,
       deterministic: !canRunSimulation,
     },
@@ -827,6 +925,33 @@ function formatTeeTime(teeTimeMs, timezone) {
   } catch (_error) {
     return null;
   }
+}
+
+function getPlayerTeeWave(teeTimeMs, timezone) {
+  if (!Number.isFinite(teeTimeMs)) return null;
+  try {
+    const hourText = new Intl.DateTimeFormat('en-US', {
+      hour: 'numeric',
+      hour12: false,
+      timeZone: timezone || 'UTC',
+    }).format(new Date(teeTimeMs));
+    const hour = Number(hourText);
+    if (!Number.isFinite(hour)) return null;
+    return hour < 12 ? 'am' : 'pm';
+  } catch (_error) {
+    return null;
+  }
+}
+
+function resolveTeeTimeMs(scoringData) {
+  const teeTimeCandidate = toNumberOrNull(
+    scoringData?.teeTime ??
+      scoringData?.startTime ??
+      scoringData?.teeTimeMs ??
+      scoringData?.startTimeMs ??
+      scoringData?.tee_time
+  );
+  return Number.isFinite(teeTimeCandidate) ? teeTimeCandidate : null;
 }
 
 function selectCourse(courses, courseId) {
@@ -903,7 +1028,9 @@ function buildBaseHoleStatsFromCourseContext(courseHoleStatsByHoleNumber) {
       ? scoringAverageDiff
       : Number.isFinite(scoringAverage) && Number.isFinite(par)
         ? scoringAverage - par
-        : null;
+        : Number.isFinite(par)
+          ? 0
+          : null;
     if (!Number.isFinite(averageDiffFromPar)) {
       continue;
     }
@@ -966,10 +1093,146 @@ function countRemainingHolesByPar(remainingHoles, holeStatsByHoleNumber) {
   return counts;
 }
 
+function buildPreTournamentLeaderboardPlayers(playerStatusData, courseId) {
+  const players = Array.isArray(playerStatusData?.players) ? playerStatusData.players : [];
+  return players
+    .map((playerRow) => {
+      const playerName = String(
+        playerRow?.playerName ||
+          [playerRow?.firstName, playerRow?.lastName].filter(Boolean).join(' ') ||
+          playerRow?.shortName ||
+          ''
+      ).trim();
+      if (!playerName) return null;
+      return {
+        player: {
+          id: playerRow?.playerId || null,
+          displayName: playerName,
+          firstName: playerRow?.firstName || null,
+          lastName: playerRow?.lastName || null,
+          shortName: playerRow?.shortName || null,
+          country: playerRow?.countryName || null,
+          countryCode: playerRow?.countryCode || null,
+        },
+        scoringData: {
+          courseId,
+          total: 'E',
+          score: 'E',
+          thru: '0',
+          thruSort: 0,
+          backNine: false,
+          playerState: 'NOT_STARTED',
+        },
+      };
+    })
+    .filter(Boolean);
+}
+
 function roundBreakdownMap(valuesByKey) {
   return Object.fromEntries(
     Object.entries(valuesByKey).map(([key, value]) => [key, roundTo(Number(value) || 0, 4)])
   );
+}
+
+function buildSkillAdjustmentBlend({
+  projectionModel,
+  totalParAdjustment,
+  totalSgAdjustment,
+  hasParSelection,
+  hasSgSelection,
+}) {
+  const normalizedProjectionModel = normalizeProjectionModel(projectionModel);
+  if (normalizedProjectionModel !== PROJECTION_MODEL_BLENDED) {
+    return {
+      projectionModel: PROJECTION_MODEL_STANDARD,
+      parBlendWeight: 1,
+      sgBlendWeight: 1,
+      blendedSkillAdjustment: totalParAdjustment + totalSgAdjustment,
+    };
+  }
+
+  const parBlendWeight = hasParSelection && hasSgSelection ? BLENDED_MODEL_PAR_WEIGHT : hasParSelection ? 1 : 0;
+  const sgBlendWeight = hasParSelection && hasSgSelection ? BLENDED_MODEL_SG_WEIGHT : hasSgSelection ? 1 : 0;
+  return {
+    projectionModel: PROJECTION_MODEL_BLENDED,
+    parBlendWeight,
+    sgBlendWeight,
+    blendedSkillAdjustment: totalParAdjustment * parBlendWeight + totalSgAdjustment * sgBlendWeight,
+  };
+}
+
+function getSgHoleWeight(statKey, par) {
+  const weightsByPar = SG_HOLE_WEIGHTS_BY_STAT_KEY[statKey] || SG_HOLE_WEIGHTS_BY_STAT_KEY.sg_total;
+  const normalizedPar = Number(par);
+  const weight = weightsByPar[normalizedPar];
+  return Number.isFinite(weight) ? weight : 1;
+}
+
+function getFullRoundSgWeightSum(statKey, holeStatsByHoleNumber) {
+  let weightSum = 0;
+  for (let holeNumber = 1; holeNumber <= 18; holeNumber += 1) {
+    const par = Number(holeStatsByHoleNumber.get(holeNumber)?.par);
+    weightSum += getSgHoleWeight(statKey, par);
+  }
+  return weightSum;
+}
+
+function buildSgHoleAllocation({
+  statKey,
+  roundEdge,
+  remainingHolePlan,
+  holeStatsByHoleNumber,
+}) {
+  const currentRoundRemaining = Array.isArray(remainingHolePlan?.currentRoundRemaining)
+    ? remainingHolePlan.currentRoundRemaining
+    : [];
+  const futureRoundRemaining = Array.isArray(remainingHolePlan?.futureRoundRemaining)
+    ? remainingHolePlan.futureRoundRemaining
+    : [];
+  const allRemaining = Array.isArray(remainingHolePlan?.allRemaining) ? remainingHolePlan.allRemaining : [];
+  const fullRoundWeightSum = getFullRoundSgWeightSum(statKey, holeStatsByHoleNumber);
+
+  const buildWeightedHoleMap = (holes) => {
+    const weightedHoles = holes.map((hole) => {
+      const par = Number(holeStatsByHoleNumber.get(hole.holeNumber)?.par);
+      return {
+        key: `${hole.roundNumber || ''}:${hole.holeNumber}`,
+        weight: getSgHoleWeight(statKey, par),
+      };
+    });
+    const values = new Map();
+    if (!Number.isFinite(roundEdge) || !weightedHoles.length || fullRoundWeightSum <= 0) {
+      weightedHoles.forEach((hole) => values.set(hole.key, 0));
+      return values;
+    }
+    weightedHoles.forEach((hole) => {
+      values.set(hole.key, (roundEdge * hole.weight) / fullRoundWeightSum);
+    });
+    return values;
+  };
+
+  const valuesByHoleKey = new Map();
+  const currentValues = buildWeightedHoleMap(currentRoundRemaining);
+  currentValues.forEach((value, key) => valuesByHoleKey.set(key, value));
+
+  const futureRoundNumbers = Array.from(new Set(futureRoundRemaining.map((hole) => hole.roundNumber))).filter((roundNumber) =>
+    Number.isFinite(Number(roundNumber))
+  );
+  futureRoundNumbers.forEach((roundNumber) => {
+    const futureRoundHoles = futureRoundRemaining.filter((hole) => Number(hole.roundNumber) === Number(roundNumber));
+    const roundValues = buildWeightedHoleMap(futureRoundHoles);
+    roundValues.forEach((value, key) => valuesByHoleKey.set(key, value));
+  });
+
+  const totalAdjustment = allRemaining.reduce((sum, hole) => {
+    const key = `${hole.roundNumber || ''}:${hole.holeNumber}`;
+    return sum + (valuesByHoleKey.get(key) || 0);
+  }, 0);
+
+  return {
+    valuesByHoleKey,
+    totalAdjustment,
+  };
 }
 
 function toSortedTokenKey(normalizedName) {
@@ -1128,20 +1391,66 @@ function buildProjectedPlayers({
   statSnapshot,
   statOverridesByPlayer = {},
   scoreOverridesByPlayer = {},
+  weatherOverrides = DEFAULT_WEATHER_OVERRIDES,
+  projectionModel = PROJECTION_MODEL_STANDARD,
+  recentFormWeight = DEFAULT_RECENT_FORM_WEIGHT,
   projectionScope = 'round',
   currentRound,
   totalRounds,
 }) {
+  const normalizedWeatherOverrides = normalizeWeatherOverrides(weatherOverrides);
+  const normalizedProjectionModel = normalizeProjectionModel(projectionModel);
+  const normalizedRecentFormWeight = normalizeRecentFormWeight(recentFormWeight);
+  const isRoundWeatherEnabled = projectionScope === 'round' && normalizedWeatherOverrides.enabled;
   const selectedStatSet = new Set(selectedStats);
   const statMaps = statSnapshot?.byStatKey || {};
   const fieldMeans = statSnapshot?.fieldMeans || {};
+  const selectedParStatKeys = ['par3_scoring_avg', 'par4_scoring_avg', 'par5_scoring_avg'].filter((statKey) =>
+    selectedStatSet.has(statKey)
+  );
   const selectedSgStatKeys = SG_STAT_KEYS.filter((statKey) => selectedStatSet.has(statKey));
+  const selectedRecentFormStatKeys = RECENT_FORM_STAT_KEYS.filter((statKey) => selectedStatSet.has(statKey));
+  const hasParSelection = selectedParStatKeys.length > 0;
   const hasSgSelection = selectedSgStatKeys.length > 0;
   const hasAnySgData = SG_STAT_KEYS.some((statKey) => {
     const entries = statMaps?.[statKey];
     return entries && Object.keys(entries).length > 0;
   });
   const resolveSgName = createSgNameMatcher(statSnapshot?.sgNameRows);
+  const resolveRecentFormName = createSgNameMatcher(statSnapshot?.recentFormNameRows);
+  const groupWaveHints = new Map();
+  const groupWaveSamples = [];
+  players.forEach((row) => {
+    const scoringData = row?.scoringData || {};
+    const groupNumber = toIntegerOrNull(scoringData.groupNumber);
+    if (!Number.isFinite(groupNumber)) return;
+    const teeTimeMs = resolveTeeTimeMs(scoringData);
+    const wave = getPlayerTeeWave(teeTimeMs, timezone);
+    if (!wave) return;
+    if (!groupWaveHints.has(groupNumber)) {
+      groupWaveHints.set(groupNumber, wave);
+    }
+    groupWaveSamples.push({
+      groupNumber,
+      wave,
+    });
+  });
+  const resolveWaveFromGroup = (groupNumber) => {
+    if (!Number.isFinite(groupNumber)) return null;
+    if (groupWaveHints.has(groupNumber)) {
+      return groupWaveHints.get(groupNumber);
+    }
+    if (!groupWaveSamples.length) return null;
+    let nearestSample = null;
+    let nearestDistance = Infinity;
+    groupWaveSamples.forEach((sample) => {
+      const distance = Math.abs(sample.groupNumber - groupNumber);
+      if (distance >= nearestDistance) return;
+      nearestDistance = distance;
+      nearestSample = sample;
+    });
+    return nearestSample?.wave || null;
+  };
 
   return players
     .map((row) => {
@@ -1160,6 +1469,17 @@ function buildProjectedPlayers({
             matchType: null,
           };
       const sgLookupName = sgNameMatch?.matchedNormalizedName || normalizedPlayerName;
+      const recentFormNameMatch = selectedRecentFormStatKeys.length
+        ? resolveRecentFormName({
+            normalizedPlayerName,
+            playerName,
+          })
+        : {
+            found: false,
+            matchedNormalizedName: null,
+            matchType: null,
+          };
+      const recentFormLookupName = recentFormNameMatch?.matchedNormalizedName || normalizedPlayerName;
       const scoringData = row?.scoringData || {};
       const scoreRawFromFeed = scoringData.total ?? '-';
       const scoreNumberFromFeed = toScoreNumber(scoreRawFromFeed);
@@ -1190,7 +1510,7 @@ function buildProjectedPlayers({
       const teeOrder = buildTeeOrder(startedOnBackNine);
       const playerState = scoringData.playerState || '';
       const normalizedPlayerState = String(playerState).trim().toUpperCase();
-      const teeTimeMs = Number(scoringData.teeTime);
+      const teeTimeMs = resolveTeeTimeMs(scoringData);
       const teeTimeDisplay = formatTeeTime(teeTimeMs, timezone);
       const hasFeedTotalScore = Number.isFinite(scoreNumberFromFeed);
       const hasFeedRoundScore = Number.isFinite(roundScoreNumberFromFeed);
@@ -1219,6 +1539,19 @@ function buildProjectedPlayers({
           ? Math.max(0, Math.floor(totalRounds) - Math.floor(currentRound))
           : 0
       );
+      const groupNumber = toIntegerOrNull(scoringData.groupNumber);
+      const explicitTeeWave = getPlayerTeeWave(teeTimeMs, timezone);
+      const teeWave = isRoundWeatherEnabled ? explicitTeeWave || resolveWaveFromGroup(groupNumber) : null;
+      const weatherAdjustmentPerRound =
+        teeWave === 'am'
+          ? normalizedWeatherOverrides.amWaveAdjustmentPerRound
+          : teeWave === 'pm'
+            ? normalizedWeatherOverrides.pmWaveAdjustmentPerRound
+            : 0;
+      const weatherAdjustment =
+        isRoundWeatherEnabled && holesRemainingCurrentRound > 0
+          ? (weatherAdjustmentPerRound * holesRemainingCurrentRound) / 18
+          : 0;
       const currentHole =
         completedHoles === null
           ? '-'
@@ -1258,6 +1591,11 @@ function buildProjectedPlayers({
             : Number.isFinite(fieldMean)
               ? fieldMean
               : 0;
+        const baselineValue = Number.isFinite(playerValue)
+          ? playerValue
+          : Number.isFinite(fieldMean)
+            ? fieldMean
+            : 0;
         const safeFieldMean = Number.isFinite(fieldMean) ? fieldMean : 0;
         const statValueSource = Number.isFinite(overrideValue)
           ? 'manual_override'
@@ -1269,6 +1607,7 @@ function buildProjectedPlayers({
         playerStatInputs[statKey] = {
           value: roundTo(safePlayerValue, 4),
           source: statValueSource,
+          baselineValue: roundTo(baselineValue, 4),
           fieldMean: roundTo(safeFieldMean, 4),
         };
         return {
@@ -1312,6 +1651,14 @@ function buildProjectedPlayers({
         sg_arg: 0,
         sg_putt: 0,
       };
+      const sgHoleAdjustmentsByStatKey = {
+        sg_total: new Map(),
+        sg_t2g: new Map(),
+        sg_ott: new Map(),
+        sg_app: new Map(),
+        sg_arg: new Map(),
+        sg_putt: new Map(),
+      };
       Object.keys(sgAdjustments).forEach((statKey) => {
         const { safePlayerValue, safeFieldMean } = resolvePlayerStatInput(statKey, sgLookupName);
         const sgEdgeVsField = safePlayerValue - safeFieldMean;
@@ -1320,46 +1667,98 @@ function buildProjectedPlayers({
         }
         if (!selectedStatSet.has(statKey)) return;
         // Positive SG means a player gains strokes and should project to fewer strokes remaining.
-        const perHoleDelta = (safeFieldMean - safePlayerValue) / 18;
-        sgPerHoleDeltas[statKey] = perHoleDelta;
-        sgAdjustments[statKey] = perHoleDelta * holesRemaining;
+        const roundEdge = safeFieldMean - safePlayerValue;
+        const sgAllocation = buildSgHoleAllocation({
+          statKey,
+          roundEdge,
+          remainingHolePlan,
+          holeStatsByHoleNumber,
+        });
+        sgHoleAdjustmentsByStatKey[statKey] = sgAllocation.valuesByHoleKey;
+        sgPerHoleDeltas[statKey] = holesRemaining > 0 ? sgAllocation.totalAdjustment / holesRemaining : 0;
+        sgAdjustments[statKey] = sgAllocation.totalAdjustment;
       });
       const playoffSgRating = playoffSgEdgeValues.length
         ? playoffSgEdgeValues.reduce((sum, value) => sum + value, 0) / playoffSgEdgeValues.length
         : 0;
+      const recentFormAdjustments = {
+        recent_form_l20: 0,
+      };
+      selectedRecentFormStatKeys.forEach((statKey) => {
+        const { safePlayerValue } = resolvePlayerStatInput(statKey, recentFormLookupName);
+        recentFormAdjustments[statKey] = -1 * safePlayerValue * normalizedRecentFormWeight * (holesRemaining / 18);
+      });
+      const rawTotalParAdjustment = Object.values(parAdjustments).reduce((accumulator, value) => accumulator + value, 0);
+      const rawTotalSgAdjustment = Object.values(sgAdjustments).reduce((accumulator, value) => accumulator + value, 0);
+      const totalRecentFormAdjustment = Object.values(recentFormAdjustments).reduce(
+        (accumulator, value) => accumulator + value,
+        0
+      );
+      const skillAdjustmentBlend = buildSkillAdjustmentBlend({
+        projectionModel: normalizedProjectionModel,
+        totalParAdjustment: rawTotalParAdjustment,
+        totalSgAdjustment: rawTotalSgAdjustment,
+        hasParSelection,
+        hasSgSelection,
+      });
+      const totalParAdjustment = rawTotalParAdjustment * skillAdjustmentBlend.parBlendWeight;
+      const totalSgAdjustment = rawTotalSgAdjustment * skillAdjustmentBlend.sgBlendWeight;
 
       const holeBreakdown = remainingHolePlan.allRemaining.map((remainingHole) => {
         const holeStats = holeStatsByHoleNumber.get(remainingHole.holeNumber);
         const par = Number(holeStats?.par);
         const base = selectedStatSet.has('course_hole_model') ? Number(holeStats?.averageDiffFromPar) || 0 : 0;
-        const parAdjustment = parDeltasByType[par] || 0;
-        const sgAdjustment = Object.entries(sgPerHoleDeltas).reduce((accumulator, [statKey, value]) => {
+        const rawParAdjustment = parDeltasByType[par] || 0;
+        const holeKey = `${remainingHole.roundNumber || ''}:${remainingHole.holeNumber}`;
+        const rawSgAdjustment = Object.entries(sgHoleAdjustmentsByStatKey).reduce((accumulator, [statKey, valuesByHoleKey]) => {
           if (!selectedStatSet.has(statKey)) return accumulator;
-          return accumulator + value;
+          return accumulator + (valuesByHoleKey.get(holeKey) || 0);
         }, 0);
-        const total = base + parAdjustment + sgAdjustment;
+        const parAdjustment = rawParAdjustment * skillAdjustmentBlend.parBlendWeight;
+        const sgAdjustment = rawSgAdjustment * skillAdjustmentBlend.sgBlendWeight;
+        const recentFormAdjustment = holesRemaining > 0 ? totalRecentFormAdjustment / holesRemaining : 0;
+        const total = base + parAdjustment + sgAdjustment + recentFormAdjustment;
         return {
           roundNumber: remainingHole.roundNumber,
           holeNumber: remainingHole.holeNumber,
           par: Number.isFinite(par) ? par : null,
           base: roundTo(base, 4),
+          rawParAdjustment: roundTo(rawParAdjustment, 4),
+          rawSgAdjustment: roundTo(rawSgAdjustment, 4),
           parAdjustment: roundTo(parAdjustment, 4),
           sgAdjustment: roundTo(sgAdjustment, 4),
+          recentFormAdjustment: roundTo(recentFormAdjustment, 4),
           total: roundTo(total, 4),
         };
       });
 
-      const totalParAdjustment = Object.values(parAdjustments).reduce((accumulator, value) => accumulator + value, 0);
-      const totalSgAdjustment = Object.values(sgAdjustments).reduce((accumulator, value) => accumulator + value, 0);
-      const totalAdjustment = baselineRemaining + totalParAdjustment + totalSgAdjustment;
+      const totalAdjustment =
+        baselineRemaining + totalParAdjustment + totalSgAdjustment + totalRecentFormAdjustment + weatherAdjustment;
       const scoreNumberForProjection = scoreNumber === null && isNotStarted ? 0 : scoreNumber;
+      const hasStartedCurrentRound = Number.isFinite(completedHoles) && completedHoles > 0;
+      const hasCurrentRoundScore = Number.isFinite(roundScoreNumber);
+      const isAwaitingCurrentRoundStart = !hasStartedCurrentRound && !hasCurrentRoundScore && Boolean(teeTimeDisplay);
 
       const expectedFinalScoreNumber =
         scoreNumberForProjection === null ? null : roundTo(scoreNumberForProjection + totalAdjustment, 2);
-      const missingSgData = hasSgSelection ? !sgNameMatch?.found : false;
+      const selectedProjectionStatKeys = [...selectedParStatKeys, ...selectedSgStatKeys, ...selectedRecentFormStatKeys];
+      const missingProjectionStats = selectedProjectionStatKeys
+        .map((statKey) => {
+          const statInput = playerStatInputs[statKey];
+          const source = statInput?.source || 'missing';
+          if (source === 'stat_feed' || source === 'manual_override') return null;
+          return {
+            statKey,
+            source,
+          };
+        })
+        .filter(Boolean);
+      const missingProjectionStatKeys = missingProjectionStats.map((stat) => stat.statKey);
+      const missingSgData = selectedSgStatKeys.some((statKey) => missingProjectionStatKeys.includes(statKey));
       const playerScoreInputs = {
         totalScoreNumber: {
           value: Number.isFinite(scoreNumber) ? roundTo(scoreNumber, 2) : null,
+          baselineValue: Number.isFinite(scoreNumberFromFeed) ? roundTo(scoreNumberFromFeed, 2) : null,
           source: Number.isFinite(overrideScoreNumber)
             ? 'manual_override'
             : Number.isFinite(scoreNumberFromFeed)
@@ -1368,6 +1767,7 @@ function buildProjectedPlayers({
         },
         roundScoreNumber: {
           value: Number.isFinite(roundScoreNumber) ? roundTo(roundScoreNumber, 2) : null,
+          baselineValue: Number.isFinite(roundScoreNumberFromFeed) ? roundTo(roundScoreNumberFromFeed, 2) : null,
           source: Number.isFinite(overrideRoundScoreNumber)
             ? 'manual_override'
             : Number.isFinite(roundScoreNumberFromFeed)
@@ -1376,6 +1776,7 @@ function buildProjectedPlayers({
         },
         completedHoles: {
           value: Number.isFinite(completedHoles) ? completedHoles : null,
+          baselineValue: Number.isFinite(completedHolesFromFeed) ? completedHolesFromFeed : null,
           source: overrideCompletedHoles !== null
             ? 'manual_override'
             : Number.isFinite(completedHolesFromFeed)
@@ -1401,21 +1802,56 @@ function buildProjectedPlayers({
         roundsRemainingAfterCurrent,
         remainingHoles,
         remainingParCounts,
-        teeTimeMs: Number.isFinite(teeTimeMs) ? teeTimeMs : null,
+        teeTimeMs,
         teeTimeDisplay,
-        currentScoreDisplay: teeTimeDisplay && !Number.isFinite(scoreNumber) ? teeTimeDisplay : scoreRaw,
+        currentScoreDisplay: scoreRaw,
+        currentThruDisplay: isAwaitingCurrentRoundStart ? teeTimeDisplay : thruRaw,
+        isAwaitingCurrentRoundStart,
+        hasMissingProjectionStats: missingProjectionStats.length > 0,
+        missingProjectionStats,
+        missingProjectionStatKeys,
         missingSgData,
         sgNameMatchType: sgNameMatch?.matchType || null,
+        recentFormNameMatchType: recentFormNameMatch?.matchType || null,
         playoffSgRating: roundTo(playoffSgRating, 6),
+        teeWave,
         playerStatInputs,
         playerScoreInputs,
         projectionScope,
+        projectionModel: skillAdjustmentBlend.projectionModel,
         expectedFinalScoreNumber,
         expectedFinalScoreDisplay: toDisplayScore(expectedFinalScoreNumber),
         projectionBreakdown: {
+          projectionModel: skillAdjustmentBlend.projectionModel,
+          parBlendWeight: roundTo(skillAdjustmentBlend.parBlendWeight, 4),
+          sgBlendWeight: roundTo(skillAdjustmentBlend.sgBlendWeight, 4),
+          recentFormWeight: roundTo(normalizedRecentFormWeight, 4),
           baselineRemaining: roundTo(baselineRemaining, 4),
-          parAdjustments: roundBreakdownMap(parAdjustments),
-          sgAdjustments: roundBreakdownMap(sgAdjustments),
+          rawParAdjustments: roundBreakdownMap(parAdjustments),
+          rawSgAdjustments: roundBreakdownMap(sgAdjustments),
+          recentFormAdjustments: roundBreakdownMap(recentFormAdjustments),
+          parAdjustments: roundBreakdownMap(
+            Object.fromEntries(
+              Object.entries(parAdjustments).map(([statKey, value]) => [statKey, value * skillAdjustmentBlend.parBlendWeight])
+            )
+          ),
+          sgAdjustments: roundBreakdownMap(
+            Object.fromEntries(
+              Object.entries(sgAdjustments).map(([statKey, value]) => [statKey, value * skillAdjustmentBlend.sgBlendWeight])
+            )
+          ),
+          rawTotalParAdjustment: roundTo(rawTotalParAdjustment, 4),
+          rawTotalSgAdjustment: roundTo(rawTotalSgAdjustment, 4),
+          totalParAdjustment: roundTo(totalParAdjustment, 4),
+          totalSgAdjustment: roundTo(totalSgAdjustment, 4),
+          totalRecentFormAdjustment: roundTo(totalRecentFormAdjustment, 4),
+          blendedSkillAdjustment: roundTo(skillAdjustmentBlend.blendedSkillAdjustment, 4),
+          weatherAdjustment: roundTo(weatherAdjustment, 4),
+          weatherAdjustmentPerRound: roundTo(weatherAdjustmentPerRound, 4),
+          windVolatilityMultiplier: isRoundWeatherEnabled
+            ? roundTo(normalizedWeatherOverrides.windVolatilityMultiplier, 4)
+            : 1,
+          teeWave,
           parDeltasByType: roundBreakdownMap({
             par3: parDeltasByType[3],
             par4: parDeltasByType[4],
@@ -1501,13 +1937,22 @@ async function buildRoundLeaderProjection({
   tourcastUrl,
   courseStatsUrl,
   selectedStats: selectedStatsInput = DEFAULT_SELECTED_STATS,
+  projectionModel: projectionModelInput = PROJECTION_MODEL_STANDARD,
   statOverrides: statOverridesInput,
   scoreOverrides: scoreOverridesInput,
+  weatherOverrides: weatherOverridesInput,
   uploadedSgCsv,
+  uploadedRecentFormCsv,
+  recentFormWeight: recentFormWeightInput,
 }) {
   const selectedStats = normalizeStatSelection(selectedStatsInput);
+  const selectedRecentFormStatKeys = RECENT_FORM_STAT_KEYS.filter((statKey) => selectedStats.includes(statKey));
+  const projectionModel = normalizeProjectionModel(projectionModelInput);
+  const recentFormWeight = normalizeRecentFormWeight(recentFormWeightInput);
   const statOverridesByPlayer = normalizeStatOverrides(statOverridesInput);
   const scoreOverridesByPlayer = normalizeScoreOverrides(scoreOverridesInput);
+  const normalizedWeatherOverrides = normalizeWeatherOverrides(weatherOverridesInput);
+  const applyRoundWeather = normalizedWeatherOverrides.enabled;
   const resolvedUrls = resolveSourceUrls({
     baseUrl,
     leaderboardUrl,
@@ -1518,21 +1963,34 @@ async function buildRoundLeaderProjection({
   const leaderboardHtml = await fetchText(resolvedUrls.leaderboardUrl);
   const leaderboardNextData = parseNextDataFromHtml(leaderboardHtml, 'leaderboard');
   const leaderboardData = getLeaderboardData(leaderboardNextData);
-
-  const tournamentId = leaderboardData.tournamentId;
-  const courseId = leaderboardData.players.find((row) => row?.scoringData?.courseId)?.scoringData?.courseId;
+  const leaderboardTournamentId = leaderboardData.tournamentId;
+  const leaderboardTournamentData = getTournamentData(leaderboardNextData, leaderboardTournamentId);
+  const tournamentId = leaderboardTournamentId || leaderboardTournamentData?.id;
+  const tournamentCourseId =
+    leaderboardTournamentData?.courses?.find((course) => course?.hostCourse)?.id ||
+    leaderboardTournamentData?.courses?.[0]?.id ||
+    null;
+  const courseId = leaderboardData.players.find((row) => row?.scoringData?.courseId)?.scoringData?.courseId || tournamentCourseId;
 
   if (!tournamentId || !courseId) {
-    throw createHttpError(502, 'Missing tournamentId/courseId in leaderboard payload.');
+    throw createHttpError(502, 'Missing tournamentId/courseId in PGA TOUR tournament payload.');
   }
 
   const courseStatsHtml = await fetchText(resolvedUrls.courseStatsUrl);
   const courseStatsNextData = parseNextDataFromHtml(courseStatsHtml, 'course-stats');
   const courseStatsData = getCourseStatsData(courseStatsNextData);
   const tournamentData = getTournamentData(courseStatsNextData, tournamentId);
+  const effectiveTournamentData = tournamentData || leaderboardTournamentData;
+  const playerStatusData = getPlayerStatusData(leaderboardNextData, tournamentId) || getPlayerStatusData(courseStatsNextData, tournamentId);
+  const sourcePlayers = Array.isArray(leaderboardData.players) && leaderboardData.players.length
+    ? leaderboardData.players
+    : buildPreTournamentLeaderboardPlayers(playerStatusData, courseId);
+  if (!sourcePlayers.length) {
+    throw createHttpError(502, 'PGA TOUR payload did not include leaderboard rows or a pre-tournament field list.');
+  }
   const courseContext = buildCourseContext({
     courseStatsData,
-    tournamentData,
+    tournamentData: effectiveTournamentData,
     courseId,
   });
 
@@ -1589,13 +2047,17 @@ async function buildRoundLeaderProjection({
   const holeStatsByHoleNumber = new Map(baseHoleStats.map((hole) => [hole.holeNumber, hole]));
   const holeStats = enrichHoleStats(baseHoleStats, courseContext.holeStatsByHoleNumber);
   const sgDataVersionKey = await getRoundLeaderProjectionSgDataVersionKey(uploadedSgCsv);
+  const recentFormDataVersionKey = selectedRecentFormStatKeys.length
+    ? await getRoundLeaderProjectionRecentFormDataVersionKey(uploadedRecentFormCsv)
+    : 'recent-form:not-selected';
+  const statSnapshotSelectedStats = Array.from(new Set([...ALL_PLAYER_PROJECTION_STAT_KEYS, ...selectedRecentFormStatKeys]));
   const statSnapshotResult = await getOrCreateRoundLeaderProjectionStatSnapshot({
     tournamentId,
     currentRound: courseContext.currentRound,
-    selectedStats: ALL_PLAYER_PROJECTION_STAT_KEYS,
-    cacheVersionKey: sgDataVersionKey,
+    selectedStats: statSnapshotSelectedStats,
+    cacheVersionKey: `${sgDataVersionKey}::${recentFormDataVersionKey}`,
     scrapeSnapshot: async () =>
-      scrapeRoundLeaderProjectionStats(ALL_PLAYER_PROJECTION_STAT_KEYS, { uploadedSgCsv }),
+      scrapeRoundLeaderProjectionStats(statSnapshotSelectedStats, { uploadedSgCsv, uploadedRecentFormCsv }),
   });
   const totalRounds = deriveTotalRounds(leaderboardData.rounds);
   const normalizedCurrentRound = normalizeCurrentRound(courseContext.currentRound, totalRounds);
@@ -1603,13 +2065,16 @@ async function buildRoundLeaderProjection({
   const holeStdDevByNumber = buildHoleStdDevByNumber(holeStats);
 
   const roundPlayers = buildProjectedPlayers({
-    players: leaderboardData.players,
+    players: sourcePlayers,
     holeStatsByHoleNumber,
     timezone: leaderboardData.timezone,
     selectedStats,
     statSnapshot: statSnapshotResult.snapshot,
     statOverridesByPlayer,
     scoreOverridesByPlayer,
+    weatherOverrides: normalizedWeatherOverrides,
+    projectionModel,
+    recentFormWeight,
     projectionScope: 'round',
     currentRound: normalizedCurrentRound,
     totalRounds,
@@ -1617,6 +2082,7 @@ async function buildRoundLeaderProjection({
   const roundScopeResult = attachWinProbabilities({
     players: roundPlayers,
     holeStdDevByNumber,
+    scoreStdDevMultiplier: applyRoundWeather ? normalizedWeatherOverrides.windVolatilityMultiplier : 1,
     tieResolutionMode: 'tie_split',
     seedInput: [
       tournamentId,
@@ -1630,18 +2096,27 @@ async function buildRoundLeaderProjection({
       leaderboardData.players?.[0]?.scoringData?.total,
       leaderboardData.players?.[0]?.scoringData?.thru,
       [...selectedStats].sort().join('|'),
+      projectionModel,
+      applyRoundWeather,
+      normalizedWeatherOverrides.amWaveAdjustmentPerRound,
+      normalizedWeatherOverrides.pmWaveAdjustmentPerRound,
+      normalizedWeatherOverrides.windVolatilityMultiplier,
+      recentFormWeight,
       leaderboardData.timezone,
       roundPlayers.length,
     ].join('::'),
   });
   const tournamentPlayers = buildProjectedPlayers({
-    players: leaderboardData.players,
+    players: sourcePlayers,
     holeStatsByHoleNumber,
     timezone: leaderboardData.timezone,
     selectedStats,
     statSnapshot: statSnapshotResult.snapshot,
     statOverridesByPlayer,
     scoreOverridesByPlayer,
+    weatherOverrides: DEFAULT_WEATHER_OVERRIDES,
+    projectionModel,
+    recentFormWeight,
     projectionScope: 'tournament',
     currentRound: normalizedCurrentRound,
     totalRounds,
@@ -1662,6 +2137,8 @@ async function buildRoundLeaderProjection({
       leaderboardData.players?.[0]?.scoringData?.total,
       leaderboardData.players?.[0]?.scoringData?.thru,
       [...selectedStats].sort().join('|'),
+      projectionModel,
+      recentFormWeight,
       leaderboardData.timezone,
       tournamentPlayers.length,
     ].join('::'),
@@ -1686,8 +2163,8 @@ async function buildRoundLeaderProjection({
   return {
     tournamentId,
     tournamentName: courseContext.tournamentName,
-    tournamentStatus: tournamentData?.tournamentStatus || leaderboardData.tournamentStatus || null,
-    displayDate: tournamentData?.displayDate || null,
+    tournamentStatus: effectiveTournamentData?.tournamentStatus || leaderboardData.tournamentStatus || null,
+    displayDate: effectiveTournamentData?.displayDate || null,
     roundDisplay: courseContext.roundDisplay,
     roundStatusDisplay: courseContext.roundStatusDisplay,
     currentRound: normalizedCurrentRound,
@@ -1703,12 +2180,24 @@ async function buildRoundLeaderProjection({
     fetchedAt: new Date().toISOString(),
     sourceBaseUrl: resolvedUrls.normalizedBaseUrl,
     selectedStats,
+    projectionModel,
+    projectionModelMeta: {
+      standard: PROJECTION_MODEL_STANDARD,
+      blended: PROJECTION_MODEL_BLENDED,
+      blendedParWeight: BLENDED_MODEL_PAR_WEIGHT,
+      blendedSgWeight: BLENDED_MODEL_SG_WEIGHT,
+      recentFormWeight,
+      defaultRecentFormWeight: DEFAULT_RECENT_FORM_WEIGHT,
+    },
     statDataSource: statSnapshotResult.source,
     statDataFetchedAt: statSnapshotResult.fetchedAt || statSnapshotResult.snapshot?.fetchedAt || null,
     statSources: statSnapshotResult.snapshot?.sourceStats || [],
     sgDataFile: statSnapshotResult.snapshot?.sgDataFile || null,
+    recentFormDataFile: statSnapshotResult.snapshot?.recentFormDataFile || null,
     statOverridePlayerCount: Object.keys(statOverridesByPlayer).length,
     scoreOverridePlayerCount: Object.keys(scoreOverridesByPlayer).length,
+    weatherOverrides: normalizedWeatherOverrides,
+    weatherAppliedToRoundOnly: true,
     winProbabilityModel: roundScopeResult.modelMeta,
     tournamentWinProbabilityModel: tournamentScopeResult.modelMeta,
     projectionScopes,
@@ -1717,10 +2206,10 @@ async function buildRoundLeaderProjection({
       currentRound: normalizedCurrentRound,
       totalRounds,
       roundsRemainingAfterCurrent,
-      tournamentStatus: tournamentData?.tournamentStatus || leaderboardData.tournamentStatus || null,
+      tournamentStatus: effectiveTournamentData?.tournamentStatus || leaderboardData.tournamentStatus || null,
       roundDisplay: courseContext.roundDisplay || (Number.isFinite(normalizedCurrentRound) ? `R${normalizedCurrentRound}` : null),
       roundStatusDisplay: courseContext.roundStatusDisplay || null,
-      displayDate: tournamentData?.displayDate || null,
+      displayDate: effectiveTournamentData?.displayDate || null,
     },
     holeStats,
     // Keep legacy field for backward compatibility (round scope).

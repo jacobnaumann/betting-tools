@@ -51,14 +51,26 @@ alwaysApply: false
 - Include a subtle refresh affordance so users can explicitly update schedule events on demand.
 - Selecting an event in the event picker should only set/highlight the URL target; do not auto-scrape until the user presses `Scrape and Project`.
 - Show a stat-selection panel below the tournament URL input with defaults: `Course (Hole) Model`, `Par 3 Scoring Avg`, `Par 4 Scoring Avg`, `Par 5 Scoring Avg`.
+- Include a `Blended Model` checkbox at the bottom of the stat-selection panel; when enabled, send `projectionModel: "blended"` so backend blends Par and SG skill adjustments instead of stacking them fully.
+- Include an optional weather controls panel for Round projections (`AM wave adjustment`, `PM wave adjustment`, `wind volatility multiplier`) and send these as `weatherOverrides`.
 - Provide an optional SG CSV file input below the stat-selection panel; when no file is uploaded, fall back to the latest backend SG CSV.
-- Validate uploaded SG CSV structure at upload time and show clear inline status feedback (`validating`, `OK`, or error) near the file input.
+- Validate uploaded SG CSV structure at upload time and show clear inline status feedback (`validating`, `OK`, detected schema, or error) near the file input.
 - Enforce SG exclusivity in UI: if `SG: Total` is selected, SG component stats must be unselected/disabled, and vice versa.
+- Enforce `SG: Tee-to-Green` overlap rules in UI: it cannot be selected with `SG: Off-the-Tee`, `SG: Approach`, or `SG: Around-the-Green`, but it can be selected with `SG: Putting`.
+- Keep stat-specific upload inputs directly below their related checkbox groups: SG upload below Strokes Gained and Recent Form upload below Recent Form.
+- Enable the SG upload only when at least one SG metric is selected, and enable the Recent Form upload only when `Recent Form L20` is selected.
+- Show a simple `Recent Form L20` weight input next to its checkbox/label, defaulting to `0.30`, and send it as `recentFormWeight`.
+- Recent Form uploads should validate DataGolf group trending CSVs and send `uploadedRecentFormCsv` with projection requests only when `Recent Form L20` is selected.
 - Brand the module as `Golf Projection`.
-- Player projections should support tabbing between `Round Leader` and `Tournament` projection scopes.
+- Player projections should support tabbing between `Round Leader`, `Tournament`, and `Group Winner` projection scopes.
+- The `Group Winner` tab should let users select 2-4 tournament players, display only those selected players, show raw group `Win Tie %`, and show dead-heat adjusted group placement probabilities instead of tournament top-finish columns.
 - Player projections table should include sortable `Win/Tie Pct` and `FV` columns between `Remaining` and `Projected`.
+- On the `Round Leader` tab, include sortable `Top 10` and `Top 5` columns using dead-heat adjusted top-finish fair values for the current round.
 - On the `Tournament` tab, include sortable `Top 20`, `Top 10`, and `Top 5` columns using dead-heat adjusted top-finish fair values (cents), and keep trailing column order as `Top 20`, `Top 10`, `Top 5`, `Win`, `Projected`.
-- Show a warning icon next to player names when SG data is missing from the SG CSV source.
+- In Player Projections, keep score columns showing score values; for players awaiting a round start with a tee time, display the tee time in the `Thru` column instead of replacing the score display.
+- `Thru` sorting should use tee times for players awaiting round start, and completed-hole progress for players already in-round.
+- Show a warning icon next to player names when any selected projection stat is missing and using a fallback value; tooltip text should list the missing Par/SG stat labels.
+- Show a compact manual-override icon next to player names when any stat or score input source is `manual_override` and differs from its `baselineValue`; tooltip text should list only the meaningfully overridden fields.
 - Show an edit icon next to each player in projections that opens a modal for stat overrides on currently selected per-player stats.
 - The edit modal should also support manual score overrides (`Total Score`, `Round Score`, `Completed Holes`) for faster live correction.
 - Applying modal edits should trigger a projection refresh and preserve table scope/tab context.

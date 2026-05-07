@@ -6,8 +6,24 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000
 
 const DEFAULT_BASE_URL = 'https://www.pgatour.com/tournaments/2026/valspar-championship/R2026475/';
 const DEFAULT_SELECTED_STATS = ['course_hole_model', 'par3_scoring_avg', 'par4_scoring_avg', 'par5_scoring_avg'];
+const PROJECTION_MODEL_STANDARD = 'standard';
+const PROJECTION_MODEL_BLENDED = 'blended';
+const GROUP_WINNER_TAB_KEY = 'group';
+const GROUP_WINNER_MIN_PLAYERS = 2;
+const GROUP_WINNER_MAX_PLAYERS = 4;
+const GROUP_WINNER_SIMULATION_TRIALS = 8000;
 const SG_TOTAL_STAT = 'sg_total';
 const SG_COMPONENT_STATS = ['sg_t2g', 'sg_ott', 'sg_app', 'sg_arg', 'sg_putt'];
+const SG_T2G_STAT = 'sg_t2g';
+const SG_T2G_COMPONENT_STATS = ['sg_ott', 'sg_app', 'sg_arg'];
+const RECENT_FORM_STAT = 'recent_form_l20';
+const DEFAULT_RECENT_FORM_WEIGHT = 0.3;
+const DEFAULT_WEATHER_OVERRIDES = {
+  enabled: false,
+  amWaveAdjustmentPerRound: 0,
+  pmWaveAdjustmentPerRound: 0,
+  windVolatilityMultiplier: 1,
+};
 const STAT_GROUPS = [
   {
     id: 'course-hole',
@@ -31,10 +47,18 @@ const STAT_GROUPS = [
       { key: 'sg_putt', label: 'SG: Putting' },
     ],
   },
+  {
+    id: 'recent-form',
+    title: 'Recent Form',
+    options: [
+      { key: RECENT_FORM_STAT, label: 'Recent Form L20' },
+    ],
+  },
 ];
 const PROJECTION_TABS = [
   { key: 'round', label: 'Round Leader' },
   { key: 'tournament', label: 'Tournament' },
+  { key: GROUP_WINNER_TAB_KEY, label: 'Group Winner' },
 ];
 const PLAYER_PROJECTION_STAT_KEYS = [
   'par3_scoring_avg',
@@ -46,6 +70,7 @@ const PLAYER_PROJECTION_STAT_KEYS = [
   'sg_app',
   'sg_arg',
   'sg_putt',
+  RECENT_FORM_STAT,
 ];
 const PLAYER_EDITABLE_STAT_KEYS = new Set(PLAYER_PROJECTION_STAT_KEYS);
 
@@ -62,6 +87,9 @@ function formatWinPct(value) {
 }
 
 function formatWinTiePct(player, projectionScopeKey) {
+  if (projectionScopeKey === GROUP_WINNER_TAB_KEY) {
+    return formatWinPct(player?.groupWinProbability);
+  }
   const winValue = projectionScopeKey === 'tournament' ? player?.winProbability : player?.winSoloProbability;
   const winPart = formatWinPct(winValue);
   const tiePart = formatWinPct(player?.tieForLeadProbability);
@@ -89,6 +117,247 @@ function buildTopFinishTooltip(player, cutoff) {
   const rawPctDisplay = formatWinPct(rawProbability);
   if (deadHeatFvDisplay === '-' && rawFvDisplay === '-') return '';
   return `Dead-heat FV: ${deadHeatFvDisplay} (${deadHeatPctDisplay}) | Raw Top-${cutoff} FV: ${rawFvDisplay} (${rawPctDisplay})`;
+}
+
+function getMissingProjectionStatKeys(player) {
+  if (Array.isArray(player?.missingProjectionStatKeys) && player.missingProjectionStatKeys.length) {
+    return player.missingProjectionStatKeys;
+  }
+  if (Array.isArray(player?.missingProjectionStats) && player.missingProjectionStats.length) {
+    return player.missingProjectionStats.map((stat) => stat?.statKey).filter(Boolean);
+  }
+  return player?.missingSgData ? ['SG stats'] : [];
+}
+
+function buildMissingProjectionStatsTooltip(player) {
+  const missingStatLabels = getMissingProjectionStatKeys(player).map(formatStatKey);
+  if (!missingStatLabels.length) return '';
+  return `Missing projection stat data: ${missingStatLabels.join(', ')}. Projection uses field-average fallback values.`;
+}
+
+function valuesDifferFromBaseline(value, baselineValue) {
+  const numericValue = Number(value);
+  const numericBaseline = Number(baselineValue);
+  if (!Number.isFinite(numericValue)) return false;
+  if (!Number.isFinite(numericBaseline)) return true;
+  return Math.abs(numericValue - numericBaseline) > 0.00005;
+}
+
+function formatScoreInputKey(inputKey) {
+  const map = {
+    totalScoreNumber: 'Total Score',
+    roundScoreNumber: 'Round Score',
+    completedHoles: 'Completed Holes',
+  };
+  return map[inputKey] || inputKey;
+}
+
+function buildManualOverrideTooltip(player) {
+  const statLabels = Object.entries(player?.playerStatInputs || {})
+    .filter(([, input]) => input?.source === 'manual_override' && valuesDifferFromBaseline(input?.value, input?.baselineValue))
+    .map(([statKey]) => formatStatKey(statKey));
+  const scoreLabels = Object.entries(player?.playerScoreInputs || {})
+    .filter(([, input]) => input?.source === 'manual_override' && valuesDifferFromBaseline(input?.value, input?.baselineValue))
+    .map(([inputKey]) => formatScoreInputKey(inputKey));
+  const labels = [...statLabels, ...scoreLabels];
+  if (!labels.length) return '';
+  return `Manual overrides applied: ${labels.join(', ')}.`;
+}
+
+function roundTo(value, decimals) {
+  const factor = 10 ** decimals;
+  return Math.round(value * factor) / factor;
+}
+
+function hashStringToUint32(value) {
+  const stringValue = String(value || '');
+  let hash = 2166136261;
+  for (let index = 0; index < stringValue.length; index += 1) {
+    hash ^= stringValue.charCodeAt(index);
+    hash = Math.imul(hash, 16777619);
+  }
+  return (hash >>> 0) || 1;
+}
+
+function createSeededRandom(seedInput) {
+  let state = hashStringToUint32(seedInput);
+  return () => {
+    state |= 0;
+    state = (state + 0x6d2b79f5) | 0;
+    let t = Math.imul(state ^ (state >>> 15), 1 | state);
+    t ^= t + Math.imul(t ^ (t >>> 7), 61 | t);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+function createStandardNormalSampler(randomFn) {
+  let cachedValue = null;
+  return () => {
+    if (cachedValue !== null) {
+      const output = cachedValue;
+      cachedValue = null;
+      return output;
+    }
+
+    let u1 = randomFn();
+    let u2 = randomFn();
+    if (u1 <= Number.EPSILON) u1 = Number.EPSILON;
+    if (u2 <= Number.EPSILON) u2 = Number.EPSILON;
+
+    const magnitude = Math.sqrt(-2 * Math.log(u1));
+    const angle = 2 * Math.PI * u2;
+    cachedValue = magnitude * Math.sin(angle);
+    return magnitude * Math.cos(angle);
+  };
+}
+
+function toOutcomeScoreBucket(score) {
+  if (!Number.isFinite(score)) return null;
+  return roundTo(score, 0);
+}
+
+function accumulateGroupPlacementShares(scoresByIndex, placeSharesByIndex, groupWinTieCounts = null) {
+  const scoreGroups = new Map();
+  scoresByIndex.forEach((scoreRaw, index) => {
+    const score = Number(scoreRaw);
+    if (!Number.isFinite(score)) return;
+    if (!scoreGroups.has(score)) {
+      scoreGroups.set(score, []);
+    }
+    scoreGroups.get(score).push(index);
+  });
+
+  const orderedGroups = Array.from(scoreGroups.entries()).sort((left, right) => left[0] - right[0]);
+  const firstPlaceGroup = orderedGroups[0]?.[1] || [];
+  if (Array.isArray(groupWinTieCounts)) {
+    firstPlaceGroup.forEach((playerIndex) => {
+      groupWinTieCounts[playerIndex] += 1;
+    });
+  }
+  let occupiedPlaces = 0;
+  orderedGroups.forEach(([, groupIndexes]) => {
+    const groupSize = groupIndexes.length;
+    if (!groupSize) return;
+    const groupStartPlace = occupiedPlaces + 1;
+    const groupEndPlace = occupiedPlaces + groupSize;
+    const placeShare = 1 / groupSize;
+    groupIndexes.forEach((playerIndex) => {
+      for (let place = groupStartPlace; place <= groupEndPlace; place += 1) {
+        placeSharesByIndex[playerIndex][place - 1] += placeShare;
+      }
+    });
+    occupiedPlaces += groupSize;
+  });
+}
+
+function buildGroupWinnerProjectionRows(players, options = {}) {
+  const selectedPlayers = Array.isArray(players) ? players : [];
+  const groupSize = selectedPlayers.length;
+  const hasEnoughPlayers = groupSize >= GROUP_WINNER_MIN_PLAYERS && groupSize <= GROUP_WINNER_MAX_PLAYERS;
+  if (!hasEnoughPlayers) {
+    return {
+      players: selectedPlayers.map((player) => ({
+        ...player,
+        groupSize,
+        groupWinProbability: null,
+        groupWinTieProbability: null,
+        groupFairValueCents: null,
+        groupPlaceProbabilities: {},
+      })),
+      modelMeta: {
+        method: 'monte-carlo-normal',
+        trials: 0,
+        deterministic: true,
+        groupSize,
+      },
+    };
+  }
+
+  const expectedScores = selectedPlayers.map((player) => Number(player?.expectedFinalScoreNumber));
+  const scoreStdDevs = selectedPlayers.map((player) => {
+    const fromPayload = Number(player?.scoreStdDev);
+    if (Number.isFinite(fromPayload) && fromPayload >= 0) return fromPayload;
+    const remainingHoles = Array.isArray(player?.remainingHoles) ? player.remainingHoles.length : 0;
+    return remainingHoles > 0 ? Math.sqrt(remainingHoles) * 0.84 : 0;
+  });
+  const hasValidScores = expectedScores.every((score) => Number.isFinite(score));
+  const canRunSimulation = hasValidScores && scoreStdDevs.some((value) => Number.isFinite(value) && value > 0);
+  const denominator = canRunSimulation ? GROUP_WINNER_SIMULATION_TRIALS : 1;
+  const placeSharesByIndex = selectedPlayers.map(() => new Array(groupSize).fill(0));
+  const groupWinTieCounts = new Array(groupSize).fill(0);
+
+  if (!hasValidScores) {
+    return {
+      players: selectedPlayers.map((player) => ({
+        ...player,
+        groupSize,
+        groupWinProbability: null,
+        groupWinTieProbability: null,
+        groupFairValueCents: null,
+        groupPlaceProbabilities: {},
+      })),
+      modelMeta: {
+        method: 'monte-carlo-normal',
+        trials: 0,
+        deterministic: true,
+        groupSize,
+      },
+    };
+  }
+
+  if (!canRunSimulation) {
+    accumulateGroupPlacementShares(expectedScores.map(toOutcomeScoreBucket), placeSharesByIndex, groupWinTieCounts);
+  } else {
+    const randomFn = createSeededRandom(options.seedInput || selectedPlayers.map((player) => player?.normalizedPlayerName).join('|'));
+    const sampleNormal = createStandardNormalSampler(randomFn);
+    for (let trial = 0; trial < GROUP_WINNER_SIMULATION_TRIALS; trial += 1) {
+      const sampledScores = expectedScores.map((expectedScore, index) => {
+        const scoreStdDev = scoreStdDevs[index] || 0;
+        const sampledScore = scoreStdDev > 0 ? expectedScore + sampleNormal() * scoreStdDev : expectedScore;
+        return toOutcomeScoreBucket(sampledScore);
+      });
+      accumulateGroupPlacementShares(sampledScores, placeSharesByIndex, groupWinTieCounts);
+    }
+  }
+
+  return {
+    players: selectedPlayers
+      .map((player, index) => {
+        const groupPlaceProbabilities = {};
+        placeSharesByIndex[index].forEach((share, placeIndex) => {
+          groupPlaceProbabilities[placeIndex + 1] = roundTo(share / denominator, 6);
+        });
+        const groupWinProbability = groupPlaceProbabilities[1];
+        const groupWinTieProbability = groupWinTieCounts[index] / denominator;
+        return {
+          ...player,
+          groupSize,
+          groupWinProbability: Number.isFinite(groupWinProbability) ? groupWinProbability : null,
+          groupWinTieProbability: Number.isFinite(groupWinTieProbability) ? roundTo(groupWinTieProbability, 6) : null,
+          groupFairValueCents: Number.isFinite(groupWinProbability) ? roundTo(groupWinProbability * 100, 2) : null,
+          groupPlaceProbabilities,
+          groupPlace1Probability: groupPlaceProbabilities[1] ?? null,
+          groupPlace2Probability: groupPlaceProbabilities[2] ?? null,
+          groupPlace3Probability: groupPlaceProbabilities[3] ?? null,
+          groupPlace4Probability: groupPlaceProbabilities[4] ?? null,
+        };
+      })
+      .sort((left, right) => {
+        const leftWin = Number(left?.groupWinProbability);
+        const rightWin = Number(right?.groupWinProbability);
+        if (Number.isFinite(leftWin) && Number.isFinite(rightWin) && leftWin !== rightWin) {
+          return rightWin - leftWin;
+        }
+        return Number(left?.expectedFinalScoreNumber) - Number(right?.expectedFinalScoreNumber);
+      }),
+    modelMeta: {
+      method: 'monte-carlo-normal',
+      tieHandling: 'dead-heat-place-split',
+      trials: canRunSimulation ? GROUP_WINNER_SIMULATION_TRIALS : 0,
+      deterministic: !canRunSimulation,
+      groupSize,
+    },
+  };
 }
 
 function toCsvCellValue(value) {
@@ -122,6 +391,54 @@ function formatStatInputSource(source) {
   return sourceLabels[source] || 'Unknown source';
 }
 
+function normalizeCompletedHolesForThruSort(player) {
+  const completedFromInput = Number(player?.playerScoreInputs?.completedHoles?.value);
+  if (Number.isFinite(completedFromInput)) {
+    return Math.max(0, Math.min(18, Math.floor(completedFromInput)));
+  }
+  const thruRaw = String(player?.thruRaw || '')
+    .replace('*', '')
+    .trim()
+    .toUpperCase();
+  if (!thruRaw) return null;
+  if (thruRaw === 'F') return 18;
+  const parsed = Number(thruRaw);
+  if (!Number.isFinite(parsed)) return null;
+  return Math.max(0, Math.min(18, Math.floor(parsed)));
+}
+
+function comparePlayersByThruColumn(leftPlayer, rightPlayer, compareValues) {
+  const leftAwaiting = Boolean(leftPlayer?.isAwaitingCurrentRoundStart);
+  const rightAwaiting = Boolean(rightPlayer?.isAwaitingCurrentRoundStart);
+  if (leftAwaiting && rightAwaiting) {
+    const leftTeeTime = Number.isFinite(Number(leftPlayer?.teeTimeMs)) ? Number(leftPlayer?.teeTimeMs) : null;
+    const rightTeeTime = Number.isFinite(Number(rightPlayer?.teeTimeMs)) ? Number(rightPlayer?.teeTimeMs) : null;
+    const teeResult = compareValues(leftTeeTime, rightTeeTime);
+    if (teeResult !== 0) return teeResult;
+    return compareValues(leftPlayer?.playerName, rightPlayer?.playerName);
+  }
+  if (leftAwaiting !== rightAwaiting) {
+    return leftAwaiting ? 1 : -1;
+  }
+
+  const leftCompleted = normalizeCompletedHolesForThruSort(leftPlayer);
+  const rightCompleted = normalizeCompletedHolesForThruSort(rightPlayer);
+  const completedResult = compareValues(leftCompleted, rightCompleted);
+  if (completedResult !== 0) return completedResult;
+  return compareValues(leftPlayer?.playerName, rightPlayer?.playerName);
+}
+
+function formatWeatherSummary(weatherOverrides) {
+  if (!weatherOverrides?.enabled) return 'Weather: Off';
+  const amValue = Number(weatherOverrides?.amWaveAdjustmentPerRound);
+  const pmValue = Number(weatherOverrides?.pmWaveAdjustmentPerRound);
+  const volatilityValue = Number(weatherOverrides?.windVolatilityMultiplier);
+  const amDisplay = Number.isFinite(amValue) ? formatSignedValue(amValue, 2) : 'E';
+  const pmDisplay = Number.isFinite(pmValue) ? formatSignedValue(pmValue, 2) : 'E';
+  const volatilityDisplay = Number.isFinite(volatilityValue) ? volatilityValue.toFixed(2) : '1.00';
+  return `Weather (Round): AM ${amDisplay} | PM ${pmDisplay} | Vol x${volatilityDisplay}`;
+}
+
 export function RoundLeaderProjectionTool() {
   const [baseUrl, setBaseUrl] = useState(DEFAULT_BASE_URL);
   const [loading, setLoading] = useState(false);
@@ -133,15 +450,24 @@ export function RoundLeaderProjectionTool() {
   const [eventsUpdatedAt, setEventsUpdatedAt] = useState(null);
   const [selectedEventUrl, setSelectedEventUrl] = useState('');
   const [selectedStats, setSelectedStats] = useState(DEFAULT_SELECTED_STATS);
+  const [useBlendedModel, setUseBlendedModel] = useState(false);
   const [uploadedSgCsv, setUploadedSgCsv] = useState(null);
   const [sgCsvValidation, setSgCsvValidation] = useState({
     status: 'idle',
     message: '',
   });
+  const [uploadedRecentFormCsv, setUploadedRecentFormCsv] = useState(null);
+  const [recentFormCsvValidation, setRecentFormCsvValidation] = useState({
+    status: 'idle',
+    message: '',
+  });
+  const [recentFormWeight, setRecentFormWeight] = useState(DEFAULT_RECENT_FORM_WEIGHT);
   const [playerStatOverrides, setPlayerStatOverrides] = useState({});
   const [playerScoreOverrides, setPlayerScoreOverrides] = useState({});
+  const [weatherOverrides, setWeatherOverrides] = useState(DEFAULT_WEATHER_OVERRIDES);
   const [payload, setPayload] = useState(null);
   const [activeProjectionTab, setActiveProjectionTab] = useState('round');
+  const [selectedGroupPlayerNames, setSelectedGroupPlayerNames] = useState([]);
   const [isInputExpanded, setIsInputExpanded] = useState(true);
   const [isHoleStatsExpanded, setIsHoleStatsExpanded] = useState(true);
   const [projectionRowMovement, setProjectionRowMovement] = useState({});
@@ -156,6 +482,7 @@ export function RoundLeaderProjectionTool() {
   const playerProjectionsRef = useRef(null);
   const courseHoleStatsRef = useRef(null);
   const sgCsvInputRef = useRef(null);
+  const recentFormCsvInputRef = useRef(null);
   const previousProjectionRanksRef = useRef(new Map());
   const previousProjectionTabRef = useRef('round');
   const movementResetTimerRef = useRef(null);
@@ -187,10 +514,46 @@ export function RoundLeaderProjectionTool() {
     [playerScoreOverrides]
   );
   const manualOverrideCount = manualStatOverrideCount + manualScoreOverrideCount;
+  const tournamentProjectionPlayers = useMemo(
+    () => projectionScopes?.tournament?.players || payload?.tournamentPlayers || [],
+    [projectionScopes, payload]
+  );
+  const selectedGroupPlayers = useMemo(() => {
+    if (!selectedGroupPlayerNames.length || !tournamentProjectionPlayers.length) return [];
+    const playersByName = new Map(
+      tournamentProjectionPlayers
+        .filter((player) => player?.normalizedPlayerName)
+        .map((player) => [player.normalizedPlayerName, player])
+    );
+    return selectedGroupPlayerNames.map((playerName) => playersByName.get(playerName)).filter(Boolean);
+  }, [selectedGroupPlayerNames, tournamentProjectionPlayers]);
+  const groupProjectionResult = useMemo(
+    () =>
+      buildGroupWinnerProjectionRows(selectedGroupPlayers, {
+        seedInput: [
+          payload?.tournamentId,
+          payload?.currentRound,
+          payload?.totalRounds,
+          payload?.projectionModel,
+          selectedGroupPlayerNames.join('|'),
+          selectedGroupPlayers.map((player) => player?.expectedFinalScoreNumber).join('|'),
+        ].join('::'),
+      }),
+    [payload, selectedGroupPlayerNames, selectedGroupPlayers]
+  );
   const activeProjectionScope = useMemo(() => {
+    if (activeProjectionTab === GROUP_WINNER_TAB_KEY) {
+      return {
+        key: GROUP_WINNER_TAB_KEY,
+        label: 'Group Winner',
+        description: 'Select 2-4 tournament players to project head-to-head, 3-ball, or 4-ball group outcomes.',
+        players: groupProjectionResult.players,
+        winProbabilityModel: groupProjectionResult.modelMeta,
+      };
+    }
     if (!projectionScopes) return null;
     return projectionScopes[activeProjectionTab] || projectionScopes.round || null;
-  }, [projectionScopes, activeProjectionTab]);
+  }, [projectionScopes, activeProjectionTab, groupProjectionResult]);
   const projectedLeader = useMemo(
     () => activeProjectionScope?.players?.[0] || payload?.players?.[0] || null,
     [activeProjectionScope, payload]
@@ -201,10 +564,23 @@ export function RoundLeaderProjectionTool() {
   );
   const holeRows = useMemo(() => payload?.holeStats || [], [payload]);
   const remainingColumnLabel = useMemo(
-    () => (activeProjectionTab === 'tournament' ? 'Remaining (Tourn)' : 'Remaining (Round)'),
+    () => (activeProjectionTab === 'tournament' || activeProjectionTab === GROUP_WINNER_TAB_KEY ? 'Rem. (Tourn)' : 'Rem. (Round)'),
     [activeProjectionTab]
   );
   const isTournamentProjection = activeProjectionTab === 'tournament';
+  const isGroupProjection = activeProjectionTab === GROUP_WINNER_TAB_KEY;
+  const showTop10Column = !isGroupProjection;
+  const showTop5Column = !isGroupProjection;
+  const selectedGroupSize = selectedGroupPlayers.length;
+  const hasValidGroupSelection =
+    selectedGroupSize >= GROUP_WINNER_MIN_PLAYERS && selectedGroupSize <= GROUP_WINNER_MAX_PLAYERS;
+  const activeWeatherOverrides = useMemo(
+    () => (payload?.weatherOverrides && typeof payload.weatherOverrides === 'object' ? payload.weatherOverrides : weatherOverrides),
+    [payload, weatherOverrides]
+  );
+  const activeProjectionModel = payload?.projectionModel || (useBlendedModel ? PROJECTION_MODEL_BLENDED : PROJECTION_MODEL_STANDARD);
+  const activeProjectionModelLabel = activeProjectionModel === PROJECTION_MODEL_BLENDED ? 'Blended Model' : 'Standard Model';
+  const weatherSummary = useMemo(() => formatWeatherSummary(activeWeatherOverrides), [activeWeatherOverrides]);
   const courseAverageScore = useMemo(() => {
     if (!holeRows.length) return null;
     const totals = holeRows.reduce(
@@ -229,10 +605,18 @@ export function RoundLeaderProjectionTool() {
     sortedRows: sortedPlayers,
     requestSort: requestPlayerSort,
     getSortIndicator: getPlayerSortIndicator,
-  } = useSortableTable(playerRows, {
-    key: 'expectedFinalScoreNumber',
-    direction: 'asc',
-  });
+  } = useSortableTable(
+    playerRows,
+    {
+      key: 'expectedFinalScoreNumber',
+      direction: 'asc',
+    },
+    {
+      customComparators: {
+        thruSortValue: comparePlayersByThruColumn,
+      },
+    }
+  );
 
   const {
     sortedRows: sortedHoleStats,
@@ -329,6 +713,8 @@ export function RoundLeaderProjectionTool() {
       options.statOverrides && typeof options.statOverrides === 'object' ? options.statOverrides : playerStatOverrides;
     const scoreOverridesForRequest =
       options.scoreOverrides && typeof options.scoreOverrides === 'object' ? options.scoreOverrides : playerScoreOverrides;
+    const weatherOverridesForRequest =
+      options.weatherOverrides && typeof options.weatherOverrides === 'object' ? options.weatherOverrides : weatherOverrides;
     const requestedUrl = typeof inputUrl === 'string' ? inputUrl : baseUrl;
     const targetUrl = String(requestedUrl || '').trim();
     if (!targetUrl) return;
@@ -345,9 +731,13 @@ export function RoundLeaderProjectionTool() {
         body: JSON.stringify({
           baseUrl: targetUrl,
           selectedStats,
+          projectionModel: useBlendedModel ? PROJECTION_MODEL_BLENDED : PROJECTION_MODEL_STANDARD,
           statOverrides: statOverridesForRequest,
           scoreOverrides: scoreOverridesForRequest,
-          uploadedSgCsv,
+          weatherOverrides: weatherOverridesForRequest,
+          uploadedSgCsv: hasAnySgStatSelected ? uploadedSgCsv : null,
+          uploadedRecentFormCsv: hasRecentFormSelected ? uploadedRecentFormCsv : null,
+          recentFormWeight,
         }),
       });
 
@@ -448,7 +838,9 @@ export function RoundLeaderProjectionTool() {
       setUploadedSgCsv(nextUploadedSgCsv);
       setSgCsvValidation({
         status: 'valid',
-        message: `OK: SG CSV structure is valid (${json?.data?.playerRowCount || 0} player rows).`,
+        message: `OK: SG CSV structure is valid${
+          json?.data?.schemaLabel ? ` (${json.data.schemaLabel})` : ''
+        } (${json?.data?.playerRowCount || 0} player rows).`,
       });
     } catch (uploadError) {
       setUploadedSgCsv(null);
@@ -473,6 +865,96 @@ export function RoundLeaderProjectionTool() {
     }
   };
 
+  const handleRecentFormCsvUpload = async (event) => {
+    const file = event.target?.files?.[0];
+    if (!file) {
+      setUploadedRecentFormCsv(null);
+      setRecentFormCsvValidation({
+        status: 'idle',
+        message: '',
+      });
+      return;
+    }
+
+    setRecentFormCsvValidation({
+      status: 'validating',
+      message: `Validating ${file.name}...`,
+    });
+
+    try {
+      const content = await file.text();
+      if (!content.trim()) {
+        throw new Error('Selected Recent Form CSV is empty.');
+      }
+      const nextUploadedRecentFormCsv = {
+        fileName: file.name,
+        content,
+      };
+      const response = await fetch(`${API_BASE_URL}/api/tools/round-leader-projection/validate-recent-form-csv`, {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify({
+          uploadedRecentFormCsv: nextUploadedRecentFormCsv,
+        }),
+      });
+      const json = await response.json();
+      if (!response.ok || !json?.ok) {
+        throw new Error(json?.error || 'Uploaded Recent Form CSV failed validation.');
+      }
+
+      setUploadedRecentFormCsv(nextUploadedRecentFormCsv);
+      setRecentFormCsvValidation({
+        status: 'valid',
+        message: `OK: Recent Form CSV structure is valid${
+          json?.data?.schemaLabel ? ` (${json.data.schemaLabel})` : ''
+        } (${json?.data?.playerRowCount || 0} player rows).`,
+      });
+    } catch (uploadError) {
+      setUploadedRecentFormCsv(null);
+      setRecentFormCsvValidation({
+        status: 'invalid',
+        message: uploadError.message || 'Could not validate the selected Recent Form CSV file.',
+      });
+      if (recentFormCsvInputRef.current) {
+        recentFormCsvInputRef.current.value = '';
+      }
+    }
+  };
+
+  const clearUploadedRecentFormCsv = () => {
+    setUploadedRecentFormCsv(null);
+    setRecentFormCsvValidation({
+      status: 'idle',
+      message: '',
+    });
+    if (recentFormCsvInputRef.current) {
+      recentFormCsvInputRef.current.value = '';
+    }
+  };
+
+  const setWeatherEnabled = (enabled) => {
+    setWeatherOverrides((previous) => ({
+      ...previous,
+      enabled: Boolean(enabled),
+    }));
+  };
+
+  const updateWeatherOverrideNumber = (fieldKey, rawValue) => {
+    const numericValue = Number(rawValue);
+    setWeatherOverrides((previous) => ({
+      ...previous,
+      [fieldKey]: Number.isFinite(numericValue) ? numericValue : previous[fieldKey],
+    }));
+  };
+
+  const updateRecentFormWeight = (rawValue) => {
+    const numericValue = Number(rawValue);
+    if (!Number.isFinite(numericValue)) return;
+    setRecentFormWeight(Math.min(1, Math.max(0, numericValue)));
+  };
+
   const exportPlayerProjectionsCsv = () => {
     if (!sortedPlayers.length) return;
 
@@ -482,6 +964,14 @@ export function RoundLeaderProjectionTool() {
       'tournament_name',
       'display_date',
       'selected_stats',
+      'projection_model',
+      'projection_model_label',
+      'recent_form_weight',
+      'weather_enabled',
+      'weather_am_wave_adjustment_per_round',
+      'weather_pm_wave_adjustment_per_round',
+      'weather_wind_volatility_multiplier',
+      'missing_projection_stats',
       'player_name',
       'normalized_player_name',
       'score_display',
@@ -506,6 +996,14 @@ export function RoundLeaderProjectionTool() {
       'tie_for_lead_probability',
       'win_tie_probability',
       'fair_value_yes_cents',
+      'group_size',
+      'group_win_probability',
+      'group_win_tie_probability',
+      'group_fair_value_cents',
+      'group_place_1_probability',
+      'group_place_2_probability',
+      'group_place_3_probability',
+      'group_place_4_probability',
       'top_20_dead_heat_probability',
       'top_20_raw_probability',
       'top_10_dead_heat_probability',
@@ -517,8 +1015,11 @@ export function RoundLeaderProjectionTool() {
       'baseline_remaining',
       'total_par_adjustment',
       'total_sg_adjustment',
+      'total_recent_form_adjustment',
       'total_adjustment',
       'playoff_sg_rating',
+      'weather_player_wave',
+      'weather_adjustment',
       'score_input_total',
       'score_input_total_source',
       'score_input_round',
@@ -541,6 +1042,14 @@ export function RoundLeaderProjectionTool() {
         tournament_name: payload?.tournamentName || '',
         display_date: payload?.displayDate || '',
         selected_stats: effectiveSelectedStats.join('|'),
+        projection_model: activeProjectionModel,
+        projection_model_label: activeProjectionModelLabel,
+        recent_form_weight: recentFormWeight,
+        weather_enabled: Boolean(activeWeatherOverrides?.enabled),
+        weather_am_wave_adjustment_per_round: activeWeatherOverrides?.amWaveAdjustmentPerRound,
+        weather_pm_wave_adjustment_per_round: activeWeatherOverrides?.pmWaveAdjustmentPerRound,
+        weather_wind_volatility_multiplier: activeWeatherOverrides?.windVolatilityMultiplier,
+        missing_projection_stats: getMissingProjectionStatKeys(player).map(formatStatKey).join('|'),
         player_name: player?.playerName || '',
         normalized_player_name: player?.normalizedPlayerName || '',
         score_display: player?.scoreRaw || '',
@@ -565,6 +1074,14 @@ export function RoundLeaderProjectionTool() {
         tie_for_lead_probability: player?.tieForLeadProbability,
         win_tie_probability: player?.winTieProbability,
         fair_value_yes_cents: player?.fairValueYesCents,
+        group_size: player?.groupSize,
+        group_win_probability: player?.groupWinProbability,
+        group_win_tie_probability: player?.groupWinTieProbability,
+        group_fair_value_cents: player?.groupFairValueCents,
+        group_place_1_probability: player?.groupPlaceProbabilities?.[1],
+        group_place_2_probability: player?.groupPlaceProbabilities?.[2],
+        group_place_3_probability: player?.groupPlaceProbabilities?.[3],
+        group_place_4_probability: player?.groupPlaceProbabilities?.[4],
         top_20_dead_heat_probability: player?.top20DeadHeatProbability,
         top_20_raw_probability: player?.top20Probability,
         top_10_dead_heat_probability: player?.top10DeadHeatProbability,
@@ -576,8 +1093,11 @@ export function RoundLeaderProjectionTool() {
         baseline_remaining: player?.projectionBreakdown?.baselineRemaining,
         total_par_adjustment: player?.projectionBreakdown?.totalParAdjustment,
         total_sg_adjustment: player?.projectionBreakdown?.totalSgAdjustment,
+        total_recent_form_adjustment: player?.projectionBreakdown?.totalRecentFormAdjustment,
         total_adjustment: player?.projectionBreakdown?.totalAdjustment,
         playoff_sg_rating: player?.playoffSgRating,
+        weather_player_wave: player?.teeWave || '',
+        weather_adjustment: player?.projectionBreakdown?.weatherAdjustment,
         score_input_total: scoreInput?.totalScoreNumber?.value,
         score_input_total_source: scoreInput?.totalScoreNumber?.source || '',
         score_input_round: scoreInput?.roundScoreNumber?.value,
@@ -601,7 +1121,8 @@ export function RoundLeaderProjectionTool() {
     const objectUrl = URL.createObjectURL(blob);
     const link = document.createElement('a');
     const eventSlug = slugifyForFileName(payload?.tournamentName || selectedEventUrl || 'player-projections');
-    const scopeKey = activeProjectionTab === 'tournament' ? 'tournament' : 'round';
+    const scopeKey =
+      activeProjectionTab === GROUP_WINNER_TAB_KEY ? 'group-winner' : activeProjectionTab === 'tournament' ? 'tournament' : 'round';
     const dateStamp = new Date().toISOString().replace(/[:.]/g, '-');
     link.href = objectUrl;
     link.download = `${eventSlug || 'player-projections'}-${scopeKey}-player-projections-${dateStamp}.csv`;
@@ -629,6 +1150,12 @@ export function RoundLeaderProjectionTool() {
       }
       if (SG_COMPONENT_STATS.includes(statKey)) {
         next.delete(SG_TOTAL_STAT);
+      }
+      if (statKey === SG_T2G_STAT) {
+        SG_T2G_COMPONENT_STATS.forEach((componentKey) => next.delete(componentKey));
+      }
+      if (SG_T2G_COMPONENT_STATS.includes(statKey)) {
+        next.delete(SG_T2G_STAT);
       }
 
       next.add(statKey);
@@ -720,6 +1247,8 @@ export function RoundLeaderProjectionTool() {
         setEditError(`Invalid number for ${formatStatKey(statKey)}.`);
         return;
       }
+      const baselineValue = editingPlayer?.playerStatInputs?.[statKey]?.baselineValue;
+      if (!valuesDifferFromBaseline(numericValue, baselineValue)) continue;
       nextPlayerStatMap[statKey] = numericValue;
     }
 
@@ -731,7 +1260,9 @@ export function RoundLeaderProjectionTool() {
         setEditError('Invalid number for Total Score.');
         return;
       }
-      nextPlayerScoreMap.totalScoreNumber = numericValue;
+      if (valuesDifferFromBaseline(numericValue, editingPlayer?.playerScoreInputs?.totalScoreNumber?.baselineValue)) {
+        nextPlayerScoreMap.totalScoreNumber = numericValue;
+      }
     }
     const rawRoundScore = String(editScoreDraft?.roundScoreNumber || '').trim();
     if (rawRoundScore) {
@@ -740,7 +1271,9 @@ export function RoundLeaderProjectionTool() {
         setEditError('Invalid number for Round Score.');
         return;
       }
-      nextPlayerScoreMap.roundScoreNumber = numericValue;
+      if (valuesDifferFromBaseline(numericValue, editingPlayer?.playerScoreInputs?.roundScoreNumber?.baselineValue)) {
+        nextPlayerScoreMap.roundScoreNumber = numericValue;
+      }
     }
     const rawCompletedHoles = String(editScoreDraft?.completedHoles || '').trim();
     if (rawCompletedHoles) {
@@ -749,7 +1282,10 @@ export function RoundLeaderProjectionTool() {
         setEditError('Completed Holes must be a number between 0 and 18.');
         return;
       }
-      nextPlayerScoreMap.completedHoles = Math.floor(numericValue);
+      const completedHolesValue = Math.floor(numericValue);
+      if (valuesDifferFromBaseline(completedHolesValue, editingPlayer?.playerScoreInputs?.completedHoles?.baselineValue)) {
+        nextPlayerScoreMap.completedHoles = completedHolesValue;
+      }
     }
 
     const normalizedPlayerName = editingPlayer.normalizedPlayerName;
@@ -803,20 +1339,53 @@ export function RoundLeaderProjectionTool() {
     () => SG_COMPONENT_STATS.some((statKey) => selectedStats.includes(statKey)),
     [selectedStats]
   );
+  const hasAnySgStatSelected = useMemo(
+    () => selectedStats.includes(SG_TOTAL_STAT) || SG_COMPONENT_STATS.some((statKey) => selectedStats.includes(statKey)),
+    [selectedStats]
+  );
+  const hasAnySgT2gComponentSelected = useMemo(
+    () => SG_T2G_COMPONENT_STATS.some((statKey) => selectedStats.includes(statKey)),
+    [selectedStats]
+  );
+  const hasRecentFormSelected = selectedStats.includes(RECENT_FORM_STAT);
   const isValidatingSgCsv = sgCsvValidation.status === 'validating';
+  const isValidatingRecentFormCsv = recentFormCsvValidation.status === 'validating';
+  const toggleGroupPlayerSelection = (normalizedPlayerName) => {
+    if (!normalizedPlayerName) return;
+    setSelectedGroupPlayerNames((previous) => {
+      if (previous.includes(normalizedPlayerName)) {
+        return previous.filter((playerName) => playerName !== normalizedPlayerName);
+      }
+      if (previous.length >= GROUP_WINNER_MAX_PLAYERS) return previous;
+      return [...previous, normalizedPlayerName];
+    });
+  };
+  const clearGroupPlayerSelection = () => {
+    setSelectedGroupPlayerNames([]);
+  };
 
   useEffect(() => {
     loadEvents();
   }, []);
 
   useEffect(() => {
+    if (!selectedGroupPlayerNames.length) return;
+    const validPlayerNames = new Set(tournamentProjectionPlayers.map((player) => player?.normalizedPlayerName).filter(Boolean));
+    const nextSelectedNames = selectedGroupPlayerNames.filter((playerName) => validPlayerNames.has(playerName));
+    if (nextSelectedNames.length !== selectedGroupPlayerNames.length) {
+      setSelectedGroupPlayerNames(nextSelectedNames);
+    }
+  }, [selectedGroupPlayerNames, tournamentProjectionPlayers]);
+
+  useEffect(() => {
     if (!projectionScopes) {
-      if (activeProjectionTab !== 'round') {
+      if (activeProjectionTab !== 'round' && activeProjectionTab !== GROUP_WINNER_TAB_KEY) {
         setActiveProjectionTab('round');
       }
       return;
     }
 
+    if (activeProjectionTab === GROUP_WINNER_TAB_KEY && tournamentProjectionPlayers.length) return;
     if (projectionScopes[activeProjectionTab]) return;
     if (projectionScopes.round) {
       setActiveProjectionTab('round');
@@ -827,7 +1396,7 @@ export function RoundLeaderProjectionTool() {
     if (firstScopeKey) {
       setActiveProjectionTab(firstScopeKey);
     }
-  }, [projectionScopes, activeProjectionTab]);
+  }, [projectionScopes, activeProjectionTab, tournamentProjectionPlayers.length]);
 
   const saveSnapshot = () => {
     if (!payload || !projectedLeader) return;
@@ -1042,7 +1611,12 @@ export function RoundLeaderProjectionTool() {
                         const disableSgTotal = option.key === SG_TOTAL_STAT && hasAnySgComponentSelected;
                         const disableSgComponent =
                           SG_COMPONENT_STATS.includes(option.key) && selectedStats.includes(SG_TOTAL_STAT);
-                        const isDisabled = disableSgTotal || disableSgComponent || loading;
+                        const disableSgT2g = option.key === SG_T2G_STAT && hasAnySgT2gComponentSelected;
+                        const disableSgT2gComponent =
+                          SG_T2G_COMPONENT_STATS.includes(option.key) && selectedStats.includes(SG_T2G_STAT);
+                        const isDisabled =
+                          disableSgTotal || disableSgComponent || disableSgT2g || disableSgT2gComponent || loading;
+                        const isRecentFormOption = option.key === RECENT_FORM_STAT;
                         return (
                           <label
                             key={option.key}
@@ -1055,46 +1629,171 @@ export function RoundLeaderProjectionTool() {
                               disabled={isDisabled}
                             />
                             <span>{option.label}</span>
+                            {isRecentFormOption ? (
+                              <input
+                                className="incremental-number-input rlp-inline-weight-input"
+                                type="number"
+                                step="0.05"
+                                min="0"
+                                max="1"
+                                value={recentFormWeight}
+                                onChange={(event) => updateRecentFormWeight(event.target.value)}
+                                disabled={loading || !hasRecentFormSelected}
+                                title="Recent Form weight"
+                                aria-label="Recent Form weight"
+                              />
+                            ) : null}
                           </label>
                         );
                       })}
                     </div>
+                    {group.id === 'strokes-gained' ? (
+                      <div className="rlp-stat-upload stack">
+                        <label>
+                          Strokes Gained CSV (optional)
+                          <input
+                            ref={sgCsvInputRef}
+                            type="file"
+                            accept=".csv,text/csv"
+                            onChange={handleSgCsvUpload}
+                            disabled={loading || isValidatingSgCsv || !hasAnySgStatSelected}
+                          />
+                        </label>
+                        <p className="muted">
+                          {!hasAnySgStatSelected
+                            ? 'Select an SG metric to enable SG CSV upload.'
+                            : uploadedSgCsv
+                              ? `Using uploaded SG file: ${uploadedSgCsv.fileName}.`
+                              : 'No uploaded SG CSV selected. Using latest backend SG CSV by default.'}
+                        </p>
+                        {sgCsvValidation.status !== 'idle' ? (
+                          <p className={`rlp-upload-status is-${sgCsvValidation.status}`}>{sgCsvValidation.message}</p>
+                        ) : null}
+                        {uploadedSgCsv ? (
+                          <div className="row">
+                            <button
+                              type="button"
+                              className="ghost-button"
+                              onClick={clearUploadedSgCsv}
+                              disabled={loading || isValidatingSgCsv}
+                            >
+                              Clear Uploaded SG CSV
+                            </button>
+                          </div>
+                        ) : null}
+                      </div>
+                    ) : null}
+                    {group.id === 'recent-form' ? (
+                      <div className="rlp-stat-upload stack">
+                        <label>
+                          Recent Form CSV (optional)
+                          <input
+                            ref={recentFormCsvInputRef}
+                            type="file"
+                            accept=".csv,text/csv"
+                            onChange={handleRecentFormCsvUpload}
+                            disabled={loading || isValidatingRecentFormCsv || !hasRecentFormSelected}
+                          />
+                        </label>
+                        <p className="muted">
+                          {!hasRecentFormSelected
+                            ? 'Select Recent Form L20 to enable Recent Form CSV upload.'
+                            : uploadedRecentFormCsv
+                              ? `Using uploaded Recent Form file: ${uploadedRecentFormCsv.fileName}.`
+                              : 'No uploaded Recent Form CSV selected. Using latest backend Recent Form CSV by default.'}
+                        </p>
+                        {recentFormCsvValidation.status !== 'idle' ? (
+                          <p className={`rlp-upload-status is-${recentFormCsvValidation.status}`}>
+                            {recentFormCsvValidation.message}
+                          </p>
+                        ) : null}
+                        {uploadedRecentFormCsv ? (
+                          <div className="row">
+                            <button
+                              type="button"
+                              className="ghost-button"
+                              onClick={clearUploadedRecentFormCsv}
+                              disabled={loading || isValidatingRecentFormCsv}
+                            >
+                              Clear Uploaded Recent Form CSV
+                            </button>
+                          </div>
+                        ) : null}
+                      </div>
+                    ) : null}
                   </div>
                 ))}
+                <div className="rlp-stat-group">
+                  <strong className="rlp-stat-group-title">Projection Model</strong>
+                  <div className="rlp-stat-options">
+                    <label className="rlp-stat-option">
+                      <input
+                        type="checkbox"
+                        checked={useBlendedModel}
+                        onChange={(event) => setUseBlendedModel(event.target.checked)}
+                        disabled={loading}
+                      />
+                      <span>Blended Model</span>
+                    </label>
+                  </div>
+                </div>
               </div>
 
-              <div className="stack">
-                <label>
-                  Strokes Gained CSV (optional)
-                  <input
-                    ref={sgCsvInputRef}
-                    type="file"
-                    accept=".csv,text/csv"
-                    onChange={handleSgCsvUpload}
-                    disabled={loading || isValidatingSgCsv}
-                  />
-                </label>
+              <div className="rlp-weather-panel stack">
+                <div className="row-between">
+                  <strong>Weather (Round Only, Optional)</strong>
+                  <label className="rlp-weather-toggle">
+                    <input
+                      type="checkbox"
+                      checked={Boolean(weatherOverrides.enabled)}
+                      onChange={(event) => setWeatherEnabled(event.target.checked)}
+                      disabled={loading}
+                    />
+                    <span>Enable</span>
+                  </label>
+                </div>
                 <p className="muted">
-                  {uploadedSgCsv
-                    ? `Using uploaded SG file: ${uploadedSgCsv.fileName}.`
-                    : 'No uploaded SG CSV selected. Using latest backend SG CSV by default.'}
+                  Applies only to Round Leader projections. Tournament projections ignore weather overrides.
                 </p>
-                {sgCsvValidation.status !== 'idle' ? (
-                  <p className={`rlp-upload-status is-${sgCsvValidation.status}`}>{sgCsvValidation.message}</p>
-                ) : null}
-                {uploadedSgCsv ? (
-                  <div className="row">
-                    <button
-                      type="button"
-                      className="ghost-button"
-                      onClick={clearUploadedSgCsv}
-                      disabled={loading || isValidatingSgCsv}
-                    >
-                      Clear Uploaded CSV
-                    </button>
-                  </div>
-                ) : null}
+                <div className="rlp-weather-grid">
+                  <label>
+                    AM Wave Adj (strokes / round)
+                    <input
+                      className="incremental-number-input"
+                      type="number"
+                      step="0.05"
+                      value={weatherOverrides.amWaveAdjustmentPerRound}
+                      onChange={(event) => updateWeatherOverrideNumber('amWaveAdjustmentPerRound', event.target.value)}
+                      disabled={loading || !weatherOverrides.enabled}
+                    />
+                  </label>
+                  <label>
+                    PM Wave Adj (strokes / round)
+                    <input
+                      className="incremental-number-input"
+                      type="number"
+                      step="0.05"
+                      value={weatherOverrides.pmWaveAdjustmentPerRound}
+                      onChange={(event) => updateWeatherOverrideNumber('pmWaveAdjustmentPerRound', event.target.value)}
+                      disabled={loading || !weatherOverrides.enabled}
+                    />
+                  </label>
+                  <label>
+                    Wind Volatility Multiplier
+                    <input
+                      className="incremental-number-input"
+                      type="number"
+                      step="0.05"
+                      min="0.4"
+                      max="2.5"
+                      value={weatherOverrides.windVolatilityMultiplier}
+                      onChange={(event) => updateWeatherOverrideNumber('windVolatilityMultiplier', event.target.value)}
+                      disabled={loading || !weatherOverrides.enabled}
+                    />
+                  </label>
+                </div>
               </div>
+
             </div>
           ) : (
             <p className="muted">Inputs are hidden. Use Show Inputs to edit the source URL.</p>
@@ -1104,7 +1803,7 @@ export function RoundLeaderProjectionTool() {
               type="button"
               className="primary-button"
               onClick={loadProjection}
-              disabled={loading || isValidatingSgCsv || !baseUrl.trim() || !selectedStats.length}
+              disabled={loading || isValidatingSgCsv || isValidatingRecentFormCsv || !baseUrl.trim() || !selectedStats.length}
             >
               {loading ? 'Scraping...' : 'Scrape and Project'}
             </button>
@@ -1196,7 +1895,8 @@ export function RoundLeaderProjectionTool() {
               <div className="rlp-projection-tabs" role="tablist" aria-label="Projection modes">
                 {PROJECTION_TABS.map((tab) => {
                   const isActive = activeProjectionTab === tab.key;
-                  const isDisabled = !projectionScopes?.[tab.key];
+                  const isDisabled =
+                    tab.key === GROUP_WINNER_TAB_KEY ? !tournamentProjectionPlayers.length : !projectionScopes?.[tab.key];
                   return (
                     <button
                       key={tab.key}
@@ -1215,6 +1915,59 @@ export function RoundLeaderProjectionTool() {
               {activeProjectionScope?.description ? (
                 <p className="muted">{activeProjectionScope.description}</p>
               ) : null}
+              {isGroupProjection ? (
+                <div className="rlp-group-selector stack">
+                  <div className="row-between">
+                    <strong>Group Players</strong>
+                    <div className="row rlp-group-selector-actions">
+                      <span className="muted">
+                        {selectedGroupSize} of {GROUP_WINNER_MAX_PLAYERS} selected
+                      </span>
+                      <button
+                        type="button"
+                        className="ghost-button"
+                        onClick={clearGroupPlayerSelection}
+                        disabled={!selectedGroupSize || loading}
+                      >
+                        Clear
+                      </button>
+                    </div>
+                  </div>
+                  <p className="muted">
+                    Select 2-4 players from the tournament field. Group probabilities use the Tournament projection
+                    horizon and apply dead-heat share splitting for ties.
+                  </p>
+                  <div className="rlp-group-player-grid">
+                    {tournamentProjectionPlayers.map((player) => {
+                      const normalizedPlayerName = player?.normalizedPlayerName;
+                      const isSelected = selectedGroupPlayerNames.includes(normalizedPlayerName);
+                      const isDisabled =
+                        loading ||
+                        (!isSelected && selectedGroupPlayerNames.length >= GROUP_WINNER_MAX_PLAYERS);
+                      return (
+                        <label
+                          key={normalizedPlayerName || player?.playerName}
+                          className={`rlp-group-player-option ${isSelected ? 'is-selected' : ''} ${
+                            isDisabled ? 'is-disabled' : ''
+                          }`}
+                        >
+                          <input
+                            type="checkbox"
+                            checked={isSelected}
+                            onChange={() => toggleGroupPlayerSelection(normalizedPlayerName)}
+                            disabled={isDisabled}
+                          />
+                          <span>{player?.playerName || 'Unknown Player'}</span>
+                          <small>{player?.expectedFinalScoreDisplay || '-'}</small>
+                        </label>
+                      );
+                    })}
+                  </div>
+                  {!hasValidGroupSelection ? (
+                    <p className="muted">Select at least 2 players to calculate group winner probabilities.</p>
+                  ) : null}
+                </div>
+              ) : null}
               <div className="rlp-badge-row">
                 {effectiveSelectedStats.map((statKey) => (
                   <span key={statKey} className="rlp-badge">
@@ -1222,10 +1975,18 @@ export function RoundLeaderProjectionTool() {
                   </span>
                 ))}
                 {manualOverrideCount ? <span className="rlp-badge">Manual Overrides: {manualOverrideCount}</span> : null}
+                <span className="rlp-badge">Model: {activeProjectionModelLabel}</span>
                 {payload.statDataSource ? (
                   <span className="rlp-badge">Stat Data: {payload.statDataSource}</span>
                 ) : null}
+                {payload.recentFormDataFile?.fileName ? (
+                  <span className="rlp-badge">Recent Form: {payload.recentFormDataFile.fileName}</span>
+                ) : null}
                 {payload.displayDate ? <span className="rlp-badge">Dates: {payload.displayDate}</span> : null}
+                {isGroupProjection && hasValidGroupSelection ? (
+                  <span className="rlp-badge">Group: {selectedGroupSize} players, dead-heat adjusted</span>
+                ) : null}
+                {activeWeatherOverrides?.enabled ? <span className="rlp-badge">{weatherSummary}</span> : null}
                 <button
                   type="button"
                   className="ghost-button rlp-inline-export-button"
@@ -1240,7 +2001,7 @@ export function RoundLeaderProjectionTool() {
                   type="button"
                   className="ghost-button rlp-inline-refresh-button"
                   onClick={() => loadProjection()}
-                  disabled={loading || !baseUrl.trim() || !selectedStats.length}
+                  disabled={loading || isValidatingSgCsv || isValidatingRecentFormCsv || !baseUrl.trim() || !selectedStats.length}
                   title="Refresh projections"
                   aria-label="Refresh projections"
                 >
@@ -1271,8 +2032,8 @@ export function RoundLeaderProjectionTool() {
                         </button>
                       </th>
                       <th>
-                        <button type="button" className="table-sort-button" onClick={() => requestPlayerSort('thruRaw')}>
-                          Thru <span className="table-sort-indicator">{getPlayerSortIndicator('thruRaw')}</span>
+                        <button type="button" className="table-sort-button" onClick={() => requestPlayerSort('thruSortValue')}>
+                          Thru <span className="table-sort-indicator">{getPlayerSortIndicator('thruSortValue')}</span>
                         </button>
                       </th>
                       <th>
@@ -1287,7 +2048,7 @@ export function RoundLeaderProjectionTool() {
                       </th>
                       <th>
                         <button type="button" className="table-sort-button" onClick={() => requestPlayerSort('currentHole')}>
-                          Current Hole{' '}
+                          On Hole{' '}
                           <span className="table-sort-indicator">{getPlayerSortIndicator('currentHole')}</span>
                         </button>
                       </th>
@@ -1302,11 +2063,83 @@ export function RoundLeaderProjectionTool() {
                         </button>
                       </th>
                       <th>
-                        <button type="button" className="table-sort-button" onClick={() => requestPlayerSort('winTieProbability')}>
-                          Win/Tie Pct{' '}
-                          <span className="table-sort-indicator">{getPlayerSortIndicator('winTieProbability')}</span>
+                        <button
+                          type="button"
+                          className="table-sort-button"
+                          onClick={() => requestPlayerSort(isGroupProjection ? 'groupWinProbability' : 'winTieProbability')}
+                          title={isGroupProjection ? 'Dead-heat adjusted probability of winning the selected group' : undefined}
+                        >
+                          {isGroupProjection ? 'DH Group Win' : 'Win/Tie Pct'}{' '}
+                          <span className="table-sort-indicator">
+                            {getPlayerSortIndicator(isGroupProjection ? 'groupWinProbability' : 'winTieProbability')}
+                          </span>
                         </button>
                       </th>
+                      {isGroupProjection ? (
+                        <th>
+                          <button
+                            type="button"
+                            className="table-sort-button"
+                            onClick={() => requestPlayerSort('groupWinTieProbability')}
+                            title="Raw probability of winning or tying for first in the selected group before dead-heat split"
+                          >
+                            Win Tie %{' '}
+                            <span className="table-sort-indicator">{getPlayerSortIndicator('groupWinTieProbability')}</span>
+                          </button>
+                        </th>
+                      ) : null}
+                      {isGroupProjection ? (
+                        <th>
+                          <button
+                            type="button"
+                            className="table-sort-button"
+                            onClick={() => requestPlayerSort('groupPlace1Probability')}
+                            title="Dead-heat adjusted probability share for finishing first in the selected group"
+                          >
+                            1/{selectedGroupSize || 'x'}{' '}
+                            <span className="table-sort-indicator">{getPlayerSortIndicator('groupPlace1Probability')}</span>
+                          </button>
+                        </th>
+                      ) : null}
+                      {isGroupProjection ? (
+                        <th>
+                          <button
+                            type="button"
+                            className="table-sort-button"
+                            onClick={() => requestPlayerSort('groupPlace2Probability')}
+                            title="Dead-heat adjusted probability share for finishing second in the selected group"
+                          >
+                            2/{selectedGroupSize || 'x'}{' '}
+                            <span className="table-sort-indicator">{getPlayerSortIndicator('groupPlace2Probability')}</span>
+                          </button>
+                        </th>
+                      ) : null}
+                      {isGroupProjection && selectedGroupSize >= 3 ? (
+                        <th>
+                          <button
+                            type="button"
+                            className="table-sort-button"
+                            onClick={() => requestPlayerSort('groupPlace3Probability')}
+                            title="Dead-heat adjusted probability share for finishing third in the selected group"
+                          >
+                            3/{selectedGroupSize}{' '}
+                            <span className="table-sort-indicator">{getPlayerSortIndicator('groupPlace3Probability')}</span>
+                          </button>
+                        </th>
+                      ) : null}
+                      {isGroupProjection && selectedGroupSize >= 4 ? (
+                        <th>
+                          <button
+                            type="button"
+                            className="table-sort-button"
+                            onClick={() => requestPlayerSort('groupPlace4Probability')}
+                            title="Dead-heat adjusted probability share for finishing fourth in the selected group"
+                          >
+                            4/{selectedGroupSize}{' '}
+                            <span className="table-sort-indicator">{getPlayerSortIndicator('groupPlace4Probability')}</span>
+                          </button>
+                        </th>
+                      ) : null}
                       {isTournamentProjection ? (
                         <th>
                           <button
@@ -1319,7 +2152,7 @@ export function RoundLeaderProjectionTool() {
                           </button>
                         </th>
                       ) : null}
-                      {isTournamentProjection ? (
+                      {showTop10Column ? (
                         <th>
                           <button
                             type="button"
@@ -1331,7 +2164,7 @@ export function RoundLeaderProjectionTool() {
                           </button>
                         </th>
                       ) : null}
-                      {isTournamentProjection ? (
+                      {showTop5Column ? (
                         <th>
                           <button
                             type="button"
@@ -1347,10 +2180,13 @@ export function RoundLeaderProjectionTool() {
                         <button
                           type="button"
                           className="table-sort-button"
-                          onClick={() => requestPlayerSort('fairValueYesCents')}
-                          title="Win fair value"
+                          onClick={() => requestPlayerSort(isGroupProjection ? 'groupFairValueCents' : 'fairValueYesCents')}
+                          title={isGroupProjection ? 'Dead-heat adjusted group winner fair value' : 'Win fair value'}
                         >
-                          Win <span className="table-sort-indicator">{getPlayerSortIndicator('fairValueYesCents')}</span>
+                          {isGroupProjection ? 'DH Group FV' : 'Win'}{' '}
+                          <span className="table-sort-indicator">
+                            {getPlayerSortIndicator(isGroupProjection ? 'groupFairValueCents' : 'fairValueYesCents')}
+                          </span>
                         </button>
                       </th>
                       <th>
@@ -1370,6 +2206,8 @@ export function RoundLeaderProjectionTool() {
                   <tbody>
                     {sortedPlayers.map((player) => {
                       const projectionTooltip = buildProjectionTooltip(player);
+                      const missingProjectionStatsTooltip = buildMissingProjectionStatsTooltip(player);
+                      const manualOverrideTooltip = buildManualOverrideTooltip(player);
                       const movement = projectionRowMovement[player.playerName];
                       const movementClass =
                         movement === 'up'
@@ -1382,13 +2220,22 @@ export function RoundLeaderProjectionTool() {
                           <td>
                             <span className="rlp-player-name-cell">
                               {player.playerName}
-                              {player.missingSgData ? (
+                              {missingProjectionStatsTooltip ? (
                                 <span
-                                  className="rlp-missing-sg-icon"
-                                  title="Missing in SG CSV file. Projection uses field-average SG fallback."
-                                  aria-label={`${player.playerName} missing in SG CSV file`}
+                                  className="rlp-missing-stat-icon"
+                                  title={missingProjectionStatsTooltip}
+                                  aria-label={`${player.playerName} missing projection stat data`}
                                 >
                                   !
+                                </span>
+                              ) : null}
+                              {manualOverrideTooltip ? (
+                                <span
+                                  className="rlp-manual-override-icon"
+                                  title={manualOverrideTooltip}
+                                  aria-label={`${player.playerName} has manual projection overrides`}
+                                >
+                                  m
                                 </span>
                               ) : null}
                               <button
@@ -1405,27 +2252,36 @@ export function RoundLeaderProjectionTool() {
                           </td>
                           <td>{player.currentScoreDisplay || player.scoreRaw}</td>
                           <td>{player.roundScoreRaw || '-'}</td>
-                          <td>{player.thruRaw}</td>
+                          <td>{player.currentThruDisplay || player.thruRaw}</td>
                           <td>{player.startedOnBackNine ? 'Back' : 'Front'}</td>
                           <td>{player.currentHole}</td>
                           <td>{player.holesRemaining}</td>
                           <td>{formatWinTiePct(player, activeProjectionTab)}</td>
+                          {isGroupProjection ? <td>{formatWinPct(player?.groupWinTieProbability)}</td> : null}
+                          {isGroupProjection ? <td>{formatWinPct(player?.groupPlaceProbabilities?.[1])}</td> : null}
+                          {isGroupProjection ? <td>{formatWinPct(player?.groupPlaceProbabilities?.[2])}</td> : null}
+                          {isGroupProjection && selectedGroupSize >= 3 ? (
+                            <td>{formatWinPct(player?.groupPlaceProbabilities?.[3])}</td>
+                          ) : null}
+                          {isGroupProjection && selectedGroupSize >= 4 ? (
+                            <td>{formatWinPct(player?.groupPlaceProbabilities?.[4])}</td>
+                          ) : null}
                           {isTournamentProjection ? (
                             <td title={buildTopFinishTooltip(player, 20)}>
                               {formatFairValueFromProbability(player?.top20DeadHeatProbability)}
                             </td>
                           ) : null}
-                          {isTournamentProjection ? (
+                          {showTop10Column ? (
                             <td title={buildTopFinishTooltip(player, 10)}>
                               {formatFairValueFromProbability(player?.top10DeadHeatProbability)}
                             </td>
                           ) : null}
-                          {isTournamentProjection ? (
+                          {showTop5Column ? (
                             <td title={buildTopFinishTooltip(player, 5)}>
                               {formatFairValueFromProbability(player?.top5DeadHeatProbability)}
                             </td>
                           ) : null}
-                          <td>{formatFairValueCents(player.fairValueYesCents)}</td>
+                          <td>{formatFairValueCents(isGroupProjection ? player.groupFairValueCents : player.fairValueYesCents)}</td>
                           <td>
                             <span className="rlp-projected-cell">
                               {formatSignedValue(player.expectedFinalScoreNumber)}
@@ -1633,6 +2489,7 @@ function formatStatKey(statKey) {
     sg_app: 'SG: Approach',
     sg_arg: 'SG: Around-the-Green',
     sg_putt: 'SG: Putting',
+    recent_form_l20: 'Recent Form L20',
   };
   return map[statKey] || statKey;
 }
@@ -1644,7 +2501,9 @@ function getBreakdownValueByStatKey(projectionBreakdown, statKey) {
   const parValue = Number(projectionBreakdown?.parAdjustments?.[statKey]);
   if (Number.isFinite(parValue)) return parValue;
   const sgValue = Number(projectionBreakdown?.sgAdjustments?.[statKey]);
-  return Number.isFinite(sgValue) ? sgValue : null;
+  if (Number.isFinite(sgValue)) return sgValue;
+  const recentFormValue = Number(projectionBreakdown?.recentFormAdjustments?.[statKey]);
+  return Number.isFinite(recentFormValue) ? recentFormValue : null;
 }
 
 function buildProjectionTooltip(player) {
@@ -1652,6 +2511,7 @@ function buildProjectionTooltip(player) {
   if (!projectionBreakdown) return '';
 
   const selectedStats = Array.isArray(projectionBreakdown.selectedStats) ? projectionBreakdown.selectedStats : [];
+  const projectionModel = String(projectionBreakdown?.projectionModel || PROJECTION_MODEL_STANDARD);
   const summaryLines = selectedStats
     .map((statKey) => {
       const value = getBreakdownValueByStatKey(projectionBreakdown, statKey);
@@ -1660,6 +2520,44 @@ function buildProjectionTooltip(player) {
       return `${label}: ${formatSignedValue(value, 4)}`;
     })
     .filter(Boolean);
+  if (projectionModel === PROJECTION_MODEL_BLENDED) {
+    const parWeight = Number(projectionBreakdown?.parBlendWeight);
+    const sgWeight = Number(projectionBreakdown?.sgBlendWeight);
+    const weightParts = [];
+    if (Number.isFinite(parWeight)) weightParts.push(`Par x${parWeight.toFixed(2)}`);
+    if (Number.isFinite(sgWeight)) weightParts.push(`SG x${sgWeight.toFixed(2)}`);
+    summaryLines.unshift(`Model: Blended${weightParts.length ? ` (${weightParts.join(' | ')})` : ''}`);
+  }
+  const weatherAdjustment = Number(projectionBreakdown?.weatherAdjustment);
+  const weatherAdjustmentPerRound = Number(projectionBreakdown?.weatherAdjustmentPerRound);
+  const weatherVolatilityMultiplier = Number(projectionBreakdown?.windVolatilityMultiplier);
+  const teeWave = String(projectionBreakdown?.teeWave || '').toUpperCase();
+  const hasWeatherSignal =
+    Number.isFinite(weatherAdjustment) ||
+    Number.isFinite(weatherAdjustmentPerRound) ||
+    Number.isFinite(weatherVolatilityMultiplier);
+  if (hasWeatherSignal) {
+    const weatherParts = [];
+    if (Number.isFinite(weatherAdjustment)) {
+      weatherParts.push(`Adj ${formatSignedValue(weatherAdjustment, 4)}`);
+    }
+    if (Number.isFinite(weatherAdjustmentPerRound)) {
+      weatherParts.push(`PerRound ${formatSignedValue(weatherAdjustmentPerRound, 3)}`);
+    }
+    if (Number.isFinite(weatherVolatilityMultiplier) && Math.abs(weatherVolatilityMultiplier - 1) > 0.0005) {
+      weatherParts.push(`Vol x${weatherVolatilityMultiplier.toFixed(2)}`);
+    }
+    if (teeWave) {
+      weatherParts.push(`Wave ${teeWave}`);
+    }
+    if (weatherParts.length) {
+      summaryLines.push(`Weather: ${weatherParts.join(' | ')}`);
+    }
+  }
+  const recentFormWeight = Number(projectionBreakdown?.recentFormWeight);
+  if (selectedStats.includes(RECENT_FORM_STAT) && Number.isFinite(recentFormWeight)) {
+    summaryLines.push(`Recent Form Weight: ${recentFormWeight.toFixed(2)}`);
+  }
 
   const holeLines = Array.isArray(projectionBreakdown.holeBreakdown)
     ? projectionBreakdown.holeBreakdown.map((hole) => {
@@ -1671,8 +2569,12 @@ function buildProjectionTooltip(player) {
         const sgPart = Number.isFinite(sgValue) && Math.abs(sgValue) > 0.00005
           ? ` | SGAdj ${formatSignedValue(sgValue, 4)}`
           : '';
+        const recentFormValue = Number(hole.recentFormAdjustment);
+        const recentFormPart = Number.isFinite(recentFormValue) && Math.abs(recentFormValue) > 0.00005
+          ? ` | RFAdj ${formatSignedValue(recentFormValue, 4)}`
+          : '';
         const totalPart = `Total ${formatSignedValue(Number(hole.total), 4)}`;
-        return `${holeLabel}: ${basePart} | ${parPart}${sgPart} | ${totalPart}`;
+        return `${holeLabel}: ${basePart} | ${parPart}${sgPart}${recentFormPart} | ${totalPart}`;
       })
     : [];
 

@@ -39,20 +39,36 @@ alwaysApply: false
 - Read cached schedule events via `GET /api/tools/round-leader-projection/events`.
 - Refresh and overwrite cached schedule events via `POST /api/tools/round-leader-projection/events/refresh`.
 - Projection requests accept `selectedStats` so users can define custom stat groups.
-- Supported stat keys: `course_hole_model`, `par3_scoring_avg`, `par4_scoring_avg`, `par5_scoring_avg`, `sg_total`, `sg_t2g`, `sg_ott`, `sg_app`, `sg_arg`, `sg_putt`.
+- Projection requests accept `projectionModel` (`standard` or `blended`); `standard` preserves full Par + SG stacking, while `blended` keeps course baseline and applies weighted skill adjustments (`65%` Par, `35%` SG when both families are selected).
+- Supported stat keys: `course_hole_model`, `par3_scoring_avg`, `par4_scoring_avg`, `par5_scoring_avg`, `sg_total`, `sg_t2g`, `sg_ott`, `sg_app`, `sg_arg`, `sg_putt`, `recent_form_l20`.
 - If `sg_total` is selected, reject any payload that includes other SG keys to avoid redundant SG stacking.
+- If `sg_t2g` is selected, reject payloads that also include its overlapping components (`sg_ott`, `sg_app`, `sg_arg`); `sg_putt` can still pair with `sg_t2g`.
+- Allocate SG component adjustments by remaining-hole context while preserving each selected SG stat's per-round edge: `sg_ott` applies only to par 4/5 holes, `sg_app` is weighted more heavily on par 3s, and `sg_total`, `sg_t2g`, `sg_arg`, and `sg_putt` distribute broadly across holes.
 - If Tourcast GraphQL endpoint discovery fails, fall back to hole-level scoring data from `course-stats` instead of failing the request.
 - Cache stat snapshots by `tournamentId + currentRound + sorted(selectedStats)` in `backend/data/round-leader-projection-stats-cache.json`.
+- Include SG parser/cache versioning in the stat snapshot cache key so parsing fixes, such as DataGolf sentinel handling, do not reuse stale poisoned cached field means.
 - Source SG stats from latest `backend/data/YYYY-MM-DD-strokes-gained.csv` instead of PGA SG stat pages.
 - SG player mapping should tolerate ordering/punctuation differences and minor name variations.
+- Source recent-form stats from latest `backend/data/dg_group_trending_table-*.csv` unless the request includes an uploaded Recent Form CSV.
+- Recent Form CSV validation requires `player_name`, `true_sg_l20`, and `vs_baseline_l20`; projections use `vs_baseline_l20` as `recent_form_l20`.
+- Apply `recent_form_l20` as a conservative recent-form overlay after Par/SG blending, using the request `recentFormWeight` (`0.30` default, clamped `0`-`1`) prorated by remaining holes; do not include it inside the Par/SG blended model weights.
 - Projection payload player rows include win/tie probabilities (`winSoloProbability`, `tieForLeadProbability`) plus tie-splitting share probability fields and FV fields (`fairValueYesProbability`, `fairValueYesCents`) from Monte Carlo simulation.
-- Projection payload should include dual scope datasets in `projectionScopes` for `round` and `tournament`, with `players` retaining round-scope compatibility.
+- Projection payload should include scope datasets in `projectionScopes` for `round` and `tournament`, with `players` retaining round-scope compatibility; the frontend derives `Group Winner` from tournament-scope rows.
+- Include per-player `scoreStdDev` in projected rows so frontend group-winner simulations can reuse backend score uncertainty without re-scraping.
 - Include tournament progress metadata (`currentRound`, `totalRounds`, `roundsRemainingAfterCurrent`) so frontend can display days/rounds remaining.
 - Tournament-scope tie resolution should model playoff single-winner outcomes with SG-weighted softmax allocation (fallback to equal split if SG signal is unavailable).
 - Tournament-scope player rows should include `top20/top10/top5` probabilities using dead-heat settlement shares when ties cross a top-finish cutoff (for example, tie for 10th splits top-10 payout share).
-- Projection requests can include per-player `statOverrides` (par averages and SG keys) and `scoreOverrides` (`totalScoreNumber`, `roundScoreNumber`, `completedHoles`), and player responses should expose effective input metadata (`playerStatInputs`, `playerScoreInputs`).
+- Projection requests can include optional `weatherOverrides` (`enabled`, `amWaveAdjustmentPerRound`, `pmWaveAdjustmentPerRound`, `windVolatilityMultiplier`); apply these only to round-scope mean/variance and never to tournament-scope projections.
+- Projection requests can include per-player `statOverrides` (par averages and SG keys) and `scoreOverrides` (`totalScoreNumber`, `roundScoreNumber`, `completedHoles`), and player responses should expose effective input metadata (`playerStatInputs`, `playerScoreInputs`) including `baselineValue` so frontend can distinguish meaningful manual overrides from unchanged pre-filled values.
 - Always populate `playerStatInputs` for all editable projection stat keys (par + SG) so frontend exports/edit flows have a complete per-player stat payload regardless selected stats.
+- Player responses should expose `missingProjectionStats`/`missingProjectionStatKeys` for selected Par/SG stats that fall back to field mean or zero values, so the frontend can warn when any stat used in the projection is missing.
 - For pre-tournament/not-started players with missing live totals, treat projection baseline score as `E` (0) while preserving raw feed display values.
+- For upcoming tournaments before leaderboard rows exist, build pre-tournament projection rows from the PGA `tcotrPlayerStatus` field list, resolve course metadata from tournament/course-stats payloads, and use even-par hole baselines until live scoring averages are available.
 - If PGA feed marks a player as `ACTIVE` but score fields are blank and a tee time exists, infer `not started` for projection baseline and score display purposes.
+- For `BETWEEN_ROUNDS` players with a scheduled tee time but no current-round score/thru, show tee time in score display and infer weather wave from tee time; if active players lose tee-time in feed, infer weather wave from nearest group-number tee-time sample.
 - Projection requests can include optional `uploadedSgCsv` payloads (`fileName`, `content`) to override the default backend SG CSV source for that request.
-- Validate uploaded SG CSV structure via `POST /api/tools/round-leader-projection/validate-sg-csv` and require columns: `player_name`, `sg_total_pred`, `sg_ott_pred`, `sg_app_pred`, `sg_arg_pred`, `sg_putt_pred`.
+- Projection requests can include optional `uploadedRecentFormCsv` payloads (`fileName`, `content`) to override the default backend Recent Form CSV source for that request.
+- Keep Express JSON body limit high enough for combined projection CSV upload payloads, currently `5mb` in `backend/src/app.js`.
+- Validate uploaded SG CSV structure via `POST /api/tools/round-leader-projection/validate-sg-csv`; accept either BetLab prediction columns (`player_name`, `sg_total_pred`, `sg_ott_pred`, `sg_app_pred`, `sg_arg_pred`, `sg_putt_pred`) or DataGolf skill-rating columns (`player_name`, `total_true`, `ott_true`, `app_true`, `arg_true`, `putt_true`, with `t2g_true` optional because it can be derived).
+- Validate uploaded Recent Form CSV structure via `POST /api/tools/round-leader-projection/validate-recent-form-csv`.
+- Treat DataGolf SG sentinel values like `-9999` as missing, not real SG values; missing SG components should fall back to field means instead of contaminating field averages.

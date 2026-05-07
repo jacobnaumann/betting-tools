@@ -1,6 +1,9 @@
 const express = require('express');
 const { buildRoundLeaderProjection } = require('../services/roundLeaderProjectionService');
-const { validateUploadedSgCsv } = require('../services/roundLeaderProjectionStatService');
+const {
+  validateUploadedRecentFormCsv,
+  validateUploadedSgCsv,
+} = require('../services/roundLeaderProjectionStatService');
 const {
   getRoundLeaderProjectionEvents,
   refreshRoundLeaderProjectionEvents,
@@ -32,9 +35,13 @@ toolsRouter.post('/round-leader-projection', async (req, res) => {
     tourcastUrl,
     courseStatsUrl,
     selectedStats,
+    projectionModel,
     statOverrides,
     scoreOverrides,
+    weatherOverrides,
     uploadedSgCsv,
+    uploadedRecentFormCsv,
+    recentFormWeight,
   } = req.body || {};
 
   if (!baseUrl && !leaderboardUrl && !tourcastUrl && !courseStatsUrl) {
@@ -50,9 +57,13 @@ toolsRouter.post('/round-leader-projection', async (req, res) => {
     tourcastUrl,
     courseStatsUrl,
     selectedStats,
+    projectionModel,
     statOverrides,
     scoreOverrides,
+    weatherOverrides,
     uploadedSgCsv,
+    uploadedRecentFormCsv,
+    recentFormWeight,
   });
 
   return res.json({
@@ -64,6 +75,15 @@ toolsRouter.post('/round-leader-projection', async (req, res) => {
 toolsRouter.post('/round-leader-projection/validate-sg-csv', async (req, res) => {
   const { uploadedSgCsv } = req.body || {};
   const data = validateUploadedSgCsv(uploadedSgCsv);
+  return res.json({
+    ok: true,
+    data,
+  });
+});
+
+toolsRouter.post('/round-leader-projection/validate-recent-form-csv', async (req, res) => {
+  const { uploadedRecentFormCsv } = req.body || {};
+  const data = validateUploadedRecentFormCsv(uploadedRecentFormCsv);
   return res.json({
     ok: true,
     data,

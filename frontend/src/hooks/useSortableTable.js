@@ -19,7 +19,7 @@ function compareValues(a, b) {
   });
 }
 
-export function useSortableTable(rows, defaultSort) {
+export function useSortableTable(rows, defaultSort, options = {}) {
   const [sortConfig, setSortConfig] = useState(defaultSort);
 
   const sortedRows = useMemo(() => {
@@ -27,12 +27,18 @@ export function useSortableTable(rows, defaultSort) {
     if (!sortConfig?.key) return baseRows;
 
     const directionFactor = sortConfig.direction === 'desc' ? -1 : 1;
+    const customComparator =
+      options?.customComparators && typeof options.customComparators[sortConfig.key] === 'function'
+        ? options.customComparators[sortConfig.key]
+        : null;
     baseRows.sort((leftRow, rightRow) => {
-      const result = compareValues(leftRow[sortConfig.key], rightRow[sortConfig.key]);
+      const result = customComparator
+        ? customComparator(leftRow, rightRow, compareValues)
+        : compareValues(leftRow[sortConfig.key], rightRow[sortConfig.key]);
       return result * directionFactor;
     });
     return baseRows;
-  }, [rows, sortConfig]);
+  }, [rows, sortConfig, options]);
 
   const requestSort = (key) => {
     setSortConfig((previous) => {

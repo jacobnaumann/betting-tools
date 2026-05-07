@@ -1,6 +1,6 @@
 {
   "sourceUrl": "https://www.pgatour.com/schedule",
-  "updatedAt": "2026-04-16T12:34:24.079Z",
+  "updatedAt": "2026-05-07T15:06:09.060Z",
   "events": [
     {
       "id": "R2026006",
@@ -132,7 +132,7 @@
       "id": "R2026012",
       "name": "RBC Heritage",
       "tournamentUrl": "https://www.pgatour.com/tournaments/2026/rbc-heritage/R2026012/",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETED",
       "roundLabel": null,
       "displayDate": "Apr 16 - 19",
       "startDate": "2026-04-16"
@@ -141,7 +141,7 @@
       "id": "R2026018",
       "name": "Zurich Classic of New Orleans",
       "tournamentUrl": "https://www.pgatour.com/tournaments/2026/zurich-classic-of-new-orleans/R2026018/",
-      "status": "UPCOMING",
+      "status": "COMPLETED",
       "roundLabel": null,
       "displayDate": "Apr 23 - 26",
       "startDate": "2026-04-23"
@@ -150,7 +150,7 @@
       "id": "R2026556",
       "name": "Cadillac Championship",
       "tournamentUrl": "https://www.pgatour.com/tournaments/2026/cadillac-championship/R2026556/",
-      "status": "UPCOMING",
+      "status": "COMPLETED",
       "roundLabel": null,
       "displayDate": "Apr 30 - May 3",
       "startDate": "2026-04-30"
@@ -159,7 +159,7 @@
       "id": "R2026553",
       "name": "ONEflight Myrtle Beach Classic",
       "tournamentUrl": "https://www.pgatour.com/tournaments/2026/oneflight-myrtle-beach-classic/R2026553/",
-      "status": "UPCOMING",
+      "status": "IN_PROGRESS",
       "roundLabel": null,
       "displayDate": "May 7 - 10",
       "startDate": "2026-05-07"
@@ -168,7 +168,7 @@
       "id": "R2026480",
       "name": "Truist Championship",
       "tournamentUrl": "https://www.pgatour.com/tournaments/2026/truist-championship/R2026480/",
-      "status": "UPCOMING",
+      "status": "IN_PROGRESS",
       "roundLabel": null,
       "displayDate": "May 7 - 10",
       "startDate": "2026-05-07"
